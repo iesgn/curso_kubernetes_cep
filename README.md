@@ -17,9 +17,29 @@
     * Instalación de minikube
     * Instalación y configuración de kubectl
 3. Módulo 3: Pods
+    * Despliegues de aplicaciones en Kubernetes
+    * Pod
+    * Describiendo un pod
+    * Gestionando los pods
 4. Módulo 4: ReplicaSets
+    * ReplicaSet
+    * Describiendo un ReplicaSet
+    * Gestionando los ReplicaSet
 5. Módulo 5: Deployments
+    * Deployment
+    * Describiendo un Deployment
+    * Gestión básica de deployment
+    * Actualización y rollout de Deployment
 6. Módulo 6: Services, Ingress
-7. Módulo 7: Otros recursos
-8. Módulo 8: Instalación de aplicaciones en Kubernetes con Herm
+    * Services. Tipos de servicios.
+    * Describiendo Services.
+    * Gestionando los Services
+    * Servicio DNS en Kubernetes
+    * Ingress
+7. Módulo 7: Almacenamiento en Kubernetes ????
+    * Consideraciones sobre el almacenamiento
+    * PersistentVolume
+    * PersistentVolumeClaim
+8. Módulo 8: Otros recursos
+9. Módulo 9: Instalación de aplicaciones en Kubernetes con Helm
 
