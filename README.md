@@ -7,7 +7,15 @@
 ### Contenidos
 
 1. Módulo 1: Introducción a Kubernetes
-2. Módulo 2: Instalación de Kunernetes
+    * Implantación de aplicaciones web en contenedores
+    * Limitaciones de Docker
+    * Orquestadores de contenedores
+    * El proyecto kubernetes
+    * Arquitectura básica de kubernetes
+2. Módulo 2: Instalación de Kubernetes
+    * Alternativas para instalación simple de k8s: minikube, kubeadm, k3s
+    * Instalación de minikube
+    * Instalación y configuración de kubectl
 3. Módulo 3: Pods
 4. Módulo 4: ReplicaSets
 5. Módulo 5: Deployments
