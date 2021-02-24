@@ -24,9 +24,15 @@ spec: # required
 
 Veamos cada uno de los parámetros que hemos definido:
 
-* apiVersion: v1: La versión de la API que vamos a usar.
-* kind: Pod: La clase de recurso que estamos definiendo.
-* metadata: Información que nos permite identificar unívocamente al recurso (nombre, espacio de nombres donde estamos trabajando y etiquetas que me permiten caracterizar un recurso.).
-* spec: Definimos las características del recurso. En el caso de un pod indicamos los contenedores que van a formar el pod, en este caso sólo uno. E indicamos la imagen desde la que se va a crear el contenedor, su nombre y podemos definir la política de descarga de la imagen.
+* `apiVersion`: v1: La versión de la API que vamos a usar.
+* `kind: Pod`: La clase de recurso que estamos definiendo.
+* `metadata`: Información que nos permite identificar unívocamente al recurso:
+    * `name`: Nombre del pod
+    * `namespace`: Los namespace me permiten agrupar distintos recursos dentro del cluster (podemos pensar en ellos como proyectos). nosotros vamos a usar el `namespace` creao por defecto que se llama `default`.
+    * `labels`: Las [Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) nos permiten etiquetar los recursos de kubernetes (por ejemplo un pod) con información del tipo clave/valor.
+* `spec`: Definimos las características del recurso. En el caso de un pod indicamos los contenedores que van a formar el pod, en este caso sólo uno. 
+    * `image`: La imagen desde la que se va a crear el contenedor
+    * `name`: Nombre del contenedor.
+    * `imagePullPolicy`: Las imágenes se guardan en un registro interno. Se pueden utilizar registros públicos (google, docker hub,...) y registros privados. La política por defecto es `IfNotPresent`, que se baja la imagen si no está en el registro interno. Si queremos forzar la descarga indicamos `imagePullPolicy:Always`.
 
 
