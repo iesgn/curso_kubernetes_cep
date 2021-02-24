@@ -6,7 +6,7 @@ En este caso también vamos a definir el recurso de ReplicaSet en un fichero, po
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nginx
+  name: replicaset-nginx
   namespace: default
 spec:
   replicas: 2
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - image: nginx
-          name: nginx
+          name: contenedor-nginx
 ```
 
 Algunos de los parámetros definidos ya lo hemos estudiado en la definición del pod. Los nuevos parámetros de este recurso son los siguientes:

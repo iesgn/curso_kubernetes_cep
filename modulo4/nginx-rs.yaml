@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nginx
+  name: replicaset-nginx
   namespace: default
 spec:
   replicas: 2
@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
         - image: nginx
-          name: nginx
+          name: contenedor-nginx

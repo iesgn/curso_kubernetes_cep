@@ -10,14 +10,14 @@ Lo que habitualmente vamos a hacer es trabajar con ficheros yaml donde describim
 apiVersion: v1 # required
 kind: Pod # required
 metadata: # required
- name: nginx # required
+ name: pod-nginx # required
  labels:
    app: nginx
    service: web
 spec: # required
  containers:
    - image: nginx:1.16
-     name: nginx
+     name: contenedor-nginx
      imagePullPolicy: Always
 ```
 

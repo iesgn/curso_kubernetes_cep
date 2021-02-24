@@ -6,15 +6,15 @@ Tenemos un fichero [`pod.yaml`](pod.yaml) donde hemos definido un pod  de la sig
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: pod-nginx
   namespace: default
   labels:
     app: nginx
     service: web
 spec:
   containers:
-    - image:  nginx
-      name:  nginx
+    - image: nginx
+      name: contenedor-nginx
 ```
 
 Para crear el pod desde el fichero yaml:
