@@ -11,7 +11,6 @@ apiVersion: v1 # required
 kind: Pod # required
 metadata: # required
  name: nginx # required
- namespace: default
  labels:
    app: nginx
    service: web
@@ -28,7 +27,6 @@ Veamos cada uno de los parámetros que hemos definido:
 * `kind: Pod`: La clase de recurso que estamos definiendo.
 * `metadata`: Información que nos permite identificar unívocamente al recurso:
     * `name`: Nombre del pod
-    * `namespace`: Los namespace me permiten agrupar distintos recursos dentro del cluster (podemos pensar en ellos como proyectos). nosotros vamos a usar el `namespace` creao por defecto que se llama `default`.
     * `labels`: Las [Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) nos permiten etiquetar los recursos de kubernetes (por ejemplo un pod) con información del tipo clave/valor.
 * `spec`: Definimos las características del recurso. En el caso de un pod indicamos los contenedores que van a formar el pod, en este caso sólo uno. 
     * `image`: La imagen desde la que se va a crear el contenedor
