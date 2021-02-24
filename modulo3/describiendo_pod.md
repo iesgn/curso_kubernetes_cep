@@ -35,4 +35,9 @@ Veamos cada uno de los parámetros que hemos definido:
     * `name`: Nombre del contenedor.
     * `imagePullPolicy`: Las imágenes se guardan en un registro interno. Se pueden utilizar registros públicos (google, docker hub,...) y registros privados. La política por defecto es `IfNotPresent`, que se baja la imagen si no está en el registro interno. Si queremos forzar la descarga indicamos `imagePullPolicy:Always`.
 
+## Para seguir aprendiendo
+
+* Para más información acerca de los pod puedes leer: la [documentación de la API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#pod-v1-core) y la [guía de usuario](https://kubernetes.io/docs/concepts/workloads/pods/).
+* Para más información acerca de la estructura de la definición de los objetos de Kubernetes: [Understanding Kubernetes Objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/).
+
 
