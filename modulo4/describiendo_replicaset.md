@@ -7,7 +7,6 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: replicaset-nginx
-  namespace: default
 spec:
   replicas: 2
   selector:
