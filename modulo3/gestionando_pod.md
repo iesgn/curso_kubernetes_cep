@@ -31,11 +31,11 @@ Si queremos saber en qué nodo del cluster se está ejecutando:
 
 Para obtener información más detallada del pod:
 
-    kubectl describe pod nginx
+    kubectl describe pod pod-nginx
 
 Para eliminar el pod:
 
-    kubectl delete pod nginx
+    kubectl delete pod pod-nginx
 
 Para obtener los logs del pod:
 
@@ -43,11 +43,11 @@ Para obtener los logs del pod:
 
 Si quiero conectarme al contenedor:
 
-    kubectl exec -it nginx -- /bin/bash
+    kubectl exec -it pod-nginx -- /bin/bash
 
 Podemos acceder a la aplicación, redirigiendo un puerto de localhost al puerto de la aplicación:
 
-    kubectl port-forward nginx 8080:80
+    kubectl port-forward pod-nginx 8080:80
 
 Y accedemos al servidor web en la url http://localhost:8080.
 
@@ -59,7 +59,7 @@ Para obtener las labels de los pods que hemos creado:
 
 Los Labels lo hemos definido en la sección metadata del fichero yaml, pero también podemos añadirlos a los pods ya creados:
 
-    kubectl label pods nginx service=web --overwrite=true
+    kubectl label pods pod-nginx service=web --overwrite=true
 
 Los Labels me van a permitir seleccionar un recurso determinado, por ejemplo para visualizar los pods que tienen un label con un determinado valor:
 
