@@ -18,11 +18,11 @@
     * Alternativas para instalación simple de k8s: minikube, kubeadm, k3s
     * Instalación de minikube
     * Instalación y configuración de kubectl
-3. Módulo 3: Pods
     * Despliegues de aplicaciones en Kubernetes
+3. Módulo 3: Pods
     * [Pod](modulo3/pods.md)
     * [Describiendo un pod](modulo3/describiendo_pod.md)
-    * Gestionando los pods
+    * [Gestionando los pods](modulo3/gestionando_pod.md)
 4. Módulo 4: ReplicaSets
     * ReplicaSet
     * Describiendo un ReplicaSet
