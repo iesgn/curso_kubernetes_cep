@@ -24,9 +24,9 @@
     * [Describiendo un pod](modulo3/describiendo_pod.md)
     * [Gestionando los pods](modulo3/gestionando_pod.md)
 4. Módulo 4: ReplicaSets
-    * ReplicaSet
-    * Describiendo un ReplicaSet
-    * Gestionando los ReplicaSet
+    * [ReplicaSet](modulo4/replicaset.md)
+    * [Describiendo un ReplicaSet](modulo4/describiendo_replicaset.md)
+    * [Gestionando los ReplicaSet](modulo4/gestionando_replicaset.md)
 5. Módulo 5: Deployments
     * Deployment
     * Describiendo un Deployment

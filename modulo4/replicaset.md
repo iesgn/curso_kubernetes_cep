@@ -1,0 +1,7 @@
+# ReplicaSet
+
+[ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) es un recurso de Kubernetes que asegura que siempre se ejecute un número de réplicas de un pod determinado. Por lo tanto, nos asegura que un conjunto de pods siempre están funcionando y disponibles. Nos proporciona las siguientes características: **Tolerancia a fallos y Escalabilidad dinámica**.
+
+Aunque en el módulo anterior, estudiamos como gestionar el ciclo de vida de los pods, en Kubernetes no vamos a trabajar directamente con pods. Un recurso replicaSet me controla un conjunto de pods y es el responsable de que estos pods siempre estén ejecutándose (**Tolerancia a fallos**) y de aumentar o disminuir las replícas de dicho pod (**Escalabilidad dinámica**).
+
+El ReplicaSet va a ser todo lo posible para que el conjunto de pods que controla siempre se estén ejecutando. Por ejemplo: si el nodo del cluster donde se están ejecutando una serie de pods se apaga, el ReplicaSet crearía nuevos pods en otro nodo para tener siempre ejecutando el número que hemos indicado. Si un pod se para por cualquier problema, el ReplcaSet intentará que vuelva a ejecutarse  para que siempre tengamos el número de pods deseado.
