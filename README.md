@@ -21,7 +21,7 @@
 3. Módulo 3: Pods
     * Despliegues de aplicaciones en Kubernetes
     * [Pod](modulo3/pods.md)
-    * Describiendo un pod
+    * [Describiendo un pod](modulo3/describiendo_pod.md)
     * Gestionando los pods
 4. Módulo 4: ReplicaSets
     * ReplicaSet
