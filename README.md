@@ -4,6 +4,8 @@
 
 ### Objetivos
 
+* 
+
 ### Contenidos
 
 1. Módulo 1: Introducción a Kubernetes
@@ -18,7 +20,7 @@
     * Instalación y configuración de kubectl
 3. Módulo 3: Pods
     * Despliegues de aplicaciones en Kubernetes
-    * Pod
+    * [Pod](modulo3/pods.md)
     * Describiendo un pod
     * Gestionando los pods
 4. Módulo 4: ReplicaSets
