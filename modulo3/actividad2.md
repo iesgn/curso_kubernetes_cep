@@ -6,9 +6,75 @@
 
 En esta tarea vamos a profundizar en los pods multicontenedor. como indicamos en el contenido de un módulo un pod puede estar formado por varios contenedores y por volúmenes para permitir que los contenedores del pod puedan compartir almacenmaiento (**Nota 1: Estudiaremos más en profundidad los volúmenes en un módulo postrior.** **Nota 2: Veremos también que los pods son efímeros, es decir se pierde la información cuando el pod se elimina.**)
 
+La razón principal por la que los Pods pueden tener múltiples contenedores es para admitir aplicaciones auxiliares que ayudan a una aplicación primaria. Ejemplos típicos de estas aplicaciones pueden ser las que envían o recogen datos externos (por ejemplo de un repositorio) y los servidores proxy. El ayudante y las aplicaciones primarias a menudo necesitan comunicarse entre sí. Normalmente, esto se realiza a través de un sistema de archivos compartido o mediante la interfaz de red de bucle de retorno, localhost.
+
+Veamos dos ejemplos concretos:
+
+1. Un ejemplo de este patrón es un servidor web junto con un programa auxiliar que sondea un repositorio Git en busca de nuevas actualizaciones.
+2. Un  servidor  web  nginx  con  un  servidor  de aplicaciones  PHP-FPM,  lo  podemos  implementar  en un pod, y cada servicio en un contenedor. Además tendría un volumen interno que se montaría en el Documentroot para que el servidor web y el servidor de aplicaciones puiedan acceder a la aplicación.
+
+Veamos un pequeño ejemplo de un pod multicontenedor:
+
+Tenemos la definción del pod en el fichero [`pod-multicontenedor.yaml`](pod-multicontenedor.yaml):
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod_multicontenedor
+spec:
+  volumes:
+  - name: html
+    emptyDir: {}
+  containers:
+  - name: contenedor1
+    image: nginx
+    volumeMounts:
+    - name: html
+      mountPath: /usr/share/nginx/html
+  - name: contenedor2
+    image: debian
+    volumeMounts:
+    - name: html
+      mountPath: /html
+    command: ["/bin/sh", "-c"]
+    args:
+      - while true; do
+          date >> /html/index.html;
+          sleep 1;
+        done
+```
+
+Estudiemos la definición del pod:
+
+* El pod se llama `pod_multicontenedor` y en el apartado `spec` vemos que esta formado por un volumen (llamado `html` y de tipo `emptyDir, que estudiaremos más adelante, pero que básicamente es un directorio que vamos a montar en los contenedores`) y dos contenedores (llamador `contenedor1` y `contenedor2`).
+* El `contenedor1` se crea a partir de la imagen `nginx`, es el conenedor principal, sirviendo la web. En este contenedor montamos el volumen `html` en su DocumentRoot (`/usr/share/nginx/html`). Va aservir el fichero `index.html` que está modificando el otro contendor.
+* El `contenedor2` es el auxiliar. En este caso se monta el volumen `html` en el directorio `html` y en él va escribiendo, cada 1 segundo, la fecha y la hora, en el fichero `index.html`.
+* Como los dos contenedores tienen montado el columne, el fichero `index.html` que mva modificando el `contendor2`, es el fichero que sirve el `contendor1`.
+
+Para realizar la actividad realiza los siguientes pasos:
+
+1. Crea el pod.
+2. Muestra información del pod, y fíjate cómo se indica que el pod está formado por un volumen y dos contenedores.
+3. Vamos a ver el conenido del fichero `index.html` en el primer contenedor, ejecutando:
+
+        kubectl exec pod_multicontenedor -c contenedor1 -- /bin/cat /usr/share/nginx/html/index.html
+
+    En esta ocación hay que indicar el contendor (opción `-c`) para indicar donde vamos a ejecutar la instrucción.
+4. Vamos a ver el conenido del fichero `index.html` en el segundo contenedor, ejecutando:
+
+        kubectl exec pod_multicontenedor -c contenedor2 -- /bin/cat /html/index.html
+5. Ejecuta un "port forward" para acceder al pod en el puerto 8081 de localhost, sabiendo que el servidcio usa el puero 80.
+6. Accede desde un navegador para ver el resultado. Refresca la página para observar cómo va cambiando el fichero `index.html`.
+
+Para superar la actividad deberás entregar en un fichero comprimido el siguiente pantallazo:
+
+1. Un pantallazo donde se vea el acceso a la página desde un navegador web.
+
 ## RECURSOS
 
 * Conexión a internet
+* El fichero con la definción del pod: [`pod-multicontenedor.yaml`](pod-multicontenedor.yaml)
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
