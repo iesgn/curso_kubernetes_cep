@@ -49,7 +49,7 @@ Estudiemos la definición del pod:
 
 * El pod se llama `pod_multicontenedor` y en el apartado `spec` vemos que esta formado por un volumen (llamado `html` y de tipo `emptyDir, que estudiaremos más adelante, pero que básicamente es un directorio que vamos a montar en los contenedores`) y dos contenedores (llamador `contenedor1` y `contenedor2`).
 * El `contenedor1` se crea a partir de la imagen `nginx`, es el conenedor principal, sirviendo la web. En este contenedor montamos el volumen `html` en su DocumentRoot (`/usr/share/nginx/html`). Va aservir el fichero `index.html` que está modificando el otro contendor.
-* El `contenedor2` es el auxiliar. En este caso se monta el volumen `html` en el directorio `html` y en él va escribiendo, cada 1 segundo, la fecha y la hora, en el fichero `index.html`.
+* El `contenedor2` es el auxiliar. En este caso se monta el volumen `html` en el directorio `html` y en él va escribiendo cada segundo, la fecha y la hora, en el fichero `index.html` (Parámreo `commad` y `args`). 
 * Como los dos contenedores tienen montado el columne, el fichero `index.html` que mva modificando el `contendor2`, es el fichero que sirve el `contendor1`.
 
 Para realizar la actividad realiza los siguientes pasos:
