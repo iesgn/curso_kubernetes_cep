@@ -81,6 +81,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Pod](modulo3/pods.md)
     * [Describiendo un pod](modulo3/describiendo_pod.md)
 	* [Gestionando los pods](modulo3/gestionando_pod.md)
+        * [Actividad: Trabajando con pods (OBLIGATORIA)](modulo3/actividad1.md)
 1. Tolerancia y escalabilidad: ReplicaSets
 	* [ReplicaSet](modulo4/replicaset.md)
 	* [Describiendo un ReplicaSet](modulo4/describiendo_replicaset.md)
