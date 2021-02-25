@@ -15,7 +15,7 @@ Veamos dos ejemplos concretos:
 
 Veamos un pequeño ejemplo de un pod multicontenedor:
 
-Tenemos la definción del pod en el fichero [`pod-multicontenedor.yaml`](pod-multicontenedor.yaml):
+Tenemos la definción del pod en el fichero [`pod_multicontenedor.yaml`](pod_multicontenedor.yaml):
 
 ```yaml
 apiVersion: v1
@@ -74,7 +74,7 @@ Para superar la actividad deberás entregar en un fichero comprimido el siguient
 ## RECURSOS
 
 * Conexión a internet
-* El fichero con la definción del pod: [`pod-multicontenedor.yaml`](pod-multicontenedor.yaml)
+* El fichero con la definción del pod: [`pod_multicontenedor.yaml`](pod_multicontenedor.yaml)
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
