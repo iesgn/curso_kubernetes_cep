@@ -1,6 +1,6 @@
 # Gestionando los ReplicaSet
 
-En esta unidad vamos a crear un recurso ReplicaSet que controlará un conjunto de recursos pods. Vamos a utilizar el fichero que estudiamos en la unidad anterior: [`nginx-rs.yaml`](nginx-rs.yaml).
+En esta unidad vamos a crear un recurso ReplicaSet que controlará un conjunto de recursos pods. Vamos a utilizar el fichero que estudiamos en la unidad anterior: [`nginx-rs.yaml`](files/nginx-rs.yaml).
 
 ## Creación del ReplicaSet
 

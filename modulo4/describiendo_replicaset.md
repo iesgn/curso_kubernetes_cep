@@ -1,6 +1,6 @@
 # Describiendo un ReplicaSet
 
-En este caso también vamos a definir el recurso de ReplicaSet en un fichero, por ejemplo como este:
+En este caso también vamos a definir el recurso de ReplicaSet en un fichero [`nginx-rs.yaml`](files/nginx-rs.yaml), por ejemplo como este:
 
 ```yaml
 apiVersion: apps/v1
