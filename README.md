@@ -90,7 +90,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
         * [Actividad 4.1: Trabajando con ReplicaSet (OBLIGATORIA)](modulo4/actividad1.md)
 1. Despliegues
     * [Deployment](modulo5/deployment.md)
-    * Describiendo un Deployment
+    * [Describiendo un Deployment](modulo5/describiendo_deployment.md)
     * Gestión básica de deployment
     * Actualización y rollout de Deployment
 1. Acceso a las aplicaciones

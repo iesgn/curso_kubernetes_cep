@@ -12,7 +12,7 @@ En los módulos anteriores hemos estudiado los Pods y los ReplicaSet, sin embarg
 Por la manera de trabajar de un *Deployment*, podemos indicar las funciones que nos aporta:
 
 * Control de réplicas
-* Escabilidad de pods
+* Escalabilidad de pods
 * Actualizaciones continuas
 * Despliegues automáticos
 * Rollback a versiones anteriores
