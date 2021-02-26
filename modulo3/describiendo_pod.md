@@ -4,7 +4,7 @@ Aunque podemos crear un pod directamente con kubectl:
 
     kubectl run nginx --image=nginx
 
-Lo que habitualmente vamos a hacer es trabajar con ficheros yaml donde describimos el recurso que queremos crear en el cluster, un ejemplo podría ser el contenido del fichero `pod.yam`:
+Lo que habitualmente vamos a hacer es trabajar con ficheros yaml donde describimos el recurso que queremos crear en el cluster, un ejemplo podría ser el contenido del fichero [`pod.yaml`](files/pod.yaml):
 
 ```yaml
 apiVersion: v1 # required
