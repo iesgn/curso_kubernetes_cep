@@ -1,6 +1,6 @@
 # Gestionando los ReplicaSet
 
-En esta unidad vamos a crear un recurso ReplicaSet que controlorá un conjunto de recursos pods. Vamos a utilizar el fichero que estudiamos en la unidad anterior: [`nginx-rs.yaml`](nginx-rs.yaml).
+En esta unidad vamos a crear un recurso ReplicaSet que controlará un conjunto de recursos pods. Vamos a utilizar el fichero que estudiamos en la unidad anterior: [`nginx-rs.yaml`](nginx-rs.yaml).
 
 ## Creación del ReplicaSet
 
@@ -23,7 +23,11 @@ Y podemos ver los recursos que se han creado con:
 
     kubectl get rs,pods
 
-Observamos que querimaos crear 2 replicas del pod, y efectivamente se han creado.
+Observamos que querámos crear 2 replicas del pod, y efectivamente se han creado.
+
+Si queremos obtener información detalla del recurso ReplicaSet que hemos creado:
+
+    kubectl describe rs replicaset-nginx
 
 ## Tolerancia a fallos
 
