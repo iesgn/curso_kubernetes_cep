@@ -61,4 +61,11 @@ body, input {
     font-size: 1.5em;
     line-height: 1.5;
   }
+
+  div#footer p
+  {
+    font-size: 1em;
+  }
+
+
  
