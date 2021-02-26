@@ -12,9 +12,9 @@ Vamos a crear nuestro primer pod. Vamos a desplegar una imagen que nos ofrece un
     * Indica una etiqueta en la descripción del pod.
 2. Crea el pod.
 3. Comprueba que el pod se ha creado y está corriendo.
-4. Obten información detallada del pod creado.
+4. Obtén información detallada del pod creado.
 5. Accede de forma interactiva al pod y comprueba los ficheros que están en el DocumentRoot (`usr/local/apache2/htdocs/`).
-6. Crea una redirección con `kubectl port-forward` utilizando el puerto de localhost 8888, y accede a la aplicación desde un navegador.
+6. Crea una redirección con `kubectl port-forward` utilizando el puerto de localhost 8888 y sabiendo que el pod ofrece el servicio en el puerto 80. Accede a la aplicación desde un navegador.
 7. Muestra los logs del pod y comprueba que se visualizan los logs de los accesos que hemos realizado en el punto anterior.
 8. Elimina el pod, y comprueba que ha sido eliminado.
 
@@ -22,7 +22,7 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 
 1. Pantallazo del fichero yaml que has creado con la definición del pod.
 2. Pantallazo donde se comprueba que el pod ha sido creado.
-3. Pantallazo donde se ve la información detalada del pod.
+3. Pantallazo donde se ve la información detallada del pod.
 4. Pantallazo donde se ve el fichero `index.html` del documentRoot.
 5. Pantallazo del navegador accediendo a la aplicación con el `port-forward`.
 6. Pantallazo donde se ve los logs de acceso del pod.
