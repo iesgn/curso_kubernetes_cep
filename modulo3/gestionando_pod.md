@@ -1,6 +1,6 @@
 # Gestionando los pods
 
-Tenemos un fichero [`pod.yaml`](pod.yaml) donde hemos definido un pod  de la siguiente manera:
+Tenemos un fichero [`pod.yaml`](files/pod.yaml) donde hemos definido un pod  de la siguiente manera:
 
 ```yaml
 apiVersion: v1
