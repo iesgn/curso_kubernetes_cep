@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temperaturas-frontend
+  labels:
+    app: temperaturas
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: temperaturas
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: temperaturas
+        tier: frontend
+    spec:
+      containers:
+      - name: contenedor-temperaturas
+        image: iesgn/temperaturas_frontend
+        ports:
+          - name: http-server
+            containerPort: 3000
