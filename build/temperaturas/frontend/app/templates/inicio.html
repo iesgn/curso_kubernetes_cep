@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Temperaturas</title>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Temperaturas</h1>
+    </div>
+    {% if noserver %}
+    <div id="guestbook-entries">
+      <p>No puedo conectar con el servidor de temperaturas...</p>
+    </div>
+    {% else %}
+    <div id="guestbook-entries">
+      <p>Introduce el municipio (indica el nombre completo o el inicio) de España que quieres buscar...</p>
+    </div>
+
+    {% endif %}
+
+    <div>
+      <form id="guestbook-form" action="/buscar" method="post">
+        <input autocomplete="off" id="guestbook-entry-content" name="info" type="text" value="{{info}}">
+        <input type="submit" value="Buscar"/ id="guestbook-submit">
+      </form>
+    </div>
+    {% if datos %}
+    <div id="guestbook-entries">
+      <h1><strong>{{datos.NOMBRE}}</strong></h1>
+      <p>Temperatura Máxima: <strong>{{datos.TMAX}} ºC</strong></p>
+      <p>Temperatura Mínima: <strong>{{datos.TMIN}} ºC</strong></p>
+    </div>
+    {% endif %}
+    {% for elem in lista %}
+    <div id="guestbook-entries">
+      <p><a href="/temperaturas/{{elem.CODIGO}}">{{elem.NOMBRE}}</a></p>
+    </div>
+    {% endfor %}
+    <div id="footer">
+      <p>Curso de Kubernetes. 2021 - hostname: <strong>{{server}}</strong></p>
+    </div>
+  </body>
+</html>
