@@ -13,7 +13,7 @@ def inicio():
     try:
         server=os.environ["TEMP_SERVER"]
         url="http://"+server+"/status"
-        r=requests.get(url)
+        r=requests.get(url, timeout=1)
     except:
         noserver=True
  
@@ -28,7 +28,7 @@ def buscar():
         try:
             server=os.environ["TEMP_SERVER"]
             url="http://"+server+"/municipios/"+request.form.get("info")
-            r=requests.get(url)
+            r=requests.get(url, timeout=1)
             lista=r.json()
             if len(lista)==0:
                 return redirect("/")        
@@ -48,7 +48,7 @@ def temperatura(codigo):
         server=os.environ["TEMP_SERVER"]
         url="http://"+server+"/temperatura/"+codigo
         print(url)
-        r=requests.get(url)
+        r=requests.get(url, timeout=1)
         datos=r.json()
     except:
         noserver=True
