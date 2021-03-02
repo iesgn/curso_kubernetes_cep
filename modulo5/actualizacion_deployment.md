@@ -72,11 +72,11 @@ Al ejecutar la actualización del Deployment podemos observar que se ha creado u
 
 Veamos los recursos que se han creado en la actualización:
 
-  kubectl get all
+    kubectl get all
 
 Además podemos ver el historial de actualizaciones que hemos hecho sobre el despliegue:
 
-  kubectl rollout history deployment mediawiki
+    kubectl rollout history deployment mediawiki
 
 Y volvemos a acceder a la aplicación con un `port-forward` para comprobar que realmente se ha desplegado la versión 1.34.
 
@@ -91,7 +91,7 @@ Ahora vamos a desplegar una versión que da un error (la versión 2 de la aplica
 Dependiendo de la estrategia de despliegue, esto puede provocar que la aplicación se quede en la versión anterior (`RollingUpdate`) o que no haya ningún pod válido desplegado (`Recreate`). En cualquier caso, se puede volver a la versión anterior del despliegue mediante rollout:
 
     kubectl rollout undo deployment mediawiki
-  kubectl get all
+    kubectl get all
 
 Y terminamos comprobando el historial de actualizaciones:
 
