@@ -91,7 +91,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
 1. Despliegues
     * [Deployment](modulo5/deployment.md)
     * [Describiendo un Deployment](modulo5/describiendo_deployment.md)
-    * [Gestión básica de deployment](modulo5/gestionando_deployment.md)
+    * [Gestión básica de Deployment](modulo5/gestionando_deployment.md)
     * Actualización y rollout de Deployment
         * Actividad 5.1: Trabajando con Deployments (OBLIGATORIA)
         * Actividad 5.2: Actualización y rollout de nuestra aplicación (OBLIGATORIA)
