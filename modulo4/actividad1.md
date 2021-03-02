@@ -4,7 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-Como indicamos en el contenido del módulo 4, no vamos a trabajar directamente con los Pods (realmente tampoco vamos a trabajar directamente con los ReplicaSet, en el siguiente módulo explicaremos los *Deployments* que serán el recurso con el que trabajaremos).  En ete ejercicio vamos a crear un ReplicaSet que va a controlar un conjunto de pod. Para ello realiza los siguientes pasos:
+Como indicamos en el contenido del módulo 4, no vamos a trabajar directamente con los Pods (realmente tampoco vamos a trabajar directamente con los ReplicaSet, en el siguiente módulo explicaremos los *Deployments* que serán el recurso con el que trabajaremos).  En este ejercicio vamos a crear un ReplicaSet que va a controlar un conjunto de pod. Para ello realiza los siguientes pasos:
 
 1. Crea un fichero yaml con la descripción del recurso ReplicaSet, teniendo en cuenta los siguientes aspectos:
     * Indica nombres distintos para el ReplicaSet y para el contenedor de los pods que va a controlar.
