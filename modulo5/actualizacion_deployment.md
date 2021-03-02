@@ -61,7 +61,7 @@ A continuación queremos desplegar una versión más reciente de la mediawki. Pa
 1. Modificando el fichero yaml y volviendo a ejecutar un `kubectl apply`.
 2. Ejecutando la siguiente instrucción:
 
-      kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:1.34 --all --record
+        kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:1.34 --all --record
 
 ¿Hace falta poner --all?
 
