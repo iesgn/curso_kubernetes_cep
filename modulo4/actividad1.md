@@ -12,9 +12,9 @@ Como indicamos en el contenido del módulo 4, no vamos a trabajar directamente c
     * La imagen que debes desplegar es `iesgn/test_web:latest`.
     * Indica de manera adecuada una etiqueta en la especificación del pod que vas a definir que coincida con el *selector* del ReplicaSet.
 2. Crea el ReplicaSet.
-3. Comprueba que que se ha creada el ReplicaSet y los 3 pods.
+3. Comprueba que que se ha creado el ReplicaSet y los 3 pods.
 4. Obtén información detallada del ReplicaSet creado.
-5. Vamos a probar la tolerancia a fallos: Elimna uno de los 3 pods, y comprueba que inmediatamente se ha vuelto a crear un nuevo pod.
+5. Vamos a probar la tolerancia a fallos: Elimina uno de los 3 pods, y comprueba que inmediatamente se ha vuelto a crear un nuevo pod.
 6. Vamos a comprobar la escalabilidad: escala el ReplicaSet para tener 6 pods de la aplicación.
 7. Elimina el replicaSet y comprueba que se han borrado todos los pods.
 
