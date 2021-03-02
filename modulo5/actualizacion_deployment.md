@@ -1,11 +1,15 @@
 # Actualización y rollout de Deployment
 
+El ciclo de vida del desarrollo de aplicaciones cuando trabajamos con contenedores nos facilita la labor de versionar nuestros desarrollos. por cada nueva versión que se desarrolla de nuestra aplicación podemos crear una nueva imagen del contenedor que podemos versionar utilizando la etiqueta del nombre de la imagen.
+
+Por lo tanto al crear un Deployment indicaremos la imagen desde la que se van a crear los pods. Al indicar la imagen podremos indicar la etiqeuta que nos indica la versión de la aplicación que vamos a implantar.
+
 Una vez que hemos creado un Deployment a partir de una imagen de una versión determinada, tenemos los pods ejecutando la versión indicada de la aplicación. 
 
 ¿Cómo podemos actualizar a una nueva versión de la aplicación? Se seguiran los siguientes pasos:
 
-1. Tendremos que modificar el valor del parámetro `image` para indicar una nueva imagen indicando la nueva versión. 
-2. En ese momento el Deployment se actualiza, es decir, se crea un nuevo ReplicaSet que creará nuevos pods de la nueva versión de la aplicación.
+1. Tendremos que modificar el valor del parámetro `image` para indicar una nueva imagen indicando la nueva versión al cambiar la etiqueta. 
+2. En ese momento el Deployment se actualiza, es decir, crea un nuevo ReplicaSet que creará nuevos pods de la nueva versión de la aplicación.
 3. Según la estrategía de depliegue indicada se irán borrando los antiguos pods y se crearán lo nuevos.
 4. El Deployment guardará el ReplicaSet antiguo, por si en algún momento queremos volver a la versión anterior.
 
@@ -86,7 +90,13 @@ imagen
 
 ## Rollout del Deployment
 
-Ahora vamos a desplegar una versión que da un error (la versión 2 de la aplicación no existe). ¿Podremos volver al despliegue anterior?
+El proceso de despliegue de una nueva versión de una aplicación es una labor crítica, que tradicionalmente ha dado muchos problemas. Si estamos sirviendo una aplicación web que utlizan muchos usuarios, no nos podemos permitir que haya un corte en el servicio por un problema en el despliegue de una nueva versión.
+
+Evidentemente los problemas que puede dar un despliegue de una nueva versión puede estar causado por muchos mótivos, y muchas veces es complicado tener todos los factores controlados y finalmente podemos tener algún problema, la pregunta sería: ¿Hemos diseñado un proceso que nos permita de una manera sencilla y rápida volver a la versión anterior de la aplicación que sabíamos que funcionaba bien?
+
+A ese proceso de volver a una versión antrior de la aplicación es lo que llamamos **Rollout**, y veremos en este ejemplo que Kubernetes nos ofrece un mecanismo sencillo de volver a versiones anteriores. Como hemos comentado, las actualizaciones de los Deployment van creando nuevos ReplicaSet, y va guardando el historial de ReplicaSet. Hacer un Rollout será tan sencillo como activar uno de los ReplicaSet antiguos.
+
+Ahora vamos a desplegar una versión que nos da un error (la versión 2 de la aplicación no existe, no existe la imagen `mediawiki:2`). ¿Podremos volver al despliegue anterior?
 
     kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:2 --all  --record
 
