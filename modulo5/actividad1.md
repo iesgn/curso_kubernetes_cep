@@ -1,0 +1,67 @@
+# ACTIVIDAD Nº 1
+
+## TÍTULO DE LA ACTIVIDAD: Trabajando con Deployments
+
+## TEXTO DE LA ACTIVIDAD
+
+en esta actividad vamos a crear un Deployment de una aplicación web, sigamos los siguientes pasos:
+
+1. Crea un fichero yaml con la descripción del recurso Deployment, teniendo en cuenta los siguientes aspectos:
+    * Indica nombres distintos para el Deployment y para el contenedor de los pods que va a controlar.
+    * El Deployment va a crear 2 réplicas.
+    * La imagen que debes desplegar es `iesgn/test_web:latest`.
+    * Indica de manera adecuada una etiqueta en la especificación del pod que vas a definir que coincida con el *selector* del Deployment.
+2. Crea el Deployment.
+3. Comprueba que los recursos que se han creado: Deployment, ReplicaSet y Pods.
+4. Obtén información detallada del Deployment creado.
+5. Crea un una redirección utilizando el `port-forward` para acceder a la aplicación, sabiendo que la aplicación ofrece el servicio en el puerto 80.
+6. Accede  a los logs del despliegue para comprobar el acceso que has hecho en el punto anterior.
+7. Elimina el Deployment y comprueba que se han borrado todos los recursos creados.
+
+Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
+
+1. Pantallazo del fichero yaml que has creado con la definición del Deployment.
+2. Pantallazo donde se comprueba los recursos que se han creado.
+3. Pantallazo donde se ve la información detallada del Deployment.
+4. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usndo el `port-forward`.
+5. Pantallazo donde se vea los logs del despliegue despues del acceso.
+
+## RECURSOS
+
+* Conexión a internet
+
+## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
+
+Si
+
+## ¿ES UNA ACTIVIDAD INDIVIDUAL O DE GRUPO?
+
+Individual
+
+## ¿ES UNA ACTIVIDAD CALIFICABLE?
+
+Si
+
+### ¿Tiene que ser calificada por el tutor/a? (S/N) 
+
+Si
+
+### ¿Es de calificación automática?
+
+No
+
+### ¿Es calificada por el resto de compañeros/as del curso? (S/N)
+
+No
+
+## EVALUACIÓN
+
+* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+
+## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
+
+No
+
+## TIEMPO ESTIMADO PARA REALIZAR LA ACTIVIDAD
+
+1 hora
