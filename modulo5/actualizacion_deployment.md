@@ -40,17 +40,17 @@ spec:
 ```
 Si nos fijamos vamos a desplegar la versión 1.31 de la aplicación mediawiki, creamos el despliegue:
 
-  kubectl apply -f mediawiki-deployment.yaml --record
+    kubectl apply -f mediawiki-deployment.yaml --record
 
 Con la opción `--record` vamos a registrar los comando que vamos a ejecutar a continuación para ir actualizando el despliegue. De esta forma al visualizar el historial de modificaciones veremos las instrucciones que han provado cada actualización.
 
 Podemos comprobar los recursos que hemos creado:
 
-  kubectl get all
+    kubectl get all
 
 Y si accedemos al pod con un `port-forwad` comprobamos que la versión actual de la mediawiki es la 1.31:
 
-  kubectl port-forward deployment mediawiki 8080:80
+    kubectl port-forward deployment mediawiki 8080:80
 
 imagen
 
@@ -61,7 +61,7 @@ A continuación queremos desplegar una versión más reciente de la mediawki. Pa
 1. Modificando el fichero yaml y volviendo a ejecutar un `kubectl apply`.
 2. Ejecutando la siguiente instrucción:
 
-    kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:1.34 --all --record
+      kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:1.34 --all --record
 
 ¿Hace falta poner --all?
 
@@ -86,13 +86,13 @@ imagen
 
 Ahora vamos a desplegar una versión que da un error (la versión 2 de la aplicación no existe). ¿Podremos volver al despliegue anterior?
 
-  kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:2 --all  --record
+    kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:2 --all  --record
 
 Dependiendo de la estrategia de despliegue, esto puede provocar que la aplicación se quede en la versión anterior (`RollingUpdate`) o que no haya ningún pod válido desplegado (`Recreate`). En cualquier caso, se puede volver a la versión anterior del despliegue mediante rollout:
 
-  kubectl rollout undo deployment mediawiki
+    kubectl rollout undo deployment mediawiki
   kubectl get all
 
 Y terminamos comprobando el historial de actualizaciones:
 
-  kubectl rollout history deployment mediawiki
+    kubectl rollout history deployment mediawiki
