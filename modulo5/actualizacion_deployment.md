@@ -78,6 +78,8 @@ Además podemos ver el historial de actualizaciones que hemos hecho sobre el des
 
     kubectl rollout history deployment mediawiki
 
+**Estado del despliegue: kubectl rollout status deployment.v1.apps/nginx-deployment**
+
 Y volvemos a acceder a la aplicación con un `port-forward` para comprobar que realmente se ha desplegado la versión 1.34.
 
 imagen
