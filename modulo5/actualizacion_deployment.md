@@ -1,6 +1,6 @@
 # Actualización y rollout de Deployment
 
-El ciclo de vida del desarrollo de aplicaciones cuando trabajamos con contenedores nos facilita la labor de versionar nuestros desarrollos. por cada nueva versión que se desarrolla de nuestra aplicación podemos crear una nueva imagen del contenedor que podemos versionar utilizando la etiqueta del nombre de la imagen.
+El ciclo de vida del desarrollo de aplicaciones cuando trabajamos con contenedores nos facilita la labor de versionar nuestros desarrollos. Por cada nueva versión que se desarrolla de nuestra aplicación podemos crear una nueva imagen del contenedor que podemos versionar utilizando la etiqueta del nombre de la imagen.
 
 Por lo tanto al crear un Deployment indicaremos la imagen desde la que se van a crear los pods. Al indicar la imagen podremos indicar la etiqeuta que nos indica la versión de la aplicación que vamos a implantar.
 
