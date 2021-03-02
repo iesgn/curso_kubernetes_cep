@@ -95,25 +95,36 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Actualización y rollout de Deployment](modulo5/actualizacion_deployment.md)
         * [Actividad 5.1: Trabajando con Deployments (OBLIGATORIA)](modulo5/actividad1.md)
         * Actividad 5.2: Actualización y rollout de nuestra aplicación (OBLIGATORIA)
+        * Actividad 5.3: Despliegue de la aplicación GuestBook (VOLUNTARIA)
 1. Acceso a las aplicaciones
     * Services. Tipos de servicios.
     * Describiendo Services.
     * Gestionando los Services
     * Servicio DNS en Kubernetes
     * Ingress
+        * Actividad 6.1: Despliegue y acceso de la aplicación GuestBook (OBLIGATORIA)
+        * Actividad 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA)
 1. Despliegues parametrizados
     * Variables de entorno
 	* ConfigSets
 	* Secrets
+        * Actividad 7.1: Configurando nuestra aplicación Temperaturas (OBLIGATORIA)
+        * Actividad 7.2: Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA)
 1. Almacenamiento en Kubernetes
     * Consideraciones sobre el almacenamiento
     * PersistentVolume
     * PersistentVolumeClaim
+        * Actividad 8.1: Haciendo persistente nuestra aplicación Temperaturas (OBLIGATORIA)
+        * Actividad 8.2: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)
 1. Otras cargas de trabajo
     * StatefulSets
 	* DaemonSets
 	* Jobs y cronjobs
+        * Actividad 9.1: Creando un cluster de mysql (VOLUNTARIA)
 1. Instalación de aplicaciones en Kubernetes con Helm
+    * Instalación de helm
+    * Búsquedas de charts
+        * Actividad 10.1: Instalación de un CMS con Helm (OBLIGATORIA)
 
 ## Agenda
 
