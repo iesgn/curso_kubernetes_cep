@@ -78,9 +78,15 @@ Además podemos ver el historial de actualizaciones que hemos hecho sobre el des
 
   kubectl rollout history deployment mediawiki
 
+Y volvemos a acceder a la aplicación con un `port-forward` para comprobar que realmente se ha desplegado la versión 1.34.
+
+imagen
+
+## Rollout del Deployment
+
 Ahora vamos a desplegar una versión que da un error (la versión 2 de la aplicación no existe). ¿Podremos volver al despliegue anterior?
 
-  kubectl set image deployment mediawiki mediawiki=mediawiki:2 --all  --record
+  kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:2 --all  --record
 
 Dependiendo de la estrategia de despliegue, esto puede provocar que la aplicación se quede en la versión anterior (`RollingUpdate`) o que no haya ningún pod válido desplegado (`Recreate`). En cualquier caso, se puede volver a la versión anterior del despliegue mediante rollout:
 
