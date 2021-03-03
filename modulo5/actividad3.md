@@ -18,8 +18,8 @@ Por lo tanto si tenemos dos servicios distintos, tendremos dos ficheros yaml par
 
 Por lo tanto para desplegar la aplicaciones tendremos dos ficheros.yaml:
 
-* [guestbook-deployment.yaml](../modulo6/files/guestbook-deployment.yaml)
-* [redis-deployment.yaml](../modulo6/files/redis-deployment.yaml)
+* [guestbook-deployment.yaml](../modulo6/files/guestbook/guestbook-deployment.yaml)
+* [redis-deployment.yaml](../modulo6/files/guestbook/redis-deployment.yaml)
 
 Para realizar el despliegue realiza los siguientes pasos:
 
@@ -43,8 +43,8 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 
 * Conexión a internet
 * Los siguiente ficheros: 
-  * [guestbook-deployment.yaml](../modulo6/files/guestbook-deployment.yaml)
-  * [redis-deployment.yaml](../modulo6/files/redis-deployment.yaml)
+  * [guestbook-deployment.yaml](../modulo6/files/guestbook/guestbook-deployment.yaml)
+  * [redis-deployment.yaml](../modulo6/files/guestbook/redis-deployment.yaml)
 
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
