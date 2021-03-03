@@ -29,8 +29,8 @@ Para realizar el despliegue realiza los siguientes pasos:
 
 ¿Qué aparece en la página principal de la aplicación?. Aparece el siguiente mensaje: **Waiting for database connection...**. Por lo tanto podemos indicar varias conclusiones:
 
-1. Hasta ahora no estamos accediendo de forma "normal" a las aplicaciones. El uso de la opción `port-forward` es un mecanismo que realmente nos posibilita acceder a la aplicación, pero no es la formal habitual en que accedemos a las aplicaciones: deberíamos acceder a una ip y aun puerto determinado.
-2. Parece que tampoco hay acceso entre los pods de los distintos despliegues. Parece que los poods de la aplicación guestbook no pueden acceder al pod donde se está ejecutando la base de datos redis.
+1. Hasta ahora no estamos accediendo de forma "normal" a las aplicaciones. El uso de la opción `port-forward` es un mecanismo que realmente nos posibilita acceder a la aplicación, pero utilizando un proxy. Deberíamos acceder a las aplicaciones usando una ip y un puerto determinado.
+2. Parece que tampoco hay acceso entre los pods de los distintos despliegues. Parece que los pods de la aplicación guestbook no pueden acceder al pod donde se está ejecutando la base de datos redis.
 
 En el siguiente módulo estudiaremos los recursos que nos ofrece la API de kubernetes para permitirnos el acceso a las aplicaciones desde el exterior, y para que los distintos pods de los desplieguen puedan acceder entre ello. 
 
