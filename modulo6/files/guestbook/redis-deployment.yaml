@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-master
+  name: redis
   labels:
     app: redis
     tier: backend
@@ -18,7 +18,7 @@ spec:
         tier: backend
     spec:
       containers:
-        - name: master
+        - name: contenedor-redis
           image: redis
           ports:
             - name: redis-server
