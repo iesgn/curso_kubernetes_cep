@@ -4,7 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-en esta actividad vamos a crear un Deployment de una aplicación web, sigamos los siguientes pasos:
+En esta actividad vamos a crear un Deployment de una aplicación web, sigamos los siguientes pasos:
 
 1. Crea un fichero yaml con la descripción del recurso Deployment, teniendo en cuenta los siguientes aspectos:
     * Indica nombres distintos para el Deployment y para el contenedor de los pods que va a controlar.
@@ -14,7 +14,7 @@ en esta actividad vamos a crear un Deployment de una aplicación web, sigamos lo
 2. Crea el Deployment.
 3. Comprueba que los recursos que se han creado: Deployment, ReplicaSet y Pods.
 4. Obtén información detallada del Deployment creado.
-5. Crea un una redirección utilizando el `port-forward` para acceder a la aplicación, sabiendo que la aplicación ofrece el servicio en el puerto 80.
+5. Crea un una redirección utilizando el `port-forward` para acceder a la aplicación, sabiendo que la aplicación ofrece el servicio en el puerto 80, y accede a la aplicación con un navegador web.
 6. Accede  a los logs del despliegue para comprobar el acceso que has hecho en el punto anterior.
 7. Elimina el Deployment y comprueba que se han borrado todos los recursos creados.
 
@@ -23,8 +23,8 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 1. Pantallazo del fichero yaml que has creado con la definición del Deployment.
 2. Pantallazo donde se comprueba los recursos que se han creado.
 3. Pantallazo donde se ve la información detallada del Deployment.
-4. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usndo el `port-forward`.
-5. Pantallazo donde se vea los logs del despliegue despues del acceso.
+4. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando el `port-forward`.
+5. Pantallazo donde se vea los logs del despliegue después del acceso.
 
 ## RECURSOS
 
