@@ -12,9 +12,9 @@ En esta tarea vamos a desplegar una aplicación web que requiere de dos servicio
 Por lo tanto si tenemos dos servicios distintos, tendremos dos ficheros yaml para crear dos recursos Deployment, uno para cada servicio. Con esta manera de trabajar podemos obtener las siguientes características:
 
 1. Cada conjunto de pods creado en cada despliegue ejecutarán un solo proceso para ofrecer el servicio.
-2. Cad conjunto de pods se puede escalar de manera independiente. Esto es importante, si identificamos que alguno de los servicios es un cuello de botella, podemos escalarlo para tener más pods ejecutando el servicio.
+2. Cada conjunto de pods se puede escalar de manera independiente. Esto es importante, si identificamos que al acceder a alguno de los servicios se crea un cuello de botella, podemos escalarlo para tener más pods ejecutando el servicio.
 3. Las actualizaciones de los distintos servicios no interfieren en el resto.
-4. Los veremos en un módulo posterior, pero podremos gestionar el almacenamiento de cada servicio de forma independiente.
+4. Lo estudiaremos en un módulo posterior, pero podremos gestionar el almacenamiento de cada servicio de forma independiente.
 
 Por lo tanto para desplegar la aplicaciones tendremos dos ficheros.yaml:
 
