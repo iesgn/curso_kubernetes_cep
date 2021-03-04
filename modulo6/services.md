@@ -12,7 +12,7 @@ Los servicios ([services](https://kubernetes.io/docs/concepts/services-networkin
 
 ### ClusterIP
 
-Solo permite el acceso interno a un servicio de este tipo, es decir si tenemos un despliegue con una aplicación a la que no es necesaria acceder desde el esxterior, crearemos un service de este tipo par que otras aplicaciones puedan acceder a ella (por ejemplo, una base de datos). Es el tipo por defecto. Si desdeamos seguir accediendo desde el exterior, para hacer pruebas durante la fase de daesarrollo podemos seguir utilizando la instrucción `kubectlport-forward`.
+Solo permite el acceso interno a un servicio de este tipo, es decir si tenemos un despliegue con una aplicación a la que no es necesaria acceder desde el esxterior, crearemos un service de este tipo par que otras aplicaciones puedan acceder a ella (por ejemplo, una base de datos). Es el tipo por defecto. Si deseamos seguir accediendo desde el exterior, para hacer pruebas durante la fase de daesarrollo podemos seguir utilizando la instrucción `kubectl port-forward`.
 
 ### NodePort
 
