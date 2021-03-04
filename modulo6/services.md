@@ -45,4 +45,4 @@ Este tipo sólo está soportado en servicios de cloud público (GKE, AKS o AWS).
 
 ![loadbalancer](img/loadbalancer.png)
 
-como vemos en el ejemplo, el cloud de infraestructura donde tengamos instalado el cluster nos ofrecerá un recurso *balanceador de carga* con una ip accesible desde el exterior (`80.58.12.14`) que nos permitirá acceder a la aplicación directamente.
+Como vemos en el ejemplo, el cloud de infraestructura donde tengamos instalado el cluster nos ofrecerá un recurso *balanceador de carga* con una ip accesible desde el exterior (`80.58.12.14`) que nos permitirá acceder a la aplicación directamente.
