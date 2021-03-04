@@ -16,6 +16,15 @@ Solo permite el acceso interno a un servicio de este tipo, es decir si tenemos u
 
 ![clusterip](img/clusterip.png)
 
+Veamos el ejemplo: 
+
+1. Necistamos que los pods de Wordpress accedan al pod del MySql. 
+2. La ip que ha tomado el pod de mysql (`172.100.3.5`) es inaccseble desde los pods de wordpres. 
+3. Por lo tanto hemos creado un service de tipo ClusterIP, que ha obtenido una ip virtual (`192.168.3.4`) y expone el puerto de mysql 3306. 
+4. Esta ip sí es accesible desde los pods de wordpress. 
+5. Al acceder a esta ip se balanceará la carga entre los pods de mysql (en el ejemplo sólo tenemos 1). 
+6. Además en el wordpress no necesitamos configurar la IP virtual del servicio que hemos creado, ya que disponemos de un servidor DNS que resuelve el nombre del servicio `mysql` en la dirección virtual del servicio (`192.168.3.4`). Por lo tanto en la configuraciónde wordpress pondremos el nombre `mysql` como host del servidor de base de daatos al que debe acceder.
+
 ### NodePort
 
 Abre un puerto, para que el servicio sea accesible desde el exterior. Por defecto el puerto generado está en el rango de 30000:40000. Para acceder usamos la ip del servidor master del cluster y el puerto asignado.
