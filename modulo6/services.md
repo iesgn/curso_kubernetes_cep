@@ -14,11 +14,16 @@ Los servicios ([services](https://kubernetes.io/docs/concepts/services-networkin
 
 Solo permite el acceso interno a un servicio de este tipo, es decir si tenemos un despliegue con una aplicación a la que no es necesaria acceder desde el esxterior, crearemos un service de este tipo par que otras aplicaciones puedan acceder a ella (por ejemplo, una base de datos). Es el tipo por defecto. Si deseamos seguir accediendo desde el exterior, para hacer pruebas durante la fase de daesarrollo podemos seguir utilizando la instrucción `kubectl port-forward`.
 
+![clusterip](img/clusterip.png)
+
 ### NodePort
 
 Abre un puerto, para que el servicio sea accesible desde el exterior. Por defecto el puerto generado está en el rango de 30000:40000. Para acceder usamos la ip del servidor master del cluster y el puerto asignado.
+
+![nodeport](img/nodeport.png)
 
 ### LoadBalancer
 
 Este tipo sólo está soportado en servicios de cloud público (GKE, AKS o AWS). El proveedor asignara un recurso de balanceo de carga para el acceso a los servicios. si usamos un cloud privado, como OpenSatck necesitaremos un plugin para configurar el funcionamiento. este tipo de servicio no lo vamos a utilizar en el presente curso.
 
+![loadbalancer](img/loadbalancer.png)
