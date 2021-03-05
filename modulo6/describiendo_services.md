@@ -12,7 +12,7 @@ Aunque podríamos crear un recurso Service desde la línea de comandos:
 
     kubectl expose deployment/nginx --port=80 --type=NodePort
     
-Normalmente lo que hacemos es describir las características del Service en un fichero yaml:
+Normalmente lo que hacemos es describir las características del Service en un fichero yaml [`nginx-srv.yaml`](files/nginx-srv.yaml):
 
 ```yaml
 apiVersion: v1
@@ -22,7 +22,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: http
+  - name: service-http
     port: 80
     targetPort: http
   selector:
@@ -31,4 +31,18 @@ spec:
 Veamos la descripción:
 
 * Vamos a crear un recurso Service (parámetro `kind`) y lo nombramos como `nginx` (parámetro `name`). Este nombre será importante para la resolución dns.
-* En la especificación del recurso indicamos el tipo de servicio (parámetro `type`)..........
+* En la especificación del recurso indicamos el tipo de servicio (parámetro `type`).
+* A continuación definimos el puerto por el que va a ofrecer el servicio y lo nombramos (dentro del apartado `port`: el parámetro `port` y el parámetro `name`). Además debemos indicar el puerto en el que los pods están ofreciendo el servicio (parámetro `targetPort`), en este caso, hemos usado el nombre del puerto (`http`) que indicamos en el recurso Deployment:
+
+```yaml
+   ...
+   ports:
+    - name: http
+      containerPort: 80
+   ...
+```
+* Por ultimo seleccionamos los pods a los que vamos acceder y vamos a balancear la carga seleccionando los pods por medio de sus etiquetas (parámetro `selector`).
+
+## Para seguir aprendiendo
+
+Para más información acerca de los Services puedes leer: [la documentación de la API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#service-v1-core) y la [guía de usuario](https://kubernetes.io/docs/concepts/services-networking/service/).
