@@ -99,7 +99,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
 1. Acceso a las aplicaciones
     * [Services. Tipos de servicios](modulo6/services.md)
     * [Describiendo Services](modulo6/describiendo_services.md)
-    * Gestionando los Services
+    * [Gestionando los Services](modulo6/gestionando_services.md)
     * Servicio DNS en Kubernetes
     * Ingress
     * Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas

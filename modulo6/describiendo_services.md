@@ -43,6 +43,8 @@ Veamos la descripción:
 ```
 * Por ultimo seleccionamos los pods a los que vamos acceder y vamos a balancear la carga seleccionando los pods por medio de sus etiquetas (parámetro `selector`).
 
+**Nota: La definición de un servicio de tipo ClusterIP sería exactamente igual, pero cambiando el parámetro `type`.**
+
 ## Para seguir aprendiendo
 
 Para más información acerca de los Services puedes leer: [la documentación de la API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#service-v1-core) y la [guía de usuario](https://kubernetes.io/docs/concepts/services-networking/service/).
