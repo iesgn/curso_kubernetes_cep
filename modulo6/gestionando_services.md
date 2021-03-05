@@ -1,6 +1,6 @@
 # Gestionando los Services
 
-Para aprender cómo trabajamos con los servicios, vamos a trabajar con el despliegue de nginx ([`nginx-deployment.yaml`](../modulo5/files/nginx-deployment.yaml))y el servicio NodePort ([`nginx-srv.yaml`](files/nginx-srv.yaml)) para acceder a los pods de este despliegue desde el exterior.
+Para aprender cómo trabajamos con los servicios, vamos a trabajar con el despliegue de nginx ([`nginx-deployment.yaml`](../modulo5/files/nginx-deployment.yaml)) y el servicio NodePort ([`nginx-srv.yaml`](files/nginx-srv.yaml)) para acceder a los pods de este despliegue desde el exterior.
 
 ## Creamos el despliegue
 
