@@ -100,7 +100,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Services. Tipos de servicios](modulo6/services.md)
     * [Describiendo Services](modulo6/describiendo_services.md)
     * [Gestionando los Services](modulo6/gestionando_services.md)
-    * Servicio DNS en Kubernetes
+    * [Servicio DNS en Kubernetes](modulo6/dns.md)
     * Ingress
     * Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas
         * Actividad 6.1: Despliegue y acceso de la aplicación GuestBook (OBLIGATORIA)
