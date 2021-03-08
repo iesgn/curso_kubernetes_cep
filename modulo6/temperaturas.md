@@ -14,11 +14,11 @@ Algunas consideraciones sobre el despliegue que vamos a realizar:
 
 ## Despliegue y acceso al microservicio frontend
 
-En primer lugar vamos a desplegar el primer microservicio. Esta aplicación está usando el puerto 3000/tcp para ofrecer la aplicación. Para realizar el despliegue utilizaremos el fichero [`frontend-deployment.yaml`](files/frontend-deployment.yaml). Para crear el despliegue ejecutaremos la siguiente instrucción:
+En primer lugar vamos a desplegar el primer microservicio. Esta aplicación está usando el puerto 3000/tcp para ofrecer la aplicación. Para realizar el despliegue utilizaremos el fichero [`frontend-deployment.yaml`](files/temperaturas/frontend-deployment.yaml). Para crear el despliegue ejecutaremos la siguiente instrucción:
 
     kubectl apply -f frontend-deployment.yaml
 
-A continuación usamos el fichero [`frontend-srv.yaml`](files/frontend-srv.yaml) para crear el servicio NodePort:
+A continuación usamos el fichero [`frontend-srv.yaml`](files/temperaturas/frontend-srv.yaml) para crear el servicio NodePort:
 
     kubectl apply -f frontend-srv.yaml
 
@@ -30,7 +30,7 @@ Como podemos observar la aplicación nos muestra un mensaje de error: **"No pued
 
 ## Despliegue y acceso al microservicio backend
 
-Es el momento de desplegar el segundo microservicio. Este microservicio ofrece un servicio API Restful en el puerto 5000/tcp. Para ello utilizaremos el fichero [`backend-deployment.yaml`](files/backend-deployment.yaml) para realizar el despliegue y el fichero [`backend-srv.yaml`](files/backend-srv.yaml) para crear el servicio.
+Es el momento de desplegar el segundo microservicio. Este microservicio ofrece un servicio API Restful en el puerto 5000/tcp. Para ello utilizaremos el fichero [`backend-deployment.yaml`](files/temperaturas/backend-deployment.yaml) para realizar el despliegue y el fichero [`backend-srv.yaml`](files/temperaturas/backend-srv.yaml) para crear el servicio.
 
     kubectl apply -f backend-deployment.yaml
     kubectl apply -f backend-srv.yaml
@@ -60,7 +60,7 @@ Para terminar vamos a crear un recurso Ingress que nos posibilite acceder a la a
 
 Y comprobamos que realmente ha cambiado el tipo de servicio, y que ya no tenemos un puerto para acceder usando la ip del nodo master.
 
-A continuación usamos el fichero  [`ingress.yaml`](files/ingress.yaml) para crear el recurso ingress, que definitra el nombre del host `www.temperaturas.org` que tendremos que introducir en la resolución estática cómo visto anteriormente. Por lo tanto modificamos el fichero `/etc/hosts` de nuestro servidor con la siguiente línea:
+A continuación usamos el fichero  [`ingress.yaml`](files/temperaturas/ingress.yaml) para crear el recurso ingress, que definitra el nombre del host `www.temperaturas.org` que tendremos que introducir en la resolución estática cómo visto anteriormente. Por lo tanto modificamos el fichero `/etc/hosts` de nuestro servidor con la siguiente línea:
 
     192.168.39.222  www.temperaturas.org
 
