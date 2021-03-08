@@ -52,7 +52,7 @@ También podemos comprobar que usando el nombre podemos acceder al servicio:
     saving to 'index.html'
     ...
     
-Podemos concluir, que cuando necesitemos desde alguna aplicación deplegada en nuestro cluster acceder a otro servicio ofrecido por otro despliegue, **utilizaremos el nombre que hemos asignado a su service de acceso**. Por ejemplo si desplegamos un WordPress y un servidor de base de datos mariadb, y creamos dos servicios: uno de tipo NodePort para acceder desde el exterior al CMS, y otro, que llamamos `mariadb` de tipo ClusterIP para acceder ala base de datos, cuando tengamos que configurar el WordPress para indicar la dirección de la base de datos, pondremos `mariadb`.
+Podemos concluir, que cuando necesitemos desde alguna aplicación desplegada en nuestro cluster acceder a otro servicio ofrecido por otro despliegue, **utilizaremos el nombre que hemos asignado a su service de acceso**. Por ejemplo si desplegamos un WordPress y un servidor de base de datos mariadb, y creamos dos servicios: uno de tipo NodePort para acceder desde el exterior al CMS, y otro, que llamamos `mariadb` de tipo ClusterIP para acceder ala base de datos, cuando tengamos que configurar el WordPress para indicar la dirección de la base de datos, pondremos `mariadb`.
 
 
 
