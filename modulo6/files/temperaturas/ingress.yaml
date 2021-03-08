@@ -1,13 +1,17 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: temperaturas
 spec:
   rules:
-  - host: www.example.org
+  - host: www.temperaturas.org
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: temperaturas-frontend
-          servicePort: 3000
+          service:
+            name: temperaturas-frontend
+            port:
+              number: 3000
+        

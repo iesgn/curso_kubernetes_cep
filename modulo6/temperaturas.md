@@ -1,0 +1,73 @@
+# Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas
+
+Vamos a hacer un despliegue completo de una aplicación llamada **Temperaturas**. Esta aplicación nos permite consultar la temperatura mínima y máxima de todos los municipios de España. Esta aplicación está formada por dos microservicios:
+
+* `frontend`: Es una aplicación escrita en Python que nos ofrece una página web para hacer las búsquedas y visualizar los resultados. Este microservicio hrá peticiones HTTP al segundo microservicio para obtener la información.
+* `backend`: Es el segundo microservicio que nos ofrece un servicio web de tipo API Restful. A esta API Web podemos hacerles consultas sobre los municipios y sobre las temperaturas.
+
+Algunas consideraciones sobre el despliegue que vamos a realizar:
+
+* Como la aplicación está formada por dos microservicios, tendremos que crear dos recursos Deployment para desplegar y controlar los pods de cada despliegue por separado.
+* Necesitaremos acceder desde el exterior al microservicio `frontend` por lo que crearemos un recurso Service de tipo NodePort.
+* Al componente `backend` no es necesario acceder desde el exterior, por lo tanto crearemos un recurso Service de tipo ClusterIP para permitir que se acceda desde `frontend`.
+* Para terminar usaremos un recurso Ingress para acceder al componente `frontend` por lo tanto, en ese momento, no es necesario que el Service para acceder a ese componente sea de tipo nodePort, bastaría con que fuera ClusterIP.
+
+## Despliegue y acceso al microservicio frontend
+
+En primer lugar vamos a desplegar el primer microservicio. Esta aplicación está usando el puerto 3000/tcp para ofrecer la aplicación. Para realizar el despliegue utilizaremos el fichero [`frontend-deployment.yaml`](files/frontend-deployment.yaml). Para crear el despliegue ejecutaremos la siguiente instrucción:
+
+    kubectl apply -f frontend-deployment.yaml
+
+A continuación usamos el fichero [`frontend-srv.yaml`](files/frontend-srv.yaml) para crear el servicio NodePort:
+
+    kubectl apply -f frontend-srv.yaml
+
+Obtenemos los recursos que hemos creado. Nos fijamos en el puerto que nos ha asignado por el servicio NodePort (en mi caso el 30053). Vamos a acceder desde un navegador web usando la ip del nodo master y el puesto que nos han asignado:
+
+![temperaturas](img/temperaturas1.png)
+
+Como podemos observar la aplicación nos muestra un mensaje de error: **"No puedo conectar con el servidor de temperaturas...**. Evidentemente el componente `frontend` está intentando conectar con el componente `backend` y, evidentemente, no puede, ya que ni la hemos desplegado, ni hemos creado el servicio correspondiente.
+
+## Despliegue y acceso al microservicio backend
+
+Es el momento de desplegar el segundo microservicio. Este microservicio ofrece un servicio API Restful en el puerto 5000/tcp. Para ello utilizaremos el fichero [`backend-deployment.yaml`](files/backend-deployment.yaml) para realizar el despliegue y el fichero [`backend-srv.yaml`](files/backend-srv.yaml) para crear el servicio.
+
+    kubectl apply -f backend-deployment.yaml
+    kubectl apply -f backend-srv.yaml
+
+Si volvemos acceder al navegador y refrescamos la página, veremos que ya no nos sale el mensaje de error y podemos buscar la temperatura de nuestra ciudad:
+
+![temperaturas](img/temperaturas2.png)
+
+**Nota: Por defecto el componente frontend hace peticiones al componente backend utilizando el nombre `temperaturas-backend`, que es el nombre que hemos asignado al servicio ClusterIP para el acceso al backend. En el próximo módulo veremos como podemos cambiar la configuración de frontend para cambiar el nombre del servicio web al que conecta.**
+
+## Algunas consideraciones acerca del despliegue que hemos realizado
+
+Esta manera de trabajar de que cada microservicio que forma parte de la aplicación (o si tenemos una aplicación que necesite varios servicios (servidor web, servidor de base de datos,...)) se despliegue de forma separada usando distintos recursos Deployment nos proporciona las siguientes características:
+
+1. Cada conjunto de pods creado en cada despliegue ejecutarán un solo proceso para ofrecer un servicio o microservicio.
+2. Cada conjunto de pods se puede escalar de manera independiente. Esto es importante, si identificamos que al acceder a alguno de los servicios se crea un cuello de botella, podemos escalarlo para tener más pods ejecutando el servicio. 
+    En el ejemplo que hemos desarrollado, se crearon 3 pods del frontend y un pod del backend, pero se pueden escalar independientemente los dos despliegues. Te invito a escalar los dos despliegues y comprobar que sigue funcionando la aplicación.
+3. Las actualizaciones de los distintos servicios / microservicios no interfieren en el resto. 
+4. Lo estudiaremos en un módulo posterior, pero podremos gestionar el almacenamiento de cada servicio de forma independiente.
+5. Ya lo hemos comentado, pero con esta aplicación podemos observar el balanceo de carga que realiza el servicio al acceder al frontend: la aplicación visualiza el nombre del servidor que está ofreciendo la página. Por lo tanto si vamos refrescando la página con F5 observaremos cómo se va realizando el balanceo de carga y va acambiando el nombre del pod al que está accediendo.
+
+## Acceso a la aplicación usando el Ingress Controller
+
+Para terminar vamos a crear un recurso Ingress que nos posibilite acceder a la aplicación utilizando un nombre. Como hemos indicado al utilizar Ingress no es necesario que el service al que accede sea de tipo NodePort, por lo tanto lo primero que vamos a hacer es cambiar el tipo de servicio que accede a frontend y lo vamos a poner ClusterIP, para ello vamos a modificar el fichero `frontend-srv.yaml` y cambiamos el tipo de servicio de NodePort a ClusterIP, y posterior aplicamos los cambios:
+
+    kubectl apply -f frontend-srv.yaml
+
+Y comprobamos que realmente ha cambiado el tipo de servicio, y que ya no tenemos un puerto para acceder usando la ip del nodo master.
+
+A continuación usamos el fichero  [`ingress.yaml`](files/ingress.yaml) para crear el recurso ingress, que definitra el nombre del host `www.temperaturas.org` que tendremos que introducir en la resolución estática cómo visto anteriormente. Por lo tanto modificamos el fichero `/etc/hosts` de nuestro servidor con la siguiente línea:
+
+    192.168.39.222  www.temperaturas.org
+
+Creamos el recurso ingress:
+
+    kubectl apply -f ingress.yaml
+
+Y accedemos a la aplicación usando el nombre:
+
+![temperaturas](img/temperaturas3.png)

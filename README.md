@@ -102,7 +102,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Gestionando los Services](modulo6/gestionando_services.md)
     * [Servicio DNS en Kubernetes](modulo6/dns.md)
     * [Ingress Controller](modulo6/ingress.md)
-    * Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas
+    * [Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas](modulo6/temperaturas.md)
         * Actividad 6.1: Despliegue y acceso de la aplicación GuestBook (OBLIGATORIA)
         * Actividad 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA)
 1. Despliegues parametrizados
