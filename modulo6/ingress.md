@@ -26,7 +26,7 @@ Para comprobar si tenemos instalado el componente, podemos visalizar los pods cr
     ingress-nginx-controller-558664778f-shjzp   1/1     Running     0          
     ...    
 
-Debe aparece un pod que se llama `ingress-nginx-controller-...` con lo que se ha instalado un ingress controller basado en el proxy inverso nginx.
+Debe aparece un pod que se llama `ingress-nginx-controller-...`, si es así, significa que se ha instalado un ingress controller basado en el proxy inverso nginx.
 
 ## Describiendo el recurso Ingress
 
