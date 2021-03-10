@@ -13,7 +13,7 @@ Vamos a realiza el despliegue y acceso a esta aplicación teniendo en cuenta los
 * El puerto en el que responde la aplicación es el 8080. La base de datos utiliza el puerto 27017.
 * Vamos acceder desde el exterior a la aplicación. Sin embargo, no es necesario acceder desde el exterior a la base de datos.
 * El nombre del servicio para acceder a la base de datos debe ser `mongo` ya que por defecto la aplicación va a conectar a la base de datos usando ese nombre.
-* Queremos acceder a la aplicación usando el nombre del tipo *www.chat-tunombre.org*.
+* Queremos acceder a la aplicación usando un nombre del tipo *www.chat-tunombre.org*.
 
 Realiza los siguientes pasos:
 
