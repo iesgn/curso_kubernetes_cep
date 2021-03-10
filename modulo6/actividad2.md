@@ -1,4 +1,4 @@
-# ACTIVIDAD Nº 1
+# ACTIVIDAD Nº 2
 
 ## TÍTULO DE LA ACTIVIDAD: Despliegue y acceso de la Aplicación Lets-Chat
 
@@ -31,7 +31,7 @@ Para superar la actividad deberás entregar en un fichero comprimido con la sigu
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
-No
+No  
 
 ## ¿ES UNA ACTIVIDAD INDIVIDUAL O DE GRUPO?
 
