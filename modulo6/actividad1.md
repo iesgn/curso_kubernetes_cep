@@ -71,10 +71,10 @@ metadata:
     app: redis
     tier: backend
 spec:
-  type: ClusterIP
+  type: 
   ports:
-  - port: 6379
-    targetPort: redis-server
+  - port: 
+    targetPort: 
   selector:
     app: redis
     tier: backend
