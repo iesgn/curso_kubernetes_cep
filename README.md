@@ -104,7 +104,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Ingress Controller](modulo6/ingress.md)
     * [Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas](modulo6/temperaturas.md)
         * [Actividad 6.1: Despliegue y acceso de la aplicación GuestBook (OBLIGATORIA)](modulo6/actividad1.md)
-        * Actividad 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA)
+        * [Actividad 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA)](modulo6/actividad2.md)
 1. Despliegues parametrizados
     * Variables de entorno
 	* ConfigSets
