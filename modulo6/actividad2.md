@@ -6,7 +6,7 @@
 
 [Let's Chat](https://github.com/sdelements/lets-chat) es una aplicación web escrita en Node.js que utilizando una base de datos MongoDB nos posibilita la creación de salas de chats.
 
-Vamos a realiza el despliegue y acceso de dicha aplicación teniendo en cuanta los siguientes aspectos:
+Vamos a realiza el despliegue y acceso a esta aplicación teniendo en cuanta los siguientes aspectos:
 
 * La imagen docker que vamos a usar para el despliegue de Let's Chat es `sdelements/lets-chat` y para desplegar mongoDB utilizaremos la imagen `mongo`.
 * Al crear el despliegue de Let's Chat podemos poner varias replicas, pero el despliegue de la base de datos, sólo creará una replica.
