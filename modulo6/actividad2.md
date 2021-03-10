@@ -9,7 +9,7 @@
 Vamos a realiza el despliegue y acceso de dicha aplicación teniendo en cuanta los siguientes aspectos:
 
 * La imagen docker que vamos a usar para el despliegue de Let's Chat es `sdelements/lets-chat` y para desplegar mongoDB utilizaremos la imagen `mongo`.
-* Al crear el despliegue de Let's Chat podemos poner varia replicas, pero el despliegue de la base de datos, sólo creará una replica.
+* Al crear el despliegue de Let's Chat podemos poner varias replicas, pero el despliegue de la base de datos, sólo creará una replica.
 * El puerto en el que responde la aplicación es el 8080. La base de datos utiliza el puerto 27017.
 * Vamos acceder desde el exterior a la aplicación. Sin embargo, no es necesario acceder desde el exterior a la base de datos.
 * El nombre del servicio para acceder a la base de datos debe ser `mongo` ya que por defecto la aplicación va a conectar a la base de datos usando ese nombre.
@@ -31,7 +31,7 @@ Para superar la actividad deberás entregar en un fichero comprimido con la sigu
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
-Si
+No
 
 ## ¿ES UNA ACTIVIDAD INDIVIDUAL O DE GRUPO?
 
