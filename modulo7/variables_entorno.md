@@ -1,4 +1,4 @@
-# Despliegues parametrizados: Variables de entrono
+# Despliegues parametrizados: Variables de entorno
 
 Si necesitamos añadir alguna configuración especifica a la hora de crear un contenedor, solemos usar variables de entorno que se crean en el contenedor y cuyo valor se utiliza al inicializar el contenedor para realizar una configuración específica del mismo.
 
