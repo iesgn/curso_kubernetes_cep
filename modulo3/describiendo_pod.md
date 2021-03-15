@@ -28,7 +28,7 @@ Veamos cada uno de los parámetros que hemos definido:
 * `metadata`: Información que nos permite identificar unívocamente al recurso:
     * `name`: Nombre del pod
     * `labels`: Las [Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) nos permiten etiquetar los recursos de kubernetes (por ejemplo un pod) con información del tipo clave/valor.
-* `spec`: Definimos las características del recurso. En el caso de un pod indicamos los contenedores que van a formar el pod, en este caso sólo uno. 
+* `spec`: Definimos las características del recurso. En el caso de un pod indicamos los contenedores que van a formar el pod (sección `containers`), en este caso sólo uno. 
     * `image`: La imagen desde la que se va a crear el contenedor
     * `name`: Nombre del contenedor.
     * `imagePullPolicy`: Las imágenes se guardan en un registro interno. Se pueden utilizar registros públicos (google, docker hub,...) y registros privados. La política por defecto es `IfNotPresent`, que se baja la imagen si no está en el registro interno. Si queremos forzar la descarga indicamos `imagePullPolicy:Always`.
