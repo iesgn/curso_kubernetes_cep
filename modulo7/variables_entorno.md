@@ -6,9 +6,9 @@ Por ejemplo, si estudiamos la documentación de la imagen `mariadb` en [Docker H
 
 De la misma manera, al especificar los contenedores que contendrán los pods que se van a crear desde un Deployment también se pondrán inicializar las variables de entorno necesarias.
 
-## Creación de Deployment usando variables de entorno
+## Configuración de aplicaciones usando variables de entorno
 
-Vamos a hacer un despliegue de un servidor de base de datos mariadb. Si volvemos a estudiar la documentación de esta imagen en [Docker Hub](https://hub.docker.com/_/mariadb) comprobamos que obligatoriamente tenemos que indicar la contraseña del usuario root incializando la variable de entorno `MYSQL_ROOT_PASSWORD`. El fichero de despliegue que vamos a usar es [`mariadb-deploymen-env.yaml`](files/mariadb-deploymen-env.yaml), y vemos el fragmento del fichero donde se define el contenedor:
+Vamos a hacer un despliegue de un servidor de base de datos mariadb. Si volvemos a estudiar la documentación de esta imagen en [Docker Hub](https://hub.docker.com/_/mariadb) comprobamos que obligatoriamente tenemos que indicar la contraseña del usuario root incializando la variable de entorno `MYSQL_ROOT_PASSWORD`. El fichero de despliegue que vamos a usar es [`mariadb-deployment-env.yaml`](files/mariadb-deployment-env.yaml), y vemos el fragmento del fichero donde se define el contenedor:
 
 ```yaml
 ...
