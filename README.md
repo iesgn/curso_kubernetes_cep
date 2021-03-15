@@ -108,7 +108,8 @@ De forma más concreta estos objetivos se pueden enumerar en:
 1. Despliegues parametrizados
     * [Variables de entorno](modulo7/variables_entorno.md)
 	* [ConfigMaps](modulo7/configmaps.md)
-	* Secrets
+	* [Secrets](modulo7/secrets.md)
+    * Ejemplo completo: Despliegue y acceso a WordPress + MariaDB
         * Actividad 7.1: Configurando nuestra aplicación Temperaturas (OBLIGATORIA)
         * Actividad 7.2: Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA)
 1. Almacenamiento en Kubernetes
