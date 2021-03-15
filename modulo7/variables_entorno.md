@@ -24,7 +24,7 @@ Vamos a hacer un despliegue de un servidor de base de datos mariadb. Si volvemos
               value: my-password
 ```
 
-En el apartado `containers` hemos incluido la sección `env` donde vamos indicado, como una lista, el nombre de la variable (`name`) y su valor (`value`). en este caso hemos indicado la contraseña `my-password`.
+En el apartado `containers` hemos incluido la sección `env` donde vamos indicando, como una lista, el nombre de la variable (`name`) y su valor (`value`). en este caso hemos indicado la contraseña `my-password`.
 
 Vamos a comprobar si realmente se ha creado el servidor de base de datos con esa contraseña del root:
 
