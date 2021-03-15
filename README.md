@@ -106,7 +106,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
         * [Actividad 6.1: Despliegue y acceso de la aplicación GuestBook (OBLIGATORIA)](modulo6/actividad1.md)
         * [Actividad 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA)](modulo6/actividad2.md)
 1. Despliegues parametrizados
-    * [Variables de entorno](modulo7/variables_enorno.md)
+    * [Variables de entorno](modulo7/variables_entorno.md)
 	* ConfigSets
 	* Secrets
         * Actividad 7.1: Configurando nuestra aplicación Temperaturas (OBLIGATORIA)
