@@ -1,22 +1,24 @@
 # Pod
 
-La unidad más pequeña de kubernetes son los Pods, con los que podemos correr contenedores. Un pod representa un conjunto de contenedores que comparten almacenamiento y una única IP. Los pods son efímeros, cuando se destruyen se pierde toda la información que contenía. Si queremos desarrollar aplicaciones persistentes tenemos que utilizar volúmenes.
+La unidad más pequeña que puede utilizar kubernetes es el Pod, en inglés pod significa "vaina", y podemos entender un pod como una envoltura que contiene uno o varios contenedores (en la mayoría de los casos un solo contenedor). Un pod representa un conjunto de contenedores que comparten almacenamiento y una única IP. Un aspecto muy importante que hay que ir asumiendo es que los pods son efímeros, se lanzan y en determinadas circunstancias se paran o se destruyen, creando en muchos casos nuevos pods que sustituyan a los anteriores cuando sea necesario. Esto tiene importantes ventajas a la hora de realizar modificaciones en los despliegues en producción, pero tiene una consecuencia directa sobre la información que pueda tener almacenada el pod, por lo que tendremos que utilizar algún mecanismo adicional cuando necesitemos que la información sobreviva a un pod. Por lo tanto, aunque Kubernetes es un orquestador de contenedores, **la unidad mínima de ejecución es el pod**, que contendrá uno a más de un contenedor según las circunstancias:
 
-Por lo tanto, aunque Kubernetes es un orquestador de contenedores, **la unidad mínima de ejecución son los pods**:
+* En la mayoría de los casos y siguiendo el principio de un proceso por contenedor, evitamos tener sistemas (como máquinas virtuales) ejecutando docenas de procesos, por lo que lo más habitual será tener un pod en cuyo interior se define un contenedor que ejecuta un solo proceso.
+* En determinadas circunstancias será necesario ejecutar más de un proceso en el mismo "sistema", como en los casos de procesos fuertemente relacionados, en esos casos tendremos más de un contenedor ejecutando cada uno de ellos un solo procesador, pero pudiendo compartir almacenamiento y una misma dirección IP como si se tratase de un sistema ejecutando múltiples procesos.
 
-* Si seguimos el principio de un proceso por contenedor, nos evitamos tener sistemas (como máquinas virtuales) ejecutando docenas de procesos, 
-* pero en determinadas circunstancias necesito más de un proceso para que se ejecute mi servicio.Por lo tanto parece razonable que podamos tener más de un contenedor compartiendo almacenamiento y direccionamiento, que llamamos Pod. 
+Existen además algunas razones que hacen que sea conveniente tener esta capa adicional por encima de la definción de contenedor:
 
-Además existen más razones:
+* Kubernetes puede trabajar con distintos sistemas de gestión de contenedores (docker, containerd, rocket, cri-o, etc) por lo que es muy conveniente añadir una capa de abstracción que permita utlizar kubernetes de una forma homogénea e independiente del sistema de contenedores interno asociado.
+* Esta capa de abstracción añade información adicional necesaria en Kubernetes como por ejemplo, políticas de reinicio, comprobaciones de que la aplicación esté inicializada (readiness probe) o comprobaciones de que la aplicación haya realizado alguna acción especificada (liveness probe) por ejemplo.
 
-* Kubernetes puede trabajar con distintos contenedores (Docker, Rocket, cri-o,...) por lo tanto es necesario añadir una capa de abstracción que maneje las distintas clases de contenedores.
-* Además esta capa de abstracción añade información adicional necesaria en Kubernetes como por ejemplo, políticas de reinicio, comprobación de que la aplicación esté inicializada (readiness probe), comprobación de que la aplicación haya realizado alguna acción especificada (liveness probe), ...
+## Pod con un solo contenedor
+
+En la situación más habitual, se definirá un pod con un contenedor en su interior para ejecutar un solo proceso y este pod estará ejecutándose mientras lo haga el correspondiente proceso dentro del contenedor. Algunos ejemplos pueden ser: Ejecución en modo demonio de un servidor web, ejecución de un servidor de aplicaciones Java, ejecución de una tarea programada, ejecución en modo demonio de un servidor DNS, etc. Procesos todos que pueden hacerse de forma totalmente independiente unos de otros.
 
 ## Pod multicontenedor
 
-Como hemos comentado anteriormente un pod puede estar formado por varios contenedores, e incluso por almacenamiento compartido entre los contenedores. Por ejemplo: Un servidor web nginx con un servidor de aplicaciones PHP-FPM, lo podemos implementar en un pod, y cada servicio en un contenedor.
+En algunos casos la ejecución de un solo proceso por contenedor no es la solución ideal, ya que existen procesos fuertemente acoplados que no pueden comunicarse entre sí fácilmente si se ejecutan en diferentes sistemas, por lo que la solución planteada en esos casos es definir un pod multicontenedor y ejecutar cada proceso en un contenedor, pero que puedan comunicarse entre sí como se lo estuvieran haciendo en el mismo sistema, utilizando un dispositivo de almacenamiento compartido si hiciese falta (para leer, escribir ficheros entre ellos) y compartiendo externamente una misma dirección IP. Un ejemplo típico de un pod multicontenedor es un servidor web nginx con un servidor de aplicaciones PHP-FPM, que se implementaría mediante un solo pod, pero ejecutando un proceso de nginx en un contenedor y otro proceso de php-fpm en otro contenedor.
 
-Sin embargo en este curso vamos a trabajar con pods formados por un sólo contenedor. Por ejemplo: Una aplicación WordPress con una base de datos mariadb, lo implementamos en dos pods diferenciados, uno para cada servicio.
+Al tratarse este curso de un curso de introducción a Kubernetes no vamos a poder ver todas las cargas de trabajo ni la ejecución y despliegue de todo tipo de aplicaciones, por lo que consideramos más razonable no utilizar ejemplos de pods multicontenedor y centrarnos en la comprensión de las características principales de kubernetes mediante ejemplos sencillos, comunes y muy apropiados para ejecutarse en kubernetes.
 
 
 
