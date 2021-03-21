@@ -6,7 +6,7 @@ Configurar y actualizar un cluster de kubernetes es una tarea compleja, pero exi
 
 # minikube
 
-<img src="https://raw.githubusercontent.com/kubernetes/minikube/master/images/logo/logo.png" alt="minikube-logo" width=150"/>
+<img src="https://raw.githubusercontent.com/kubernetes/minikube/master/images/logo/logo.png" alt="minikube-logo" width="150"/>
 
 minikube permite desplegar localmente un "cluster" de kubernetes con un solo nodo. minikube es un proyecto oficial de kubernetes y es probablemente la solución más adecuada para aprender a usar k8s, ya que es un proyecto maduro y muy sencillo de instalar. Los requisitos mínimos para instalar minikube en nuestro equipo son:
 
