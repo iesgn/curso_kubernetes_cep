@@ -72,8 +72,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * El proyecto kubernetes
     * Arquitectura básica de kubernetes
 1. Instalación de Kubernetes
-    * Alternativas para instalación simple de k8s: minikube, kubeadm,
-      k3s
+    * [Alternativas para instalación simple de k8s](modulo2/alternativas.md)
     * Instalación de minikube
     * Instalación y configuración de kubectl
     * Despliegues de aplicaciones en Kubernetes
