@@ -21,10 +21,10 @@ TEMP_SERVER temperaturas-backend:5000
 Vamos a modificar esta variable en el despliegue del `frontend` y cambiaremos el nombre del servicio del `backend` para que coincidan, para ello realiza los siguientes pasos:
 
 1. Crea un recurso `ConfigMap` con un dato que tenga como clave `SERVIDOR_TEMPERATURAS` y como contenido `servidor-temperaturas:5000`.
-2. Modifica el fichero de despliegue del `frontend`: [`frontend-deployment.yaml`](files/temperaturas/frontend-deployment.yaml) para añadir la modificación de la variable `TEMP_SERVER` con el valor que hemos guardado en el `ConfigMap`.
+2. Modifica el fichero de despliegue del `frontend`: [`frontend-deployment.yaml`](../modulo6/files/temperaturas/frontend-deployment.yaml) para añadir la modificación de la variable `TEMP_SERVER` con el valor que hemos guardado en el `ConfigMap`.
 3. Realiza el despliegue y crea el servicio para acceder al `frontend`.
 4. Despliega el microservicio `backend`.
-5. Modifica el fichero [`backend-srv.yaml`](files/temperaturas/backend-srv.yaml) para cambiar el nombre del servicio por `servidor-temperaturas` y crea el servicio.
+5. Modifica el fichero [`backend-srv.yaml`](../modulo6/files/temperaturas/backend-srv.yaml) para cambiar el nombre del servicio por `servidor-temperaturas` y crea el servicio.
 6. Accede a la aplicación usando el puerto asignado al servicio NodePort del `frontend` o creando el recurso `Ingress`.
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
