@@ -14,13 +14,13 @@ Algunas consideraciones sobre el despliegue que vamos a realizar:
 
 ## Despliegue y acceso al microservicio frontend
 
-En primer lugar vamos a desplegar el primer microservicio. Esta aplicación está usando el puerto 3000/tcp para ofrecer la aplicación. Para realizar el despliegue utilizaremos el fichero [`frontend-deployment.yaml`](files/temperaturas/frontend-deployment.yaml) áara crear el despliegue ejecutaordenador siguiente instrucción:
+En primer lugar vamos a desplegar el primer microservicio. Esta aplicación está usando el puerto 3000/tcp para ofrecer la aplicación. Para realizar el despliegue utilizaremos el fichero [`frontend-deployment.yaml`](files/temperaturas/frontend-deployment.yaml) para crear el despliegue ejecuta la siguiente instrucción:
 
     kubectl apply -f frontend-deployment.yaml
 
-A continuación usamos el fichero [`frontend-srv.yaml`](files/temperaturas/frontend-srv.yaml) para crear el servicio Noeáort:
+A continuación usamos el fichero [`frontend-srv.yaml`](files/temperaturas/frontend-srv.yaml) para crear el servicio Node Port:
 
-    kuordenadorply -f frontend-srv.yaml
+    kubectl applt -f frontend-srv.yaml
 
 Obtenemos los recursos que hemos creado. Nos fijamos en el puerto que nos ha asignado por el servicio NodePort (en mi caso el 30053). Vamos a acceder desde un navegador web usando la ip del nodo master y el puesto que nos han asignado:
 
@@ -30,9 +30,9 @@ Como podemos observar la aplicación nos muestra un mensaje de error: **"No pued
 
 ## Despliegue y acceso al microservicio backend
 
-Es el momento de desplegar el segundo microservicio. Este microservicio ofrece un servicio API Restful en el puerto 5000/tcp. Para ello utilizaremos el fichero [`backend-deployment.yaml`](files/temperaturas/backend-deployment.yaml) para realizar el despliegu á el fichero [`backend-srv.yaml`](files/temperaturas/backend-sordenador para crear el sevácio.
+Es el momento de desplegar el segundo microservicio. Este microservicio ofrece un servicio API Restful en el puerto 5000/tcp. Para ello utilizaremos el fichero [`backend-deployment.yaml`](files/temperaturas/backend-deployment.yaml) para realizar el despliegue. El fichero [`backend-srv.yaml`](files/temperaturas/backend-srv.yaml) lo utilizaremos para crear el servicio.
 
-    kubectl ordenador backend-deployment.yaml
+    kubectl apply -f backend-deployment.yaml
     kubectl apply -f backend-srv.yaml
 
 Si volvemos acceder al navegador y refrescamos la página, veremos que ya no nos sale el mensaje de error y podemos buscar la temperatura de nuestra ciudad:
