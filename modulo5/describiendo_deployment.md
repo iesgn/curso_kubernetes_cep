@@ -1,10 +1,10 @@
 # Describiendo un Deployment
 
-Aunque podemos crear un *deployment* de forma imperativa utilizando un comando como el siguiente:
+Aunque podemos crear un *deployment* de forma imperativa utilizando un comando como el siguiente (se podrían indicar muchos más parámetros de configuración en la siguiente instrucción que podemos consultar en la documentación):
 
     kubectl create deployment nginx --image nginx
 
-Vamos a seguir trabajando describiendo los recursos en un fichero yaml. en este caso para describir un despliegue de nginx podemos escribir un fichero [`nginx-deployment.yaml`](files/nginx-deployment.yaml):
+Vamos a seguir trabajando describiendo los recursos en un fichero yaml. En este caso para describir un despliegue de nginx podemos escribir un fichero [`nginx-deployment.yaml`](files/nginx-deployment.yaml):
 
 ```yaml
 apiVersion: apps/v1
