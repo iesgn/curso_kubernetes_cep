@@ -107,7 +107,7 @@ spec:
           service:
             name: 
             port:
-              number: 
+              number: 80
 ```
 Indica un host del tipo *www.tunombre.org*, indica el nombre del servicio que creaste para acceder a la aplicación guestbook y ten en cuenta que el puerto de dicho servicio era el 80.
 
