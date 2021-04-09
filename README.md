@@ -109,7 +109,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
 	* [ConfigMaps](modulo7/configmaps.md)
 	* [Secrets](modulo7/secrets.md)
     * [Ejemplo completo: Despliegue y acceso a WordPress + MariaDB](modulo7/wordpress.md)
-        * Actividad 7.1: Configurando nuestra aplicación Temperaturas (OBLIGATORIA)
+        * [Actividad 7.1: Configurando nuestra aplicación Temperaturas (OBLIGATORIA)](modulo7/actividad1.md)
         * Actividad 7.2: Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA)
 1. Almacenamiento en Kubernetes
     * Consideraciones sobre el almacenamiento
