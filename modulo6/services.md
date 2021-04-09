@@ -1,6 +1,6 @@
 # Services. Tipos de servicios
 
-Los servicios ([services](https://kubernetes.io/docs/concepts/services-networking/service/)) nos permiten acceder a nuestra aplicaciones.
+Los servicios ([services](https://kubernetes.io/docs/concepts/services-networking/service/)) nos permiten acceder a nuestras aplicaciones que hemos desplegado en el cluster.
 
 * Un servicio es una abstracción que **nos permite acceder a un conjunto de pods** (que se han creado a partir de un Deployment) que implementan una aplicación (Por ejemplo: acceder a un servidor web, a una servidor de base de datos, a un microservicio que forma parte de una aplicación,...).
 * A los Pods se le asignan una IP a la que no se puede acceder directamente, por lo tanto necesitamos un service que nos ofrece **una dirección virtual (CLUSTER-IP) y un nombre** que identifica al conjunto de pods que representa, al cual nos podemos conectar.
