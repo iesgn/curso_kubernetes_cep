@@ -9,7 +9,7 @@ Cuando creamos un Deployment, se crea un ReplicaSet asociado, que creará y cont
     kubectl apply -f nginx-deployment.yaml
     kubectl get deploy,rs,pod
 
-Para ver los recursos que hemos craedo también podemos utilizar la instrucción:
+Para ver los recursos que hemos creado también podemos utilizar la instrucción:
 
     kubectl get all
 
