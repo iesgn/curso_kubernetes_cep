@@ -55,8 +55,9 @@ Podemos acceder a la aplicación, redirigiendo un puerto de localhost al puerto 
 
 Y accedemos al servidor web en la url http://localhost:8080.
 
-**NOTA: Esta no es la forma con la que accedemos a las aplicaciones en kuberentes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde locashost el puerto 8080 al puerto 80 del pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.**
-**NOTA2: El port-forward no es igual a la redirección de puertos de docker, ya que en este caso la redirección de puertos se hace en el equipo que ejecuta kubectl, no en el equipo que ejecuta los pods o los contenedores**
+**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en kuberentes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde locashost el puerto 8080 al puerto 80 del pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
+
+**NOTA2**: El port-forward no es igual a la redirección de puertos de docker, ya que en este caso la redirección de puertos se hace en el equipo que ejecuta kubectl, no en el equipo que ejecuta los pods o los contenedores.
 
 Para obtener las etiquetas de los pods que hemos creado:
 
@@ -66,7 +67,7 @@ Las etiquetas las hemos definido en la sección metadata del fichero yaml, pero 
 
     kubectl label pods pod-nginx service=web --overwrite=true
 
-Las etiquetas son muy útiles, ya que permiten seleccionar recurso determinado (en un cluster de kubernetes puede haber cientos o miles de objetos), por ejemplo para visualizar los pods que tienen una etiqueta con un determinado valor:
+Las etiquetas son muy útiles, ya que permiten seleccionar un recurso determinado (en un cluster de kubernetes puede haber cientos o miles de objetos), por ejemplo para visualizar los pods que tienen una etiqueta con un determinado valor:
 
     kubectl get pods -l service=web
 
