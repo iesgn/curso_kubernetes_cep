@@ -4,28 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-**Nota: Si realizaste la Actividad 5.3: Despliegue de la aplicación GuestBook, que era voluntaria salta directamente al apartado "Acceso a la aplicación".**
-
-### Despliegue de la aplicación
-
-En esta tarea vamos a desplegar una aplicación web que requiere de dos servicios para su ejecución. La aplicación se llama GuestBook y necesita los dos siguientes servicios:
-
-* La aplicación guestbook es una aplicación web desarrollada en python que es servida por el puerto 5000/tcp. Utilizaremos la imagen `iesgn/guestbook`.
-* Esta aplicación guarda la información en una base de datos no relacional redis, que utiliza el puerto 6379/tcp para conectarnos. Usaremos la imagen `redis`.
-
-Por lo tanto para desplegar la aplicaciones tendremos dos ficheros.yaml:
-
-* [guestbook-deployment.yaml](files/guestbook/guestbook-deployment.yaml)
-* [redis-deployment.yaml](files/guestbook/redis-deployment.yaml)
-
-Para realizar el despliegue realiza los siguientes pasos:
-
-1. Usando los ficheros anteriores crea los dos despliegues.
-2. Comprueba que los recursos que se han creado: Deployment, ReplicaSet y Pods.
-
-### Acceso a la aplicación
-
-Una vez que tenemos creado el despliegue, vamos a crear los servicios correspondientes:
+Una vez que tenemos creado el despliegue de la aplicación, que realizamos en la [Actividad 5.3: Despliegue de la aplicación GuestBook](../modulo5/actividad3.md), vamos a crear los servicios correspondientes para acceder a ella:
 
 #### Servicio para acceder a la aplicación
 

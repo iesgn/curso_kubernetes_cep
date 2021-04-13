@@ -94,7 +94,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Actualización y rollout de Deployment](modulo5/actualizacion_deployment.md)
         * [Actividad 5.1: Trabajando con Deployments (OBLIGATORIA)](modulo5/actividad1.md)
         * [Actividad 5.2: Actualización y rollout de nuestra aplicación (OBLIGATORIA)](modulo5/actividad2.md)
-        * [Actividad 5.3: Despliegue de la aplicación GuestBook (VOLUNTARIA)](modulo5/actividad3.md)
+        * [Actividad 5.3: Despliegue de la aplicación GuestBook (OBLIGATORIA)](modulo5/actividad3.md)
 1. Acceso a las aplicaciones
     * [Services. Tipos de servicios](modulo6/services.md)
     * [Describiendo Services](modulo6/describiendo_services.md)
@@ -102,7 +102,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Servicio DNS en Kubernetes](modulo6/dns.md)
     * [Ingress Controller](modulo6/ingress.md)
     * [Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas](modulo6/temperaturas.md)
-        * [Actividad 6.1: Despliegue y acceso de la aplicación GuestBook (OBLIGATORIA)](modulo6/actividad1.md)
+        * [Actividad 6.1: Acceso de la aplicación GuestBook (OBLIGATORIA)](modulo6/actividad1.md)
         * [Actividad 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA)](modulo6/actividad2.md)
 1. Despliegues parametrizados
     * [Variables de entorno](modulo7/variables_entorno.md)

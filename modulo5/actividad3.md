@@ -49,7 +49,7 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
-No
+Si
 
 ## ¿ES UNA ACTIVIDAD INDIVIDUAL O DE GRUPO?
 
