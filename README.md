@@ -113,7 +113,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
         * [Actividad 7.2: Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA)](modulo7/actividad2.md)
 1. Almacenamiento en Kubernetes
     * [Consideraciones sobre el almacenamiento](modulo8/consideraciones.md)
-    * Volúmenes en Kubernetes
+    * [Volúmenes en Kubernetes](modulo8/volumenes.md)
     * Aprovisionamiento de volúmenes
         * Actividad 8.1: Haciendo persistente nuestra aplicación Temperaturas (OBLIGATORIA)
         * Actividad 8.2: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)
