@@ -114,7 +114,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
 1. Almacenamiento en Kubernetes
     * [Consideraciones sobre el almacenamiento](modulo8/consideraciones.md)
     * [Volúmenes en Kubernetes](modulo8/volumenes.md)
-    * [Aprovisionamiento de volúmenes](modulo8/aprovisonamiento.md)
+    * [Aprovisionamiento de volúmenes](modulo8/aprovisionamiento.md)
         * Actividad 8.1: Haciendo persistente nuestra aplicación Temperaturas (OBLIGATORIA)
         * Actividad 8.2: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)
 1. Otras cargas de trabajo
