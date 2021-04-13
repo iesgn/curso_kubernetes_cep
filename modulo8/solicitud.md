@@ -6,9 +6,9 @@ Un desarrollador no necesita conocer los distintos tipos de volúmenes disponibl
 
  Un desarrollador se centra en indicar los requerimientos que debe tener el volumen que necesita:
     
-    * Tamaño
-    * Tipo de acceso (sólo lectura o lectura / escritura)
-    * Tipo de volumen (sólo si es importante)
+* Tamaño
+* Tipo de acceso (sólo lectura o lectura / escritura)
+* Tipo de volumen (sólo si es importante)
 
 Para hacer la solicitud de un volumen, el desarrollador debe crear un recurso en el cluster llamado *PersitentVolumenClaim*, veamos un ejemplo:
 
