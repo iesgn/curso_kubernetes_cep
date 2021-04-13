@@ -31,3 +31,8 @@ Al trabajar con volúmenes em kubernetes se realizan dos funciones claramente di
     * Quiero 10 GiB de almacenamiento provisional para usar desde un pod en modo lectura y escritura.
 
 
+    Un desarrollador se centra en indicar los requerimientos que debe tener el volumen que necesita:
+    
+    * Tamaño
+    * Tipo de acceso (sólo lectura o lectura / escritura)
+    * Tipo de volumen (sólo si es importante)
