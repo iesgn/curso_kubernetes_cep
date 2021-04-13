@@ -116,8 +116,11 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Volúmenes en Kubernetes](modulo8/volumenes.md)
     * [Aprovisionamiento de volúmenes](modulo8/aprovisionamiento.md)
     * [Solicitud de volúmenes](modulo8/solicitud.md)
-    * [Uso de volúmenes]
-        * Actividad 8.1: Haciendo persistente nuestra aplicación Temperaturas (OBLIGATORIA)
+    * [Uso de volúmenes](modulo8/uso.md)
+    * [Ejemplo 1: Gestión estática de volúmenes]()
+    * [Ejemplo 2: Gestión dinámica de volúmenes]()
+    * [Ejemplo 3: WordPress con almacenamiento peristente]()
+        * Actividad 8.1: Haciendo persistente nuestra aplicacón Temperaturas (OBLIGATORIA)
         * Actividad 8.2: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)
 1. Otras cargas de trabajo
     * StatefulSets

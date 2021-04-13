@@ -2,19 +2,6 @@
 
 Para que el administrador de kubernetes defina los volúmenes disponible en nuestro cluster tenemos dos posibilidades:
 
-## Aprovisionamiento dinámico
-
-Cuando el desarrollador necesita almacenamiento para su aplicación, hace una petición de almacenamiento creando un recurso *PersistantVolumenClaim* y de forma dinámica se crea el recurso *PersistantVolume* que representa el volumen y se asocia con esa petición. DE otra forma explicado, cada vez que se cree un *PersistentVolumenClaim*, se creará bajo demanda un *PersistentVolumen* que se ajuste a las características seleccionadas.
-
-Para obtener la [gestión dinámica de volúmenes](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/), necesitamos [un "provisionador" de almacenamiento](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) (tendremos distintos provisionadores para los distintos tipos de almacenamiento).
-
-Para definir los "provisionadores" de almacenamiento, usaremos el objeto *StoreClass*, minikube, por defecto ya tenemos un provisionador para almacenamiento del tipo *hostPath* (monta un directorio del host en el pod).
-
-```bash
-kubectl get storageclass
-NAME             PROVISIONER             AGE
-standard (default)   k8s.io/minikube-hostpath   2d23h
-```
 
 ## Aprovisionamiento estático
 
@@ -61,3 +48,17 @@ spec:
 * `accessModes`: El modo de acceso.
 * `persistentVolumeReclaimPolicy`: La política de reciclaje.
 * Y por útimo se indica el tipo (backend) de almacenamiento), es este caso es de tipo `hostPath` que creará un directorio (`/data/pv1`) en el nodo para guardar la información.
+
+## Aprovisionamiento dinámico
+
+Cuando el desarrollador necesita almacenamiento para su aplicación, hace una petición de almacenamiento creando un recurso *PersistantVolumenClaim* y de forma dinámica se crea el recurso *PersistantVolume* que representa el volumen y se asocia con esa petición. DE otra forma explicado, cada vez que se cree un *PersistentVolumenClaim*, se creará bajo demanda un *PersistentVolumen* que se ajuste a las características seleccionadas.
+
+Para obtener la [gestión dinámica de volúmenes](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/), necesitamos [un "provisionador" de almacenamiento](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) (tendremos distintos provisionadores para los distintos tipos de almacenamiento).
+
+Para definir los "provisionadores" de almacenamiento, usaremos el objeto *StoreClass*, minikube, por defecto ya tenemos un provisionador para almacenamiento del tipo *hostPath* (monta un directorio del host en el pod).
+
+```bash
+kubectl get storageclass
+NAME             PROVISIONER             AGE
+standard (default)   k8s.io/minikube-hostpath   2d23h
+```
