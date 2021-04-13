@@ -120,7 +120,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Ejemplo 1: Gestión estática de volúmenes]()
     * [Ejemplo 2: Gestión dinámica de volúmenes]()
     * [Ejemplo 3: WordPress con almacenamiento peristente]()
-        * Actividad 8.1: Haciendo persistente nuestra aplicacón Temperaturas (OBLIGATORIA)
+        * Actividad 8.1: Desplegando un servidor web persistente (OBLIGATORIA)
         * Actividad 8.2: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)
 1. Otras cargas de trabajo
     * StatefulSets
