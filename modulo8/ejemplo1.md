@@ -185,3 +185,23 @@ $ kubectl apply -f deploy-ejemplo1.yaml
 Y volvemos acceder al mismo puerto:
 
 ![volumen](img/volumen.png)
+
+## Eliminación del volumen
+
+Si finalmente queremos eliminar los volúmenes creados, tendremos que eliminar la solicitud, el objeto *PersistentVolumeClaim*, dependiendo de la política de reciclaje con la que creamos el objeto *PersistentVolume* tendremos distintos comportamientos.
+
+En este caso como la política de reciclaje con la que creamos el volumen es `Recycle`, no se eliminará se borrará el contenido pero se podrá reutilizar es decir su estado volverá a `Available`:
+
+```bash
+$ kubectl delete persistentvolumeclaim/pvc-ejemplo1
+
+$ kubectl get pv,pvc
+NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  8m8s
+```
+
+Si queremos eliminar el objeto *PersistentVolume*, ejecutamos:
+
+```bash
+$ kubectl delete persistentvolume/pv-ejemplo1
+```

@@ -132,3 +132,12 @@ minikube ip
 Finalmente puedes volver a comprobar que la información de la aplicación no se pierde borrando el despliegue y volviéndolo a crear, y comprobar que se sigue sirviendo el fichero `index.html`.
 
 ## Eliminación del volumen
+
+En este caso los volúmenes que crea de forma dinámica el `storageclass`que tenemos creado en minikube, tienen como política de reciclaje el valor de `Delete`. esto significa que cuando eliminemos la solicitud, el objeto *PersistentVolumeClaim*, también se borrará el volumen, el objeto *PersistentVolume*.
+
+```bash
+$ kubectl delete persistentvolumeclaim/pvc-ejemplo2
+
+$ kubectl get pv,pvc
+No resources found
+```
