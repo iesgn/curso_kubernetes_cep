@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ejemplo1
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: volumen-ejemplo1
+          persistentVolumeClaim:
+            claimName: pvc-ejemplo1
+      containers:
+        - name: contenedor-nginx
+          image: nginx
+          ports:
+            - name: http-server
+              containerPort: 80
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: volumen-ejemplo1

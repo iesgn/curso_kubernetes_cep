@@ -1,0 +1,167 @@
+# Ejemplo 1: Gestión estática de volúmenes
+
+En este ejemplo vamos a desplegar un servidor web que va a servir una página html que tendrá almacenada en un volumen. En este primer ejemplo, la asignación del volumen se va a realizar de forma estática.
+
+## Aprovisonamiento del volumen
+
+En este caso, será el administrador del cluster el responsable de dar de alta en el cluster los volúmenes disponibles. Como hemos estudiado anteriormente, indicaremos algunas características del volumen: la capacidad, el modo de acceso, la política de reciclaje, el tipo de volumen,...
+
+Para ello vamos a describir el objeto *PersistentVolume* en el fichero [`pv-ejemplo1.yaml`](files/ejemplo1/pv-ejemplo1.yaml):
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-ejemplo1
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  hostPath:
+    path: /data/pv-ejemplo1
+```
+
+**Nota**: como estamos utilizando minikube, y nuestro cluster está formado por un sólo nodo, el tipo de almacenamiento más simple que podemos usar es `hostPath`, que creará un directorio en el nodo (`/data/pv-ejemplo1`) que será el que se monte en el pod para guardar la información.
+
+Al administrador crea el volumen:
+
+```bash
+$ kubectl create -f pv-ejemplo1.yaml
+```
+
+Podemos ver los volúmenes que tenemos disponibles en el cluster:
+
+```bash
+$ kubectl get pv
+```
+
+Y podemos obtener los detalle de este recurso:
+
+```bash
+$ kubectl describe pv pv-ejemplo1
+```
+
+## Solicitud del volumen
+
+A continuación, nosotros como desarrolladores necesitamos solicitar un volumen con ciertas características para nuestra aplicación, para ello vamos a definir un objeto *PersistentVolumeClaim*, que definiremos en el fichero [`pvc-ejemplo1.yaml`](files/ejemplo1/pvc-ejemplo1.yaml):
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: pvc-ejemplo1
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+```
+
+Como vemos desde el punto de vista del desarrollador no necesita saber los tipos de volúmenes que tenemos disponibles, simplemente indicamos que queremos un 1Gb de almacenamiento, el tipo de acceso y que se haga la asignación de forma estática (`storageClassName: manual`).
+
+cuando creemos el objeto *PersistentVolumeClaim*, podremos comprobar si hay algún volumen (*PersistentVolume*) disponible en el cluster que cumpla con los requisitos:
+
+```bash
+$ kubectl create -f pvc-ejemplo1.yaml
+
+$ kubectl get pv,pvc
+```
+
+**Nota**: El desarrollador quería 1 Gb de disco, que se cumple de sobra con los 5 Gb del volumen que se ha asociado.
+
+## Uso del volumen
+
+Una vez que tenemos un volumen a nuestra disposición, vamos a crear un despliegue de un servidor web, indicando en la especificación del pod, que estará formado por el volumen y el directorio donde vamos a montarlo.
+Para ello vamos a usar el fichero [`deploy-ejemplo1.yaml`](files/ejemplo1/deploy-ejemplo1.yaml):
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ejemplo1
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: volumen-ejemplo1
+          persistentVolumeClaim:
+            claimName: pvc-ejemplo1
+      containers:
+        - name: contenedor-nginx
+          image: nginx
+          ports:
+            - name: http-server
+              containerPort: 80
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: volumen-ejemplo1
+```
+
+Donde podemos observar que en la especificación del pod hemos indicado que estará formado por un volumen correspondiente al asignado al *PersistentVolumeClaim* `pvc-ejemplo1` y que el contenedor tendrá un punto de montaje en el directorio *DocumentRoot* de nginx (`/usr/share/nginx/html`) en el volumen.
+
+Creamos el despliegue:
+
+```bash
+$ kubectl apply -f deploy-ejemplo1.yaml
+```
+
+Y a continuación, cuando el contenedor esté funcionando:
+
+```bash
+$ kubectl get all
+....
+```
+
+Vamos a ejecutar un comando en el pod para que cree un fichero `index.html` en el directorio `/usr/share/nginx/html` (evidentemente estaremos guardando ese fichero en el volumen).
+
+```bash
+$ kubectl exec pod/...... -- echo "<h1>Almacenamiento en K8S</h1>" > /usr/share/nginx/html/index.html
+```
+
+Finalmente creamos el servicio de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
+
+```bash
+$ kubectl apply -f srv-ejemplo1.yaml
+
+$ kubectl get all
+....
+```
+
+Y accedemos a la aplicación:
+
+![]()
+
+## Comprobemos la persistencia de la información
+
+En primer lugar podemos acceder al nodo del cluster y comprobar que en el directorio que indicamos en la creación del volumen, efectivamente existe el fichero `index.html`:
+
+```bash
+$ minikube shh
+$ ls /data/pv-ejemplo1
+index.html
+```
+
+En segundo lugar podemos hacer la prueba de eliminar el despliegue, volver a crearlo y volver acceder a la aplicación para comprobar que el servidor web sigue sirviendo el mismo fichero `index.html`:
+
+```bash
+$ kubectl delete -f deploy-ejemplo1.yaml
+$ kubectl apply -f deploy-ejemplo1.yaml
+```
+
+Y volvemos acceder al mismo puerto:
+
+![]()
