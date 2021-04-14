@@ -67,7 +67,7 @@ spec:
 
 Como vemos desde el punto de vista del desarrollador no necesita saber los tipos de volúmenes que tenemos disponibles, simplemente indicamos que queremos un 1Gb de almacenamiento, el tipo de acceso y que se haga la asignación de forma estática (`storageClassName: manual`).
 
-cuando creemos el objeto *PersistentVolumeClaim*, podremos comprobar si hay algún volumen (*PersistentVolume*) disponible en el cluster que cumpla con los requisitos:
+Cuando creemos el objeto *PersistentVolumeClaim*, podremos comprobar si hay algún volumen (*PersistentVolume*) disponible en el cluster que cumpla con los requisitos:
 
 ```bash
 $ kubectl apply -f pvc-ejemplo1.yaml
@@ -80,7 +80,7 @@ NAME                                 STATUS   VOLUME        CAPACITY   ACCESS MO
 persistentvolumeclaim/pvc-ejemplo1   Bound    pv-ejemplo1   5Gi        RWX            manual         3s
 ```
 
-Podemos apreciar que el el estadodel volumen ha cambiado a `Bound` que significa que ya está asociado al *PersistentVolumeClaim* que hemos creado.
+Podemos apreciar que el el estado del volumen ha cambiado a `Bound` que significa que ya está asociado al *PersistentVolumeClaim* que hemos creado.
 
 **Nota**: El desarrollador quería 1 Gb de disco, que se cumple de sobra con los 5 Gb del volumen que se ha asociado.
 

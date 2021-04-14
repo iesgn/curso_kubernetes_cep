@@ -59,6 +59,11 @@ Para definir los "provisionadores" de almacenamiento, usaremos el objeto *StoreC
 
 ```bash
 kubectl get storageclass
-NAME             PROVISIONER             AGE
-standard (default)   k8s.io/minikube-hostpath   2d23h
+NAME                 PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+standard (default)   k8s.io/minikube-hostpath   Delete          Immediate           false                  46d
 ```
+
+En este caso la configuraciñon del objeto `storageclass` se definió con las siguientes características:
+
+* La política de reciclaje tiene el valor `Delete`.
+* Y el modo de asociación (`VOLUMEBINDINGMODE`) tiene el valor `Immediate`, es decir, cuando se cree el objeto *PersistenVolumenClaim* se asociadrá de forma dinámica un volumen (objeto *PersistenVolumen*) inmediatamente. Otro valor podría ser `WaitForFirstConsumer`, en ese caso la sociación se haría cuando se utilizarara el volumen.
