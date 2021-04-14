@@ -119,9 +119,10 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Uso de volúmenes](modulo8/uso.md)
     * [Ejemplo 1: Gestión estática de volúmenes]()
     * [Ejemplo 2: Gestión dinámica de volúmenes]()
-    * [Ejemplo 3: WordPress con almacenamiento peristente]()
+    * [Ejemplo 3: WordPress con almacenamiento persistente]()
         * Actividad 8.1: Desplegando un servidor web persistente (OBLIGATORIA)
-        * Actividad 8.2: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)
+        * Actividad 8.2: Haciendo persistente la aplicación GuestBook (OBLIGATORIA)
+        * Actividad 8.3: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)
 1. Otras cargas de trabajo
     * StatefulSets
 	* DaemonSets

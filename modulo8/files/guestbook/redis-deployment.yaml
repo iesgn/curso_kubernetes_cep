@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  labels:
+    app: redis
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: redis
+        tier: backend
+    spec:
+      volumes:
+        - name: volumen-redis
+          persistentVolumeClaim:
+            claimName: pvc1
+      containers:
+        - name: contenedor-redis
+          image: redis
+          command: ["redis-server"]
+          args: ["--appendonly", "yes"]
+          ports:
+            - name: redis-server
+              containerPort: 6379
+          volumeMounts:
+            - mountPath: "/data"
+              name: volumen-redis
+
+
