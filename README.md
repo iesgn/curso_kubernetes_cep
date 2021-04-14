@@ -117,7 +117,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Aprovisionamiento de volúmenes](modulo8/aprovisionamiento.md)
     * [Solicitud de volúmenes](modulo8/solicitud.md)
     * [Uso de volúmenes](modulo8/uso.md)
-    * [Ejemplo 1: Gestión estática de volúmenes]()
+    * [Ejemplo 1: Gestión estática de volúmenes](modulo8/ejemplo1.md)
     * [Ejemplo 2: Gestión dinámica de volúmenes]()
     * [Ejemplo 3: WordPress con almacenamiento persistente]()
         * Actividad 8.1: Desplegando un servidor web persistente (OBLIGATORIA)
