@@ -29,14 +29,17 @@ spec:
 Al administrador crea el volumen:
 
 ```bash
-$ kubectl create -f pv-ejemplo1.yaml
+$ kubectl apply -f pv-ejemplo1.yaml
 ```
 
 Podemos ver los volúmenes que tenemos disponibles en el cluster:
 
 ```bash
 $ kubectl get pv
+NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  73s
 ```
+Noos fijamos que el estado del volumen es `Available`, todavía no se ha asociado con ninguna solicitud de volúmen.
 
 Y podemos obtener los detalle de este recurso:
 
@@ -67,10 +70,17 @@ Como vemos desde el punto de vista del desarrollador no necesita saber los tipos
 cuando creemos el objeto *PersistentVolumeClaim*, podremos comprobar si hay algún volumen (*PersistentVolume*) disponible en el cluster que cumpla con los requisitos:
 
 ```bash
-$ kubectl create -f pvc-ejemplo1.yaml
+$ kubectl apply -f pvc-ejemplo1.yaml
 
 $ kubectl get pv,pvc
+NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                  STORAGECLASS   REASON   AGE
+persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Bound    default/pvc-ejemplo1   manual                  2m1s
+
+NAME                                 STATUS   VOLUME        CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+persistentvolumeclaim/pvc-ejemplo1   Bound    pv-ejemplo1   5Gi        RWX            manual         3s
 ```
+
+Podemos apreciar que el el estadodel volumen ha cambiado a `Bound` que significa que ya está asociado al *PersistentVolumeClaim* que hemos creado.
 
 **Nota**: El desarrollador quería 1 Gb de disco, que se cumple de sobra con los 5 Gb del volumen que se ha asociado.
 
@@ -123,13 +133,16 @@ Y a continuación, cuando el contenedor esté funcionando:
 
 ```bash
 $ kubectl get all
-....
+...
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/nginx-ejemplo1-86864d84b5-s62dq   1/1     Running   0          6s
+...
 ```
 
 Vamos a ejecutar un comando en el pod para que cree un fichero `index.html` en el directorio `/usr/share/nginx/html` (evidentemente estaremos guardando ese fichero en el volumen).
 
 ```bash
-$ kubectl exec pod/...... -- echo "<h1>Almacenamiento en K8S</h1>" > /usr/share/nginx/html/index.html
+$ kubectl exec pod/nginx-ejemplo1-86864d84b5-s62dq -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
 ```
 
 Finalmente creamos el servicio de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
@@ -138,12 +151,19 @@ Finalmente creamos el servicio de acceso al despliegue, usando el fichero [`srv-
 $ kubectl apply -f srv-ejemplo1.yaml
 
 $ kubectl get all
-....
+...
+service/nginx-ejemplo1   NodePort    10.106.238.146   <none>        80:32581/TCP   13s
+...
 ```
 
-Y accedemos a la aplicación:
+Y accedemos a la aplicación, accedo a la ip del nodo controlador del cluster y al puerto asignado al servicio NodePort:
 
-![]()
+```bash
+minikube ip
+192.168.39.222
+```
+
+![volumen](img/volumen.png)
 
 ## Comprobemos la persistencia de la información
 
@@ -164,4 +184,4 @@ $ kubectl apply -f deploy-ejemplo1.yaml
 
 Y volvemos acceder al mismo puerto:
 
-![]()
+![volumen](img/volumen.png)
