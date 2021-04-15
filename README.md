@@ -119,7 +119,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Uso de volúmenes](modulo8/uso.md)
     * [Ejemplo 1: Gestión estática de volúmenes](modulo8/ejemplo1.md)
     * [Ejemplo 2: Gestión dinámica de volúmenes](modulo8/ejemplo2.md)
-    * [Ejemplo 3: WordPress con almacenamiento persistente]()
+    * [Ejemplo 3: WordPress con almacenamiento persistente](modulo8/wordpress.md)
         * Actividad 8.1: Desplegando un servidor web persistente (OBLIGATORIA)
         * Actividad 8.2: Haciendo persistente la aplicación GuestBook (OBLIGATORIA)
         * Actividad 8.3: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)
