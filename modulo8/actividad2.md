@@ -80,7 +80,7 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 ## RECURSOS
 
 * Conexión a internet
-* Los ficheros del [Ejemplo 2: Gestión dinámica de volúmenes](ejemplo2.md).
+
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
