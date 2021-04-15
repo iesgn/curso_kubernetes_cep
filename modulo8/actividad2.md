@@ -65,7 +65,7 @@ Realiza los siguientes pasos:
 1. Crea un fichero yaml para definir un recurso *PersistantVolumenClaim* que se llame `pvc-redis`, para solicitar un volumen de 3Gb.
 2. Crea el recurso y comprueba que se ha asociado un volumen de forma dinámica a la solicitud.
 3. Modifica el fichero del despliegue de redis, modificando las `xxxxxxxxxxxx` por los valores correctos: el nombre del *PersistantVolumenClaim* y el directorio de montaje en el contenedor.
-4. Crea el despliegue de redis. El despliegue de la aplicación `guestbook` y la creación de los servicios de acceso se hacen con los ficheros que ya utilizamos anteriormente: [`guestbook-deployment.yaml`](files/guestbook/guestbook-deployment.yaml), [guestbook-srv.yaml](files/guestbook/guestbook-srv.yaml) y [redis-srv.yaml](files/guestbook/redis-srv.yaml).
+4. Crea el despliegue de redis. El despliegue de la aplicación `guestbook` y la creación de los servicios de acceso se hacen con los ficheros que ya utilizamos anteriormente: [`guestbook-deployment.yaml`](files/guestbook/guestbook-deployment.yaml), [`guestbook-srv.yaml`](files/guestbook/guestbook-srv.yaml) y [`redis-srv.yaml`](files/guestbook/redis-srv.yaml).
 5. Accede a la aplicación y escribe algunos mensajes.
 6. Comprobemos la persistencia: elimina el despliegue de redis, vuelve a crearlo y vuelve acceder desde el navegador y comprueba que los mensajes no se han perdido.
 
