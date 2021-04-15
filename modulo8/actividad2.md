@@ -56,7 +56,7 @@ spec:
 ```
 Hemos usado el parámetro `command` para ejecutar el proceso, y el parámetro `args` para indicar los argumentos.
 
-**Nota**: Los valores `xxxxxxxxxxxx` tendrás qye rellenarlos durante la realización de la actividad.
+**Nota**: Los valores `xxxxxxxxxxxx` tendrás que rellenarlos durante la realización de la actividad.
 
 ## Pasos a seguir
 
