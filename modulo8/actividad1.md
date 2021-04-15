@@ -6,7 +6,7 @@
 
 Siguiendo la guía explicada en el [Ejemplo 2: Gestión dinámica de volúmenes](ejemplo2.md), vamos a crear un servidor web que permita la ejecución de scripts PHP con almacenamiento persistente.
 
-Para realizar esta actividad vamos a usar asignación dinámica de volúmenes y puedes usar los fichero del ejemplo 2 de modelos.
+Para realizar esta actividad vamos a usar asignación dinámica de volúmenes y puedes usar, como modelos, los ficheros del ejemplo 2.
 
 Realiza los siguientes pasos:
 
