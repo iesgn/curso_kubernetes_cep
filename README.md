@@ -127,6 +127,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [StatefulSets](modulo9/statefulsets.md)
 	* DaemonSets
 	* Jobs y cronjobs
+    * Horizontal Pod AutoScaler ????
         * Actividad 9.1: Creando un cluster de mysql (VOLUNTARIA)
 1. Instalación de aplicaciones en Kubernetes con Helm
     * Instalación de helm
