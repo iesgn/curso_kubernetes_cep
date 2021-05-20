@@ -124,7 +124,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
         * [Actividad 8.2: Haciendo persistente la aplicación GuestBook (OBLIGATORIA)](modulo8/actividad2.md)
         * [Actividad 8.3: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)](modulo8/actividad3.md)
 1. Otras cargas de trabajo
-    * StatefulSets
+    * [StatefulSets](modulo9/statefulsets.md)
 	* DaemonSets
 	* Jobs y cronjobs
         * Actividad 9.1: Creando un cluster de mysql (VOLUNTARIA)
