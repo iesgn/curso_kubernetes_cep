@@ -10,7 +10,6 @@ se desarrolla desde cero, sino que aprovecha todo el conocimiento que
 tenía Google con el uso de la herramienta interna
 [Borg](https://kubernetes.io/blog/2015/04/borg-predecessor-to-kubernetes/),
 de manera que cuando se hace pública la primera versión de Kubernetes,
-la [0.2](https://github.com/kubernetes/kubernetes/releases/tag/v0.2)
 ya era un software con muchas funcionalidades.
 
 Un proyecto se convierte en software libre cuando utiliza una
@@ -72,6 +71,32 @@ módulos, plugins, etc.
 El nombre del proyecto proviene de una palabra de griego antiguo que
 significa timonel y habitualmente se escribe de forma abreviada como
 k8s.
+
+## Características del software
+
+Kubernetes está desarrollado en el lenguaje [Go](https://golang.org/)
+como diversas aplicaciones de este sector. La primera versión de
+Kubernetes se publicó el 7 de junio de 2014, aunque la más antigua
+disponible en el repositorio es la
+[v0.2](https://github.com/kubernetes/kubernetes/releases/tag/v0.2), de
+septiembre de 2014.
+
+La licencia utilizada en Kubernetes es la [Apache License
+v2.0](https://www.apache.org/licenses/LICENSE-2.0.html), licencia de
+software libre permisiva, muy utilizada últimamente en proyectos de
+fundación en los que están involucrados empresas, ya que no se trata
+de una licencia copyleft, que no permitiría su inclusión en software
+que no sea libre, mientras que la licencia Apache sí lo permite en
+determinadas circunstancias.
+
+El código de Kubernetes se gestiona a través de
+[Github](https://github.com/kubernetes/kubernetes) en cuyo repositorio
+se puede ver la gran cantidad de código desarrollado en estos años
+(más de 100000 "commits") y las miles de personas que han participado
+en mayor o menor medida. La versión actual de Kubernetes es la 1.21 y
+el proyecto actualmente está publicando tres versiones nuevas cada
+año, por lo que es probable que a lo largo del 2021 se publiquen las
+versiones 1.22 y 1.23.
 
 ## El ecosistema
 
