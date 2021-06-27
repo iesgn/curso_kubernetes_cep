@@ -69,7 +69,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * Implantación de aplicaciones web en contenedores
     * Limitaciones de Docker
     * Orquestadores de contenedores
-    * El proyecto kubernetes
+    * [El proyecto kubernetes](modulo1/proyecto-kubernetes.md)
     * Arquitectura básica de kubernetes
 1. Instalación de Kubernetes
     * [Alternativas para instalación simple de k8s](modulo2/alternativas.md)
