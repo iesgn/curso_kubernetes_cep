@@ -129,7 +129,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
 1. Instalación de aplicaciones en Kubernetes con Helm
     * [Despliegue de aplicaciones completas](modulo10/helm.md   )
     * [Instalación de helm](modulo10/instalacion.md)
-    * Búsquedas de charts
+    * [Gestión de charts y despliegue de aplicaciones](modulo10/ejemplo.md)
         * Actividad 10.1: Instalación de un CMS con Helm (OBLIGATORIA)
 
 ## Agenda
