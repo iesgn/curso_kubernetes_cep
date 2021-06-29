@@ -17,6 +17,7 @@ WARNING: You should switch to "https://charts.helm.sh/stable" via:
 WARNING: helm repo add "stable" "https://charts.helm.sh/stable" --force-update
 NAME  	URL                                             
 stable	https://kubernetes-charts.storage.googleapis.com
+```
 
 Así, que actualizamos a `https://charts.helm.sh/stable`, tal como se recomienda:
 
