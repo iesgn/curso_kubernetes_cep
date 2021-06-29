@@ -6,11 +6,8 @@ Introducción a Kubernetes
 
 ## Descripción
 
-En los últimos años se ha ido extendiendo el uso de contendores como
-elementos esenciales para el uso de aplicaciones en entornos en
-producción, tanto más cuanto más variable sea la demanda, la
-frecuencia con la que se actualizan o la necesidad de que funcionen de
-forma ininterrumpida.
+En los últimos años se ha ido extendiendo el uso de contenedores como
+elementos esenciales para el uso de aplicaciones en entornos en producción, tanto más cuanto más variable sea la demanda, la frecuencia con la que se actualizan o la necesidad de que funcionen de forma ininterrumpida.
 
 Gestionar una aplicación sobre contenedores, que pueda actualizarse
 rápidamente, que sea escalable o tolerante a fallos, es una tarea
@@ -168,7 +165,7 @@ Podemos distinguir las siguientes partes en el curso:
    de módulos, iremos viendo de forma progresiva los diferentes
    elementos de kubernetes y como nos ayudan a gestionar el despliegue
    y puesta en producción de una aplicación.
-1. Finalmente veremos en el último módulo la aplicacion Helm, que es
+1. Finalmente veremos en el último módulo la aplicación Helm, que es
    un sistema de empaquetado para kubernetes
    
 En todo momento contarás con la ayuda de un tutor o tutora que te
