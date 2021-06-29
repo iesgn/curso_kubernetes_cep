@@ -130,7 +130,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Despliegue de aplicaciones completas](modulo10/helm.md   )
     * [Instalación de helm](modulo10/instalacion.md)
     * [Gestión de charts y despliegue de aplicaciones](modulo10/ejemplo.md)
-        * [[Actividad 10.1: Instalación de un CMS con Helm (OBLIGATORIA)]](modulo10/actividad1.md)
+        * [Actividad 10.1: Instalación de un CMS con Helm (OBLIGATORIA)](modulo10/actividad1.md)
 
 ## Agenda
 
