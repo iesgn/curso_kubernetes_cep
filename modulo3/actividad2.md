@@ -6,7 +6,7 @@
 
 En esta tarea vamos a profundizar en los pods multicontenedor. Como indicamos en el contenido del módulo, un pod puede estar formado por varios contenedores y por volúmenes (para permitir que los contenedores del pod puedan compartir almacenamiento). 
 
-* **Nota 1: Estudiaremos más en profundidad los volúmenes en un módulo posterior.** 
+* **Nota 1: Estudiaremos más en profundidad los volúmenes en una unidad posterior.** 
 * **Nota 2: Veremos también que los pods son efímeros, es decir, que se pierde la información cuando el pod se elimina.**
 
 La razón principal por la que los Pods pueden tener múltiples contenedores es para admitir aplicaciones auxiliares que ayudan a una aplicación primaria. Ejemplos típicos de estas aplicaciones pueden ser las que envían o recogen datos externos (por ejemplo de un repositorio) y los servidores proxy. El ayudante y las aplicaciones primarias a menudo necesitan comunicarse entre sí. Normalmente, esto se realiza a través de un sistema de archivos compartido o mediante la interfaz de red de bucle de retorno, localhost.

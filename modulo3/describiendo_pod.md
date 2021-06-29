@@ -1,10 +1,10 @@
 # Describiendo un pod
 
-Es posible crear un pod directamente (lo que se denomina utilización imperativa) mediante kubectl:
+Es posible crear un pod directamente (lo que se denomina utilización imperativa) mediante `kubectl`:
 
     kubectl run pod-nginx --image=nginx
 
-De esta forma se crea un pod con un contenedor que utiliza la imagen nginx:latest (no hemos especificado una versión) del registro que esté definido por defecto en el cluster de kubernetes, se asigna una dirección IP y se lanza en uno de los nodos del cluster. Un pod tiene otros muchos parámetros asociados, que en este caso quedarán sin definir o kubernetes asumirá los valores por defecto. Sin embargo es mucho más habitual trabajar con los objetos de kubernetes de manera declarativa, definiendo los objetos de forma detallada a través de un fichero en formato YAML. De esta forma tenemos un fichero con la definición del objeto que hemos lanzado y podemos utilizar en otro momento exactamente la misma definición o podemos ir modificándola y aplicando los cambios cuando sea conveniente. Un ejemplo podría ser el contenido del fichero [`pod.yaml`](files/pod.yaml):
+De esta forma se crea un pod con un contenedor que utiliza la imagen `nginx:latest` (no hemos especificado una versión) del registro que esté definido por defecto en el cluster de kubernetes, se asigna una dirección IP y se lanza en uno de los nodos del cluster. Un pod tiene otros muchos parámetros asociados, que en este caso quedarán sin definir o kubernetes asumirá los valores por defecto. Sin embargo es mucho más habitual trabajar con los objetos de kubernetes de manera declarativa, definiendo los objetos de forma detallada a través de un fichero en formato YAML. De esta forma tenemos un fichero con la definición del objeto que hemos lanzado y podemos utilizar en otro momento exactamente la misma definición o podemos ir modificándola y aplicando los cambios cuando sea conveniente. Un ejemplo podría ser el contenido del fichero [`pod.yaml`](files/pod.yaml):
 
 ```yaml
 apiVersion: v1 # required

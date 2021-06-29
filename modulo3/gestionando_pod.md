@@ -1,6 +1,6 @@
 # Gestionando los pods
 
-Tenemos un fichero [`pod.yaml`](files/pod.yaml) donde hemos definido un pod  de la siguiente manera:
+Tenemos un fichero [`pod.yaml`](files/pod.yaml) donde hemos definido un pod de la siguiente manera:
 
 ```yaml
 apiVersion: v1
@@ -25,7 +25,7 @@ Y podemos ver el estado en el que se encuentra y si está o no listo:
 
     kubectl get pods
 
-(Sería equivalente usar po, pod o pods)
+(Sería equivalente usar po, pod o pods).
 
 Si queremos saber en qué nodo del cluster se está ejecutando:
 
@@ -55,9 +55,9 @@ Podemos acceder a la aplicación, redirigiendo un puerto de localhost al puerto 
 
 Y accedemos al servidor web en la url http://localhost:8080.
 
-**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en kuberentes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde locashost el puerto 8080 al puerto 80 del pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
+**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en kubernetes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde localhost el puerto 8080 al puerto 80 del pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
 
-**NOTA2**: El port-forward no es igual a la redirección de puertos de docker, ya que en este caso la redirección de puertos se hace en el equipo que ejecuta kubectl, no en el equipo que ejecuta los pods o los contenedores.
+**NOTA2**: El `port-forward` no es igual a la redirección de puertos de docker, ya que en este caso la redirección de puertos se hace en el equipo que ejecuta `kubectl`, no en el equipo que ejecuta los pods o los contenedores.
 
 Para obtener las etiquetas de los pods que hemos creado:
 
