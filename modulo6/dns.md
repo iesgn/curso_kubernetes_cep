@@ -25,7 +25,7 @@ Para comprobar el servidor DNS de nuestro cluster y de que podemos resolver los 
     search default.svc.cluster.local svc.cluster.local cluster.local
 
 * El servidor DNS (componente coreDNS) tiene asignado la IP del cluster 10.96.0.10.
-* Podemos utilizar el nombre corto del servicio, porque buscará el nombre del host totalmente cualificado usando los dominios indicados en el parámetro `search`. Como vemos el primer nombre de dominio es que se crea con los servicios: `default.svc.cluster.local` (recuerda que el *namespace* que estamos usando es `default`).
+* Podemos utilizar el nombre corto del servicio, porque buscará el nombre del host totalmente cualificado usando los dominios indicados en el parámetro `search`. Como vemos el primer nombre de dominio es el que se crea con los servicios: `default.svc.cluster.local` (recuerda que el *namespace* que estamos usando es `default`).
 
 Vamos a comprobar que realmente se han creado dos registros A para cad uno de los servicio, haciendo consultas DNS:
 
@@ -52,7 +52,7 @@ También podemos comprobar que usando el nombre podemos acceder al servicio:
     saving to 'index.html'
     ...
     
-Podemos concluir, que cuando necesitemos desde alguna aplicación desplegada en nuestro cluster acceder a otro servicio ofrecido por otro despliegue, **utilizaremos el nombre que hemos asignado a su service de acceso**. Por ejemplo si desplegamos un WordPress y un servidor de base de datos mariadb, y creamos dos servicios: uno de tipo NodePort para acceder desde el exterior al CMS, y otro, que llamamos `mariadb` de tipo ClusterIP para acceder ala base de datos, cuando tengamos que configurar el WordPress para indicar la dirección de la base de datos, pondremos `mariadb`.
+Podemos concluir, que cuando necesitemos desde alguna aplicación desplegada en nuestro cluster acceder a otro servicio ofrecido por otro despliegue, **utilizaremos el nombre que hemos asignado a su servicio de acceso**. Por ejemplo si desplegamos un WordPress y un servidor de base de datos mariadb, y creamos dos servicios: uno de tipo NodePort para acceder desde el exterior al CMS, y otro, que llamamos `mariadb` de tipo ClusterIP para acceder ala base de datos, cuando tengamos que configurar el WordPress para indicar la dirección de la base de datos, pondremos `mariadb`.
 
 
 
