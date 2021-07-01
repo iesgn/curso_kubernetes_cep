@@ -92,14 +92,14 @@ Indica un host del tipo *www.tunombre.org*, indica el nombre del servicio que cr
 
 Realiza los siguientes pasos:
 
-1. Activa el addon ingress en minikube para instalar el ingress controller.
+1. Activa el *addon* ingress en minikube para instalar el ingress controller.
 2. Crea La definición del recurso ingress con los datos sugeridos, y crea el recurso ingress.
 3. Modifica el fichero `/etc/hosts` de tu ordenador para configurar la resolución estática.
 3. Accede a la aplicación usando el nombre que has asignado.
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo donde se vea el acceso desde un navegador web a la aplicación cuando sólo tenemos el servicio para acceder a la aplicación (Tiene que aparecer el mensaje de error).
+1. Pantallazo donde se vea el acceso desde un navegador web a la aplicación cuando sólo tenemos el servicio para acceder a la aplicación (tiene que aparecer el mensaje de error).
 2. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando la ip del nodo master y el puerto asignado al servicio.
 5. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando el nombre que hemos configurado en el recurso ingress.
 
