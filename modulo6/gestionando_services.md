@@ -60,7 +60,7 @@ Y ya podemos acceder desde un navegador web:
 
 ## Servicio ClusterIP
 
-En esta ocasión vamos a desplegar una base de datos MariaDB, es esta ocasión no vamos a necesitar acceder a la base de datos desde el exterior, pero necesitamos que los pods de algún despliegue acceda a ella. Por lo tanto vamos a crear un servicio de tipo ClusterIP.
+En esta ocasión vamos a desplegar una base de datos MariaDB, en este caso, no vamos a necesitar acceder a la base de datos desde el exterior, pero necesitamos que los pods de otro despliegue puedan acceder a ella. Por lo tanto vamos a crear un servicio de tipo ClusterIP.
 
 Para el despliegue de MariaDB vamos a usar el fichero [`mariadb-deployment.yaml`](files/mariadb-deployment.yaml). Puedes comprobar que en la definición del contenedor hemos añadido la sección `env` que nos permite establecer variables de entorno para configurar el contenedor (los estudiaremos en el siguiente módulo).
 
