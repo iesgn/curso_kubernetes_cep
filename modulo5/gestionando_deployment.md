@@ -1,10 +1,10 @@
 # Gestionando los Deployment
 
-En esta unidad vamos a trabajar con el recurso Deployment, vamos a crear un despliegue de un servidor nginx, usando el ficherto yaml que hemos visto en la unidad anterior: [`nginx-deployment.yaml`](files/nginx-deployment.yaml).
+En esta unidad vamos a trabajar con el recurso Deployment, vamos a crear un despliegue de un servidor nginx, usando el fichero yaml que hemos visto en la unidad anterior: [`nginx-deployment.yaml`](files/nginx-deployment.yaml).
 
 ## Creación del Deployment
 
-Cuando creamos un Deployment, se crea un ReplicaSet asociado, que creará y controlorá los pods que hayamos indicado.
+Cuando creamos un Deployment, se crea un ReplicaSet asociado, que creará y controlará los pods que hayamos indicado.
 
     kubectl apply -f nginx-deployment.yaml
     kubectl get deploy,rs,pod
@@ -27,7 +27,7 @@ Si queremos acceder a la aplicación, podemos utilizar la opción de `port-forwa
 
     kubectl port-forward deployment deployment-nginx 8080:80
 
-Si queremos ver los logs generados en los pods de un desployment:
+Si queremos ver los logs generados en los pods de un Deployment:
 
     kubectl logs deployment deployment-nginx
 

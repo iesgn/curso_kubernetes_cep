@@ -1,6 +1,6 @@
 # Describiendo un Deployment
 
-Aunque podemos crear un *deployment* de forma imperativa utilizando un comando como el siguiente (se podrían indicar muchos más parámetros de configuración en la siguiente instrucción que podemos consultar en la documentación):
+Aunque podemos crear un *deployment* de forma imperativa utilizando un comando como el siguiente (se podrían indicar muchos más parámetros de configuración que podemos consultar en la documentación):
 
     kubectl create deployment nginx --image nginx
 

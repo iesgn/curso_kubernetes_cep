@@ -12,7 +12,7 @@ En esta actividad vamos a crear un Deployment de una aplicación web, sigamos lo
     * La imagen que debes desplegar es `iesgn/test_web:latest`.
     * Indica de manera adecuada una etiqueta en la especificación del pod que vas a definir que coincida con el *selector* del Deployment.
 2. Crea el Deployment.
-3. Comprueba que los recursos que se han creado: Deployment, ReplicaSet y Pods.
+3. Comprueba los recursos que se han creado: Deployment, ReplicaSet y Pods.
 4. Obtén información detallada del Deployment creado.
 5. Crea un una redirección utilizando el `port-forward` para acceder a la aplicación, sabiendo que la aplicación ofrece el servicio en el puerto 80, y accede a la aplicación con un navegador web.
 6. Accede  a los logs del despliegue para comprobar el acceso que has hecho en el punto anterior.

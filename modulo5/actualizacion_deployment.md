@@ -46,7 +46,7 @@ Si nos fijamos vamos a desplegar la versión 1.31 de la aplicación mediawiki, c
 
     kubectl apply -f mediawiki-deployment.yaml --record
 
-Con la opción `--record` vamos a registrar los comando que vamos a ejecutar a continuación para ir actualizando el despliegue. De esta forma al visualizar el historial de modificaciones veremos las instrucciones que han provocado cada actualización.
+Con la opción `--record` vamos a registrar las instrucciones que vamos a ejecutar a continuación para ir actualizando el despliegue. De esta forma al visualizar el historial de modificaciones veremos las instrucciones que han provocado cada actualización.
 
 Podemos comprobar los recursos que hemos creado:
 
@@ -60,7 +60,7 @@ Y si accedemos al pod con un `port-forward` comprobamos que la versión actual d
 
 ## Actualizar un Deployment
 
-A continuación queremos desplegar una versión más reciente de la mediawki. Para ello tenemos que modificar el campo `image` de nuestro Deployment, esta operación la podemos hacer de varias formas:
+A continuación queremos desplegar una versión más reciente de la mediawiki. Para ello tenemos que modificar el campo `image` de nuestro Deployment, esta operación la podemos hacer de varias formas:
 
 1. Modificando el fichero yaml y volviendo a ejecutar un `kubectl apply`.
 2. Ejecutando la siguiente instrucción:
