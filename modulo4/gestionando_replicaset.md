@@ -25,7 +25,7 @@ Y podemos ver los recursos que se han creado con:
 
 Observamos que querámos crear 2 replicas del pod, y efectivamente se han creado.
 
-Si queremos obtener información detalla del recurso ReplicaSet que hemos creado:
+Si queremos obtener información detallada del recurso ReplicaSet que hemos creado:
 
     kubectl describe rs replicaset-nginx
 
@@ -47,7 +47,7 @@ Otra forma de hacerlo sería cambiando el parámetro `replicas` de fichero yaml,
 
     kubectl apply -f nginx-rs.yaml
 
-La escabilidad puede ser para aumentar el número de pods o para reducirla:
+La escalabilidad puede ser para aumentar el número de pods o para reducirla:
 
     kubectl scale rs replicaset-nginx --replicas=1
 
