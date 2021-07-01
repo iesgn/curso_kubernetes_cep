@@ -13,14 +13,14 @@ stable	https://charts.helm.sh/stable
 Podemos buscar más repositorios de charts buscando en la página [Artifact Hub](https://artifacthub.io/), por ejemplo podemos añadir el repositorio de charts de Bitnami de la siguiente manera:
 
 ```bash
-$ helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add bitnami https://charts.bitnami.com/bitnami
 "bitnami" has been added to your repositories
 ```
 
 Y podemos comprobar que hemos añadido un nuevo repositorio:
 
 ```bash
-$ helm repo list
+helm repo list
 NAME   	URL                               
 stable 	https://charts.helm.sh/stable     
 bitnami	https://charts.bitnami.com/bitnami
@@ -29,7 +29,7 @@ bitnami	https://charts.bitnami.com/bitnami
 Si queremos actualizar la lista de charts ofrecidas por los repositorios podemos actualizarlos:
 
 ```bash
-$ helm repo update
+helm repo update
 Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "stable" chart repository
 ...Successfully got an update from the "bitnami" chart repository
@@ -41,7 +41,7 @@ Update Complete. ⎈Happy Helming!⎈
 Como hemos comentado anteriormente los charts lo podemos buscar en la página [Artifact Hub](https://artifacthub.io/), o podemos buscarlos desde la línea de comandos, por ejemplo si queremos buscar un chart relacionado con `nginx`:
 
 ```bash
-$ helm search repo nginx
+helm search repo nginx
 NAME                            	CHART VERSION	APP VERSION	DESCRIPTION                                       
 bitnami/nginx                   	9.3.0        	1.21.0     	Chart for the nginx server                        
 bitnami/nginx-ingress-controller	7.6.12       	0.47.0     	Chart for the nginx Ingress controller            
@@ -57,7 +57,7 @@ Todos los ficheros yaml que forman parte de un chart están parametrizados, es d
 ¿Y cómo sabemos los parámetros que tiene definido cada chart y sus valores por defecto? Estudiando la documentación del char en [Artifact Hub](https://artifacthub.io/), en concreto para el chart con el que estamos trabajando, accediendo a la url [https://artifacthub.io/packages/helm/bitnami/nginx](https://artifacthub.io/packages/helm/bitnami/nginx). También podemos obtener esta información ejecutando el siguiente comando:
 
 ```bash
-$ helm show all bitnami/nginx
+helm show all bitnami/nginx
 ```
 
 ## Instalación del chart
@@ -65,7 +65,7 @@ $ helm show all bitnami/nginx
 Para instalar el chart ejecutamos la siguiente instrucción:
 
 ```bash
-$ helm install serverweb bitnami/nginx --set service.type=NodePort
+helm install serverweb bitnami/nginx --set service.type=NodePort
 ```
 
 Como vemos hemos nombrado el chart desplegado (`serverweb`), indicado el chart (`bitnami/nginx`) y, en este caso, hemos redefinido el parámetro `service.type`.
@@ -94,13 +94,13 @@ Si queremos acceder a la aplicación desde el exterior, debemos ejecutar las tre
 Siempre podemos volver a ver esta información ejecutando la siguiente instrucción:
 
 ```bash
-$ helm status serverweb
+helm status serverweb
 ```
 
 Podemos comprobar los despliegues que hemos realizado con helm, ejecutando:
 
 ```bash
-$ helm ls
+helm ls
 NAME     	NAMESPACE	REVISION	UPDATED                                 	STATUS  	CHART      	APP VERSION
 serverweb	default  	1       	2021-06-29 19:11:15.975016119 +0200 CEST	deployed	nginx-9.3.0	1.21.0   
 ```
@@ -108,7 +108,7 @@ serverweb	default  	1       	2021-06-29 19:11:15.975016119 +0200 CEST	deployed	n
 Y podemos comprobar también los recursos que se han creado en el cluster:
 
 ```bash
-$ kubectl get all
+kubectl get all
 NAME                                   READY   STATUS    RESTARTS   AGE
 pod/serverweb-nginx-7b7f75d476-kxq8j   1/1     Running   0          56s
 
@@ -126,7 +126,7 @@ replicaset.apps/serverweb-nginx-7b7f75d476   1         1         1       56s
 Por último, para desinstalar una aplicación completa, ejecutamos:
 
 ```bash
-$ helm delete serverweb
+helm delete serverweb
 release "serverweb" uninstalled
 ```
 
