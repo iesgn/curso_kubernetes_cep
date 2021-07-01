@@ -4,7 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-En un ejemplo de módulo anterior: [Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas](../modulo6/temperaturas.md) habíamos desplegado una aplicación formado por dos microservicios que nos permitía visualizar las temperaturas de municipios.
+En un ejemplo del módulo anterior: [Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas](../modulo6/temperaturas.md) habíamos desplegado una aplicación formado por dos microservicios que nos permitía visualizar las temperaturas de municipios.
 
 Recordamos que el componente `frontend` hace peticiones al componente `backend` utilizando el nombre `temperaturas-backend`, que es el nombre que asignamos al servicio ClusterIP para el acceso al `backend`.
 

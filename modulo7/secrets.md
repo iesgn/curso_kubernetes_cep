@@ -1,6 +1,6 @@
 # Despliegues parametrizados: Secrets
 
-Cuando en un variable de entorno indicamos una información sensible, como por ejemplo una contraseña, una clave ssh,... solemos utilizar un nuevo recurso de kubernete que son los **secret**.
+Cuando en un variable de entorno indicamos una información sensible, como por ejemplo una contraseña, una clave ssh,... solemos utilizar un nuevo recurso de kubernetes llamado **secret**.
 
 Los [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) nos permiten guardar información sensible que será **codificada**. 
 
@@ -31,4 +31,4 @@ Veamos a continuación como quedaría un despliegue que usa el valor de un Secre
                   name: mariadb
                   key: password
 ```
-Donde observamos como al indicar las variables de entorno (sección `env`) seguimos indicado el nombre (`name`) pero el valor se referencia a un valor de un Secret (`valueFrom: - secretKeyRef:`) y se indica el nombre del Secret (`name`) y la clave que hemos indicado (`key`).
+Donde observamos como al indicar las variables de entorno (sección `env`) seguimos indicado el nombre (`name`) pero el valor se indica con un valor de un Secret (`valueFrom: - secretKeyRef:`), indicando el nombre del Secret (`name`) y la clave correspondiente. (`key`).
