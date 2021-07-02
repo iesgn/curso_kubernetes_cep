@@ -67,7 +67,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Docker](modulo1/docker.md)
     * [Orquestadores de contenedores](modulo1/orquestadores.md)
     * [El proyecto kubernetes](modulo1/proyecto-kubernetes.md)
-    * Arquitectura básica de kubernetes
+    * [Arquitectura básica de kubernetes](modulo1/arquitectura.md)
 1. Instalación de Kubernetes
     * [Alternativas para instalación simple de k8s](modulo2/alternativas.md)
     * Instalación de minikube
