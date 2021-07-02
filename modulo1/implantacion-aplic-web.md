@@ -55,13 +55,15 @@ vamos a ir viendo paso a paso la forma de ir incluyendo diferentes
 componentes auxiliares y cómo va a ir cambiando la arquitectura de los
 sistemas que proporcionan el servicio.
 
-### Punto de partida
+### Paso 1. Punto de partida
 
 Supongamos que nuestra organización proporciona tres aplicaciones web
 diferentes que son accesibles a través de las URL:
 
 https://example.com/app1
+
 https://example.com/app2
+
 https://example.com/app3
 
 Estas aplicaciones pueden estar desarrolladas en el mismo lenguaje o
@@ -91,3 +93,136 @@ recursos.
 
 <img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso2.png" alt="paso2" />
 
+### Paso 3. Servidores de aplicaciones en equipos separados
+
+El coste computacional mayor en una aplicacioń web suele recaer en los
+servidores de aplicaciones, que son los que ejecutan código complejo,
+mientras que el servidor web se limita a servir el contenido generado
+por estos servidores de aplicaciones o los ficheros estáticos del
+sitio web. Al servir tres aplicaciones web diferentes desde el mismo
+equipo, podemos tener importantes interacciones entre ellas y que un
+aumento de uso de una aplicación, repercuta negativamente en las
+otras. Es por esto, por lo que se puede separar estos servidores de
+aplicación en equipos dedicados para cada una de ellas. La función del
+servidor web en este caso, se acerca más a la de un proxy inverso, que
+pasa la petición web a un equipo interno (el servidor de
+aplicaciones).
+
+<img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso3.png" alt="paso3" />
+
+### Paso 4. Caché SQL
+
+Los servidores de aplicaciones consultan continuamente a los
+servidores de bases de datos y cada consulta conlleva un importante
+coste computacional y una ralentización de la respuesta. Si la misma
+consulta ya se ha realizado antes, se puede acelerar mucho la
+velocidad de respuesta con menor coste computacional utilizando un
+servicio de caché SQL, de manera que los servidores de aplicaciones se
+configuran para consultar al servidor caché, que servirá directamente
+la respuesta si ya lo ha hecho anteriormente, o consultará al servidor
+de bases de datos en caso necesario. Memcached o redis son dos
+opciones muy utilizadas como caché SQL.
+
+<img
+src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso4.png"
+alt="paso4" />
+
+### Paso 5. Caché HTTP
+
+Al igual que se puede cachear la respuesta del servidor de bases de
+datos, se puede hacer lo mismo con la del servidor de aplicaciones o
+el servidor web. Dependiendo del servidor de aplicaciones, se puede
+ubicar este componente delante del servidor web o entre éste y el
+servidor de aplicaciones. Dicho de otro modo, podemos cachear http o
+algún otro protocolo como CGI, WSGI, etc. Un software muy conocido de
+caché http es varnish.
+
+<img
+src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso5.png"
+alt="paso5" />
+
+### Paso 6. Varios servidores de aplicaciones
+
+Si la demanda de alguna de las aplicaciones varía de forma importante,
+se puede utilizar escalado horizontal, aumentando el número de nodos
+de estos servidores de aplicaciones a la demanda de cada momento. Esto
+conlleva dos importantes modificaciones, el almacenamiento entre los
+servidores de aplicación de la misma aplicación tiene que estar
+distribuido de alguna forma que garantice el uso concurrente y se deben
+repartir las peticiones a los diferentes servidores de aplicación a
+través de un balanceador de carga.
+
+<img
+src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso6.png"
+alt="paso6" />
+
+### Paso 7. Alta disponibilidad en el resto de componentes
+
+No solo se puede escalar horizontalmente los servidores de
+aplicaciones, sino que si queremos ofrecer realmente alta
+disponibilidad en todos los niveles, debemos crear una arquitectura en
+la que la disponibilidad nunca depende de uno solo nodo y el sistema
+pueda responder siempre ante incidencias puntuales en cualquier nivel.
+
+<img
+src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso7.png"
+alt="paso7" />
+
+
+### Paso 8. Microservicios y aplicaciones "tradicionales"
+
+Una de las opciones que se considera más adecuada hoy en día para el
+desarrollo y puesta en producción de aplicaciones web son los
+microservicios, en la que los propios componentes de la aplicación se
+separan en múltiples componentes que se ejecutan en nodos
+independientes (típicamente contenedores) y se comunican unos con
+otros a través de servicios en red que ofrecen al resto. Estos
+microservicios no solo incluirían de forma independiente los
+componentes que hemos explicado hasta ahora, sino que principalmente
+se refiere a la separación de los componentes internos de la
+aplicación en diferentes microservicios.
+
+<img
+src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso8.png"
+alt="paso8" />
+
+### Paso 9. Escalabilidad en los microservicios
+
+Al ofrecer microservicios no podemos tener dependencia de un solo
+nodo, por lo que al igual que en los pasos anteriores, se debe ofrecer
+la posiblidad de escalar cualquier componente a la demanda y que el
+sistema globalmente pueda responder ante cualquier error puntual.
+
+<img
+src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso9.png"
+alt="paso9" />
+
+### Paso 10. Microservicios en todas las aplicaciones
+
+En lugar de utilizar microservicios en una aplicación, podríamos
+utilizarlos en todas, pero manteniendo los componentes auxiliares
+gestionados aparte.
+
+<img
+src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso10.png"
+alt="paso10" />
+
+### Paso 11. Todo en microservicios
+
+O podríamos tener todo definido internamente en microservicios, tanto
+los componentes de cada aplicación, como los componentes auxiliares.
+
+<img
+src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso11.png"
+alt="paso11" />
+
+## Conclusión
+
+Esto no son más que un conjunto de componentes y una explicación muy
+rápida de ellos, el orden y la ubicación de ellos es variable en
+función del caso de uso, pero en cualquier caso queríamos presentarlos
+aquí para tener una visión global de hacia dónde vamos. Algo que
+claramente podemos ver es que la gestión de este tipo de aplicaciones
+se convierte pronto en algo muy complejo, por lo que necesitamos
+apoyarnos en algún software que controle y gestione de forma adecuada
+estos sistemas tan complejos.
