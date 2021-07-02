@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="docker.svg"
+   inkscape:export-filename="docker.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="549.3289"
+     inkscape:cy="398.37559"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1136"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 201.75641,122.89508 140.7174,90.06983"
+       id="path1034"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect833-62" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 140.63398,103.16659 -0.2007,31.50766"
+       id="path1032"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect833-6" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 171.08555,166.71654 140.43328,134.67425"
+       id="path1038"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect833-1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 140.7174,90.069831 0,-31.734513"
+       id="path978"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-end="#rect833" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#ffe7af;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001"
+       id="rect833"
+       width="58.248623"
+       height="26.193514"
+       x="111.59309"
+       y="32.141804" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#ffe7af;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001"
+       id="rect833-3"
+       width="58.248623"
+       height="26.193514"
+       x="26.200481"
+       y="76.973076" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#ffe7af;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001"
+       id="rect833-6"
+       width="58.248623"
+       height="26.193514"
+       x="111.59309"
+       y="76.973076" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#ffe7af;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001"
+       id="rect833-7"
+       width="58.248623"
+       height="26.193514"
+       x="196.9857"
+       y="76.973076" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#ffe7af;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001"
+       id="rect833-5"
+       width="58.248623"
+       height="26.193514"
+       x="26.200481"
+       y="122.89508" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#beff55;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001000000000008"
+       id="rect833-35"
+       width="58.248623"
+       height="26.193514"
+       x="111.59309"
+       y="122.89508" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#ffe7af;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001"
+       id="rect833-62"
+       width="58.248623"
+       height="26.193514"
+       x="196.9857"
+       y="122.89508" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#beff55;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001000000000008"
+       id="rect833-9"
+       width="58.248623"
+       height="26.193514"
+       x="68.696335"
+       y="166.71654" />
+    <rect
+       style="color:#000000;overflow:visible;fill:#beff55;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-dasharray:4.52001, 4.52001000000000008"
+       id="rect833-1"
+       width="58.248623"
+       height="26.193514"
+       x="154.48985"
+       y="166.71654" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="121.94076"
+       y="46.698421"
+       id="text942"><tspan
+         sodipodi:role="line"
+         id="tspan940"
+         x="121.94076"
+         y="46.698421"
+         style="stroke-width:0.264583px">docker engine</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="41.589188"
+       y="92.04258"
+       id="text946"><tspan
+         sodipodi:role="line"
+         id="tspan944"
+         x="41.589188"
+         y="92.04258"
+         style="stroke-width:0.264583px">docker CLI</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="33.050945"
+       y="137.96458"
+       id="text958"><tspan
+         sodipodi:role="line"
+         id="tspan956"
+         x="33.050945"
+         y="137.96458"
+         style="stroke-width:0.264583px">Almacenamiento</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="126.64202"
+       y="137.96458"
+       id="text962"><tspan
+         sodipodi:role="line"
+         id="tspan960"
+         x="126.64202"
+         y="137.96458"
+         style="stroke-width:0.264583px">containerd</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="218.65569"
+       y="137.96458"
+       id="text966"><tspan
+         sodipodi:role="line"
+         id="tspan964"
+         x="218.65569"
+         y="137.96458"
+         style="stroke-width:0.264583px">redes</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.434731"
+       y="181.73953"
+       id="text970"><tspan
+         sodipodi:role="line"
+         id="tspan968"
+         x="91.434731"
+         y="181.73953"
+         style="stroke-width:0.264583px">runC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="166.34906"
+       y="181.89198"
+       id="text974"><tspan
+         sodipodi:role="line"
+         id="tspan972"
+         x="166.34906"
+         y="181.89198"
+         style="stroke-width:0.264583px">Instantáneas</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 80.270911,76.973076 115.77128,58.335318"
+       id="path976"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect833-3"
+       inkscape:connection-end="#rect833" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 201.16389,76.973076 165.66352,58.335318"
+       id="path980"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect833-7"
+       inkscape:connection-end="#rect833" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="204.94463"
+       y="92.04258"
+       id="text950"><tspan
+         sodipodi:role="line"
+         id="tspan948"
+         x="204.94463"
+         y="92.04258"
+         style="stroke-width:0.264583px">docker REsT API</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="122.44848"
+       y="92.04258"
+       id="text954"><tspan
+         sodipodi:role="line"
+         id="tspan952"
+         x="122.44848"
+         y="92.04258"
+         style="stroke-width:0.264583px">docker server</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 116.3638,103.16659 79.678394,122.89508"
+       id="path1030"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect833-6"
+       inkscape:connection-end="#rect833-5" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 127.897,149.08859 -17.25596,17.62795"
+       id="path1036"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect833-35"
+       inkscape:connection-end="#rect833-9" />
+  </g>
+</svg>
