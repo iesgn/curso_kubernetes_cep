@@ -216,6 +216,20 @@ los componentes de cada aplicación, como los componentes auxiliares.
 src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso11.png"
 alt="paso11" />
 
+## Contenedores
+
+En parte por lo que hemos explicado aquí, y en parte por las ventajas
+que proporciona en el desarrollo de software y en el rápido
+despliegue, muchos de los componentes que hemos presentado se
+ejecutan no sobre máquinas virtuales o físicas, sino que lo hacen
+sobre contenedores de aplicaciones tipo docker (hoy en día se plantean
+otras alternativas como podman o containerd, pero no vamos a entrar en
+esa explicación). Docker es capaz de gestionar esos contenedores de
+forma ágil y rápida, pero no tiene funcionalidad para ejecutar
+escenarios tan complejos como los anteriores, que además se
+ejecutarían lógicamente en diferentes nodos físicos o virtuales (que a
+su vez ejecutarían docker para los componentes de la aplicación).
+
 ## Conclusión
 
 Esto no son más que un conjunto de componentes y una explicación muy
