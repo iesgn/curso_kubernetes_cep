@@ -26,7 +26,7 @@ conseguir que una parte importante del sector se sumase al proyecto,
 Google tomó la decisión de desvincularse del mismo y ceder el control
 a la [Cloud Native Compute Foundation (CNCF)](https://www.cncf.io/),
 por lo que Kubernetes es un proyecto de software libre de fundación,
-en la que se admiten contribuciones de forma abierta y las reglas de
+en el que se admiten contribuciones de forma abierta y donde las reglas de
 la gobernanza recaen sobre los [miembros de la
 fundación](https://www.cncf.io/about/members/), normalmente un
 conjunto amplio de grandes empresas del sector. Es decir, aunque hoy
@@ -50,8 +50,8 @@ importantes de Kubernetes, podríamos decir:
 * Permite limitar los recursos a utilizar
 
 Kubernetes está centrado en la puesta en **producción** de
-contenedores y por tanto indicada su gestión para administradores de
-sistemas y personal de equipos de operaciones. Por otra parte, afecta
+contenedores y por su gestión es indicada para administradores de
+sistemas y personal de equipos de operaciones. Por otra parte, afecta también
 a los desarrolladores, ya que las aplicaciones deben adaptarse para
 poder desplegarse en kubernetes.
 

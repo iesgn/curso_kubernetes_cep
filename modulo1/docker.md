@@ -1,15 +1,14 @@
 # Docker
 
 Docker es una empresa ([Docker Inc.](https://www.docker.com/)) que
-desarrolla un software con el mismo nombre, de forma más concreta es
-el denominado ([docker
+desarrolla un software con el mismo nombre, de forma más concreta el software denominado ([docker
 engine](https://www.docker.com/products/container-runtime)), que ha
 supuesto una revolución en el desarrollo de software, muy ligado al
 uso de contenedores de aplicaciones, a las aplicaciones web y al
 desarrollo ágil.
 
 Docker permite gestionar contenedores a alto nivel, proporcionando
-todas las capas y funcionalidad adicional y lo más importante de todo
+todas las capas y funcionalidad adicional y, lo más importante de todo,
 es que proporciona un nuevo paradigma en la forma de distribuir las
 aplicaciones, ya que se crean imágenes en contenedores que se
 distribuyen, de manera que el contenedor que se ha desarrollado es
@@ -48,8 +47,7 @@ Los cambios más significativos que han ocurrido en docker se enumeran
 a continuación:
 
 * [Moby](https://github.com/moby/moby) Docker engine se desarrolla
-  ahora como proyecto de software libre independiente de Docker Inc. y
-  se denomina Moby. De este proyecto se surten las distribuciones de
+  ahora como proyecto de software libre independiente de Docker Inc. denominándose Moby. De este proyecto se surten las distribuciones de
   linux para desarrollar los paquetes docker.io
 
 * [Docker Engine](https://www.docker.com/products/container-runtime)
@@ -68,8 +66,10 @@ a continuación:
 Docker (docker engine) gestiona completamente la ejecución de un
 contenedor en un determinado nodo a partir de una imagen, pero no
 proporciona toda la funcionalidad que necesitamos para ejecutar
-aplicaciones en entornos en producción. Existen diferentes preguntas
-que nos podemos hacer acerca de esto, como las siguientes:
+aplicaciones en entornos en producción. 
+
+Existen diferentes preguntas
+que nos podemos hacer acerca de esto :
 
 * ¿Qué hacemos con los cambios entre versiones?
 * ¿Cómo hacemos los cambios en producción?
@@ -83,7 +83,7 @@ contenedor?
 * ¿Es posible mover la carga entre diferentes nodos?
 
 Las respuestas a estas preguntas no pueden venir de docker engine, ya
-que no es un software desarrollado para eso, sino de algún software
+que no es un software desarrollado para eso, tiene que venir de algún software
 que pueda utilizar docker o parte de él y que sea capaz de comunicar
 múltiples nodos para proporcionar de forma coordinada estas
 funcionalidades. Ese software se conoce de forma genérica como

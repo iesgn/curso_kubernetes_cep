@@ -9,10 +9,10 @@ Windows](https://kubernetes.io/docs/setup/production-environment/windows/intro-w
 la situación normal es que se trate de un cluster de nodos linux. No
 es necesario que todos los nodos tengan la misma versión y ni siquiera
 que sean la misma distribución, aunque en muchos casos sí lo sea por
-simplicidad en el despliegue y mantenmiento.
+simplicidad en el despliegue y mantenimiento.
 
 Los nodos del clúster pueden ser máquinas físicas o virtuales, pero
-quizás lo más habitual es que se trate de instancias de nube de
+quizás lo más habitual es que se traten de instancias de nube de
 infraestructura, es decir, máquinas virtuales ejecutándose en algún
 proveedor de IaaS (AWS, GCP, OpenStack, etc.)
 
@@ -62,8 +62,7 @@ estos complementos son:
 * **Web UI** Interfaz web para el manejo de k8s
 * **Container Resource Monitoring** Recoge métricas de forma
 centralizada. Múltiples opciones: [prometheus](https://prometheus.io/), [sysdig](https://sysdig.com/)
-* **Cluster-level Logging** Almacena y gestiona los logs de los
-contenedores
+* **Cluster-level Logging** Almacena y gestiona los logs de los contenedores
 
 ## Esquema de nodos y componentes
 
