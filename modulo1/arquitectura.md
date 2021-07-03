@@ -52,7 +52,7 @@ interactúan con el proveedor de nube:
 ## Complementos (addons)
 
 Los elementos anteriores forman la estructura básica de k8s, pero es
-muy habitual que se proporcione funcionalidad adicionar a través de
+muy habitual que se proporcione funcionalidad adicional a través de
 complementos de k8s, que en muchas ocasiones se ejecutan a su vez como
 contenedores y son gestionados por el propio kubernetes. Algunos de
 estos complementos son:
@@ -61,10 +61,19 @@ estos complementos son:
   k8s. Normalmente a través de [CoreDNS](https://coredns.io/)
 * **Web UI** Interfaz web para el manejo de k8s
 * **Container Resource Monitoring** Recoge métricas de forma
-centralizada. Múltiples opciones: prometheus, sysdig
-** **Cluster-level Logging** Almacena y gestiona los logs de los
+centralizada. Múltiples opciones: [prometheus](https://prometheus.io/), [sysdig](https://sysdig.com/)
+* **Cluster-level Logging** Almacena y gestiona los logs de los
 contenedores
 
 ## Esquema de nodos y componentes
+
+Se crea un cluster de k8s en los que algunos nodos actúan como master
+(normalmente se crea un conjunto impar de nodos master que
+proporcionen alta disponibilidad) y el resto actúa como worker en los
+que se ejecutan los contenedores de las aplicaciones. Los nodos se
+comunican entre sí a través de una red que proporciona la capa de
+infraestructura y se crea una red para la comunicación de los
+contenedores, que suele ser una red de tipo
+[overlay](https://en.wikipedia.org/wiki/Overlay_network).
 
 <img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/arquitectura.png" alt="arquitectura" />
