@@ -2,13 +2,16 @@
 
 El protocolo http, o su extensión https, ha ido convirtiéndose poco a
 poco en el "superprotocolo" de Internet y ha ido desplazando
-paulatinamente el uso de otros protocolos. De igual forma, la mayor
+paulatinamente el uso de otros protocolos. 
+
+De igual forma, la mayor
 parte del software que se consume hoy en día se podría denominar de
-forma genérica como aplicaciones web, aunque hay diferencias
-importantes sobre la forma de presentarse, ya que no es lo mismo que
-acceda a una aplicación una persona a través de un navegador, a través
+forma genérica como aplicación web, aunque hay diferencias
+importantes sobre la forma de presentarse, ya que no es lo mismo que una persona acceda a una aplicación a través de un navegador, a través
 de una aplicación móvil o que quien acceda a la aplicación sea una
-máquina. En este curso no podemos entrar en detalle sobre las
+máquina. 
+
+En este curso no podemos entrar en detalle sobre las
 características de estas aplicaciones web, pero sí en las
 características que deben tener los sistemas que las ofrecen para que
 cumplan con los requisitos esperados.
@@ -21,8 +24,10 @@ tiene son la plantilla de empleados de la empresa. En ese caso, es
 fácil determinar los recursos necesarios para que la aplicación
 funcione de forma adecuada, porque ni el uso de la aplicación se
 dispara en unos instantes, ni el número de empleados de una empresa
-varía de forma abrupta. Por otra parte, las actualizaciones se pueden
-hacer en momentos en los que el uso es mínimo y si es necesario una
+varía de forma abrupta.
+
+Por otra parte, las actualizaciones se pueden
+hacer en momentos en los que el uso es mínimo y, si es necesario una
 interrupción del servicio, se puede programar para un momento
 determinado en que tenga muy poco impacto. Las aplicaciones de este
 tipo no se suelen modificar habitualmente, sino que lo hacen de forma
@@ -37,12 +42,14 @@ tiene miles de millones de potenciales usuarios, que la pueden usar
 las 24 horas del día y cualquier día del año. Esto tiene unas
 consecuencias muy importantes, ya que es muy difícil determinar los
 recursos necesarios para prestar servicios a una demanda muy variable
-e idealmente el servicio no puede interrumpirse nunca. Pero, ¿esto
-cómo se hace?¿Es posible que el mismo sistema se ajuste a una demanda
+e idealmente, el servicio no puede interrumpirse nunca.
+
+Pero, ¿esto
+cómo se hace?. ¿Es posible que el mismo sistema se ajuste a una demanda
 que puede variar de un usuario a un millón?, ¿es posible tener un
 sistema siempre actualizado y que a la vez no se pare?, ¿cómo se
-aplican las actualizaciones de software? ¿poco a poco o con grandes
-saltos? Durante este curso, veremos que precisamente esto es lo que
+aplican las actualizaciones de software?, ¿poco a poco o con grandes
+saltos?. Durante este curso, veremos que precisamente esto es lo que
 trata de proporcionar Kubernetes.
 
 ## Componentes auxiliares de un servicio web
@@ -52,7 +59,7 @@ web, pero vamos a ver a continuación, que para poder proporcionar el
 servicio con los requisitos anteriores, debe apoyarse en un número
 importante de componentes auxiliares. En los siguientes apartados
 vamos a ir viendo paso a paso la forma de ir incluyendo diferentes
-componentes auxiliares y cómo va a ir cambiando la arquitectura de los
+componentes auxiliares y cómo esta inclusión va a ir cambiando la arquitectura de los
 sistemas que proporcionan el servicio.
 
 ### Paso 1. Punto de partida
@@ -66,16 +73,14 @@ https://example.com/app2
 
 https://example.com/app3
 
-Estas aplicaciones pueden estar desarrolladas en el mismo lenguaje o
-en uno diferente (Python, Java, PHP, etc.), pueden utilizar una base
+Estas aplicaciones pueden estar desarrolladas en el mismo lenguaje o en varios diferentes (Python, Java, PHP, etc.), pueden utilizar una base
 de datos, almacenamiento auxiliar y como se sirven a través de https,
 es necesario gestionar los certificados x509.
 
 El esquema inicial que pensaríamos para proporcionar estas tres
 aplicaciones sería una máquina (física o virtual) en la que
 instalaríamos el servidor web, los servidores de aplicaciones (php,
-java, ...), el servidor de bases de datos, etc. tal como aparece en la
-siguiente imagen:
+java, ...), el servidor de bases de datos, etc... tal y como aparece en la siguiente imagen:
 
 <img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/paso1.png" alt="paso1" />
 
@@ -96,8 +101,7 @@ recursos.
 ### Paso 3. Servidores de aplicaciones en equipos separados
 
 El coste computacional mayor en una aplicacioń web suele recaer en los
-servidores de aplicaciones, que son los que ejecutan código complejo,
-mientras que el servidor web se limita a servir el contenido generado
+servidores de aplicaciones, que son los que ejecutan código complejo, mientras que el servidor web se limita a servir el contenido generado
 por estos servidores de aplicaciones o los ficheros estáticos del
 sitio web. Al servir tres aplicaciones web diferentes desde el mismo
 equipo, podemos tener importantes interacciones entre ellas y que un
@@ -148,7 +152,7 @@ se puede utilizar escalado horizontal, aumentando el número de nodos
 de estos servidores de aplicaciones a la demanda de cada momento. Esto
 conlleva dos importantes modificaciones, el almacenamiento entre los
 servidores de aplicación de la misma aplicación tiene que estar
-distribuido de alguna forma que garantice el uso concurrente y se deben
+distribuido de forma que garantice el uso concurrente y se deben
 repartir las peticiones a los diferentes servidores de aplicación a
 través de un balanceador de carga.
 
@@ -158,10 +162,10 @@ alt="paso6" />
 
 ### Paso 7. Alta disponibilidad en el resto de componentes
 
-No solo se puede escalar horizontalmente los servidores de
+No solo se pueden escalar horizontalmente los servidores de
 aplicaciones, sino que si queremos ofrecer realmente alta
 disponibilidad en todos los niveles, debemos crear una arquitectura en
-la que la disponibilidad nunca depende de uno solo nodo y el sistema
+la que la disponibilidad nunca dependa de uno solo nodo y el sistema
 pueda responder siempre ante incidencias puntuales en cualquier nivel.
 
 <img
@@ -172,11 +176,12 @@ alt="paso7" />
 ### Paso 8. Microservicios y aplicaciones "tradicionales"
 
 Una de las opciones que se considera más adecuada hoy en día para el
-desarrollo y puesta en producción de aplicaciones web son los
-microservicios, en la que los propios componentes de la aplicación se
+desarrollo y puesta en producción de aplicaciones web es la utilización de microservicios. Con este enfoque los propios componentes de la aplicación se
 separan en múltiples componentes que se ejecutan en nodos
 independientes (típicamente contenedores) y se comunican unos con
-otros a través de servicios en red que ofrecen al resto. Estos
+otros a través de servicios en red que ofrecen al resto. 
+
+Estos
 microservicios no solo incluirían de forma independiente los
 componentes que hemos explicado hasta ahora, sino que principalmente
 se refiere a la separación de los componentes internos de la
