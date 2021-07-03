@@ -70,7 +70,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Arquitectura básica de kubernetes](modulo1/arquitectura.md)
 1. Instalación de Kubernetes
     * [Alternativas para instalación simple de k8s](modulo2/alternativas.md)
-    * Instalación de minikube
+    * [Instalación de minikube](modulo2/instalacion-minikube.md)
     * Instalación y configuración de kubectl
     * Despliegues de aplicaciones en Kubernetes
 1. Contenedores en kubernetes: Pods
