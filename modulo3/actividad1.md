@@ -4,7 +4,9 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-Vamos a crear nuestro primer pod. Vamos a desplegar una imagen que nos ofrece un servidor web con una página estática. Para ello realiza los siguientes pasos:
+Vamos a crear nuestro primer pod, y para ellos vamos a desplegar una
+imagen que nos ofrece un servidor web con una página estática. Para
+ello realiza los siguientes pasos:
 
 1. Crea un fichero yaml con la descripción del recurso pod, teniendo en cuenta los siguientes aspectos:
     * Indica nombres distintos para el pod y para el contenedor.
@@ -23,17 +25,17 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 1. Pantallazo del fichero yaml que has creado con la definición del pod.
 2. Pantallazo donde se comprueba que el pod ha sido creado.
 3. Pantallazo donde se ve la información detallada del pod.
-4. Pantallazo donde se ve el fichero `index.html` del documentRoot.
+4. Pantallazo donde se ve el fichero `index.html` del DocumentRoot.
 5. Pantallazo del navegador accediendo a la aplicación con el `port-forward`.
 6. Pantallazo donde se ve los logs de acceso del pod.
 
 ## RECURSOS
 
-* Conexión a internet
+* Conexión a Internet
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
-Si
+Sí
 
 ## ¿ES UNA ACTIVIDAD INDIVIDUAL O DE GRUPO?
 
@@ -41,11 +43,11 @@ Individual
 
 ## ¿ES UNA ACTIVIDAD CALIFICABLE?
 
-Si
+Sí
 
-### ¿Tiene que ser calificada por el tutor/a? (S/N) 
+### ¿Tiene que ser calificada por el tutor/a? (S/N)
 
-Si
+Sí
 
 ### ¿Es de calificación automática?
 
@@ -65,4 +67,4 @@ No
 
 ## TIEMPO ESTIMADO PARA REALIZAR LA ACTIVIDAD
 
-30 minutos
+1 hora
