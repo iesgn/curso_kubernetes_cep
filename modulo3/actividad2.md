@@ -53,20 +53,20 @@ Estudiemos la definición del pod:
 ![pod_multicontenedor](img/pod_multicontenedor.png)
 
 * El pod se llama `pod_multicontenedor` y en el apartado `spec` vemos que está formado por un volumen (llamado `html` y de tipo `emptyDir`, que estudiaremos más adelante, pero que básicamente es un directorio que vamos a montar en los contenedores) y dos contenedores (llamados `contenedor1` y `contenedor2`).
-* El `contenedor1` se crea a partir de la imagen `nginx`, es el contenedor principal, encargado de servir la web. En este contenedor montamos el volumen `html` en su *DocumentRoot* (`/usr/share/nginx/html`). Va a servir el fichero `index.html` que está modificando el otro contenedor.
+* El `contenedor1` se crea a partir de la imagen `nginx`. Es el contenedor principal, encargado de servir la web. En este contenedor montamos el volumen `html` en su *DocumentRoot* (`/usr/share/nginx/html`). Va a servir el fichero `index.html` que está modificando el otro contenedor.
 * El `contenedor2` es el auxiliar. En este caso se monta el volumen `html` en el directorio `html` donde va modificando el fichero `index.html` con la fecha y hora actuales cada un segundo (parámetro `command` y `args`). 
 * Como los dos contenedores tienen montado el volumen, el fichero `index.html` que va modificando el `contenedor2`, es el fichero que sirve el `contenedor1`.
 
 Para realizar la actividad realiza los siguientes pasos:
 
 1. Crea el pod.
-2. Muestra información del pod, y fíjate que el pod está formado por un volumen y dos contenedores.
-3. Vamos a ver el contenido del fichero `index.html` en el primer contenedor, ejecutando:
+2. Muestra la información del pod, y fíjate que el pod está formado por un volumen y dos contenedores.
+3. Muestra el contenido del fichero `index.html` en el primer contenedor, ejecutando:
 
         kubectl exec pod_multicontenedor -c contenedor1 -- /bin/cat /usr/share/nginx/html/index.html
 
     En esta ocasión hay que indicar el contenedor (opción `-c`) para indicar donde vamos a ejecutar la instrucción.
-4. Vamos a ver el contenido del fichero `index.html` en el segundo contenedor, ejecutando:
+4. Muestra el contenido del fichero `index.html` en el segundo contenedor, ejecutando:
 
         kubectl exec pod_multicontenedor -c contenedor2 -- /bin/cat /html/index.html
 5. Ejecuta un "port forward" para acceder al pod en el puerto 8081 de localhost, sabiendo que el servicio usa el puerto 80.
@@ -107,7 +107,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 

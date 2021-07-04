@@ -4,7 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-Vamos a crear nuestro primer pod. Vamos a desplegar una imagen que nos ofrece un servidor web con una página estática. Para ello realiza los siguientes pasos:
+Vamos a crear nuestro primer pod. Vamos a desplegar una imagen que nos ofrece un servidor web con una página estática. Para ello realizaremos los siguientes pasos:
 
 1. Crea un fichero yaml con la descripción del recurso pod, teniendo en cuenta los siguientes aspectos:
     * Indica nombres distintos para el pod y para el contenedor.
@@ -57,7 +57,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 
