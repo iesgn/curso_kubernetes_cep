@@ -108,3 +108,29 @@ kubelet: Running
 apiserver: Running
 kubeconfig: Configured
 ```
+
+## Parada y reinicio de minikube
+
+Si vamos a apagar nuestro equipo, debemos parar previamente minikube y
+volverlo a lanzar cuando vayamos a usarlo de nuevo. Esto se realiza
+mediante las instrucciones:
+
+```
+minikube stop
+✋  Stopping node "minikube"  ...
+🛑  1 nodes stopped.
+```
+
+```
+minikube start
+😄  minikube v1.21.0 en Debian 11.0
+✨  Using the kvm2 driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🔄  Restarting existing kvm2 VM for "minikube" ...
+🐳  Preparando Kubernetes v1.20.7 en Docker 20.10.6...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Complementos habilitados: storage-provisioner, default-storageclass
+💡  kubectl not found. If you need it, try: 'minikube kubectl -- get pods -A'
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+```
