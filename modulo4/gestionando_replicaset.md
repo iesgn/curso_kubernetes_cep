@@ -10,7 +10,7 @@ Aunque en la unidad anterior usamos `kubectl create` para crear los recursos de 
 
         kubectl create -f recurso.yaml
         kubectl delete -f recurso.yaml
-    
+
 * **Configuración declarativa de objetos**: No se definen las acciones a realizar. Cuando se aplica la configuración del objeto estamos indicando un estado deseado al que queremos llegar. Posteriormente si la definición cambia, podremos cambiar el objeto. Recomendado en producción. Ejemplo:
 
         kubectl apply -f recurso.yaml
@@ -23,7 +23,7 @@ Y podemos ver los recursos que se han creado con:
 
     kubectl get rs,pods
 
-Observamos que querámos crear 2 replicas del pod, y efectivamente se han creado.
+Observamos que queríamos crear 2 replicas del pod, y efectivamente se han creado.
 
 Si queremos obtener información detallada del recurso ReplicaSet que hemos creado:
 
@@ -31,7 +31,7 @@ Si queremos obtener información detallada del recurso ReplicaSet que hemos crea
 
 ## Tolerancia a fallos
 
-¿Qué pasaría si borro uno de los pods que se han creado? Inmediatamente se creará uno nuevo para que siempre estén ejecutándose los pods deseados, en este caso 2:
+Y ahora comenzamos con las funcionalidades llamativas de Kubernetes. ¿Qué pasaría si borro uno de los pods que se han creado? Inmediatamente se creará uno nuevo para que siempre estén ejecutándose los pods deseados, en este caso 2:
 
     kubectl delete pod <nombre_del_pod>
     kubectl get pods
@@ -60,5 +60,3 @@ Por último si borramos un ReplicaSet se borraran todos los pods asociados:
 Otra forma de borrar el recurso, es utilizar el fichero yaml:
 
     kubectl delete -f nginx-rs.yaml
-
-
