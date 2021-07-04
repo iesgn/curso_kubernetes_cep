@@ -1,10 +1,10 @@
 # Deployment
 
-El [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) es la unidad de más alto nivel que podemos gestionar en Kubernetes.
+El despliegue o [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) es la unidad de más alto nivel que podemos gestionar en Kubernetes.
 
-En los módulos anteriores hemos estudiado los Pods y los ReplicaSet, sin embargo cuando queramos desplegar una aplicación en kubernetes vamos a crear un recurso *Deployment*. ¿Qué ocurre cuando creamos un nuevo recurso *Deployment*?
+En los módulos anteriores hemos estudiado los Pods y los ReplicaSet, sin embargo, cuando queramos desplegar una aplicación en kubernetes no vamos a gestinar estos directamente, sino que vamos a crear un recurso de tipo *deployment*. ¿Qué ocurre cuando creamos un nuevo recurso *deployment*?
 
-* La creación de un *Deployment* conlleva la creación de un *ReplicaSet* que controlará un conjunto de pods creados a partir de la versión de la imagen que se ha indicado. 
+* La creación de un *Deployment* conlleva la creación de un *ReplicaSet* que controlará un conjunto de pods creados a partir de la versión de la imagen que se ha indicado.
 * Si hemos desarrollado una nueva versión de la aplicación y hemos creado una nueva imagen con la nueva versión, podemos modificar el *Deployment* indicando la nueva versión de la imagen. En ese momento, se creará un nuevo *ReplicaSet* que controlará un nuevo conjunto de pods creados a partir de la nueva versión de la imagen (habremos desplegado una nueva versión de la aplicación).
 * Por lo tanto podemos decir que un *Deployment* va guardando un historial con los *ReplicaSet* que se van creando al ir cambiado la versión de la imagen. El *ReplicaSet* que este activo en un determinado momento será el responsable de crear los pods con la versión actual de la aplicación.
 * Si tenemos un historial de *ReplicaSet* según las distintas versiones de la imagen que estamos utilizando, podemos, de una manera sencilla, volver a una versión anterior de la aplicación (**Rollback**).
@@ -22,4 +22,4 @@ Por la manera de trabajar de un *Deployment*, podemos indicar las funciones que 
 Tenemos dos clases de aplicaciones que podemos desplegar en un cluster de Kubernetes:
 
 1. Aplicaciones que necesitan varios servicios para ejecutarse: por ejemplo una aplicación escrita en PHP y servida por un servidor web que necesita un servidor de base de datos para guardar la información. En este caso crearemos dos recursos Deployment: uno para desplegar la aplicación PHP y otro para despegar la base de datos. Por cada servicio que necesite nuestra aplicación crearemos un Deployment para desplegarlo.
-2. Aplicaciones construidas por microservicios: cada microservicio se puede desplegar de manera autónoma. Por cada microservicio que forma parte de la aplicación crearemos un recurso Deployment. Por ejemplo, una aplicación que tenga un frontend para ofrecer la información y que haga llamadas a un backend que ofrece un servicio web por medio de una Api Restful.
+2. Aplicaciones construidas por microservicios: cada microservicio se puede desplegar de manera autónoma. Por cada microservicio que forma parte de la aplicación crearemos un recurso Deployment. Por ejemplo, una aplicación que tenga un frontend para ofrecer la información y que haga llamadas a un backend que ofrece un servicio web por medio de una API RESTful.
