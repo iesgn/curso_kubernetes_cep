@@ -65,8 +65,8 @@ sudo snap install kubectl --classic
 
 ## Configuración kubectl
 
-Una vez instalado `kubectl` podemos comprobar que está disponible y su
-versión con:
+Una vez instalado `kubectl` podemos comprobar que está disponible y cuál es su
+versión, con la instrucción:
 
 ```
 usuario@equipo:~$ kubectl version
@@ -83,7 +83,16 @@ todavía para conectarse al cluster de k8s que ejecuta minikube.
 
 La solución más sencilla es parar minikube y volverlo a arrancar,
 porque de esta manera minikube configurará automáticamente
-`kubectl`. Lo que va a hacer minikube es configurar el fichero
+`kubectl`. Si nos fijamos en la salida de minikube anterior, en la que
+no teníamos instalado `kubectl`, aparecía la línea:
+
+```
+💡  kubectl not found. If you need it, try: 'minikube kubectl -- get pods -A'
+```
+
+Pero si lo volvemos a repetir ahora, esa línea no aparecerá y se
+configurará `kubectl` para poder usar el cluster que proporciona
+minikube. Lo que va a hacer minikube es configurar el fichero
 `~/.kube/config` de la siguiente manera:
 
 ```
@@ -146,3 +155,4 @@ NAME       STATUS   ROLES                  AGE   VERSION
 minikube   Ready    control-plane,master   23h   v1.20.7
 ```
 
+Ya está todo el entorno listo para poder realizar el curso.
