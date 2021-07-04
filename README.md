@@ -72,7 +72,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Alternativas para instalación simple de k8s](modulo2/alternativas.md)
     * [Instalación de minikube](modulo2/instalacion-minikube.md)
     * [Instalación y configuración de kubectl](modulo2/instalacion-kubectl.md)
-    * Despliegues de aplicaciones en Kubernetes
+    * [Despliegues de aplicaciones en Kubernetes](modulo2/despliegues-k8s.md)
         * [Actividad 2.1: Instalación de minikube y kubectl (OBLIGATORIA)](modulo2/actividad1.md)
 1. Contenedores en kubernetes: Pods
     * [Pod](modulo3/pods.md)
