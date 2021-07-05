@@ -1,6 +1,7 @@
 # Describiendo un pod
 
-Es posible crear un pod directamente (lo que se denomina utilización imperativa) mediante `kubectl`:
+Es posible crear un pod directamente (lo que se denomina utilización
+imperativa) mediante `kubectl`:
 
     kubectl run pod-nginx --image=nginx
 
