@@ -24,7 +24,7 @@ continuación:
 
 En la imagen se han destacado los componentes que son relevantes desde
 el punto de vista de este curso, ya que como veremos más adelante,
-docker podría ser un componente esencial de kubernetes, pero realmente
+docker podría ser un componente esencial de Kubernetes, pero realmente
 no lo es completo, solo containerd y los elementos que éste
 proporciona lo son, ya que k8s utiliza su propia API, su propia línea
 de comandos y gestiona el almacenamiento y las redes de forma

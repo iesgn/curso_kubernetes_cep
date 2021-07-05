@@ -55,9 +55,9 @@ De forma más concreta estos objetivos se pueden enumerar en:
 
 * Conocer las diferencias entre aplicaciones en función de su
   arquitectura
-* Conocer kubernetes y los elementos principales que nos permiten
+* Conocer Kubernetes y los elementos principales que nos permiten
   gestionar una aplicación en un entorno en producción
-* Realizar despliegues de aplicaciones sobre kubernetes utilizando la
+* Realizar despliegues de aplicaciones sobre Kubernetes utilizando la
   herramienta kubectl
 
 ### Contenidos
@@ -66,15 +66,15 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Implantación de aplicaciones web en contenedores](modulo1/implantacion-aplic-web.md)
     * [Docker](modulo1/docker.md)
     * [Orquestadores de contenedores](modulo1/orquestadores.md)
-    * [El proyecto kubernetes](modulo1/proyecto-kubernetes.md)
-    * [Arquitectura básica de kubernetes](modulo1/arquitectura.md)
+    * [El proyecto Kubernetes](modulo1/proyecto-kubernetes.md)
+    * [Arquitectura básica de Kubernetes](modulo1/arquitectura.md)
 1. Instalación de Kubernetes
     * [Alternativas para instalación simple de k8s](modulo2/alternativas.md)
     * [Instalación de minikube](modulo2/instalacion-minikube.md)
     * [Instalación y configuración de kubectl](modulo2/instalacion-kubectl.md)
     * [Despliegues de aplicaciones en Kubernetes](modulo2/despliegues-k8s.md)
         * [Actividad 2.1: Instalación de minikube y kubectl (OBLIGATORIA)](modulo2/actividad1.md)
-1. Contenedores en kubernetes: Pods
+1. Contenedores en Kubernetes: Pods
     * [Pod](modulo3/pods.md)
     * [Describiendo un pod](modulo3/describiendo_pod.md)
 	* [Gestionando los pods](modulo3/gestionando_pod.md)
@@ -140,7 +140,7 @@ Pendiente de hacer cuando estén definidas las actividades
 ## Metodología
 
 El curso está pensado como una secuencia de complejidad creciente, en
-la que se irán introduciendo los diferentes elementos de kubernetes,
+la que se irán introduciendo los diferentes elementos de Kubernetes,
 hasta llegar a poder gestionar completamente el ciclo de vida de una
 aplicación en un entorno en producción.
 
@@ -160,15 +160,15 @@ Podemos distinguir las siguientes partes en el curso:
 
 1. Una primera parte más conceptual en la que veremos las
    características de la arquitectura de una aplicación y por qué es
-   necesario un software como kubernetes. También veremos las
+   necesario un software como Kubernetes. También veremos las
    características principales de este software y lo instalaremos en
    una máquina virtual para poder realizar el curso.
 1. En la segunda parte del curso, que está formado por la mayor parte
    de módulos, iremos viendo de forma progresiva los diferentes
-   elementos de kubernetes y como nos ayudan a gestionar el despliegue
+   elementos de Kubernetes y como nos ayudan a gestionar el despliegue
    y puesta en producción de una aplicación.
 1. Finalmente veremos en el último módulo la aplicación Helm, que es
-   un sistema de empaquetado para kubernetes
+   un sistema de empaquetado para Kubernetes
    
 En todo momento contarás con la ayuda de un tutor o tutora que te
 facilitará tu paso por la actividad formativa y se fomentará la

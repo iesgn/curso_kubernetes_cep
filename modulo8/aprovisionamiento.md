@@ -1,6 +1,6 @@
 # Aprovisionamiento de volúmenes
 
-Para que el administrador de kubernetes defina los volúmenes disponible en nuestro cluster tenemos dos posibilidades:
+Para que el administrador de Kubernetes defina los volúmenes disponible en nuestro cluster tenemos dos posibilidades:
 
 
 ## Aprovisionamiento estático

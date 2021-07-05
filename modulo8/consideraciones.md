@@ -21,7 +21,7 @@ Podemos fijarnos en el [Ejemplo: Despliegue y acceso a WordPress + MariaDB](../m
     Pues la respuesta es similar a la anterior. En este caso, el pod antigüo tendría almacenada el contenido estáticos (las imágenes), pero el nuevo no tendría información. Como al acceder a la aplicación se balancea la carga, se mostraría la imagen según al pod que estuviéramos accediendo.
 
 
-Por lo tanto es necesario usar un mecanismo que nos permita guardar la información con la que trabajan los pods para que no se pierda en caso de que el pod se elimine. Al sistema de almacenamiento que nos ofrece kubernetes lo llamamos **volumenes**. Con el uso de volúmenes vamos a conseguir varias cosas:
+Por lo tanto es necesario usar un mecanismo que nos permita guardar la información con la que trabajan los pods para que no se pierda en caso de que el pod se elimine. Al sistema de almacenamiento que nos ofrece Kubernetes lo llamamos **volumenes**. Con el uso de volúmenes vamos a conseguir varias cosas:
 
 1. Si un pod guarda su información en un volumen, está no se perderá. Por lo que podemos eliminar el pod sin ningún problema y cuando volvamos a crearlo mantendrá la misma información. En definitiva, los volúmenes proporcionan almacenamiento adicional o secundario al disco que define la imagen.
 2. Si usamos volúmenes, y tenemos varios pods que están ofreciendo un servicio, estos pods tendrán la información compartida y por tanto todos podrán leer y escribir la misma información. 

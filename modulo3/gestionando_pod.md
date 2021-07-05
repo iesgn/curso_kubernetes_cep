@@ -40,7 +40,7 @@ de docker):
 
 Podríamos editar el pod y ver todos los atributos que definen el
 objeto, la mayoría de ellos con valores asignados automáticamente por
-el propio kubernetes y podremos actualizar ciertos valores:
+el propio Kubernetes y podremos actualizar ciertos valores:
 
     kubectl edit pod pod-nginx
 
@@ -85,7 +85,7 @@ yaml, pero también podemos añadirlos a los pods ya creados:
 
     kubectl label pods pod-nginx service=web --overwrite=true
 
-Las etiquetas son muy útiles, ya que permiten seleccionar un recurso determinado (en un cluster de kubernetes puede haber cientos o miles de objetos).Por ejemplo para visualizar los pods que tienen una etiqueta con un determinado valor:
+Las etiquetas son muy útiles, ya que permiten seleccionar un recurso determinado (en un cluster de Kubernetes puede haber cientos o miles de objetos).Por ejemplo para visualizar los pods que tienen una etiqueta con un determinado valor:
 
     kubectl get pods -l service=web
 

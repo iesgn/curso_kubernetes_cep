@@ -32,7 +32,7 @@ Para realizar el despliegue realiza los siguientes pasos:
 1. Hasta ahora no estamos accediendo de forma "normal" a las aplicaciones. El uso de la opción `port-forward` es un mecanismo que realmente nos posibilita acceder a la aplicación, pero utilizando un proxy. Deberíamos acceder a las aplicaciones usando una ip y un puerto determinado.
 2. Parece que tampoco hay acceso entre los pods de los distintos despliegues. Parece que los pods de la aplicación guestbook no pueden acceder al pod donde se está ejecutando la base de datos redis.
 
-En el siguiente módulo estudiaremos los recursos que nos ofrece la API de kubernetes para permitirnos el acceso a las aplicaciones desde el exterior, y para que los distintos pods de los despliegues puedan acceder entre ello. 
+En el siguiente módulo estudiaremos los recursos que nos ofrece la API de Kubernetes para permitirnos el acceso a las aplicaciones desde el exterior, y para que los distintos pods de los despliegues puedan acceder entre ello. 
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 

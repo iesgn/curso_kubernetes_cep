@@ -5,7 +5,7 @@ En el apartado anterior hemos estudiado como podemos definir las variables de en
 * Los valores de las variables de entorno están escritos directamente en el fichero yaml. Los ficheros yaml lo solemos guardar en repositorios git y no siempre queremos que los valores de dichas variables sean públicos.
 * Por otro lado, escribiendo los valores de las variables de entorno directamente en los ficheros, no podemos reutilizar estos valores en otros despliegues.
 
-Para solucionar estas deficiencias, podemos usar un nuevo recurso de kubernetes llamado **ConfigMap**.
+Para solucionar estas deficiencias, podemos usar un nuevo recurso de Kubernetes llamado **ConfigMap**.
 
 ## Configuración de aplicaciones usando ConfigMaps
 

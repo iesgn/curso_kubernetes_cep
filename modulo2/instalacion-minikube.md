@@ -2,12 +2,12 @@
 
 El "cluster" de k8s que vamos a utilizar en este curso es el de un
 solo nodo que va a encargarse de realizar tanto las tareas de master,
-con los componentes principales de kubernetes, como de worker,
+con los componentes principales de Kubernetes, como de worker,
 ejecutando las cargas de trabajo en contenedores (ya veremos más
 adelante que realmente utiliza algo que se llama pod). Aunque
 evidentemente un cluster constituido por un solo nodo no es la
 solución más adecuada en la mayoría de los casos, sí lo es en éste, en
-el que queremos instalar kubernetes de forma rápida y fácil para
+el que queremos instalar Kubernetes de forma rápida y fácil para
 aprender sus características, pero no para usarlo en producción ni
 nada similar.
 
@@ -46,13 +46,13 @@ Comprobamos que se ha instalado correctamente con:
 ## Creación del cluster de k8s
 
 El siguiente paso consiste en lanzar minikube para que cree el cluster
-de kubernetes de un solo nodo (master+worker). Minikube puede crear
+de Kubernetes de un solo nodo (master+worker). Minikube puede crear
 este cluster en diversos sistemas de virtualización o sobre docker, lo
 recomendable es visitar la página de
 ["drivers"](https://minikube.sigs.k8s.io/docs/drivers/) y seleccionar
 el método más adecuado para nuestro sistema.
 
-De forma general, se creará el cluster de kubernetes a través de
+De forma general, se creará el cluster de Kubernetes a través de
 minikube, mediante la instrucción:
 
     minikube start

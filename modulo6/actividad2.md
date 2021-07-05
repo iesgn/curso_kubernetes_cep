@@ -17,7 +17,7 @@ Vamos a realiza el despliegue y acceso a esta aplicación teniendo en cuenta los
 
 Realiza los siguientes pasos:
 
-1. Utilizando como modelos los ficheros yaml de la actividad anterior, crea los ficheros necesarios para crear los recursos en tu cluster de kubernetes para desplegar esta aplicación.
+1. Utilizando como modelos los ficheros yaml de la actividad anterior, crea los ficheros necesarios para crear los recursos en tu cluster de Kubernetes para desplegar esta aplicación.
 
 Para superar la actividad deberás entregar en un fichero comprimido con la siguiente información:
 

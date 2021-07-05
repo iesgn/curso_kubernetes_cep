@@ -2,7 +2,7 @@
 
 El despliegue o [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) es la unidad de más alto nivel que podemos gestionar en Kubernetes.
 
-En los módulos anteriores hemos estudiado los Pods y los ReplicaSet, sin embargo, cuando queramos desplegar una aplicación en kubernetes no vamos a gestinar estos directamente, sino que vamos a crear un recurso de tipo *deployment*. ¿Qué ocurre cuando creamos un nuevo recurso *deployment*?
+En los módulos anteriores hemos estudiado los Pods y los ReplicaSet, sin embargo, cuando queramos desplegar una aplicación en Kubernetes no vamos a gestinar estos directamente, sino que vamos a crear un recurso de tipo *deployment*. ¿Qué ocurre cuando creamos un nuevo recurso *deployment*?
 
 * La creación de un *Deployment* conlleva la creación de un *ReplicaSet* que controlará un conjunto de pods creados a partir de la versión de la imagen que se ha indicado.
 * Si hemos desarrollado una nueva versión de la aplicación y hemos creado una nueva imagen con la nueva versión, podemos modificar el *Deployment* indicando la nueva versión de la imagen. En ese momento, se creará un nuevo *ReplicaSet* que controlará un nuevo conjunto de pods creados a partir de la nueva versión de la imagen (habremos desplegado una nueva versión de la aplicación).

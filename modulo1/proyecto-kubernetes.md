@@ -53,7 +53,7 @@ Kubernetes está centrado en la puesta en **producción** de
 contenedores y por su gestión es indicada para administradores de
 sistemas y personal de equipos de operaciones. Por otra parte, afecta también
 a los desarrolladores, ya que las aplicaciones deben adaptarse para
-poder desplegarse en kubernetes.
+poder desplegarse en Kubernetes.
 
 ## Características principales
 

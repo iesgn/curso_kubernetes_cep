@@ -5,7 +5,7 @@ imperativa) mediante `kubectl`:
 
     kubectl run pod-nginx --image=nginx
 
-De esta forma se crea un pod con un contenedor que utiliza la imagen `nginx:latest` (no hemos especificado una versión) del registro que esté definido por defecto en el cluster de kubernetes, se asigna una dirección IP y se lanza en uno de los nodos del cluster. 
+De esta forma se crea un pod con un contenedor que utiliza la imagen `nginx:latest` (no hemos especificado una versión) del registro que esté definido por defecto en el cluster de Kubernetes, se asigna una dirección IP y se lanza en uno de los nodos del cluster. 
 
 Un pod tiene otros muchos parámetros asociados, que en este caso quedarán sin definir o Kubernetes asumirá los valores por defecto. Sin embargo es mucho más habitual trabajar con los objetos de Kubernetes de manera declarativa, definiendo los objetos de forma detallada a través de un fichero en formato YAML. De esta forma tenemos un fichero con la definición del objeto que hemos lanzado y podemos utilizar en otro momento exactamente la misma definición o podemos ir modificándola y aplicando los cambios cuando sea conveniente. 
 

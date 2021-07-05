@@ -19,7 +19,7 @@ Para activar el ingress controller ejecutamos:
 
     minikube addons enable ingress
 
-Para comprobar si tenemos instalado el componente, podemos visualizar los pods creados en el *namespace* `kube-system`. En este espacio de nombre encontramos distintos despliegues con componentes del propio cluster de kubernetes. Por lo tanto al ejecutar:
+Para comprobar si tenemos instalado el componente, podemos visualizar los pods creados en el *namespace* `kube-system`. En este espacio de nombre encontramos distintos despliegues con componentes del propio cluster de Kubernetes. Por lo tanto al ejecutar:
 
     kubectl get pods -n kube-system 
     ...

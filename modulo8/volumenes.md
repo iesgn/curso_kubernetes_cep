@@ -5,7 +5,7 @@
 Los [volúmenes](https://kubernetes.io/docs/concepts/storage/volumes/) nos permiten proporcional almacenamiento a los pods, y podemos usar distintos tipos que nos ofrecen distintas características:
 
 * Proporcionados por el proveedor de cloud: AWS, Azure, GCE, OpenStack, etc
-* Propios de kubernetes:
+* Propios de Kubernetes:
     * configMap: Para usar un configMap como un directorio desde el pod.
     * emptyDir: Volumen efímero con la misma vida que el pod. Usado como almacenamiento secundario o para compartir entre contenedores del mismo pod.
     * hostPath: Monta un directorio del host en el pod (usado excepcionalmente, pero el que nosotros vamos a usar con minikube).
@@ -14,7 +14,7 @@ Los [volúmenes](https://kubernetes.io/docs/concepts/storage/volumes/) nos permi
 
 ## Trabajando con volúmenes
 
-Al trabajar con volúmenes em kubernetes se realizan dos funciones claramente diferenciadas:
+Al trabajar con volúmenes em Kubernetes se realizan dos funciones claramente diferenciadas:
 
 * **Desde el punto de vista del administrador del cluster de Kubernetes:**
 

@@ -1,6 +1,6 @@
 # Despliegues parametrizados: Secrets
 
-Cuando en un variable de entorno indicamos una información sensible, como por ejemplo una contraseña, una clave ssh,... solemos utilizar un nuevo recurso de kubernetes llamado **secret**.
+Cuando en un variable de entorno indicamos una información sensible, como por ejemplo una contraseña, una clave ssh,... solemos utilizar un nuevo recurso de Kubernetes llamado **secret**.
 
 Los [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) nos permiten guardar información sensible que será **codificada**. 
 

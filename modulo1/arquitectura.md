@@ -54,7 +54,7 @@ interactúan con el proveedor de nube:
 Los elementos anteriores forman la estructura básica de k8s, pero es
 muy habitual que se proporcione funcionalidad adicional a través de
 complementos de k8s, que en muchas ocasiones se ejecutan a su vez como
-contenedores y son gestionados por el propio kubernetes. Algunos de
+contenedores y son gestionados por el propio Kubernetes. Algunos de
 estos complementos son:
 
 * **Cluster DNS** Proporciona registros DNS para los servicios de
