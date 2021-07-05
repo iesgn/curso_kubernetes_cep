@@ -4,7 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-Como indicamos en el contenido de este módulo, no se trabaja  a trabajar directamente con los pods (realmente tampoco vamos a trabajar directamente con los ReplicaSet, en el siguiente módulo explicaremos los *Deployments* que serán el recurso con el que trabajaremos).  En este ejercicio vamos a crear un ReplicaSet que va a controlar un conjunto de pod. Para ello, realiza los siguientes pasos:
+Como indicamos en el contenido de este módulo, no se va  a trabajar directamente con los pods (realmente tampoco vamos a trabajar directamente con los ReplicaSet, en el siguiente módulo explicaremos los *Deployments* que serán el recurso con el que trabajaremos).  En este ejercicio vamos a crear un ReplicaSet que va a controlar un conjunto de pods. Para ello, realiza los siguientes pasos:
 
 1. Crea un fichero yaml con la descripción del recurso ReplicaSet, teniendo en cuenta los siguientes aspectos:
     * Indica nombres distintos para el ReplicaSet y para el contenedor de los pods que va a controlar.
@@ -23,8 +23,8 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 1. Pantallazo del fichero yaml que has creado con la definición del ReplicaSet.
 2. Pantallazo donde se comprueba que el ReplicaSet y los 3 pods se han creado.
 3. Pantallazo donde se ve la información detallada del ReplicaSet.
-4. Pantallazo donde se ve los pods que se han creado, después de eliminar uno de ellos.
-5. Pantallazo donde se ve los pods que se han creado después del escalado.
+4. Pantallazo donde se ven los pods que se han creado, después de eliminar uno de ellos.
+5. Pantallazo donde se ven los pods que se han creado después del escalado.
 
 ## RECURSOS
 
@@ -56,7 +56,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 
