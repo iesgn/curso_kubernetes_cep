@@ -1,8 +1,8 @@
 # Servicio DNS en Kubernetes
 
-Existe un componente de Kubernetes llamado CoreDNS, que ofrece un servidor DNS para que los pods puedan resolver diferentes nombres de recursos (servicios, pods, ...) a direcciones IP.
+Existe un componente de Kubernetes llamado CoreDNS, que ofrece un servidor DNS interno para que los pods puedan resolver diferentes nombres de recursos (servicios, pods, ...) a direcciones IP.
 
-Cada vez que se crea un nuevo servicio se crea un registro de tipo A con el nombre: 
+Cada vez que se crea un nuevo servicio se crea un registro de tipo A con el nombre:
 
     <nombre_servicio>.<nombre_namespace>.svc.cluster.local.
 
@@ -11,8 +11,8 @@ Cada vez que se crea un nuevo servicio se crea un registro de tipo A con el nomb
 Partimos del punto anterior donde tenemos creados los dos servicios:
 
     kubectl get services
-    mariadb      ClusterIP   10.106.60.233   <none>        3306/TCP       
-    nginx        NodePort    10.110.81.74    <none>        80:32717/TCP   
+    mariadb      ClusterIP   10.106.60.233   <none>        3306/TCP
+    nginx        NodePort    10.110.81.74    <none>        80:32717/TCP
 
 Para comprobar el servidor DNS de nuestro cluster y de que podemos resolver los nombres de los distintos servicios, vamos a usar un pod ([`busybox.yaml`](files/busybox.yaml)) creado desde una imagen `busybox`.  Es una imagen muy pequeña pero con algunas utilidades que nos vienen muy bien:
 
@@ -51,8 +51,8 @@ También podemos comprobar que usando el nombre podemos acceder al servicio:
     Connecting to nginx (10.110.81.74:80)
     saving to 'index.html'
     ...
-    
-Podemos concluir, que cuando necesitemos desde alguna aplicación desplegada en nuestro cluster acceder a otro servicio ofrecido por otro despliegue, **utilizaremos el nombre que hemos asignado a su servicio de acceso**. Por ejemplo si desplegamos un WordPress y un servidor de base de datos mariadb, y creamos dos servicios: uno de tipo NodePort para acceder desde el exterior al CMS, y otro, que llamamos `mariadb` de tipo ClusterIP para acceder ala base de datos, cuando tengamos que configurar el WordPress para indicar la dirección de la base de datos, pondremos `mariadb`.
+
+Podemos concluir que, cuando necesitemos acceder desde alguna aplicación desplegada en nuestro cluster a otro servicio ofrecido por otro despliegue, **utilizaremos el nombre que hemos asignado a su servicio de acceso**. Por ejemplo, si desplegamos un WordPress y un servidor de base de datos mariadb, y creamos dos servicios: uno de tipo NodePort para acceder desde el exterior al CMS, y otro, que llamamos `mariadb` de tipo ClusterIP para acceder ala base de datos, cuando tengamos que configurar el WordPress para indicar la dirección de la base de datos, pondremos `mariadb`.
 
 
 
