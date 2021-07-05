@@ -20,11 +20,11 @@ Como indicamos en el contenido de este módulo, no se va  a trabajar directament
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo del fichero yaml que has creado con la definición del ReplicaSet.
-2. Pantallazo donde se comprueba que el ReplicaSet y los 3 pods se han creado.
-3. Pantallazo donde se ve la información detallada del ReplicaSet.
-4. Pantallazo donde se ven los pods que se han creado, después de eliminar uno de ellos.
-5. Pantallazo donde se ven los pods que se han creado después del escalado.
+1. Pantallazo del fichero yaml que has creado con la definición del ReplicaSet (**pantallazo1.jpg**).
+2. Pantallazo donde se comprueba que el ReplicaSet y los 3 pods se han creado (**pantallazo2.jpg**).
+3. Pantallazo donde se ve la información detallada del ReplicaSet (**pantallazo3.jpg**).
+4. Pantallazo donde se ven los pods que se han creado, después de eliminar uno de ellos (**pantallazo4.jpg**).
+5. Pantallazo donde se ven los pods que se han creado después del escalado (**pantallazo5.jpg**).
 
 ## RECURSOS
 

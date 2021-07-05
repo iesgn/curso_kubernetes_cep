@@ -11,8 +11,8 @@ se vaya a utilizar para realizar el curso; instala y configura
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo con la salida de `minikube status`
-2. Pantallazo con la salida de `kubectl get nodes -o wide`
+1. Pantallazo con la salida de `minikube status` (**pantallazo1.jpg**).
+2. Pantallazo con la salida de `kubectl get nodes -o wide` (**pantallazo2.jpg**).
 
 ## RECURSOS
 

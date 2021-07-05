@@ -18,9 +18,9 @@ Realiza los siguientes pasos:
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo donde se vean los ficheros yaml modificados para los despliegues.
-2. Pantallazo donde se vea el acceso a la aplicación con el fichero que has subido.
-5. Pantallazo donde se vea que se han eliminados y se ha vuelto a crear los despliegues y que la aplicación se sigue sirviendo con el fichero que habíamos subido.
+1. Pantallazo donde se vean los ficheros yaml modificados para los despliegues (**pantallazo1.jpg**).
+2. Pantallazo donde se vea el acceso a la aplicación con el fichero que has subido (**pantallazo2.jpg**).
+3. Pantallazo donde se vea que se han eliminados y se ha vuelto a crear los despliegues y que la aplicación se sigue sirviendo con el fichero que habíamos subido (**pantallazo3.jpg**).
 
 ## RECURSOS
 

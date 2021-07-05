@@ -19,11 +19,11 @@ Realiza los siguientes pasos:
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo con la definición del recurso *PersistantVolumenClaim*.
-2. Pantallazo donde se visualice los recursos `pv` y `pvc` que se han creado.
-3. Pantallazo donde se vea el fichero yaml para el despliegue.
-4. Pantallazo donde se vea el acceso a `info.php`.
-5. Pantallazo donde se vea que se ha eliminado y se ha vuelto a crear el despliegue y se sigue sirviendo el fichero `info.php`.
+1. Pantallazo con la definición del recurso *PersistantVolumenClaim* (**pantallazo1.jpg**).
+2. Pantallazo donde se visualice los recursos `pv` y `pvc` que se han creado (**pantallazo2.jpg**).
+3. Pantallazo donde se vea el fichero yaml para el despliegue (**pantallazo3.jpg**).
+4. Pantallazo donde se vea el acceso a `info.php` (**pantallazo4.jpg**).
+5. Pantallazo donde se vea que se ha eliminado y se ha vuelto a crear el despliegue y se sigue sirviendo el fichero `info.php` (**pantallazo5.jpg**).
 
 
 ## RECURSOS

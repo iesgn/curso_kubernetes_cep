@@ -13,9 +13,9 @@ Basándonos en el [Ejemplo completo: Despliegue y acceso a WordPress + MariaDB](
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo donde se vea el contenido del fichero de despliegue de NextCloud.
-2. Pantallazo donde se vean los recurso que se han creado.
-3. Pantallazo donde se comprueba que la aplicación está funcionando.
+1. Pantallazo donde se vea el contenido del fichero de despliegue de NextCloud (**pantallazo1.jpg**).
+2. Pantallazo donde se vean los recurso que se han creado (**pantallazo2.jpg**).
+3. Pantallazo donde se comprueba que la aplicación está funcionando (**pantallazo3.jpg**).
 
 ## RECURSOS
 

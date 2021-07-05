@@ -20,11 +20,11 @@ En esta actividad vamos a crear un Deployment de una aplicación web. Sigamos lo
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo del fichero yaml que has creado con la definición del Deployment.
-2. Pantallazo donde se comprueba los recursos que se han creado.
-3. Pantallazo donde se ve la información detallada del Deployment.
-4. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando el `port-forward`.
-5. Pantallazo donde se vea los logs del despliegue después del acceso.
+1. Pantallazo del fichero yaml que has creado con la definición del Deployment (**pantallazo1.jpg**).
+2. Pantallazo donde se comprueba los recursos que se han creado (**pantallazo2.jpg**).
+3. Pantallazo donde se ve la información detallada del Deployment (**pantallazo3.jpg**).
+4. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando el `port-forward` (**pantallazo4.jpg**).
+5. Pantallazo donde se vea los logs del despliegue después del acceso (**pantallazo5.jpg**).
 
 ## RECURSOS
 

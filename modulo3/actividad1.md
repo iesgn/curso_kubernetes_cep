@@ -22,12 +22,12 @@ ello realiza los siguientes pasos:
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo del fichero yaml que has creado con la definición del pod.
-2. Pantallazo donde se comprueba que el pod ha sido creado.
-3. Pantallazo donde se ve la información detallada del pod.
-4. Pantallazo donde se ve el fichero `index.html` del DocumentRoot.
-5. Pantallazo del navegador accediendo a la aplicación con el `port-forward`.
-6. Pantallazo donde se ve los logs de acceso del pod.
+1. Pantallazo del fichero yaml que has creado con la definición del pod (**pantallazo1.jpg**).
+2. Pantallazo donde se comprueba que el pod ha sido creado (**pantallazo2.jpg**).
+3. Pantallazo donde se ve la información detallada del pod (**pantallazo3.jpg**).
+4. Pantallazo donde se ve el fichero `index.html` del DocumentRoot (**pantallazo4.jpg**).
+5. Pantallazo del navegador accediendo a la aplicación con el `port-forward` (**pantallazo5.jpg**).
+6. Pantallazo donde se ve los logs de acceso del pod (**pantallazo6.jpg**).
 
 ## RECURSOS
 

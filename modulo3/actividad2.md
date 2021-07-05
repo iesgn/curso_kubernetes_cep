@@ -103,7 +103,9 @@ Para realizar la actividad realiza los siguientes pasos:
 
 Para superar la actividad deberás entregar en un fichero comprimido el siguiente pantallazo:
 
-1. Un pantallazo donde se vea el acceso a la página desde un navegador web.
+1. Un pantallazo donde se muestre la información del pod y se vean la definición de los dos contenedores (**pantallazo1.jpg**).
+2. Un pantallazo donde se vea el acceso a la página desde un navegador web (**pantallazo2.jpg**).
+
 
 ## RECURSOS
 

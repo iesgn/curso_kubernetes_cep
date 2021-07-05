@@ -36,8 +36,8 @@ En el siguiente módulo estudiaremos los recursos que nos ofrece la API de Kuber
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo donde se comprueba los recursos que se han creado.
-2. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando el `port-forward`, y se vea el mensaje de error al no poder acceder a la base de datos.
+1. Pantallazo donde se comprueba los recursos que se han creado (**pantallazo1.jpg**).
+2. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando el `port-forward`, y se vea el mensaje de error al no poder acceder a la base de datos (**pantallazo2.jpg**).
 
 ## RECURSOS
 

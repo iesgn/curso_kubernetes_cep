@@ -29,10 +29,10 @@ Vamos a modificar esta variable en el despliegue del `frontend` y cambiaremos el
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo donde se vea la definición del recurso `ConfigMap`.
-2. Pantallazo donde se vea la modificación del fichero `frontend-deployment.yaml`.
-3. Pantallazo donde se vea la modificación del fichero `backend-srv.yaml`.
-4. Pantallazo donde se comprueba que la aplicación está funcionando.
+1. Pantallazo donde se vea la definición del recurso `ConfigMap` (**pantallazo1.jpg**).
+2. Pantallazo donde se vea la modificación del fichero `frontend-deployment.yaml` (**pantallazo2.jpg**).
+3. Pantallazo donde se vea la modificación del fichero `backend-srv.yaml` (**pantallazo3.jpg**).
+4. Pantallazo donde se comprueba que la aplicación está funcionando (**pantallazo4.jpg**).
 
 ## RECURSOS
 

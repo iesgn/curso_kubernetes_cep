@@ -71,11 +71,11 @@ Realiza los siguientes pasos:
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo con la definición del recurso *PersistantVolumenClaim*.
-2. Pantallazo donde se visualice los recursos `pv` y `pvc` que se han creado.
-3. Pantallazo donde se vea el fichero yaml modificado para el despliegue de redis.
-4. Pantallazo donde se vea el acceso a la aplicación con los mensajes escritos.
-5. Pantallazo donde se vea que se ha eliminado y se ha vuelto a crear el despliegue de redis y que se sigue sirviendo la aplicación con los mensajes.
+1. Pantallazo con la definición del recurso *PersistantVolumenClaim* (**pantallazo1.jpg**).
+2. Pantallazo donde se visualice los recursos `pv` y `pvc` que se han creado (**pantallazo2.jpg**).
+3. Pantallazo donde se vea el fichero yaml modificado para el despliegue de redis (**pantallazo3.jpg**).
+4. Pantallazo donde se vea el acceso a la aplicación con los mensajes escritos (**pantallazo4.jpg**).
+5. Pantallazo donde se vea que se ha eliminado y se ha vuelto a crear el despliegue de redis y que se sigue sirviendo la aplicación con los mensajes (**pantallazo5.jpg**).
 
 ## RECURSOS
 

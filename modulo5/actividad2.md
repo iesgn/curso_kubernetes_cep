@@ -35,12 +35,12 @@ Finalmente después de un trabajo muy duro, el equipo de desarrollo ha creado la
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
-1. Pantallazo donde se vea el acceso desde un navegador web a la version 1 de la aplicación aplicación.
-2. Pantallazo donde se vea el acceso desde un navegador web a la version 2 de la aplicación aplicación.
-3. Pantallazo donde se visualice el historial de actualización del despliegue después de actualizar a la versión 2.
-4. Pantallazo donde se vea el acceso desde un navegador web a la version 3 de la aplicación aplicación (¡¡¡No se visualiza bien la hoja de estilos!!!).
-5. Pantallazo donde se visualice el historial de actualización después de realizar el *rollback* del despliegue.
-6. Pantallazo donde se vea el acceso desde un navegador web a la version de la aplicación que queda después de hacer el rollout.
+1. Pantallazo donde se vea el acceso desde un navegador web a la version 1 de la aplicación aplicación (**pantallazo1.jpg**).
+2. Pantallazo donde se vea el acceso desde un navegador web a la version 2 de la aplicación aplicación (**pantallazo2.jpg**).
+3. Pantallazo donde se visualice el historial de actualización del despliegue después de actualizar a la versión 2 (**pantallazo3.jpg**).
+4. Pantallazo donde se vea el acceso desde un navegador web a la version 3 de la aplicación aplicación (¡¡¡No se visualiza bien la hoja de estilos!!!) (**pantallazo4.jpg**).
+5. Pantallazo donde se visualice el historial de actualización después de realizar el *rollback* del despliegue (**pantallazo5.jpg**).
+6. Pantallazo donde se vea el acceso desde un navegador web a la version de la aplicación que queda después de hacer el rollout (**pantallazo6.jpg**).
 
 ## RECURSOS
 
