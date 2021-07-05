@@ -4,7 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-En esta actividad vamos a crear un Deployment de una aplicación web, sigamos los siguientes pasos:
+En esta actividad vamos a crear un Deployment de una aplicación web. Sigamos los siguientes pasos:
 
 1. Crea un fichero yaml con la descripción del recurso Deployment, teniendo en cuenta los siguientes aspectos:
     * Indica nombres distintos para el Deployment y para el contenedor de los pods que va a controlar.
@@ -32,7 +32,7 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
-Si
+Sí
 
 ## ¿ES UNA ACTIVIDAD INDIVIDUAL O DE GRUPO?
 
@@ -40,11 +40,11 @@ Individual
 
 ## ¿ES UNA ACTIVIDAD CALIFICABLE?
 
-Si
+Sí
 
-### ¿Tiene que ser calificada por el tutor/a? (S/N) 
+### ¿Tiene que ser calificada por el tutor/a? (S/N)
 
-Si
+Sí
 
 ### ¿Es de calificación automática?
 

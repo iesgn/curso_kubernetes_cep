@@ -88,10 +88,10 @@ De forma más concreta estos objetivos se pueden enumerar en:
 1. Despliegues
     * [Deployment](modulo5/deployment.md)
     * [Describiendo un Deployment](modulo5/describiendo_deployment.md)
-    * [Gestión básica de Deployment](modulo5/gestionando_deployment.md)
-    * [Actualización y rollout de Deployment](modulo5/actualizacion_deployment.md)
+    * [Gestión básica de un Deployment](modulo5/gestionando_deployment.md)
+    * [Actualización y desactualización de un Deployment](modulo5/actualizacion_deployment.md)
         * [Actividad 5.1: Trabajando con Deployments (OBLIGATORIA)](modulo5/actividad1.md)
-        * [Actividad 5.2: Actualización y rollout de nuestra aplicación (OBLIGATORIA)](modulo5/actividad2.md)
+        * [Actividad 5.2: Actualización y desactualización de nuestra aplicación (OBLIGATORIA)](modulo5/actividad2.md)
         * [Actividad 5.3: Despliegue de la aplicación GuestBook (OBLIGATORIA)](modulo5/actividad3.md)
 1. Acceso a las aplicaciones
     * [Services. Tipos de servicios](modulo6/services.md)
