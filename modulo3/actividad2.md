@@ -110,7 +110,7 @@ Para superar la actividad deberás entregar en un fichero comprimido el siguient
 ## RECURSOS
 
 * Conexión a Internet
-* El fichero con la definición del pod: [`files/pod_multicontenedor.yaml`](pod_multicontenedor.yaml)
+* El fichero con la definición del pod: [`pod_multicontenedor.yaml`](files/pod_multicontenedor.yaml)
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
