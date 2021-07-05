@@ -1,12 +1,12 @@
 # Gestionando los ReplicaSet
 
-En esta unidad vamos a crear un recurso ReplicaSet que controlará un conjunto de recursos pods. Vamos a utilizar el fichero que estudiamos en la unidad anterior: [`nginx-rs.yaml`](files/nginx-rs.yaml).
+En esta unidad vamos a crear un recurso ReplicaSet que controlará un conjunto de recursos pods. Para ello vamos a utilizar el fichero que estudiamos en la unidad anterior: [`nginx-rs.yaml`](files/nginx-rs.yaml).
 
 ## Creación del ReplicaSet
 
-Aunque en la unidad anterior usamos `kubectl create` para crear los recursos de nuestro cluster, es recomendable usar `kubectl apply`. La diferencia es la forma en que actuamos sobre el cluster:
+Aunque en la unidad anterior usamos `kubectl create` para crear los recursos de nuestro cluster, es recomendable usar `kubectl apply`. La diferencia es la forma en la que actuamos sobre el cluster:
 
-* **Configuración imperativa de objetos**: La definición del objeto está guardada en un fichero Yaml, y ejecutamos un comando imperativo. Posteriormente no podremos modificar el objeto, habrá que borrarlo y crearlo de nuevo. Ejemplos:
+* **Configuración imperativa de objetos**: La definición del objeto está guardada en un fichero Yaml y ejecutamos un comando imperativo. Posteriormente no podremos modificar el objeto, habrá que borrarlo y crearlo de nuevo. Ejemplos:
 
         kubectl create -f recurso.yaml
         kubectl delete -f recurso.yaml
@@ -15,7 +15,7 @@ Aunque en la unidad anterior usamos `kubectl create` para crear los recursos de 
 
         kubectl apply -f recurso.yaml
 
-Por lo tanto para crear nuestro replicaSet, ejecutamos:
+Por lo tanto para crear nuestro ReplicaSet, ejecutamos:
 
     kubectl apply -f nginx-rs.yaml
 
@@ -53,7 +53,7 @@ La escalabilidad puede ser para aumentar el número de pods o para reducirla:
 
 ## Eliminando el ReplicaSet
 
-Por último si borramos un ReplicaSet se borraran todos los pods asociados:
+Por último, si borramos un ReplicaSet se borrarán todos los pods asociados:
 
     kubectl delete rs nginx
 
