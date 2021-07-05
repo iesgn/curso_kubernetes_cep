@@ -1,7 +1,7 @@
 # Instalación de kubectl
 
 kubectl es la herramienta de línea de comandos para interactuar con la
-API de kubernetes, es por tanto la herramienta fundamental que vamos a
+API de Kubernetes, es por tanto la herramienta fundamental que vamos a
 utilizar durante todo el curso para gestionar nuestros objetos en el
 cluster recién creado con minikube.
 
@@ -76,7 +76,7 @@ specify the right host or port?
 ```
 
 En el caso anterior, estamos utilizando la versión 1.20.2 y nos
-informa de que no ha podido conectarse al cluster de kubernetes con la
+informa de que no ha podido conectarse al cluster de Kubernetes con la
 configuración por defecto (`localhost:8080`). Es decir, aunque
 tengamos kubectl y minikube instalados, el primero no está configurado
 todavía para conectarse al cluster de k8s que ejecuta minikube.
