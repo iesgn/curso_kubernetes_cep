@@ -46,9 +46,9 @@ el propio kubernetes y podremos actualizar ciertos valores:
 
 Sin embargo, es una opción compleja para utilizarla a estas alturas
 del curso y hay que comprender mejor cómo funcionan los objetos de
-kubernetes para poder hacer modificaciones de forma apropiada, y además,
+Kubernetes para poder hacer modificaciones de forma apropiada, y además,
 veremos más adelante otra manera más correcta de actualizar un objeto
-de kubernetes.
+de Kubernetes.
 
 Normalmente no se interactúa directamente con el pod a través de una
 shell, pero sí se obtienen directamente los logs al igual que se hace
@@ -70,13 +70,7 @@ al puerto de la aplicación:
 
 Y accedemos al servidor web en la url http://localhost:8080.
 
-**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones
-en kubernetes. Para el acceso a las aplicaciones usaremos un recurso
-llamado `service`. Con la anterior instrucción lo que estamos haciendo
-es una redirección desde localhost el puerto 8080 al puerto 80 del pod
-y es útil para pequeñas pruebas de funcionamiento, nunca para acceso
-real a un servicio.
-
+**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en Kubernetes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde localhost el puerto 8080 al puerto 80 del pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
 **NOTA2**: El `port-forward` no es igual a la redirección de puertos
 de docker, ya que en este caso la redirección de puertos se hace en el
 equipo que ejecuta `kubectl`, no en el equipo que ejecuta los pods o
@@ -91,10 +85,7 @@ yaml, pero también podemos añadirlos a los pods ya creados:
 
     kubectl label pods pod-nginx service=web --overwrite=true
 
-Las etiquetas son muy útiles, ya que permiten seleccionar un recurso
-determinado (en un cluster de kubernetes puede haber cientos o miles
-de objetos), por ejemplo para visualizar los pods que tienen una
-etiqueta con un determinado valor:
+Las etiquetas son muy útiles, ya que permiten seleccionar un recurso determinado (en un cluster de kubernetes puede haber cientos o miles de objetos).Por ejemplo para visualizar los pods que tienen una etiqueta con un determinado valor:
 
     kubectl get pods -l service=web
 

@@ -89,13 +89,13 @@ Estudiemos la definición del pod:
 Para realizar la actividad realiza los siguientes pasos:
 
 1. Crea el pod.
-2. Muestra información del pod, y fíjate que el pod está formado por un volumen y dos contenedores.
-3. Vamos a ver el contenido del fichero `index.html` en el primer contenedor, ejecutando:
+2. Muestra la información del pod, y fíjate que el pod está formado por un volumen y dos contenedores.
+3. Muestra el contenido del fichero `index.html` en el primer contenedor, ejecutando:
 
         kubectl exec pod_multicontenedor -c contenedor1 -- /bin/cat /usr/share/nginx/html/index.html
 
     En esta ocasión hay que indicar el contenedor (opción `-c`) para indicar donde vamos a ejecutar la instrucción.
-4. Vamos a ver el contenido del fichero `index.html` en el segundo contenedor, ejecutando:
+4. Muestra el contenido del fichero `index.html` en el segundo contenedor, ejecutando:
 
         kubectl exec pod_multicontenedor -c contenedor2 -- /bin/cat /html/index.html
 5. Ejecuta un "port forward" para acceder al pod en el puerto 8081 de localhost, sabiendo que el servicio usa el puerto 80.
@@ -136,7 +136,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 

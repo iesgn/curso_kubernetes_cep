@@ -1,6 +1,6 @@
 # Pod
 
-La unidad más pequeña que puede utilizar kubernetes es el Pod, en
+La unidad más pequeña que puede utilizar Kubernetes es el Pod, en
 inglés pod significa "vaina", y podemos entender un pod como una
 envoltura que contiene uno o varios contenedores (en la mayoría de los
 casos un solo contenedor). De forma genérica, un pod representa un
@@ -38,7 +38,7 @@ esta capa adicional por encima de la definición de contenedor:
 * Kubernetes puede trabajar con distintos sistemas de gestión de
   contenedores (docker, containerd, rocket, cri-o, etc) por lo que es
   muy conveniente añadir una capa de abstracción que permita utilizar
-  kubernetes de una forma homogénea e independiente del sistema de
+  Kubernetes de una forma homogénea e independiente del sistema de
   contenedores interno asociado.
 * Esta capa de abstracción añade información adicional necesaria en
   Kubernetes como por ejemplo, políticas de reinicio, comprobaciones
@@ -76,6 +76,6 @@ Al tratarse este curso de un curso de introducción a Kubernetes no
 vamos a poder ver todas las cargas de trabajo, ni la ejecución y
 despliegue de todo tipo de aplicaciones, por lo que consideramos más
 razonable no utilizar ejemplos de pods multicontenedor y centrarnos en
-la comprensión de las características principales de kubernetes
+la comprensión de las características principales de Kubernetes
 mediante ejemplos sencillos, comunes y muy apropiados para ejecutarse
-en kubernetes, mediante en uso de pods con un solo contenedor.
+en Kubernetes, mediante en uso de pods con un solo contenedor.
