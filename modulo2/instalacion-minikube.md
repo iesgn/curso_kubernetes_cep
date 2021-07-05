@@ -35,7 +35,7 @@ en este caso sería /usr/local/bin/) y establecemos permisos de
 ejecución. Todo esto puede hacerse con los comandos `mv` y `chmod`, o
 de forma más sencilla con `install`
 
-    usuario@equipo:~$ sudo install minikube-linux-amd64	/usr/local/bin/minikube
+    usuario@equipo:~$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 Comprobamos que se ha instalado correctamente con:
 
@@ -63,17 +63,17 @@ por ejemplo:
     minikube start --driver=kvm2
 
 Esto creará de forma automática una máquina virtual o un contenedor en
-el sistema escogido e instalará Kubernetes en ella. Por último se
-configura kubectl (el cliente de línea de comandos de k8s) para que
-utilice el cluster recién instalado. Podemos ver una salida típica de
-la instalación del cluster a continuación:
+el sistema escogido e instalará Kubernetes en ella. Por último, se
+configura kubectl si está instalado (el cliente de línea de comandos
+de k8s) para que utilice el cluster recién instalado. Podemos ver una
+salida típica de la instalación del cluster a continuación:
 
 ```
 😄  minikube v1.21.0 en Debian 11.0
 ✨  Using the kvm2 driver based on user configuration
 💾  Descargando el controlador docker-machine-driver-kvm2:
     > docker-machine-driver-kvm2....: 65 B / 65 B [----------] 100.00% ? p/s 0s
-    > docker-machine-driver-kvm2: 11.45 MiB / 11.45 MiB  100.00% 14.25 MiB p/s 
+    > docker-machine-driver-kvm2: 11.45 MiB / 11.45 MiB  100.00% 14.25 MiB p/s
 💿  Descargando la imagen de arranque de la VM
     > minikube-v1.21.0.iso.sha256: 65 B / 65 B [-------------] 100.00% ? p/s 0s
     > minikube-v1.21.0.iso: 243.03 MiB / 243.03 MiB [ 100.00% 10.56 MiB p/s 23s
@@ -92,9 +92,9 @@ la instalación del cluster a continuación:
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 ```
 
-En la última línea de la salida podemos ver que se ha configurado
-apropiadamente kubectl, a pesar de que no está instalado en el equipo,
-paso que haremos a continuación.
+En la última línea de la salida podemos ver que se ha intentado
+configurar apropiadamente kubectl, a pesar de que no está instalado en
+el equipo, paso que haremos a continuación.
 
 Podemos comprobar en cualquier momento el estado de minikube con la
 instrucción:
