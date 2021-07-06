@@ -13,7 +13,7 @@ Para ver los recursos que hemos creado también podemos utilizar la instrucción
 
     kubectl get all
 
-Que muestra los Deployments, ReplicaSets, Pods y Services que tenemos creados en el cluster. Los *Services* lo estudiaremos en el siguiente módulo.
+Esta orden muestra los Deployments, ReplicaSets, Pods y Services que tenemos creados en el cluster. Los *Services* lo estudiaremos en el siguiente módulo.
 
 ## Escalado de los Deployments
 
