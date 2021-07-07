@@ -14,7 +14,7 @@ embargo, la solución que presentamos puede tener alguna limitación:
   hacerlo en varios sitios.
 
 Para solucionar estas limitaciones, podemos usar un nuevo recurso de
-Kubernetes llamado **ConfigMap**.
+Kubernetes llamado ConfigMap.
 
 ## Configuración de aplicaciones usando ConfigMaps
 

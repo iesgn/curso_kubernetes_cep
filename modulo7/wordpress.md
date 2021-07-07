@@ -1,6 +1,6 @@
 # Ejemplo completo: Despliegue y acceso a WordPress + MariaDB
 
-En este ejemplo vamos a desplegar el CMS WordPress y la base de datos MariaDB para su correcto funcionamiento. Cada uno de los servicios se van a desplegar independientemente, y configuraremos los *Services* para acceder desde el exterior a la aplicación y para que el WordPress pueda acceder a la base de datos:
+En este ejemplo vamos a desplegar el CMS WordPress y la base de datos MariaDB para su correcto funcionamiento. Cada uno de los servicios se van a desplegar independientemente, y configuraremos los Services para acceder desde el exterior a la aplicación y para que el WordPress pueda acceder a la base de datos:
 
 ## Configuración de los contenedores
 

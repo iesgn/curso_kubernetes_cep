@@ -30,7 +30,7 @@ Como podemos observar la aplicación nos muestra un mensaje de error: **"No pued
 
 ## Despliegue y acceso al microservicio backend
 
-Es el momento de desplegar el segundo microservicio. Este microservicio ofrece un servicio API Restful en el puerto 5000/tcp. Para ello utilizaremos el fichero [`backend-deployment.yaml`](files/temperaturas/backend-deployment.yaml) para realizar el despliegue. El fichero [`backend-srv.yaml`](files/temperaturas/backend-srv.yaml) lo utilizaremos para crear el servicio.
+Es el momento de desplegar el segundo microservicio. Este microservicio ofrece un servicio API Restful en el puerto 5000/tcp. Para ello utilizaremos el fichero [`backend-deployment.yaml`](files/temperaturas/backend-deployment.yaml) para realizar el despliegue. El fichero [`backend-srv.yaml`](files/temperaturas/backend-srv.yaml) lo utilizaremos para crear el Service.
 
     kubectl apply -f backend-deployment.yaml
     kubectl apply -f backend-srv.yaml
@@ -50,7 +50,7 @@ Esta manera de trabajar de que cada microservicio que forma parte de la aplicaci
     En el ejemplo que hemos desarrollado, se crearon 3 Pods del frontend y un Pod del backend, pero se pueden escalar independientemente los dos despliegues. Te invito a escalar los dos despliegues y comprobar que sigue funcionando la aplicación.
 3. Las actualizaciones de los distintos servicios / microservicios no interfieren en el resto. 
 4. Lo estudiaremos en un módulo posterior, pero podremos gestionar el almacenamiento de cada servicio de forma independiente.
-5. Ya lo hemos comentado, pero con esta aplicación podemos observar el balanceo de carga que realiza el servicio al acceder al frontend: la aplicación visualiza el nombre del servidor que está ofreciendo la página. Por lo tanto si vamos refrescando la página con F5 observaremos cómo se va realizando el balanceo de carga y va cambiando el nombre del Pod al que está accediendo.
+5. Ya lo hemos comentado, pero con esta aplicación podemos observar el balanceo de carga que realiza el Service al acceder al frontend: la aplicación visualiza el nombre del servidor que está ofreciendo la página. Por lo tanto si vamos refrescando la página con F5 observaremos cómo se va realizando el balanceo de carga y va cambiando el nombre del Pod al que está accediendo.
 
 ## Acceso a la aplicación usando el Ingress Controller
 

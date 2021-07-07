@@ -22,7 +22,7 @@ Realiza los siguientes pasos:
 Para superar la actividad deberás entregar en un fichero comprimido con la siguiente información:
 
 1. Los ficheros yaml que has creado.
-2. Un pantallazo donde se vea el acceso desde un navegador web a la aplicación usando la ip del nodo master y el puerto asignado al servicio (**pantallazo1.jpg**).
+2. Un pantallazo donde se vea el acceso desde un navegador web a la aplicación usando la ip del nodo master y el puerto asignado al Service (**pantallazo1.jpg**).
 3. Un pantallazo donde se vea el acceso desde un navegador web a la aplicación usando el nombre que hemos configurado en el recurso Ingress (**pantallazo2.jpg**).
 
 ## RECURSOS

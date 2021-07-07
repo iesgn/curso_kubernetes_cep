@@ -8,7 +8,7 @@ Una vez que tenemos creado el despliegue de la aplicación, que realizamos en la
 
 #### Service para acceder a la aplicación
 
-El primer Service que vamos a crear es el servicio para acceder a la aplicación GuestBook desde el exterior, para ello crea un fichero yaml con la definición del Service a partir de la siguiente plantilla:
+El primer Service que vamos a crear nos va a permitir acceder a la aplicación GuestBook desde el exterior, para ello crea un fichero yaml con la definición del Service a partir de la siguiente plantilla:
 
 ```yaml
 apiVersion: v1
@@ -28,11 +28,11 @@ spec:
     tier: frontend
 ```
 
-Tienes que poner el tipo de servicio, el puerto del servicio será el 80 y el nombre del puerto de la aplicación que hemos asignado en el Deployment es `http-server`.
+Tienes que poner el tipo del Service, el puerto del servicio será el 80 y el nombre del puerto de la aplicación que hemos asignado en el Deployment es `http-server`.
 
 Realiza los siguientes pasos:
 
-1. Crea el fichero yaml con la definición del Service, y crea el servicio.
+1. Crea el fichero yaml con la definición del Service, y crealo.
 2. Comprueba el puerto que te han asignado al Service para acceder desde el exterior.
 3. Accede a la ip del nodo master y al puerto asignado desde un navegador web para ver la aplicación.
 4. Responde la siguiente pregunta: ¿Por qué aparece el mensaje de error: **Waiting for database connection...**?
@@ -58,11 +58,11 @@ spec:
     app: redis
     tier: backend
 ```
-Tienes que poner el tipo de servicio, el puerto del servicio será el 6379 y el nombre del puerto de la base de datos que hemos asignado en el Deployment es `redis-server`. **Nota: No cambies el nombre del Service, ya que la aplicación guestbook va a acceder por defecto a la base de datos usando el nombre `redis`**.
+Tienes que poner el tipo del Service, el puerto del servicio será el 6379 y el nombre del puerto de la base de datos que hemos asignado en el Deployment es `redis-server`. **Nota: No cambies el nombre del Service, ya que la aplicación guestbook va a acceder por defecto a la base de datos usando el nombre `redis`**.
 
 Realiza los siguientes pasos:
 
-1. Crea el fichero yaml con la definición del Service, y crea el servicio.
+1. Crea el fichero yaml con la definición del Service, y crealo.
 2. Lista los Services que has creado.
 3. Accede a la ip del nodo master y al puerto asignado desde un navegador web para ver la aplicación. Y comprueba que funciona sin ningún problema.
 
@@ -88,7 +88,7 @@ spec:
             port:
               number: 80
 ```
-Indica un host del tipo *www.tunombre.org*, indica el nombre del servicio que creaste para acceder a la aplicación guestbook y ten en cuenta que el puerto de dicho servicio era el 80.
+Indica un host del tipo *www.tunombre.org*, indica el nombre del Service que creaste para acceder a la aplicación guestbook y ten en cuenta que el puerto de dicho servicio era el 80.
 
 Realiza los siguientes pasos:
 
@@ -100,7 +100,7 @@ Realiza los siguientes pasos:
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
 1. Pantallazo donde se vea el acceso desde un navegador web a la aplicación cuando sólo tenemos el servicio para acceder a la aplicación (tiene que aparecer el mensaje de error) (**pantallazo1.jpg**).
-2. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando la ip del nodo master y el puerto asignado al servicio (**pantallazo2.jpg**).
+2. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando la ip del nodo master y el puerto asignado al Service (**pantallazo2.jpg**).
 3. Pantallazo donde se vea el acceso desde un navegador web a la aplicación usando el nombre que hemos configurado en el recurso Ingress (**pantallazo3.jpg**).
 
 ## RECURSOS

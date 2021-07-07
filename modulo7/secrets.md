@@ -2,7 +2,7 @@
 
 Cuando en un variable de entorno indicamos una información sensible,
 como por ejemplo, una contraseña o una clave ssh, es mejor utilizar un
-nuevo recurso de Kubernetes llamado **Secret**.
+nuevo recurso de Kubernetes llamado Secret.
 
 Los
 [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
