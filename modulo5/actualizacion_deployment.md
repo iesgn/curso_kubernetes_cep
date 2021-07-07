@@ -6,11 +6,11 @@ Por lo tanto, al crear un Deployment indicaremos la imagen desde la que se van a
 
 Una vez que hemos creado un Deployment a partir de una imagen de una versión determinada, tenemos los pods ejecutando la versión indicada de la aplicación.
 
-¿Cómo podemos actualizar a una nueva versión de la aplicación? Se seguirán los siguientes pasos:
+¿Cómo podemos actualizar a una nueva versión de la aplicación?. Se seguirán los siguientes pasos:
 
-1. Tendremos que modificar el valor del parámetro `image` para indicar una nueva imagen indicando la nueva versión al cambiar la etiqueta.
+1. Tendremos que modificar el valor del parámetro `image` para indicar una nueva imagen, especificando la nueva versión mediante el cambio de etiqueta.
 2. En ese momento el Deployment se actualiza, es decir, crea un nuevo ReplicaSet que creará nuevos pods de la nueva versión de la aplicación.
-3. Según la estrategía de despliegue indicada, se irán borrando los antiguos pods y se crearán lo nuevos.
+3. Según la estrategia de despliegue indicada, se irán borrando los antiguos pods y se crearán lo nuevos.
 4. El Deployment guardará el ReplicaSet antiguo, por si en algún momento queremos volver a la versión anterior.
 
 Veamos este proceso con más detalles estudiando un ejemplo de despliegue:
@@ -42,7 +42,7 @@ spec:
         ports:
         - containerPort: 80
 ```
-Si nos fijamos vamos a desplegar la versión 1.31 de la aplicación mediawiki, creamos el despliegue:
+Si nos fijamos vamos a desplegar la versión 1.31 de la aplicación mediawiki. Creamos el despliegue con la siguiente instrucción:
 
     kubectl apply -f mediawiki-deployment.yaml --record
 
@@ -70,7 +70,7 @@ A continuación queremos desplegar una versión más reciente de la mediawiki. P
 Al ejecutar la actualización del Deployment podemos observar que se ha creado un nuevo ReplicaSet, que creará los nuevos pods a partir de la versión modificada de la imagen. ¿Cómo se crean los nuevos pods y se destruyen los antiguos? Dependerá de la estratégia de despliegue:
 
   * Por defecto la estrategía de despliegue es `Recreate` que elimina los Pods antiguos y crea los nuevos.
-  * Si indicamos en el despliegue el tipo de estrategia como: `RollingUpdate`, se van creando los nuevos pods, comprueba que funcionan y se eliminan los antiguos.
+  * Si indicamos en el despliegue el tipo de estrategia  `RollingUpdate`, se van creando los nuevos pods, se comprueba que funcionan y se eliminan los antiguos.
 
 Veamos los recursos que se han creado en la actualización:
 
@@ -88,9 +88,9 @@ Y volvemos a acceder a la aplicación con un `port-forward` para comprobar que r
 
 El proceso de despliegue de una nueva versión de una aplicación es una labor crítica, que tradicionalmente ha dado muchos problemas. Si estamos sirviendo una aplicación web que utilizan muchos usuarios, no nos podemos permitir que haya un corte en el servicio por un problema en el despliegue de una nueva versión.
 
-Evidentemente, los problemas que puede dar un despliegue de una nueva versión puede estar causado por muchos mótivos, y muchas veces es complicado tener todos los factores controlados y finalmente podemos tener algún problema, la pregunta sería: ¿Hemos diseñado un proceso que nos permita de una manera sencilla y rápida volver a la versión anterior de la aplicación que sabíamos que funcionaba bien?
+Evidentemente, los problemas que pueden aparecer durante el despliegue de una nueva versión pueden estar causados por muchos motivos, y muchas veces es complicado tener todos los factores controlados. Si finalmente tenemos alguno, la pregunta sería: ¿Hemos diseñado un proceso que nos permita de una manera sencilla y rápida volver a la versión anterior de la aplicación que sabíamos que funcionaba bien?
 
-A ese proceso de volver a una versión anterior de la aplicación es lo que llamamos **rollback**, o de forma concreta en k8s se "deshace" un **rollout** y veremos en este ejemplo que Kubernetes nos ofrece un mecanismo sencillo de volver a versiones anteriores. Como hemos comentado, las actualizaciones de los Deployment van creando nuevos ReplicaSet, y va guardando el historial de ReplicaSet. Deshacer un Rollout será tan sencillo como activar uno de los ReplicaSet antiguos.
+A ese proceso de volver a una versión anterior de la aplicación es lo que llamamos **rollback**, o de forma concreta en k8s, "deshacer" un **rollout**. Veremos en este ejemplo que Kubernetes nos ofrece un mecanismo sencillo de volver a versiones anteriores. Como hemos comentado, las actualizaciones de los Deployment van creando nuevos ReplicaSet, y se va guardando el historial de ReplicaSet anteriores. Deshacer un Rollout será tan sencillo como activar uno de los ReplicaSet antiguos.
 
 Ahora vamos a desplegar una versión que nos da un error (la versión 2 de la aplicación no existe, no existe la imagen `mediawiki:2`). ¿Podremos volver al despliegue anterior?
 
