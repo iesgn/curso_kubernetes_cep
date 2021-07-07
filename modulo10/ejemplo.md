@@ -52,7 +52,7 @@ stable/nginx-ldapauth-proxy     	0.1.6        	1.13.5     	DEPRECATED - nginx pr
 
 Para obtener información sobre el chart `bitnami/nginx` podemos buscar en [Artifact Hub](https://artifacthub.io/).
 
-Todos los ficheros yaml que forman parte de un chart están parametrizados, es decir cada propiedad tiene un valor por defecto, pero a la hora de instalarlo se puede cambiar. Por ejemplo, ¿qué tipo de servicio se creará al instalar el chart `bitnami/nginx`? Por defecto, el parámetro `service.type` tiene como valor `LoadBalancer`, pero si queremos un servicio de tipo `NodePort`, podremos redefinir este parámetro a la hora de instalar el chart.
+Todos los ficheros yaml que forman parte de un chart están parametrizados, es decir cada propiedad tiene un valor por defecto, pero a la hora de instalarlo se puede cambiar. Por ejemplo, ¿qué tipo de Service se creará al instalar el chart `bitnami/nginx`? Por defecto, el parámetro `service.type` tiene como valor `LoadBalancer`, pero si queremos un Service de tipo `NodePort`, podremos redefinir este parámetro a la hora de instalar el chart.
 
 ¿Y cómo sabemos los parámetros que tiene definido cada chart y sus valores por defecto? Estudiando la documentación del char en [Artifact Hub](https://artifacthub.io/), en concreto para el chart con el que estamos trabajando, accediendo a la url [https://artifacthub.io/packages/helm/bitnami/nginx](https://artifacthub.io/packages/helm/bitnami/nginx). También podemos obtener esta información ejecutando el siguiente comando:
 
@@ -89,7 +89,7 @@ To access NGINX from outside the cluster, follow the steps below:
     echo "http://${NODE_IP}:${NODE_PORT}"
 ```
 
-Si queremos acceder a la aplicación desde el exterior, debemos ejecutar las tres últimas instrucciones, que nos muestra la ip de nuestro cluster y el puerto asignado al servicio NodePort.
+Si queremos acceder a la aplicación desde el exterior, debemos ejecutar las tres últimas instrucciones, que nos muestra la ip de nuestro cluster y el puerto asignado al Service NodePort.
 
 Siempre podemos volver a ver esta información ejecutando la siguiente instrucción:
 

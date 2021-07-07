@@ -18,15 +18,15 @@ En primer lugar vamos a desplegar el primer microservicio. Esta aplicación est�
 
     kubectl apply -f frontend-deployment.yaml
 
-A continuación usamos el fichero [`frontend-srv.yaml`](files/temperaturas/frontend-srv.yaml) para crear el servicio Node Port:
+A continuación usamos el fichero [`frontend-srv.yaml`](files/temperaturas/frontend-srv.yaml) para crear el Service NodePort:
 
     kubectl applt -f frontend-srv.yaml
 
-Obtenemos los recursos que hemos creado. Nos fijamos en el puerto que nos ha asignado por el servicio NodePort (en mi caso el 30053). Vamos a acceder desde un navegador web usando la ip del nodo master y el puesto que nos han asignado:
+Obtenemos los recursos que hemos creado. Nos fijamos en el puerto que nos ha asignado por el Service NodePort (en mi caso el 30053). Vamos a acceder desde un navegador web usando la ip del nodo master y el puesto que nos han asignado:
 
 ![temperaturas](img/temperaturas1.png)
 
-Como podemos observar la aplicación nos muestra un mensaje de error: **"No puedo conectar con el servidor de temperaturas...**. Evidentemente el componente `frontend` está intentando conectar con el componente `backend` y, evidentemente, no puede, ya que ni la hemos desplegado, ni hemos creado el servicio correspondiente.
+Como podemos observar la aplicación nos muestra un mensaje de error: **"No puedo conectar con el servidor de temperaturas...**. Evidentemente el componente `frontend` está intentando conectar con el componente `backend` y, evidentemente, no puede, ya que ni la hemos desplegado, ni hemos creado el Service correspondiente.
 
 ## Despliegue y acceso al microservicio backend
 
@@ -39,7 +39,7 @@ Si volvemos acceder al navegador y refrescamos la página, veremos que ya no nos
 
 ![temperaturas](img/temperaturas2.png)
 
-**Nota: Por defecto el componente frontend hace peticiones al componente backend utilizando el nombre `temperaturas-backend`, que es el nombre que hemos asignado al servicio ClusterIP para el acceso al backend. En el próximo módulo veremos como podemos cambiar la configuración de frontend para cambiar el nombre del servicio web al que conecta.**
+**Nota: Por defecto el componente frontend hace peticiones al componente backend utilizando el nombre `temperaturas-backend`, que es el nombre que hemos asignado al Service ClusterIP para el acceso al backend. En el próximo módulo veremos como podemos cambiar la configuración de frontend para cambiar el nombre del servicio web al que conecta.**
 
 ## Algunas consideraciones acerca del despliegue que hemos realizado
 
@@ -54,11 +54,11 @@ Esta manera de trabajar de que cada microservicio que forma parte de la aplicaci
 
 ## Acceso a la aplicación usando el Ingress Controller
 
-Para terminar vamos a crear un recurso Ingress que nos posibilite acceder a la aplicación utilizando un nombre. Como hemos indicado al utilizar Ingress no es necesario que el service al que accede sea de tipo NodePort, por lo tanto lo primero que vamos a hacer es cambiar el tipo de servicio que accede a frontend y lo vamos a poner ClusterIP, para ello vamos a modificar el fichero `frontend-srv.yaml` y cambiamos el tipo de servicio de NodePort a ClusterIP, y posterior aplicamos los cambios:
+Para terminar vamos a crear un recurso Ingress que nos posibilite acceder a la aplicación utilizando un nombre. Como hemos indicado al utilizar Ingress no es necesario que el Service al que accede sea de tipo NodePort, por lo tanto lo primero que vamos a hacer es cambiar el tipo de Service que accede a frontend y lo vamos a poner ClusterIP, para ello vamos a modificar el fichero `frontend-srv.yaml` y cambiamos el tipo de Service de NodePort a ClusterIP, y posterior aplicamos los cambios:
 
     kubectl apply -f frontend-srv.yaml
 
-Y comprobamos que realmente ha cambiado el tipo de servicio, y que ya no tenemos un puerto para acceder usando la ip del nodo master.
+Y comprobamos que realmente ha cambiado el tipo de Service, y que ya no tenemos un puerto para acceder usando la ip del nodo master.
 
 A continuación usamos el fichero  [`ingress.yaml`](files/temperaturas/ingress.yaml) para crear el recurso Ingress, que definirá el nombre del host `www.temperaturas.org` que tendremos que introducir en la resolución estática cómo visto anteriormente. Por lo tanto modificamos el fichero `/etc/hosts` de nuestro ordenador con la siguiente línea:
 

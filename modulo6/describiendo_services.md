@@ -31,8 +31,8 @@ spec:
 Veamos la descripción:
 
 * Vamos a crear un recurso Service (parámetro `kind`) y lo nombramos como `nginx` (parámetro `name`). Este nombre será importante para la resolución dns.
-* En la especificación del recurso indicamos el tipo de servicio (parámetro `type`).
-* A continuación, definimos el puerto por el que va a ofrecer el servicio y lo nombramos (dentro del apartado `port`: el parámetro `port` y el parámetro `name`). Además, debemos indicar el puerto en el que los Pods están ofreciendo el servicio (parámetro `targetPort`), en este caso, hemos usado el nombre del puerto (`http`) que indicamos en el recurso Deployment:
+* En la especificación del recurso indicamos el tipo de Service (parámetro `type`).
+* A continuación, definimos el puerto por el que va a ofrecer el Service y lo nombramos (dentro del apartado `port`: el parámetro `port` y el parámetro `name`). Además, debemos indicar el puerto en el que los Pods están ofreciendo el Service (parámetro `targetPort`), en este caso, hemos usado el nombre del puerto (`http`) que indicamos en el recurso Deployment:
 
 ```yaml
    ...
@@ -43,7 +43,7 @@ Veamos la descripción:
 ```
 * Por ultimo, seleccionamos los Pods a los que vamos acceder y vamos a balancear la carga seleccionando los Pods por medio de sus etiquetas (parámetro `selector`).
 
-**Nota: La definición de un servicio de tipo ClusterIP sería exactamente igual, pero cambiando el parámetro `type`.**
+**Nota: La definición de un Service de tipo ClusterIP sería exactamente igual, pero cambiando el parámetro `type`.**
 
 ## Para seguir aprendiendo
 

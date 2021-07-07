@@ -93,7 +93,7 @@ De forma similar, modificamos el fichero [`mariadb-deployment.yaml`](files/wordp
 ```
 En esta ocasión usaremos el volumen asociado a `mariadb-pvc` y el punto de montaje se hará sobre el directorio donde se guarda la información de la base de datos: `/var/lib/mysql`.
 
-Evidentemente, no es necesario modificar la definición de los otros recursos: services e Ingress.
+Evidentemente, no es necesario modificar la definición de los otros recursos: Services e Ingress.
 
 Creamos el DEployment, los Services y el Ingress:
 

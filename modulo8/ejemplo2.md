@@ -109,7 +109,7 @@ pod/nginx-ejemplo2-7b79b5966-zbdqh   1/1     Running   0          5s
 ...
 kubectl exec pod/nginx-ejemplo2-7b79b5966-zbdqh -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
 ```
-Finalmente creamos el servicio de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
+Finalmente creamos el Service de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
 
 ```bash
 kubectl apply -f srv-ejemplo2.yaml
@@ -120,7 +120,7 @@ service/nginx-ejemplo2   NodePort    10.99.48.24   <none>        80:31053/TCP   
 ...
 ```
 
-Y accedemos a la aplicación, accedo a la ip del nodo controlador del cluster y al puerto asignado al servicio NodePort:
+Y accedemos a la aplicación, accedo a la ip del nodo controlador del cluster y al puerto asignado al Service NodePort:
 
 ```bash
 minikube ip

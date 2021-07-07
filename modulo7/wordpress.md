@@ -9,9 +9,9 @@ En este ejemplo vamos a desplegar el CMS WordPress y la base de datos MariaDB pa
 
 Evidentemente el valor de estas variables tienen que coincidir, es decir, el usuario y la contraseña que creemos en la base de datos serán las mismas que utilicemos desde WordPress para acceder a la base de datos, y el nombre de la base de datos usada por WordPres será el mismo que la base de datos creada en MariaDB.
 
-Lo veremos posteriormente, pero adelantamos, que el valor de la variable `WORDPRESS_DB_HOST` será el nombre del servicio que creemos para acceder a la base de datos, como ya hemos estudiado, se creará un registro en el DNS del cluster que permitirá que WordPress acceda a la base de datos usando el nombre del servicio.
+Lo veremos posteriormente, pero adelantamos, que el valor de la variable `WORDPRESS_DB_HOST` será el nombre del Service que creemos para acceder a la base de datos, como ya hemos estudiado, se creará un registro en el DNS del cluster que permitirá que WordPress acceda a la base de datos usando el nombre del Service.
 
-Los valores para crear la base de datos y el usuario en mariadb, que corresponden a las credenciales que vamos a usar en WordPress, lo vamos a guardar en dos recursos de nuestro cluster: los datos no sensibles (nombre de usuario y nombre de la base de datos) lo guardaremos en un ConfigMap y los datos sensibles, las contraseñas, la guardaremos en un Secret.
+Los valores para crear la base de datos y el usuario en MariaDB, que corresponden a las credenciales que vamos a usar en WordPress, lo vamos a guardar en dos recursos de nuestro cluster: los datos no sensibles (nombre de usuario y nombre de la base de datos) lo guardaremos en un ConfigMap y los datos sensibles, las contraseñas, la guardaremos en un Secret.
 
 Para ello ejecutamos las siguientes instrucciones:
 
@@ -45,23 +45,23 @@ Para desplegar la base de datos vamos a usar el fichero [`mariadb-deployment.yam
 
     kubectl apply -f mariadb-deployment.yaml
 
-La definición del servicio que vamos a crear lo tenemos en el fichero: [`mariadb-srv.yaml`](files/wordpress/mariadb-srv.yaml). Como comprobamos en la definición estamos creando un servicio del tipo ClusterIP, ya que no vamos a acceder a la base de datos desde el exterior. Además es importante recordar el nombre que hemos puesto al servicio (`mariadb-service`), ya que cómo hemos indicado posteriormente, usaremos este nombre para configurar la aplicación WordPress a la hora de indicar el servidor de base de datos. Ejecutamos:
+La definición del Service que vamos a crear lo tenemos en el fichero: [`mariadb-srv.yaml`](files/wordpress/mariadb-srv.yaml). Como comprobamos en la definición estamos creando un Service del tipo ClusterIP, ya que no vamos a acceder a la base de datos desde el exterior. Además es importante recordar el nombre que hemos puesto al Service (`mariadb-service`), ya que cómo hemos indicado posteriormente, usaremos este nombre para configurar la aplicación WordPress a la hora de indicar el servidor de base de datos. Ejecutamos:
 
     kubectl apply -f mariadb-srv.yaml
 
 ## Despliegue de la aplicación WordPress
 
-Para desplegar la aplicación WordPress vamos a usar el fichero [`wordpress-deployment.yaml`](files/wordpress/wordpress-deployment.yaml). Podemos observar en el fichero cómo los datos de las variables de entorno del contenedor se inicializan con los valores que hemos creado en el ConfigMap y en el Secret anterior. Además, comprobamos que la variable de entorno `WORDPRESS_DB_HOST` se inicializa a `mariadb-service`, que es el nombre del servicio creado para a acceder a mariaDB. Ejecutamos:
+Para desplegar la aplicación WordPress vamos a usar el fichero [`wordpress-deployment.yaml`](files/wordpress/wordpress-deployment.yaml). Podemos observar en el fichero cómo los datos de las variables de entorno del contenedor se inicializan con los valores que hemos creado en el ConfigMap y en el Secret anterior. Además, comprobamos que la variable de entorno `WORDPRESS_DB_HOST` se inicializa a `mariadb-service`, que es el nombre del Service creado para a acceder a mariaDB. Ejecutamos:
 
     kubectl apply -f wordpress-deployment.yaml
 
-La definición del servicio que vamos a crear lo tenemos en el fichero: [`wordpress-srv.yaml`](files/wordpress/wordpress-srv.yaml). Como comprobamos en la definición estamos creando un servicio del tipo NodePort, pero también podríamos haberlo configurado de tipo ClusterIP, porque posteriormente vamos a crear un recurso Ingress para acceder a la aplicación. Ejecutamos:
+La definición del Service que vamos a crear lo tenemos en el fichero: [`wordpress-srv.yaml`](files/wordpress/wordpress-srv.yaml). Como comprobamos en la definición estamos creando un Service del tipo NodePort, pero también podríamos haberlo configurado de tipo ClusterIP, porque posteriormente vamos a crear un recurso Ingress para acceder a la aplicación. Ejecutamos:
 
     kubectl apply -f wordpress-srv.yaml
 
 ## Acceso a la aplicación
 
-Para acceder a la aplicación vamos a crear un recurso Ingress que tenemos definido en el fichero: [`wordpress-ingress.yaml`](files/wordpress/wordpress-ingress.yaml). Como podemos observar vamos a usar el nombre `www.miwordpress.org` que tendremos que añadir en la resolución estática del ordenador desde el que vamos a acceder. También es interesante observar a que servicio se va acceder con este recurso Ingress, el nombre del servicio es `wordpress-service` que evidentemente es el mismo que hemos puesto en la definición del servicio de wordpress.
+Para acceder a la aplicación vamos a crear un recurso Ingress que tenemos definido en el fichero: [`wordpress-ingress.yaml`](files/wordpress/wordpress-ingress.yaml). Como podemos observar vamos a usar el nombre `www.miwordpress.org` que tendremos que añadir en la resolución estática del ordenador desde el que vamos a acceder. También es interesante observar a que Service se va acceder con este recurso Ingress, el nombre del Service es `wordpress-service` que evidentemente es el mismo que hemos puesto en la definición del Service de wordpress.
 
 Una vez que comprobemos que todos los recursos están funcionando, podemos acceder a nuestra aplicación:
 

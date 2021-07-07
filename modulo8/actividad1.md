@@ -14,7 +14,7 @@ Realiza los siguientes pasos:
 2. Crea el recurso y comprueba que se ha asociado un volumen de forma dinámica a la solicitud.
 3. Crea un fichero yaml para desplegar un servidor web desde la imagen `php:7.4-apache`, asocia el volumen al Pod que se va a crear e indica el punto de montaje en el *DocumentRoot* del servidor: `/var/www/html`.
 4. Despliega el servidor y crea un fichero `info.php` en `/var/www/html`, con el siguiente contenido: `<?php phpinfo(); ?>`.
-5. Define y crea un servicio NodePort y accede desde un navegador al fichero `info.php` y comprueba que se visualiza de forma correcta.
+5. Define y crea un Service NodePort y accede desde un navegador al fichero `info.php` y comprueba que se visualiza de forma correcta.
 6. Comprobemos la persistencia: elimina el Deployment, vuelve a crearlo y vuelve acceder desde el navegador al fichero `info.php`. ¿Se sigue visualizando?
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:

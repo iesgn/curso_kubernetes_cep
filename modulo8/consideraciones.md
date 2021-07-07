@@ -10,7 +10,7 @@ Podemos fijarnos en el [Ejemplo: Despliegue y acceso a WordPress + MariaDB](../m
 
 2. ¿Qué pasa si escalamos el despliegue de la base de datos y tenemos dos Pods ofreciendo la base de datos?
 
-    En este caso el Pod más antiguo tendría la información de la base de datos, pero el nuevo Pod creado al escalar el despliegue no tendría ninguna información. Como al acceder a l servicio de la base de datos se hace balanceo de carga, en unas ocasiones accederíamos al Pod antiguo, y todo funcionaría correctamente, pero cuando accederíamos al Pod nuevo, al no tener información, nos mostraría la pantalla de instalación de la aplicación. En definitiva, tendríamos dos bases de datos distintas a las que accederíamos indistintamente.
+    En este caso el Pod más antiguo tendría la información de la base de datos, pero el nuevo Pod creado al escalar el despliegue no tendría ninguna información. Como al acceder al Service de la base de datos se hace balanceo de carga, en unas ocasiones accederíamos al Pod antiguo, y todo funcionaría correctamente, pero cuando accederíamos al Pod nuevo, al no tener información, nos mostraría la pantalla de instalación de la aplicación. En definitiva, tendríamos dos bases de datos distintas a las que accederíamos indistintamente.
 
 3. Si escribimos un post en el wordpress y subimos una imagen, ¿qué pasa con esta información en el pod?
 

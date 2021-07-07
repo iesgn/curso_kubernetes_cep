@@ -19,7 +19,7 @@ Por lo tanto el objeto StatefulSet nos ofrece las siguientes **características*
 
 * El nombre de cada Pod tendrá un número (1,2,...) que lo identifica y que nos proporciona la posibilidad de que la creación actualización y eliminación sea ordenada.
 * Si un nuevo Pod es recreado, obtendrá el mismo nombre (hostname), los mismos nombres DNS (aunque la IP pueda cambiar) y el mismo volumen que tenía asociado. 
-* Necesitamos crear un servicio especial, llamado **Headless Service**, que nos permite acceder a los Pods de forma independiente, pero que no balancea la carga entre ellos, por lo tanto este servicio no tendrá una ClusterIP.
+* Necesitamos crear un Service especial, llamado **Headless Service**, que nos permite acceder a los Pods de forma independiente, pero que no balancea la carga entre ellos, por lo tanto este Service no tendrá una ClusterIP.
 
 ## StatefulSet vs Deployment
 
@@ -31,9 +31,9 @@ Por lo tanto el objeto StatefulSet nos ofrece las siguientes **características*
 
 ## Creando el Headless Service para acceder a los Pods del StatefulSet
 
-Una de las características de los Pods controlados por un StatefulSet es que son únicos (todos los Pods son distintos), por lo tanto al acceder a ellos por medio de la definición de un servicio no necesitamos el balanceo de carga entre ellos. 
+Una de las características de los Pods controlados por un StatefulSet es que son únicos (todos los Pods son distintos), por lo tanto al acceder a ellos por medio de la definición de un Service no necesitamos el balanceo de carga entre ellos. 
 
-Para acceder a los Pods de un StatefulSet vamos a crear un servicio Headless que se caracteriza por no tener IP (ClusterIP) y por lo tanto no va a balancear la carga entre los distintos Pods. Este tipo de servicio va a crear una entrada DNS por cada Pod, que nos permitirá acceder a cada Pod de forma independiente. El nombre DNS que se creará será `<nombre del Pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`.
+Para acceder a los Pods de un StatefulSet vamos a crear un Service Headless que se caracteriza por no tener IP (ClusterIP) y por lo tanto no va a balancear la carga entre los distintos Pods. Este tipo de Service va a crear una entrada DNS por cada Pod, que nos permitirá acceder a cada Pod de forma independiente. El nombre DNS que se creará será `<nombre del Pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`.
 
 Veamos un ejemplo de definición de un Headless Service (fichero `service.yaml`):
 
@@ -53,7 +53,7 @@ spec:
     app: nginx
 ```
 
-En esta definición podemos observar que al indicar `clusterIP: None` estamos creando un Headless Service, que no tendrá ClusterIP (por lo que no balanceará la carga entre los pods). Este servicios será el responsable de crear, por cada Pod seleccionado con el `selector`, una entrada DNS.
+En esta definición podemos observar que al indicar `clusterIP: None` estamos creando un Headless Service, que no tendrá ClusterIP (por lo que no balanceará la carga entre los pods). Este Service será el responsable de crear, por cada Pod seleccionado con el `selector`, una entrada DNS.
 
 ## Creando el recurso StatefulSet
 
@@ -103,9 +103,9 @@ Vamos a estudiar las características de la definición de este recurso:
 
 ## Ejemplo: Creación de un StatefulSet
 
-Vamos a crear los recursos estudiados en este apartado: el servicio headless y el StatefulSet, y vamos a comprobar sus características.
+Vamos a crear los recursos estudiados en este apartado: el Service Headless y el StatefulSet, y vamos a comprobar sus características.
 
-Lo primero es crear el headless service:
+Lo primero es crear el Headless Service:
 
 ```bash
 kubectl apply -f service.yaml
@@ -137,7 +137,7 @@ web-0
 web-1
 ```
 
-Veamos los nombres DNS. en este ejemplo el Headless service ha creado entradas en el DNS para cada Pod. El nombre DNS que se creará será `<nombre del pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`. En este caso el nombre del primer Pod será `web-0.nginx`. Vamos a comprobarlo, haciendo una consulta DNS desde otro pod:
+Veamos los nombres DNS. en este ejemplo el Headless Service ha creado entradas en el DNS para cada Pod. El nombre DNS que se creará será `<nombre del pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`. En este caso el nombre del primer Pod será `web-0.nginx`. Vamos a comprobarlo, haciendo una consulta DNS desde otro pod:
 
 ```bash
 kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm

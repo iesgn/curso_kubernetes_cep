@@ -2,8 +2,8 @@
 
 Hasta ahora tenemos dos opciones principales para acceder a nuestras aplicaciones desde el exterior:
 
-1. Utilizando servicios del tipo NodePort: Esta opción no es muy viable para entornos de producción ya que tenemos que utilizar puertos aleatorios desde 30000-40000.
-2. Utilizando servicios del tipo LoadBalancer: Esta opción sólo es válida si trabajamos en un proveedor Cloud que nos ofrece un balanceador de carga para cada una de las aplicaciones, en cloud público puede ser una opción muy cara.
+1. Utilizando Services del tipo NodePort: Esta opción no es muy viable para entornos de producción ya que tenemos que utilizar puertos aleatorios desde 30000-40000.
+2. Utilizando Services del tipo LoadBalancer: Esta opción sólo es válida si trabajamos en un proveedor Cloud que nos ofrece un balanceador de carga para cada una de las aplicaciones, en cloud público puede ser una opción muy cara.
 
 La solución puede ser utilizar un [Ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) que nos permite utilizar un proxy inverso (HAproxy, nginx, traefik,...) que por medio de reglas de encaminamiento que obtiene de la API de Kubernetes, nos permite el acceso a nuestras aplicaciones por medio de nombres.
 
@@ -30,7 +30,7 @@ Debe aparece un Pod que se llama `ingress-nginx-controller-...`, si es así, sig
 
 ## Describiendo el recurso Ingress
 
-Una vez instalado el componente Ingress Controller, ya podemos definir un recurso Ingress en un fichero yaml. Para ello vamos a trabajar con el despliegue y el servicio que hemos creado de nginx.
+Una vez instalado el componente Ingress Controller, ya podemos definir un recurso Ingress en un fichero yaml. Para ello vamos a trabajar con el despliegue y el Service que hemos creado de nginx.
 
 El recurso Ingress para acceder a nuestro despliegue de nginx lo tenemos en el fichero [`ingress.yaml`](file/ingress.yaml):
 
@@ -53,14 +53,14 @@ spec:
               number: 80
 ```
 
-Hemos indicado el tipo de recurso Ingress (`kind`) y le hemos puesto un nombre (`name`). A continuación en la especificación del recurso vamos a poner una regla que relaciona un nombre de host con un service que me permita el acceso a una aplicación:
+Hemos indicado el tipo de recurso Ingress (`kind`) y le hemos puesto un nombre (`name`). A continuación en la especificación del recurso vamos a poner una regla que relaciona un nombre de host con un Service que me permita el acceso a una aplicación:
 
 * `host`: Indicamos el nombre de host que vamos a usar para el acceso. Este nombre debe apuntar a la ip del nodo master.
 * `path`: Indicamos el path de la url que vamos a usar, en este caso sería la ruta raíz: `/`. Esto nos sirve por si queremos servir la aplicación en una ruta determinada, por ejemplo: `www.example.org/app1`.
 * `pathType`: No es importante, nos permite indicar cómo se van a trabajar con las URL. 
-* `backend`: Indicamos el servicio al que vamos a acceder. En este caso indicamos el nombre del servicio (`service/name`) y el puerto del servicio (`service/port/number`).
+* `backend`: Indicamos el Service al que vamos a acceder. En este caso indicamos el nombre del servicio (`service/name`) y el puerto del servicio (`service/port/number`).
 
-Cuando se crea el recurso, y accedamos al nombre indicado, un proxy inverso redirigirá las peticiones HTTP a la IP y al puerto del servicio correspondiente. **Nota: Utilizando Ingress no es necesario que los servicios sean de tipo NodePort para acceder a la aplicación desde el exterior**.
+Cuando se crea el recurso, y accedamos al nombre indicado, un proxy inverso redirigirá las peticiones HTTP a la IP y al puerto del servicio correspondiente. **Nota: Utilizando Ingress no es necesario que los Services sean de tipo NodePort para acceder a la aplicación desde el exterior**.
 
 ## Gestionando el recurso Ingress
 

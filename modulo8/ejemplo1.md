@@ -145,7 +145,7 @@ Vamos a ejecutar un comando en el Pod para que cree un fichero `index.html` en e
 kubectl exec pod/nginx-ejemplo1-86864d84b5-s62dq -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
 ```
 
-Finalmente creamos el servicio de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
+Finalmente creamos el Service de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
 
 ```bash
 kubectl apply -f srv-ejemplo1.yaml
@@ -156,7 +156,7 @@ service/nginx-ejemplo1   NodePort    10.106.238.146   <none>        80:32581/TCP
 ...
 ```
 
-Y accedemos a la aplicación, accedo a la ip del nodo controlador del cluster y al puerto asignado al servicio NodePort:
+Y accedemos a la aplicación, accedo a la ip del nodo controlador del cluster y al puerto asignado al Service NodePort:
 
 ```bash
 minikube ip

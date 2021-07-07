@@ -6,7 +6,7 @@
 
 En un ejemplo del módulo anterior: [Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas](../modulo6/temperaturas.md) habíamos desplegado una aplicación formado por dos microservicios que nos permitía visualizar las temperaturas de municipios.
 
-Recordamos que el componente `frontend` hace peticiones al componente `backend` utilizando el nombre `temperaturas-backend`, que es el nombre que asignamos al servicio ClusterIP para el acceso al `backend`.
+Recordamos que el componente `frontend` hace peticiones al componente `backend` utilizando el nombre `temperaturas-backend`, que es el nombre que asignamos al Service ClusterIP para el acceso al `backend`.
 
 Vamos a cambiar la configuración de la aplicación para indicar otro nombre.
 
@@ -18,14 +18,14 @@ Por defecto el valor de esa variable es:
 TEMP_SERVER temperaturas-backend:5000
 ```
 
-Vamos a modificar esta variable en el despliegue del `frontend` y cambiaremos el nombre del servicio del `backend` para que coincidan, para ello realiza los siguientes pasos:
+Vamos a modificar esta variable en el despliegue del `frontend` y cambiaremos el nombre del Service del `backend` para que coincidan, para ello realiza los siguientes pasos:
 
 1. Crea un recurso `ConfigMap` con un dato que tenga como clave `SERVIDOR_TEMPERATURAS` y como contenido `servidor-temperaturas:5000`.
 2. Modifica el fichero de despliegue del `frontend`: [`frontend-deployment.yaml`](../modulo6/files/temperaturas/frontend-deployment.yaml) para añadir la modificación de la variable `TEMP_SERVER` con el valor que hemos guardado en el `ConfigMap`.
-3. Realiza el despliegue y crea el servicio para acceder al `frontend`.
+3. Realiza el despliegue y crea el Service para acceder al `frontend`.
 4. Despliega el microservicio `backend`.
-5. Modifica el fichero [`backend-srv.yaml`](../modulo6/files/temperaturas/backend-srv.yaml) para cambiar el nombre del servicio por `servidor-temperaturas` y crea el servicio.
-6. Accede a la aplicación usando el puerto asignado al servicio NodePort del `frontend` o creando el recurso `Ingress`.
+5. Modifica el fichero [`backend-srv.yaml`](../modulo6/files/temperaturas/backend-srv.yaml) para cambiar el nombre del Service por `servidor-temperaturas` y crea el Service.
+6. Accede a la aplicación usando el puerto asignado al Service NodePort del `frontend` o creando el recurso `Ingress`.
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 

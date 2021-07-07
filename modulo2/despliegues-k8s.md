@@ -43,7 +43,7 @@ funciones en la siguiente lista:
 * Deployments:
   * Gestionan las actualizaciones continuas
   * Realizan despliegues automáticos
-* Servicios:
+* Services:
   * Gestionan el acceso a los pods
   * Balancean la carga entre los Pods disponibles
 * Ingress:

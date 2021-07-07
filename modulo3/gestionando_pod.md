@@ -70,7 +70,7 @@ al puerto de la aplicación:
 
 Y accedemos al servidor web en la url http://localhost:8080.
 
-**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en Kubernetes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde localhost el puerto 8080 al puerto 80 del Pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
+**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en Kubernetes. Para el acceso a las aplicaciones usaremos un recurso llamado Service. Con la anterior instrucción lo que estamos haciendo es una redirección desde localhost el puerto 8080 al puerto 80 del Pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
 **NOTA2**: El `port-forward` no es igual a la redirección de puertos
 de docker, ya que en este caso la redirección de puertos se hace en el
 equipo que ejecuta `kubectl`, no en el equipo que ejecuta los Pods o
