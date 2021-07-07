@@ -1,7 +1,7 @@
-# Gestionando los pods
+# Gestionando los Pods
 
 Tenemos un fichero [`pod.yaml`](files/pod.yaml), donde hemos definido
-un pod de la siguiente manera:
+un Pod de la siguiente manera:
 
 ```yaml
 apiVersion: v1
@@ -33,12 +33,12 @@ saber en qué nodo del cluster se está ejecutando:
 
     kubectl get pod -o wide
 
-Para obtener información más detallada del pod (equivalente al inspect
+Para obtener información más detallada del Pod (equivalente al inspect
 de docker):
 
     kubectl describe pod pod-nginx
 
-Podríamos editar el pod y ver todos los atributos que definen el
+Podríamos editar el Pod y ver todos los atributos que definen el
 objeto, la mayoría de ellos con valores asignados automáticamente por
 el propio Kubernetes y podremos actualizar ciertos valores:
 
@@ -50,7 +50,7 @@ Kubernetes para poder hacer modificaciones de forma apropiada, y además,
 veremos más adelante otra manera más correcta de actualizar un objeto
 de Kubernetes.
 
-Normalmente no se interactúa directamente con el pod a través de una
+Normalmente no se interactúa directamente con el Pod a través de una
 shell, pero sí se obtienen directamente los logs al igual que se hace
 en docker:
 
@@ -70,7 +70,7 @@ al puerto de la aplicación:
 
 Y accedemos al servidor web en la url http://localhost:8080.
 
-**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en Kubernetes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde localhost el puerto 8080 al puerto 80 del pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
+**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en Kubernetes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde localhost el puerto 8080 al puerto 80 del Pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
 **NOTA2**: El `port-forward` no es igual a la redirección de puertos
 de docker, ya que en este caso la redirección de puertos se hace en el
 equipo que ejecuta `kubectl`, no en el equipo que ejecuta los pods o
@@ -94,6 +94,6 @@ columna:
 
     kubectl get pods -Lservice
 
-Y por último, eliminamos el pod mediante:
+Y por último, eliminamos el Pod mediante:
 
     kubectl delete pod pod-nginx

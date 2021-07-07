@@ -76,10 +76,10 @@ De forma más concreta estos objetivos se pueden enumerar en:
         * [Actividad 2.1: Instalación de minikube y kubectl (OBLIGATORIA)](modulo2/actividad1.md)
 1. Contenedores en Kubernetes: Pods
     * [Pod](modulo3/pods.md)
-    * [Describiendo un pod](modulo3/describiendo_pod.md)
-	* [Gestionando los pods](modulo3/gestionando_pod.md)
-        * [Actividad 3.1: Trabajando con pods (OBLIGATORIA)](modulo3/actividad1.md)
-        * [Actividad 3.2: Trabajando con un pod multicontenedor (VOLUNTARIA)](modulo3/actividad2.md)
+    * [Describiendo un Pod](modulo3/describiendo_pod.md)
+	* [Gestionando los Pods](modulo3/gestionando_pod.md)
+        * [Actividad 3.1: Trabajando con Pods (OBLIGATORIA)](modulo3/actividad1.md)
+        * [Actividad 3.2: Trabajando con un Pod multicontenedor (VOLUNTARIA)](modulo3/actividad2.md)
 1. Tolerancia y escalabilidad: ReplicaSets
 	* [ReplicaSet](modulo4/replicaset.md)
 	* [Describiendo un ReplicaSet](modulo4/describiendo_replicaset.md)
@@ -152,8 +152,8 @@ aproximadamente 5-6 horas por semana.
 | INICIO | 0.3. Nos presentamos (T) | 30' | 1ª |
 | MÓD 2 | 2.1: Instalación de minikube (T) | 1 h | 2ª |
 | MÓD 2 | 2.2: Instalación de kubectl (T) | 30' | 2ª |
-| MÓD 3 | 3.1: Trabajando con pods (T) | 1 h | 3ª |
-| MÓD 3 | 3.2: Trabajando con un pod multicontenedor (VOLUNTARIA)  | 1 h | 3ª |
+| MÓD 3 | 3.1: Trabajando con Pods (T) | 1 h | 3ª |
+| MÓD 3 | 3.2: Trabajando con un Pod multicontenedor (VOLUNTARIA)  | 1 h | 3ª |
 | MÓD 4 | 4.1: Trabajando con ReplicaSet (T) | 1 h | 4ª |
 | MÓD 5 | 5.1: Trabajando con Deployments (T) | 1 h | 4ª |
 | MÓD 5 | 5.2: Actualización y desactualización de nuestra aplicación (T)  | 1 h | 4ª |
