@@ -35,9 +35,9 @@ spec:
 Cuando creemos el objeto *PersistentVolumeClaim*, veremos que de forma dinámica se creará un *PersitentVolumen* que se asociará a nuestra solicitud::
 
 ```bash
-$ kubectl apply -f pvc-ejemplo2.yaml
+kubectl apply -f pvc-ejemplo2.yaml
 
-$ kubectl get pv,pvc
+kubectl get pv,pvc
 NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                  STORAGECLASS   REASON   AGE
 persistentvolume/pvc-6a09c69a-4344-447c-b23d-d85c7edd7f36   1Gi        RWX            Delete           Bound    default/pvc-ejemplo2   standard                1s
 
@@ -49,7 +49,7 @@ persistentvolumeclaim/pvc-ejemplo2   Bound    pvc-6a09c69a-4344-447c-b23d-d85c7e
 Cómo el volumen ha sido generado de forma dinámica por el provisonador, éste habra escogido una carpeta del host que correspona al volumen.
 
 ```bash
-$ kubectl describe persistentvolume/pvc-6a09c69a-4344-447c-b23d-d85c7edd7f36
+kubectl describe persistentvolume/pvc-6a09c69a-4344-447c-b23d-d85c7edd7f36
 ...
 Source:
     Type:          HostPath (bare host directory volume)
@@ -96,25 +96,25 @@ spec:
 Creamos el despliegue:
 
 ```bash
-$ kubectl apply -f deploy-ejemplo2.yaml
+kubectl apply -f deploy-ejemplo2.yaml
 ```
 
 Y a continuación, cuando el contenedor esté funcionando, creamos el fichero `index.html`:
 
 ```bash
-$ kubectl get all
+kubectl get all
 ...
 NAME                                 READY   STATUS    RESTARTS   AGE
 pod/nginx-ejemplo2-7b79b5966-zbdqh   1/1     Running   0          5s
 ...
-$ kubectl exec pod/nginx-ejemplo2-7b79b5966-zbdqh -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
+kubectl exec pod/nginx-ejemplo2-7b79b5966-zbdqh -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
 ```
 Finalmente creamos el servicio de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
 
 ```bash
-$ kubectl apply -f srv-ejemplo2.yaml
+kubectl apply -f srv-ejemplo2.yaml
 
-$ kubectl get all
+kubectl get all
 ...
 service/nginx-ejemplo2   NodePort    10.99.48.24   <none>        80:31053/TCP   3s
 ...
@@ -136,8 +136,8 @@ Finalmente puedes volver a comprobar que la información de la aplicación no se
 En este caso los volúmenes que crea de forma dinámica el `storageclass`que tenemos creado en minikube, tienen como política de reciclaje el valor de `Delete`. esto significa que cuando eliminemos la solicitud, el objeto *PersistentVolumeClaim*, también se borrará el volumen, el objeto *PersistentVolume*.
 
 ```bash
-$ kubectl delete persistentvolumeclaim/pvc-ejemplo2
+kubectl delete persistentvolumeclaim/pvc-ejemplo2
 
-$ kubectl get pv,pvc
+kubectl get pv,pvc
 No resources found
 ```

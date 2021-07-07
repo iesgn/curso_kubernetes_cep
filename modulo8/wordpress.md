@@ -43,10 +43,10 @@ spec:
 Creamos las solicitudes y comprobamos que se ha asociado un volúmen a cada una de ellas:
 
 ```bash
-$ kubectl apply -f wordpress-pvc.yaml
-$ kubectl apply -f mariadb-pvc.yaml
+kubectl apply -f wordpress-pvc.yaml
+kubectl apply -f mariadb-pvc.yaml
 
-$ kubectl get pv,pvc
+kubectl get pv,pvc
 NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                   STORAGECLASS   REASON   AGE
 persistentvolume/pvc-01ed3c4c-a542-4161-93a9-b9d5ea2bf6d1   5Gi        RWX            Delete           Bound    default/wordpress-pvc   standard                10s
 persistentvolume/pvc-78acc14b-71da-4cf0-861d-0ab7780bca4f   5Gi        RWX            Delete           Bound    default/mariadb-pvc     standard                10s
@@ -98,11 +98,11 @@ Evidntemente, no es necesario modificar la defininción de los otrs recursos: se
 Creamos el despliegue, los servicios y el ingress:
 
 ```bash
-$ kubectl apply -f mariadb-deployment.yaml
-$ kubectl apply -f mariadb-srv.yaml
-$ kubectl apply -f wordpress-deployment.yaml
-$ kubectl apply -f wordpress-srv.yaml
-$ kubectl apply -f wordpress-ingress.yaml
+kubectl apply -f mariadb-deployment.yaml
+kubectl apply -f mariadb-srv.yaml
+kubectl apply -f wordpress-deployment.yaml
+kubectl apply -f wordpress-srv.yaml
+kubectl apply -f wordpress-ingress.yaml
 ```
 
 Acedemos a la aplicación y la configuramos:
@@ -115,10 +115,10 @@ Acedemos a la aplicación y la configuramos:
 Si en cualquier momento tenemos que eliminar o actualizar uno de los despliegues, podemos comprobar que la información sigue existiendo después de volver a crear los despliegues:
 
 ```bash
-$ kubectl delete -f mariadb-deployment.yaml
-$ kubectl delete -f wordpress-deployment.yaml
-$ kubectl apply -f mariadb-deployment.yaml
-$ kubectl apply -f wordpress-deployment.yaml
+kubectl delete -f mariadb-deployment.yaml
+kubectl delete -f wordpress-deployment.yaml
+kubectl apply -f mariadb-deployment.yaml
+kubectl apply -f wordpress-deployment.yaml
 ```
 
 Si volvemos acceder, comprobamos que la aplicación sigue funcionando con toda la información:

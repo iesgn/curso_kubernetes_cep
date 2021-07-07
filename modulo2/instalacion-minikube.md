@@ -28,18 +28,18 @@ Paso 1: Descargamos como usuario normal y con ayuda de la aplicación
 curl, la última versión del binario de minikube (en este caso para
 arquitectura x86-64):
 
-    usuario@equipo:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
 Paso 2: Movemos el binario a un directorio del PATH (lo recomendable
 en este caso sería /usr/local/bin/) y establecemos permisos de
 ejecución. Todo esto puede hacerse con los comandos `mv` y `chmod`, o
 de forma más sencilla con `install`
 
-    usuario@equipo:~$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 Comprobamos que se ha instalado correctamente con:
 
-    usuario@equipo:~$ minikube version
+    minikube version
     minikube version: v1.21.0
     commit: 76d74191d82c47883dc7e1319ef7cebd3e00ee11
 
@@ -100,7 +100,7 @@ Podemos comprobar en cualquier momento el estado de minikube con la
 instrucción:
 
 ```
-usuario@equipo:~ $ minikube status
+minikube status
 minikube
 type: Control Plane
 host: Running

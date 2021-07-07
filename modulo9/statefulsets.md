@@ -108,7 +108,7 @@ Vamos a crear los recursos estudiados en este apartado: el servicio headless y e
 Lo primero es crear el headless service:
 
 ```bash
-$ kubectl apply -f service.yaml
+kubectl apply -f service.yaml
 ```
 
 ### Creación ordenada de Pods
@@ -116,13 +116,13 @@ $ kubectl apply -f service.yaml
 Es statefulSet que hemos definido va a crear dos Pods (`replicas: 2`). Para observar cómo se crean de forma ordenada podemos usar dos terminales, en la primera ejecutamos:
 
 ```bash
-$ watch kubectl get pod
+watch kubectl get pod
 ```
 
 Con esta instrucción vamos a ver en "vivo" cómo se van creando los Pods, que vamos a crear al ejecutar en la otra terminar la instrucción:
 
 ```bash
-$ kubectl apply -f statefulset.yaml
+kubectl apply -f statefulset.yaml
 ```
 
 ### Comprobamos la identidad de red estable
@@ -132,7 +132,7 @@ En este caso vamos a comprobar que los hostname y los nombres DNS son estables p
 Para ver los nombres de los Pods podemos ejecutar los siguiente:
 
 ```bash
-$ for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done
+for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done
 web-0
 web-1
 ```
@@ -140,7 +140,7 @@ web-1
 Veamos los nombres DNS. en este ejemplo el Headless service ha creado entradas en el DNS para cada Pod. El nombre DNS que se creará será `<nombre del pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`. En este caso el nombre del primer Pod será `web-0.nginx`. Vamos a comprobarlo, haciendo una consulta DNS desde otro pod:
 
 ```bash
-$ kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm
+kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm
 / # nslookup web-0.nginx
 ...
 Address 1: 172.17.0.4 web-0.nginx.default.svc.cluster.local
@@ -154,23 +154,23 @@ Address 1: 172.17.0.5 web-1.nginx.default.svc.cluster.local
 Podemos usar las dos terminales para observar como la eliminación también se hace de forma ordenada. en la primera terminal ejecutamos:
 
 ```bash
-$ watch kubectl get pod
+watch kubectl get pod
 ```
 
 Y en la segunda:
 
 ```bash
-$ kubectl delete pod -l app=nginx
+kubectl delete pod -l app=nginx
 ```
 
 Al eliminar los Pods, el statefulSet ha creado nuevos Pods que serán idénticos a los anteriores y por lo tanto mantendrán la identidad de red, es decir tendrán los mismos hostname y los mismos nombres DNS (aunque es posible que cambien las ip):
 
 ```bash
-$ for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done
+for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done
 web-0
 web-1
 
-$ kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm
+kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm
 / # nslookup web-0.nginx
 ...
 / # nslookup web-1.nginx
@@ -182,14 +182,14 @@ $ kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm
 Podemos comprobar que se han creado los distintos volúmenes para cada pod:
 
 ```bash
-$ kubectl get pv,pvc
+kubectl get pv,pvc
 ```
 
 Y podemos comprobar que realmente la información que guardemos en el directorio que hemos montado en cada Pod es persistente:
 
 ```bash
-$ for i in 0 1; do kubectl exec "web-$i" -- sh -c 'echo "$(hostname)" > /usr/share/nginx/html/index.html'; done
-$ for i in 0 1; do kubectl exec -i -t "web-$i" -- sh -c 'curl http://localhost/'; done
+for i in 0 1; do kubectl exec "web-$i" -- sh -c 'echo "$(hostname)" > /usr/share/nginx/html/index.html'; done
+for i in 0 1; do kubectl exec -i -t "web-$i" -- sh -c 'curl http://localhost/'; done
 web-0
 web-1
 ```
@@ -197,8 +197,8 @@ web-1
 Ahora si eliminamos los Pods, los nuevos Pods creados mantendrán la información:
 
 ```bash
-$ kubectl delete pod -l app=nginx
-$ for i in 0 1; do kubectl exec -i -t "web-$i" -- sh -c 'curl http://localhost/'; done
+kubectl delete pod -l app=nginx
+for i in 0 1; do kubectl exec -i -t "web-$i" -- sh -c 'curl http://localhost/'; done
 web-0
 web-1
 ```

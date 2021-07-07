@@ -29,13 +29,13 @@ spec:
 Al administrador crea el volumen:
 
 ```bash
-$ kubectl apply -f pv-ejemplo1.yaml
+kubectl apply -f pv-ejemplo1.yaml
 ```
 
 Podemos ver los volúmenes que tenemos disponibles en el cluster:
 
 ```bash
-$ kubectl get pv
+kubectl get pv
 NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
 persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  73s
 ```
@@ -44,7 +44,7 @@ Noos fijamos que el estado del volumen es `Available`, todavía no se ha asociad
 Y podemos obtener los detalle de este recurso:
 
 ```bash
-$ kubectl describe pv pv-ejemplo1
+kubectl describe pv pv-ejemplo1
 ```
 
 ## Solicitud del volumen
@@ -70,9 +70,9 @@ Como vemos desde el punto de vista del desarrollador no necesita saber los tipos
 Cuando creemos el objeto *PersistentVolumeClaim*, podremos comprobar si hay algún volumen (*PersistentVolume*) disponible en el cluster que cumpla con los requisitos:
 
 ```bash
-$ kubectl apply -f pvc-ejemplo1.yaml
+kubectl apply -f pvc-ejemplo1.yaml
 
-$ kubectl get pv,pvc
+kubectl get pv,pvc
 NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                  STORAGECLASS   REASON   AGE
 persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Bound    default/pvc-ejemplo1   manual                  2m1s
 
@@ -126,13 +126,13 @@ Donde podemos observar que en la especificación del Pod hemos indicado que esta
 Creamos el despliegue:
 
 ```bash
-$ kubectl apply -f deploy-ejemplo1.yaml
+kubectl apply -f deploy-ejemplo1.yaml
 ```
 
 Y a continuación, cuando el contenedor esté funcionando:
 
 ```bash
-$ kubectl get all
+kubectl get all
 ...
 NAME                                  READY   STATUS    RESTARTS   AGE
 pod/nginx-ejemplo1-86864d84b5-s62dq   1/1     Running   0          6s
@@ -142,15 +142,15 @@ pod/nginx-ejemplo1-86864d84b5-s62dq   1/1     Running   0          6s
 Vamos a ejecutar un comando en el Pod para que cree un fichero `index.html` en el directorio `/usr/share/nginx/html` (evidentemente estaremos guardando ese fichero en el volumen).
 
 ```bash
-$ kubectl exec pod/nginx-ejemplo1-86864d84b5-s62dq -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
+kubectl exec pod/nginx-ejemplo1-86864d84b5-s62dq -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
 ```
 
 Finalmente creamos el servicio de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
 
 ```bash
-$ kubectl apply -f srv-ejemplo1.yaml
+kubectl apply -f srv-ejemplo1.yaml
 
-$ kubectl get all
+kubectl get all
 ...
 service/nginx-ejemplo1   NodePort    10.106.238.146   <none>        80:32581/TCP   13s
 ...
@@ -170,16 +170,16 @@ minikube ip
 En primer lugar podemos acceder al nodo del cluster y comprobar que en el directorio que indicamos en la creación del volumen, efectivamente existe el fichero `index.html`:
 
 ```bash
-$ minikube shh
-$ ls /data/pv-ejemplo1
+minikube shh
+ls /data/pv-ejemplo1
 index.html
 ```
 
 En segundo lugar podemos hacer la prueba de eliminar el despliegue, volver a crearlo y volver acceder a la aplicación para comprobar que el servidor web sigue sirviendo el mismo fichero `index.html`:
 
 ```bash
-$ kubectl delete -f deploy-ejemplo1.yaml
-$ kubectl apply -f deploy-ejemplo1.yaml
+kubectl delete -f deploy-ejemplo1.yaml
+kubectl apply -f deploy-ejemplo1.yaml
 ```
 
 Y volvemos acceder al mismo puerto:
@@ -193,9 +193,9 @@ Si finalmente queremos eliminar los volúmenes creados, tendremos que eliminar l
 En este caso como la política de reciclaje con la que creamos el volumen es `Recycle`, no se eliminará se borrará el contenido pero se podrá reutilizar es decir su estado volverá a `Available`:
 
 ```bash
-$ kubectl delete persistentvolumeclaim/pvc-ejemplo1
+kubectl delete persistentvolumeclaim/pvc-ejemplo1
 
-$ kubectl get pv,pvc
+kubectl get pv,pvc
 NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
 persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  8m8s
 ```
@@ -203,5 +203,5 @@ persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Availa
 Si queremos eliminar el objeto *PersistentVolume*, ejecutamos:
 
 ```bash
-$ kubectl delete persistentvolume/pv-ejemplo1
+kubectl delete persistentvolume/pv-ejemplo1
 ```

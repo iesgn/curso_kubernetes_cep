@@ -12,7 +12,7 @@ Por lo tanto necesitaremos solicitar un volumen, que se asociará de forma diná
 
 Si estudiamos la documentación de la imagen redis en [Docker Hub](https://hub.docker.com/_/redis), para que la información de la base de datos se guarde en un directorio `/data` del contenedor hay ue ejecutar con docker:
 
-$ docker run --name some-redis -d redis redis-server --appendonly yes
+docker run --name some-redis -d redis redis-server --appendonly yes
 
 Es decir, hay que crear el contenedor ejecutando el proceso `redis-server` con los argumentos `--appendonly yes`.
 
