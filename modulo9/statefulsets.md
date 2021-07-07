@@ -1,6 +1,6 @@
 # StatefulSets
 
-El objeto [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) controla el despliegue de pods con identidades únicas y persistentes, y nombres de host estables. 
+El objeto [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) controla el despliegue de Pods con identidades únicas y persistentes, y nombres de host estables. 
 
 Veamos algunos ejemplos en los que podemos usarlo:
 
@@ -15,11 +15,11 @@ Por lo tanto el objeto StatefulSet nos ofrece las siguientes **características*
 * Despliegues y escalado ordenado (Ejemplo redis)
 * Eliminación y actualizaciones ordenadas
 
-**Por lo tanto cada pod es distinto (tiene una identidad única)**, y este hecho tiene algunas consecuencias:
+**Por lo tanto cada Pod es distinto (tiene una identidad única)**, y este hecho tiene algunas consecuencias:
 
-* El nombre de cada pod tendrá un número (1,2,...) que lo identifica y que nos proporciona la posibilidad de que la creación actualización y eliminación sea ordenada.
-* Si un nuevo pod es recreado, obtendrá el mismo nombre (hostname), los mismos nombres DNS (aunque la IP pueda cambiar) y el mismo volumen que tenía asociado. 
-* Necesitamos crear un servicio especial, llamado **Headless Service**, que nos permite acceder a los pods de forma independiente, pero que no balancea la carga entre ellos, por lo tanto este servicio no tendrá una ClusterIP.
+* El nombre de cada Pod tendrá un número (1,2,...) que lo identifica y que nos proporciona la posibilidad de que la creación actualización y eliminación sea ordenada.
+* Si un nuevo Pod es recreado, obtendrá el mismo nombre (hostname), los mismos nombres DNS (aunque la IP pueda cambiar) y el mismo volumen que tenía asociado. 
+* Necesitamos crear un servicio especial, llamado **Headless Service**, que nos permite acceder a los Pods de forma independiente, pero que no balancea la carga entre ellos, por lo tanto este servicio no tendrá una ClusterIP.
 
 ## StatefulSet vs Deployment
 
@@ -29,11 +29,11 @@ Por lo tanto el objeto StatefulSet nos ofrece las siguientes **características*
 * Cuando use StatefulSets, cada Pod recibirá un PersistentVolume independiente.
 * StatefulSet actualmente no admite el escalado automático
 
-## Creando el Headless Service para acceder a los pods del StatefulSet
+## Creando el Headless Service para acceder a los Pods del StatefulSet
 
-Una de las características de los pods controlados por un StatefulSet es que son únicos (todos los pods son distintos), por lo tanto al acceder a ellos por medio de la definición de un servicio no necesitamos el balanceo de carga entre ellos. 
+Una de las características de los Pods controlados por un StatefulSet es que son únicos (todos los Pods son distintos), por lo tanto al acceder a ellos por medio de la definición de un servicio no necesitamos el balanceo de carga entre ellos. 
 
-Para acceder a los pods de un StatefulSet vamos a crear un servicio Headless que se caracteriza por no tener IP (ClusterIP) y por lo tanto no va a balancear la carga entre los distintos pods. Este tipo de servicio va a crear una entrada DNS por cada pod, que nos permitirá acceder a cada pod de forma independiente. El nombre DNS que se creará será `<nombre del pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`.
+Para acceder a los Pods de un StatefulSet vamos a crear un servicio Headless que se caracteriza por no tener IP (ClusterIP) y por lo tanto no va a balancear la carga entre los distintos Pods. Este tipo de servicio va a crear una entrada DNS por cada Pod, que nos permitirá acceder a cada Pod de forma independiente. El nombre DNS que se creará será `<nombre del Pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`.
 
 Veamos un ejemplo de definición de un Headless Service (fichero `service.yaml`):
 
@@ -53,7 +53,7 @@ spec:
     app: nginx
 ```
 
-En esta definición podemos observar que al indicar `clusterIP: None` estamos creando un Headless Service, que no tendrá ClusterIP (por lo que no balanceará la carga entre los pods). Este servicios será el responsable de crear, por cada pod seleccionado con el `selector`, una entrada DNS.
+En esta definición podemos observar que al indicar `clusterIP: None` estamos creando un Headless Service, que no tendrá ClusterIP (por lo que no balanceará la carga entre los pods). Este servicios será el responsable de crear, por cada Pod seleccionado con el `selector`, una entrada DNS.
 
 ## Creando el recurso StatefulSet
 
@@ -96,10 +96,10 @@ spec:
 
 Vamos a estudiar las características de la definición de este recurso:
 
-* Con el parámetro `serviceName` indicaremos el nombre de dominio que va a formar parte del nombre DNS que el Headless Service va a crear para cada pod.
-* Con el parámetro `selector` se indica los pods que vamos a controlar con StatefulSet.
-* Una de las características que hemos indicado del StatefulSet es que cada pod va a tener un almacenamiento estáble. El tipo de almacenamiento se indica con el parámetro `volumeClaimTemplates` que se define de forma similar a un `PersistantVolumenClaim`. 
-* Además observamos en la definición del contenedor que el almacenamiento que hemos definido se va a montar en cada pod (en este ejemplo el punto de montaje es el DocumentRoot de nginx), con el parámetro `volumeMounts`.
+* Con el parámetro `serviceName` indicaremos el nombre de dominio que va a formar parte del nombre DNS que el Headless Service va a crear para cada Pod.
+* Con el parámetro `selector` se indica los Pods que vamos a controlar con StatefulSet.
+* Una de las características que hemos indicado del StatefulSet es que cada Pod va a tener un almacenamiento estáble. El tipo de almacenamiento se indica con el parámetro `volumeClaimTemplates` que se define de forma similar a un `PersistantVolumenClaim`. 
+* Además observamos en la definición del contenedor que el almacenamiento que hemos definido se va a montar en cada Pod (en este ejemplo el punto de montaje es el DocumentRoot de nginx), con el parámetro `volumeMounts`.
 
 ## Ejemplo: Creación de un StatefulSet
 
@@ -111,15 +111,15 @@ Lo primero es crear el headless service:
 $ kubectl apply -f service.yaml
 ```
 
-### Creación ordenada de pods
+### Creación ordenada de Pods
 
-Es statefulSet que hemos definido va a crear dos pods (`replicas: 2`). Para observar cómo se crean de forma ordenada podemos usar dos terminales, en la primera ejecutamos:
+Es statefulSet que hemos definido va a crear dos Pods (`replicas: 2`). Para observar cómo se crean de forma ordenada podemos usar dos terminales, en la primera ejecutamos:
 
 ```bash
 $ watch kubectl get pod
 ```
 
-Con esta instrucción vamos a ver en "vivo" cómo se van creando los pods, que vamos a crear al ejecutar en la otra terminar la instrucción:
+Con esta instrucción vamos a ver en "vivo" cómo se van creando los Pods, que vamos a crear al ejecutar en la otra terminar la instrucción:
 
 ```bash
 $ kubectl apply -f statefulset.yaml
@@ -127,9 +127,9 @@ $ kubectl apply -f statefulset.yaml
 
 ### Comprobamos la identidad de red estable
 
-En este caso vamos a comprobar que los hostname y los nombres DNS son estables para cada pod. Las ips de los pods pueden cambiar si eliminamos el recurso StatefulSet y lo volvemos a crear, pero los nombres van a permanecer.
+En este caso vamos a comprobar que los hostname y los nombres DNS son estables para cada Pod. Las ips de los Pods pueden cambiar si eliminamos el recurso StatefulSet y lo volvemos a crear, pero los nombres van a permanecer.
 
-Para ver los nombres de los pods podemos ejecutar los siguiente:
+Para ver los nombres de los Pods podemos ejecutar los siguiente:
 
 ```bash
 $ for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done
@@ -137,7 +137,7 @@ web-0
 web-1
 ```
 
-Veamos los nombres DNS. en este ejemplo el Headless service ha creado entradas en el DNS para cada pod. El nombre DNS que se creará será `<nombre del pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`. En este caso el nombre del primer pod será `web-0.nginx`. Vamos a comprobarlo, haciendo una consulta DNS desde otro pod:
+Veamos los nombres DNS. en este ejemplo el Headless service ha creado entradas en el DNS para cada Pod. El nombre DNS que se creará será `<nombre del pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`. En este caso el nombre del primer Pod será `web-0.nginx`. Vamos a comprobarlo, haciendo una consulta DNS desde otro pod:
 
 ```bash
 $ kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm
@@ -163,7 +163,7 @@ Y en la segunda:
 $ kubectl delete pod -l app=nginx
 ```
 
-Al eliminar los pods, el statefulSet ha creado nuevos pods que serán idénticos a los anteriores y por lo tanto mantendrán la identidad de red, es decir tendrán los mismos hostname y los mismos nombres DNS (aunque es posible que cambien las ip):
+Al eliminar los Pods, el statefulSet ha creado nuevos Pods que serán idénticos a los anteriores y por lo tanto mantendrán la identidad de red, es decir tendrán los mismos hostname y los mismos nombres DNS (aunque es posible que cambien las ip):
 
 ```bash
 $ for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done
@@ -185,7 +185,7 @@ Podemos comprobar que se han creado los distintos volúmenes para cada pod:
 $ kubectl get pv,pvc
 ```
 
-Y podemos comprobar que realmente la información que guardemos en el directorio que hemos montado en cada pod es persistente:
+Y podemos comprobar que realmente la información que guardemos en el directorio que hemos montado en cada Pod es persistente:
 
 ```bash
 $ for i in 0 1; do kubectl exec "web-$i" -- sh -c 'echo "$(hostname)" > /usr/share/nginx/html/index.html'; done
@@ -194,7 +194,7 @@ web-0
 web-1
 ```
 
-Ahora si eliminamos los pods, los nuevos pods creados mantendrán la información:
+Ahora si eliminamos los Pods, los nuevos Pods creados mantendrán la información:
 
 ```bash
 $ kubectl delete pod -l app=nginx

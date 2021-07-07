@@ -1,6 +1,6 @@
 # Gestionando los ReplicaSet
 
-En esta unidad vamos a crear un recurso ReplicaSet que controlará un conjunto de recursos pods. Para ello vamos a utilizar el fichero que estudiamos en la unidad anterior: [`nginx-rs.yaml`](files/nginx-rs.yaml).
+En esta unidad vamos a crear un recurso ReplicaSet que controlará un conjunto de recursos Pods. Para ello vamos a utilizar el fichero que estudiamos en la unidad anterior: [`nginx-rs.yaml`](files/nginx-rs.yaml).
 
 ## Creación del ReplicaSet
 
@@ -23,7 +23,7 @@ Y podemos ver los recursos que se han creado con:
 
     kubectl get rs,pods
 
-Observamos que queríamos crear 2 replicas del pod, y efectivamente se han creado.
+Observamos que queríamos crear 2 replicas del Pod, y efectivamente se han creado.
 
 Si queremos obtener información detallada del recurso ReplicaSet que hemos creado:
 
@@ -31,7 +31,7 @@ Si queremos obtener información detallada del recurso ReplicaSet que hemos crea
 
 ## Tolerancia a fallos
 
-Y ahora comenzamos con las funcionalidades llamativas de Kubernetes. ¿Qué pasaría si borro uno de los pods que se han creado? Inmediatamente se creará uno nuevo para que siempre estén ejecutándose los pods deseados, en este caso 2:
+Y ahora comenzamos con las funcionalidades llamativas de Kubernetes. ¿Qué pasaría si borro uno de los Pods que se han creado? Inmediatamente se creará uno nuevo para que siempre estén ejecutándose los Pods deseados, en este caso 2:
 
     kubectl delete pod <nombre_del_pod>
     kubectl get pods
@@ -47,13 +47,13 @@ Otra forma de hacerlo sería cambiando el parámetro `replicas` de fichero yaml,
 
     kubectl apply -f nginx-rs.yaml
 
-La escalabilidad puede ser para aumentar el número de pods o para reducirla:
+La escalabilidad puede ser para aumentar el número de Pods o para reducirla:
 
     kubectl scale rs replicaset-nginx --replicas=1
 
 ## Eliminando el ReplicaSet
 
-Por último, si borramos un ReplicaSet se borrarán todos los pods asociados:
+Por último, si borramos un ReplicaSet se borrarán todos los Pods asociados:
 
     kubectl delete rs nginx
 

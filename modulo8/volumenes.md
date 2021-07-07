@@ -2,13 +2,13 @@
 
 ## Tipos de volúmenes 
 
-Los [volúmenes](https://kubernetes.io/docs/concepts/storage/volumes/) nos permiten proporcional almacenamiento a los pods, y podemos usar distintos tipos que nos ofrecen distintas características:
+Los [volúmenes](https://kubernetes.io/docs/concepts/storage/volumes/) nos permiten proporcional almacenamiento a los Pods, y podemos usar distintos tipos que nos ofrecen distintas características:
 
 * Proporcionados por el proveedor de cloud: AWS, Azure, GCE, OpenStack, etc
 * Propios de Kubernetes:
-    * configMap: Para usar un configMap como un directorio desde el pod.
-    * emptyDir: Volumen efímero con la misma vida que el pod. Usado como almacenamiento secundario o para compartir entre contenedores del mismo pod.
-    * hostPath: Monta un directorio del host en el pod (usado excepcionalmente, pero el que nosotros vamos a usar con minikube).
+    * configMap: Para usar un configMap como un directorio desde el Pod.
+    * emptyDir: Volumen efímero con la misma vida que el Pod. Usado como almacenamiento secundario o para compartir entre contenedores del mismo Pod.
+    * hostPath: Monta un directorio del host en el Pod (usado excepcionalmente, pero el que nosotros vamos a usar con minikube).
     * ...
 * Habituales en despliegues "on premises": glusterfs, cephfs, iscsi, nfs, etc.
 
@@ -27,8 +27,8 @@ Al trabajar con volúmenes em Kubernetes se realizan dos funciones claramente di
 
     A los desarrolladores de aplicaciones les interesa más la disponibilidad y características del almacenamiento, que los detalles sobre el mecanismo de almacenamiento. Para solicitar almacenamiento se va a utilizar el recurso del cluster *PersistentVolumeClaim*. Ejemplos:
     
-    * Quiero 20 GiB de almacenamiento permanente que pueda compartir entre varios pods de varios nodos en modo lectura.
-    * Quiero 10 GiB de almacenamiento provisional para usar desde un pod en modo lectura y escritura.
+    * Quiero 20 GiB de almacenamiento permanente que pueda compartir entre varios Pods de varios nodos en modo lectura.
+    * Quiero 10 GiB de almacenamiento provisional para usar desde un Pod en modo lectura y escritura.
 
 
    

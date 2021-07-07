@@ -22,11 +22,11 @@ spec:
           name: contenedor-nginx
 ```
 
-Algunos de los parámetros definidos ya lo hemos estudiado en la definición del pod. Los nuevos parámetros de este recurso son los siguientes:
+Algunos de los parámetros definidos ya lo hemos estudiado en la definición del Pod. Los nuevos parámetros de este recurso son los siguientes:
 
-* `replicas`: Indicamos el número de pods que siempre se deben estar ejecutando.
-* `selector`: Seleccionamos los pods que va a controlar el ReplicaSet por medio de las etiquetas. Es decir este ReplicaSet controla los pods cuya etiqueta `app` es igual a `nginx`.
-* `template`: El recurso ReplicaSet contiene la definición de un pod. Fíjate que el pod que hemos definido en la sección `template` tiene indicado la etiqueta necesaria para que sea seleccionado por el ReplicaSet (`app: nginx`).
+* `replicas`: Indicamos el número de Pods que siempre se deben estar ejecutando.
+* `selector`: Seleccionamos los Pods que va a controlar el ReplicaSet por medio de las etiquetas. Es decir este ReplicaSet controla los Pods cuya etiqueta `app` es igual a `nginx`.
+* `template`: El recurso ReplicaSet contiene la definición de un Pod. Fíjate que el Pod que hemos definido en la sección `template` tiene indicado la etiqueta necesaria para que sea seleccionado por el ReplicaSet (`app: nginx`).
 
 ## Para seguir aprendiendo
 

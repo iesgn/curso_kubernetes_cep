@@ -24,7 +24,7 @@ spec:
     path: /data/pv-ejemplo1
 ```
 
-**Nota**: como estamos utilizando minikube, y nuestro cluster está formado por un sólo nodo, el tipo de almacenamiento más simple que podemos usar es `hostPath`, que creará un directorio en el nodo (`/data/pv-ejemplo1`) que será el que se monte en el pod para guardar la información.
+**Nota**: como estamos utilizando minikube, y nuestro cluster está formado por un sólo nodo, el tipo de almacenamiento más simple que podemos usar es `hostPath`, que creará un directorio en el nodo (`/data/pv-ejemplo1`) que será el que se monte en el Pod para guardar la información.
 
 Al administrador crea el volumen:
 
@@ -86,7 +86,7 @@ Podemos apreciar que el el estado del volumen ha cambiado a `Bound` que signific
 
 ## Uso del volumen
 
-Una vez que tenemos un volumen a nuestra disposición, vamos a crear un despliegue de un servidor web, indicando en la especificación del pod, que estará formado por el volumen y el directorio donde vamos a montarlo.
+Una vez que tenemos un volumen a nuestra disposición, vamos a crear un despliegue de un servidor web, indicando en la especificación del Pod, que estará formado por el volumen y el directorio donde vamos a montarlo.
 Para ello vamos a usar el fichero [`deploy-ejemplo1.yaml`](files/ejemplo1/deploy-ejemplo1.yaml):
 
 ```yaml
@@ -121,7 +121,7 @@ spec:
               name: volumen-ejemplo1
 ```
 
-Donde podemos observar que en la especificación del pod hemos indicado que estará formado por un volumen correspondiente al asignado al *PersistentVolumeClaim* `pvc-ejemplo1` y que el contenedor tendrá un punto de montaje en el directorio *DocumentRoot* de nginx (`/usr/share/nginx/html`) en el volumen.
+Donde podemos observar que en la especificación del Pod hemos indicado que estará formado por un volumen correspondiente al asignado al *PersistentVolumeClaim* `pvc-ejemplo1` y que el contenedor tendrá un punto de montaje en el directorio *DocumentRoot* de nginx (`/usr/share/nginx/html`) en el volumen.
 
 Creamos el despliegue:
 
@@ -139,7 +139,7 @@ pod/nginx-ejemplo1-86864d84b5-s62dq   1/1     Running   0          6s
 ...
 ```
 
-Vamos a ejecutar un comando en el pod para que cree un fichero `index.html` en el directorio `/usr/share/nginx/html` (evidentemente estaremos guardando ese fichero en el volumen).
+Vamos a ejecutar un comando en el Pod para que cree un fichero `index.html` en el directorio `/usr/share/nginx/html` (evidentemente estaremos guardando ese fichero en el volumen).
 
 ```bash
 $ kubectl exec pod/nginx-ejemplo1-86864d84b5-s62dq -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"

@@ -11,8 +11,8 @@ En esta tarea vamos a desplegar una aplicación web que requiere de dos servicio
 
 Por lo tanto si tenemos dos servicios distintos, tendremos dos ficheros yaml para crear dos recursos Deployment, uno para cada servicio. Con esta manera de trabajar podemos obtener las siguientes características:
 
-1. Cada conjunto de pods creado en cada despliegue ejecutarán un solo proceso para ofrecer el servicio.
-2. Cada conjunto de pods se puede escalar de manera independiente. Esto es importante, si identificamos que al acceder a alguno de los servicios se crea un cuello de botella, podemos escalarlo para tener más pods ejecutando el servicio.
+1. Cada conjunto de Pods creado en cada despliegue ejecutarán un solo proceso para ofrecer el servicio.
+2. Cada conjunto de Pods se puede escalar de manera independiente. Esto es importante, si identificamos que al acceder a alguno de los servicios se crea un cuello de botella, podemos escalarlo para tener más Pods ejecutando el servicio.
 3. Las actualizaciones de los distintos servicios no interfieren en el resto.
 4. Lo estudiaremos en un módulo posterior, pero podremos gestionar el almacenamiento de cada servicio de forma independiente.
 
@@ -30,9 +30,10 @@ Para realizar el despliegue realiza los siguientes pasos:
 ¿Qué aparece en la página principal de la aplicación?. Aparece el siguiente mensaje: **Waiting for database connection...**. Por lo tanto podemos indicar varias conclusiones:
 
 1. Hasta ahora no estamos accediendo de forma "normal" a las aplicaciones. El uso de la opción `port-forward` es un mecanismo que realmente nos posibilita acceder a la aplicación, pero utilizando un proxy. Deberíamos acceder a las aplicaciones usando una ip y un puerto determinado.
-2. Parece que tampoco hay acceso entre los pods de los distintos despliegues. Parece que los pods de la aplicación guestbook no pueden acceder al pod donde se está ejecutando la base de datos redis.
+2. Parece que tampoco hay acceso entre los p
+Pods de los distintos despliegues. Parece que los Pods de la aplicación guestbook no pueden acceder al Pod donde se está ejecutando la base de datos redis.
 
-En el siguiente módulo estudiaremos los recursos que nos ofrece la API de Kubernetes para permitirnos el acceso a las aplicaciones desde el exterior, y para que los distintos pods de los despliegues puedan acceder entre ellos.
+En el siguiente módulo estudiaremos los recursos que nos ofrece la API de Kubernetes para permitirnos el acceso a las aplicaciones desde el exterior, y para que los distintos Pods de los despliegues puedan acceder entre ellos.
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 

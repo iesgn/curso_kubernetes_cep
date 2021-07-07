@@ -6,7 +6,7 @@ Suponemos que tenemos desplegado nginx usando el fichero yaml: [`nginx-deploymen
 
     kubectl apply -f nginx-deployment.yaml
 
-Por lo tanto tenemos dos pods ofreciendo el servidor web nginx, a los que queremos acceder desde el exterior y que se balancee la carga entre ellos.
+Por lo tanto tenemos dos Pods ofreciendo el servidor web nginx, a los que queremos acceder desde el exterior y que se balancee la carga entre ellos.
 
 Aunque podríamos crear un recurso Service desde la línea de comandos:
 
@@ -32,7 +32,7 @@ Veamos la descripción:
 
 * Vamos a crear un recurso Service (parámetro `kind`) y lo nombramos como `nginx` (parámetro `name`). Este nombre será importante para la resolución dns.
 * En la especificación del recurso indicamos el tipo de servicio (parámetro `type`).
-* A continuación, definimos el puerto por el que va a ofrecer el servicio y lo nombramos (dentro del apartado `port`: el parámetro `port` y el parámetro `name`). Además, debemos indicar el puerto en el que los pods están ofreciendo el servicio (parámetro `targetPort`), en este caso, hemos usado el nombre del puerto (`http`) que indicamos en el recurso Deployment:
+* A continuación, definimos el puerto por el que va a ofrecer el servicio y lo nombramos (dentro del apartado `port`: el parámetro `port` y el parámetro `name`). Además, debemos indicar el puerto en el que los Pods están ofreciendo el servicio (parámetro `targetPort`), en este caso, hemos usado el nombre del puerto (`http`) que indicamos en el recurso Deployment:
 
 ```yaml
    ...
@@ -41,7 +41,7 @@ Veamos la descripción:
       containerPort: 80
    ...
 ```
-* Por ultimo, seleccionamos los pods a los que vamos acceder y vamos a balancear la carga seleccionando los pods por medio de sus etiquetas (parámetro `selector`).
+* Por ultimo, seleccionamos los Pods a los que vamos acceder y vamos a balancear la carga seleccionando los Pods por medio de sus etiquetas (parámetro `selector`).
 
 **Nota: La definición de un servicio de tipo ClusterIP sería exactamente igual, pero cambiando el parámetro `type`.**
 

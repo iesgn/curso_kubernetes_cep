@@ -18,7 +18,7 @@ spec:
       name: contenedor-nginx
 ```
 
-Podemos crear directamente el pod desde el fichero yaml:
+Podemos crear directamente el Pod desde el fichero yaml:
 
     kubectl create -f pod.yaml
 
@@ -28,7 +28,7 @@ Y podemos ver el estado en el que se encuentra y si está o no listo:
 
 (Sería equivalente usar po, pod o pods).
 
-Si queremos ver más información sobre los pods, como por ejemplo,
+Si queremos ver más información sobre los Pods, como por ejemplo,
 saber en qué nodo del cluster se está ejecutando:
 
     kubectl get pod -o wide
@@ -57,7 +57,7 @@ en docker:
     kubectl logs nginx
 
 En el caso poco habitual de que queramos ejecutar alguna orden
-adicional en el pod, podemos utilizar el comando `exec`, por ejemplo,
+adicional en el Pod, podemos utilizar el comando `exec`, por ejemplo,
 en el caso particular de que queremos abrir una shell de forma
 interactiva:
 
@@ -73,19 +73,19 @@ Y accedemos al servidor web en la url http://localhost:8080.
 **NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en Kubernetes. Para el acceso a las aplicaciones usaremos un recurso llamado `service`. Con la anterior instrucción lo que estamos haciendo es una redirección desde localhost el puerto 8080 al puerto 80 del Pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
 **NOTA2**: El `port-forward` no es igual a la redirección de puertos
 de docker, ya que en este caso la redirección de puertos se hace en el
-equipo que ejecuta `kubectl`, no en el equipo que ejecuta los pods o
+equipo que ejecuta `kubectl`, no en el equipo que ejecuta los Pods o
 los contenedores.
 
-Para obtener las etiquetas de los pods que hemos creado:
+Para obtener las etiquetas de los Pods que hemos creado:
 
     kubectl get pods --show-labels
 
 Las etiquetas las hemos definido en la sección metadata del fichero
-yaml, pero también podemos añadirlos a los pods ya creados:
+yaml, pero también podemos añadirlos a los Pods ya creados:
 
     kubectl label pods pod-nginx service=web --overwrite=true
 
-Las etiquetas son muy útiles, ya que permiten seleccionar un recurso determinado (en un cluster de Kubernetes puede haber cientos o miles de objetos).Por ejemplo para visualizar los pods que tienen una etiqueta con un determinado valor:
+Las etiquetas son muy útiles, ya que permiten seleccionar un recurso determinado (en un cluster de Kubernetes puede haber cientos o miles de objetos).Por ejemplo para visualizar los Pods que tienen una etiqueta con un determinado valor:
 
     kubectl get pods -l service=web
 

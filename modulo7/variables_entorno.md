@@ -4,7 +4,7 @@ Si necesitamos añadir alguna configuración especifica a la hora de crear un co
 
 Por ejemplo, si estudiamos la documentación de la imagen `mariadb` en [Docker Hub](https://hub.docker.com/_/mariadb) podemos comprobar que podemos definir un conjunto de variables de entorno (`MYSQL_ROOT_PASSWORD`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`,...) que nos permitirán configurar de alguna forma determinada nuestro servidor de base de datos (indicando la contraseña del usuario root, creando una determinada base de datos, creando un usuario con una contraseña,...).
 
-De la misma manera, al especificar los contenedores que contendrán los pods que se van a crear desde un Deployment también se pondrán inicializar las variables de entorno necesarias.
+De la misma manera, al especificar los contenedores que contendrán los Pods que se van a crear desde un Deployment también se pondrán inicializar las variables de entorno necesarias.
 
 ## Configuración de aplicaciones usando variables de entorno
 

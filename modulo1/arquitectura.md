@@ -44,7 +44,7 @@ interactúan con el proveedor de nube:
 
 ## Componentes de un nodo worker
 
-* **kubelet** Controla los pods asignados a su nodo
+* **kubelet** Controla los Pods asignados a su nodo
 * **kube-proxy** Permite la conexión a través de la red
 * **docker/rkt/containerd/...** Ejecuta los contenedores
 * **supervisord** Monitoriza y controla kubelet y docker

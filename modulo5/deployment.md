@@ -4,9 +4,9 @@ El despliegue o [Deployment](https://kubernetes.io/docs/concepts/workloads/contr
 
 En los módulos anteriores hemos estudiado los Pods y los ReplicaSet, sin embargo, cuando queramos desplegar una aplicación en Kubernetes no vamos a gestinar éstos directamente, sino que vamos a crear un recurso de tipo *Deployment*. ¿Qué ocurre cuando creamos un nuevo recurso *Deployment*?
 
-* La creación de un *Deployment* conlleva la creación de un *ReplicaSet* que controlará un conjunto de pods creados a partir de la versión de la imagen que se ha indicado.
-* Si hemos desarrollado una nueva versión de la aplicación y hemos creado una nueva imagen con la nueva versión, podemos modificar el *Deployment* indicando la nueva versión de la imagen. En ese momento se creará un nuevo *ReplicaSet* que controlará un nuevo conjunto de pods creados a partir de la nueva versión de la imagen (habremos desplegado una nueva versión de la aplicación).
-* Por lo tanto podemos decir que un *Deployment* va guardando un historial con los *ReplicaSet* que se van creando al ir cambiado la versión de la imagen. El *ReplicaSet* que esté activo en un determinado momento será el responsable de crear los pods con la versión actual de la aplicación.
+* La creación de un *Deployment* conlleva la creación de un *ReplicaSet* que controlará un conjunto de Pods creados a partir de la versión de la imagen que se ha indicado.
+* Si hemos desarrollado una nueva versión de la aplicación y hemos creado una nueva imagen con la nueva versión, podemos modificar el *Deployment* indicando la nueva versión de la imagen. En ese momento se creará un nuevo *ReplicaSet* que controlará un nuevo conjunto de Pods creados a partir de la nueva versión de la imagen (habremos desplegado una nueva versión de la aplicación).
+* Por lo tanto podemos decir que un *Deployment* va guardando un historial con los *ReplicaSet* que se van creando al ir cambiado la versión de la imagen. El *ReplicaSet* que esté activo en un determinado momento será el responsable de crear los Pods con la versión actual de la aplicación.
 * Si tenemos un historial de *ReplicaSet* según las distintas versiones de la imagen que estamos utilizando, podemos, de una manera sencilla, volver a una versión anterior de la aplicación (**Rollback**).
 
 Por la manera de trabajar de un *Deployment*, podemos indicar las funciones que nos aporta:

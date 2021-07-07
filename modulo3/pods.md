@@ -7,9 +7,9 @@ casos un solo contenedor). De forma genérica, un Pod representa un
 conjunto de contenedores que comparten almacenamiento y una única
 IP.
 
-Un aspecto muy importante que hay que ir asumiendo es que los pods son
+Un aspecto muy importante que hay que ir asumiendo es que los Pods son
 efímeros, se lanzan y en determinadas circunstancias se paran o se
-destruyen, creando en muchos casos nuevos pods que sustituyan a los
+destruyen, creando en muchos casos nuevos Pods que sustituyan a los
 anteriores. Esto tiene importantes ventajas a la hora de realizar
 modificaciones en los despliegues en producción, pero tiene una
 consecuencia directa sobre la información que pueda tener almacenada
@@ -75,7 +75,7 @@ php-fpm en otro contenedor.
 Al tratarse este curso de un curso de introducción a Kubernetes no
 vamos a poder ver todas las cargas de trabajo, ni la ejecución y
 despliegue de todo tipo de aplicaciones, por lo que consideramos más
-razonable no utilizar ejemplos de pods multicontenedor y centrarnos en
+razonable no utilizar ejemplos de Pods multicontenedor y centrarnos en
 la comprensión de las características principales de Kubernetes
 mediante ejemplos sencillos, comunes y muy apropiados para ejecutarse
-en Kubernetes, mediante en uso de pods con un solo contenedor.
+en Kubernetes, mediante en uso de Pods con un solo contenedor.

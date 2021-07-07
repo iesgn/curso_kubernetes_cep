@@ -58,7 +58,7 @@ persistentvolumeclaim/wordpress-pvc   Bound    pvc-01ed3c4c-a542-4161-93a9-b9d5e
 
 ## Modificación de los deployment para el uso de los volúmenes
 
-A continuación vamos a modificar el fichero [`wordpress-deployment.yaml`](files/wordpress/wordpress-deployment.yaml) para añadir el volumen al pod y el punto de montaje:
+A continuación vamos a modificar el fichero [`wordpress-deployment.yaml`](files/wordpress/wordpress-deployment.yaml) para añadir el volumen al Pod y el punto de montaje:
 
 ```yaml
 ...

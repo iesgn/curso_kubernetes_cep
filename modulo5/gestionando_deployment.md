@@ -4,7 +4,7 @@ En esta unidad vamos a trabajar con el recurso Deployment, vamos a crear un desp
 
 ## Creación del Deployment
 
-Cuando creamos un Deployment, se creará un ReplicaSet asociado, que creará y controlará los pods que hayamos indicado.
+Cuando creamos un Deployment, se creará un ReplicaSet asociado, que creará y controlará los Pods que hayamos indicado.
 
     kubectl apply -f nginx-deployment.yaml
     kubectl get deploy,rs,pod
@@ -17,17 +17,17 @@ Esta orden muestra los Deployments, ReplicaSets, Pods y Services que tenemos cre
 
 ## Escalado de los Deployments
 
-Como ocurría con los ReplicaSets los Deployment también se pueden escalar, aumentando o disminuyendo el número de pods asociados. Al escalar un Deployment estamos escalando el ReplicaSet asociado en ese momento:
+Como ocurría con los ReplicaSets los Deployment también se pueden escalar, aumentando o disminuyendo el número de Pods asociados. Al escalar un Deployment estamos escalando el ReplicaSet asociado en ese momento:
 
     kubectl scale deployment deployment-nginx --replicas=4
 
 ## Otras operaciones
 
-Si queremos acceder a la aplicación, podemos utilizar la opción de `port-forward` sobre el despliegue (de nuevo recordamos que no es la forma adecuada para acceder a un servicio que se ejecuta en un pod, pero de momento no tenemos otra). En este caso si tenemos asociados más de un pod, la redirección de puertos se hará sobre un solo pod (no habrá balanceo de carga):
+Si queremos acceder a la aplicación, podemos utilizar la opción de `port-forward` sobre el despliegue (de nuevo recordamos que no es la forma adecuada para acceder a un servicio que se ejecuta en un Pod, pero de momento no tenemos otra). En este caso si tenemos asociados más de un Pod, la redirección de puertos se hará sobre un solo Pod (no habrá balanceo de carga):
 
     kubectl port-forward deployment deployment-nginx 8080:80
 
-Si queremos ver los logs generados en los pods de un Deployment:
+Si queremos ver los logs generados en los Pods de un Deployment:
 
     kubectl logs deployment deployment-nginx
 
@@ -37,6 +37,6 @@ Si queremos obtener información detallada del recurso Deployment que hemos crea
 
 ## Eliminando el Deployment
 
-Si eliminamos el Deployment se eliminarán el ReplicaSet asociado y los pods que se estaban gestionando.
+Si eliminamos el Deployment se eliminarán el ReplicaSet asociado y los Pods que se estaban gestionando.
 
     kubectl delete deployment deployment-nginx

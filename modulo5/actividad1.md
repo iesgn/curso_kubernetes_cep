@@ -7,10 +7,10 @@
 En esta actividad vamos a crear un Deployment de una aplicación web. Sigamos los siguientes pasos:
 
 1. Crea un fichero yaml con la descripción del recurso Deployment, teniendo en cuenta los siguientes aspectos:
-    * Indica nombres distintos para el Deployment y para el contenedor de los pods que va a controlar.
+    * Indica nombres distintos para el Deployment y para el contenedor de los Pods que va a controlar.
     * El Deployment va a crear 2 réplicas.
     * La imagen que debes desplegar es `iesgn/test_web:latest`.
-    * Indica de manera adecuada una etiqueta en la especificación del pod que vas a definir que coincida con el *selector* del Deployment.
+    * Indica de manera adecuada una etiqueta en la especificación del Pod que vas a definir que coincida con el *selector* del Deployment.
 2. Crea el Deployment.
 3. Comprueba los recursos que se han creado: Deployment, ReplicaSet y Pods.
 4. Obtén información detallada del Deployment creado.

@@ -2,7 +2,7 @@
 
 ## Servicio de tipo NodePort
 
-Para aprender cómo gestionamos los servicios, vamos a trabajar con el despliegue de nginx ([`nginx-deployment.yaml`](../modulo5/files/nginx-deployment.yaml)) y el servicio NodePort ([`nginx-srv.yaml`](files/nginx-srv.yaml)) para acceder a los pods de este despliegue desde el exterior.
+Para aprender cómo gestionamos los servicios, vamos a trabajar con el despliegue de nginx ([`nginx-deployment.yaml`](../modulo5/files/nginx-deployment.yaml)) y el servicio NodePort ([`nginx-srv.yaml`](files/nginx-srv.yaml)) para acceder a los Pods de este despliegue desde el exterior.
 
 ### Creamos el despliegue
 
@@ -37,7 +37,7 @@ Antes de acceder a la aplicación podemos ver la información más detallada del
     Endpoints:                172.17.0.3:80,172.17.0.4:80
     ...
 
-Podemos ver la etiqueta de los pods a los que accede (`Selector`). El tipo de Service (`Type`). La IP virtual que ha tomado (CLUSTER-IP) y que es accesible desde el cluster (`IP`). El puerto por el que ofrece el servicio (`Port`). El puerto de los pods a los que redirige el tráfico (`TargetPort`). Al ser un service de tipo NodePort no da información del puerto que se asignado para acceder a la aplicación (`NodePort`). Y por último, podemos ver las IPs de los pods que ha seleccionado y sobre los que balanceará la carga (`Endpoints`).
+Podemos ver la etiqueta de los Pods a los que accede (`Selector`). El tipo de Service (`Type`). La IP virtual que ha tomado (CLUSTER-IP) y que es accesible desde el cluster (`IP`). El puerto por el que ofrece el servicio (`Port`). El puerto de los Pods a los que redirige el tráfico (`TargetPort`). Al ser un service de tipo NodePort no da información del puerto que se asignado para acceder a la aplicación (`NodePort`). Y por último, podemos ver las IPs de los Pods que ha seleccionado y sobre los que balanceará la carga (`Endpoints`).
 
 ### Accediendo a la aplicación
 
@@ -60,7 +60,7 @@ Y ya podemos acceder desde un navegador web:
 
 ## Servicio ClusterIP
 
-En esta ocasión vamos a desplegar una base de datos MariaDB, en este caso, no vamos a necesitar acceder a la base de datos desde el exterior, pero necesitamos que los pods de otro despliegue puedan acceder a ella. Por lo tanto vamos a crear un servicio de tipo ClusterIP.
+En esta ocasión vamos a desplegar una base de datos MariaDB, en este caso, no vamos a necesitar acceder a la base de datos desde el exterior, pero necesitamos que los Pods de otro despliegue puedan acceder a ella. Por lo tanto vamos a crear un servicio de tipo ClusterIP.
 
 Para el despliegue de MariaDB vamos a usar el fichero [`mariadb-deployment.yaml`](files/mariadb-deployment.yaml). Puedes comprobar que en la definición del contenedor hemos añadido la sección `env` que nos permite establecer variables de entorno para configurar el contenedor (los estudiaremos en el siguiente módulo).
 
@@ -88,4 +88,4 @@ Comprobamos el servicio creado:
     Endpoints:         172.17.0.5:3306
     ...
 
-Como podemos comprobar que no se ha mapeado un puerto aleatorio para que accedemos usando la IP del nodo master. Los pods que accedan a la IP 10.106.60.233 o al nombre `mariadb` y al puerto 3306 estarán accediendo al pod (172.17.0.5:3306) del despliegue de mariadb.
+Como podemos comprobar que no se ha mapeado un puerto aleatorio para que accedemos usando la IP del nodo master. Los Pods que accedan a la IP 10.106.60.233 o al nombre `mariadb` y al puerto 3306 estarán accediendo al Pod (172.17.0.5:3306) del despliegue de mariadb.

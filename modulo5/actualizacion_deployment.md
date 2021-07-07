@@ -2,15 +2,15 @@
 
 El ciclo de vida del desarrollo de aplicaciones cuando trabajamos con contenedores nos facilita la labor de versionar nuestros desarrollos. Por cada nueva versión que se desarrolla de nuestra aplicación podemos crear una nueva imagen del contenedor que podemos versionar utilizando la etiqueta del nombre de la imagen.
 
-Por lo tanto, al crear un Deployment indicaremos la imagen desde la que se van a crear los pods. Al indicar la imagen podremos indicar la etiqueta que nos indica la versión de la aplicación que vamos a implantar.
+Por lo tanto, al crear un Deployment indicaremos la imagen desde la que se van a crear los Pods. Al indicar la imagen podremos indicar la etiqueta que nos indica la versión de la aplicación que vamos a implantar.
 
-Una vez que hemos creado un Deployment a partir de una imagen de una versión determinada, tenemos los pods ejecutando la versión indicada de la aplicación.
+Una vez que hemos creado un Deployment a partir de una imagen de una versión determinada, tenemos los Pods ejecutando la versión indicada de la aplicación.
 
 ¿Cómo podemos actualizar a una nueva versión de la aplicación?. Se seguirán los siguientes pasos:
 
 1. Tendremos que modificar el valor del parámetro `image` para indicar una nueva imagen, especificando la nueva versión mediante el cambio de etiqueta.
-2. En ese momento el Deployment se actualiza, es decir, crea un nuevo ReplicaSet que creará nuevos pods de la nueva versión de la aplicación.
-3. Según la estrategia de despliegue indicada, se irán borrando los antiguos pods y se crearán lo nuevos.
+2. En ese momento el Deployment se actualiza, es decir, crea un nuevo ReplicaSet que creará nuevos Pods de la nueva versión de la aplicación.
+3. Según la estrategia de despliegue indicada, se irán borrando los antiguos Pods y se crearán lo nuevos.
 4. El Deployment guardará el ReplicaSet antiguo, por si en algún momento queremos volver a la versión anterior.
 
 Veamos este proceso con más detalles estudiando un ejemplo de despliegue:
@@ -52,7 +52,7 @@ Podemos comprobar los recursos que hemos creado:
 
     kubectl get all
 
-Y si accedemos al pod con un `port-forward` comprobamos que la versión actual de la mediawiki es la 1.31:
+Y si accedemos al Pod con un `port-forward` comprobamos que la versión actual de la mediawiki es la 1.31:
 
     kubectl port-forward deployment/mediawiki 8080:80
 
@@ -67,10 +67,10 @@ A continuación queremos desplegar una versión más reciente de la mediawiki. P
 
     kubectl set image deployment/mediawiki contenedor-mediawiki=mediawiki:1.34 --record
 
-Al ejecutar la actualización del Deployment podemos observar que se ha creado un nuevo ReplicaSet, que creará los nuevos pods a partir de la versión modificada de la imagen. ¿Cómo se crean los nuevos pods y se destruyen los antiguos? Dependerá de la estratégia de despliegue:
+Al ejecutar la actualización del Deployment podemos observar que se ha creado un nuevo ReplicaSet, que creará los nuevos Pods a partir de la versión modificada de la imagen. ¿Cómo se crean los nuevos Pods y se destruyen los antiguos? Dependerá de la estratégia de despliegue:
 
   * Por defecto la estrategía de despliegue es `Recreate` que elimina los Pods antiguos y crea los nuevos.
-  * Si indicamos en el despliegue el tipo de estrategia  `RollingUpdate`, se van creando los nuevos pods, se comprueba que funcionan y se eliminan los antiguos.
+  * Si indicamos en el despliegue el tipo de estrategia  `RollingUpdate`, se van creando los nuevos Pods, se comprueba que funcionan y se eliminan los antiguos.
 
 Veamos los recursos que se han creado en la actualización:
 
@@ -96,7 +96,7 @@ Ahora vamos a desplegar una versión que nos da un error (la versión 2 de la ap
 
     kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:2 --record
 
-Dependiendo de la estrategia de despliegue, esto puede provocar que la aplicación se quede en la versión anterior (`RollingUpdate`) o que no haya ningún pod válido desplegado (`Recreate`). En cualquier caso, se puede volver a la versión anterior del despliegue mediante rollout:
+Dependiendo de la estrategia de despliegue, esto puede provocar que la aplicación se quede en la versión anterior (`RollingUpdate`) o que no haya ningún Pod válido desplegado (`Recreate`). En cualquier caso, se puede volver a la versión anterior del despliegue mediante rollout:
 
     kubectl rollout undo deployment/mediawiki
     kubectl get all

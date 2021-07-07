@@ -1,6 +1,6 @@
 # Servicio DNS en Kubernetes
 
-Existe un componente de Kubernetes llamado CoreDNS, que ofrece un servidor DNS interno para que los pods puedan resolver diferentes nombres de recursos (servicios, pods, ...) a direcciones IP.
+Existe un componente de Kubernetes llamado CoreDNS, que ofrece un servidor DNS interno para que los Pods puedan resolver diferentes nombres de recursos (Services, Pods, ...) a direcciones IP.
 
 Cada vez que se crea un nuevo servicio se crea un registro de tipo A con el nombre:
 
@@ -14,11 +14,11 @@ Partimos del punto anterior donde tenemos creados los dos servicios:
     mariadb      ClusterIP   10.106.60.233   <none>        3306/TCP
     nginx        NodePort    10.110.81.74    <none>        80:32717/TCP
 
-Para comprobar el servidor DNS de nuestro cluster y de que podemos resolver los nombres de los distintos servicios, vamos a usar un pod ([`busybox.yaml`](files/busybox.yaml)) creado desde una imagen `busybox`.  Es una imagen muy pequeña pero con algunas utilidades que nos vienen muy bien:
+Para comprobar el servidor DNS de nuestro cluster y de que podemos resolver los nombres de los distintos servicios, vamos a usar un Pod ([`busybox.yaml`](files/busybox.yaml)) creado desde una imagen `busybox`.  Es una imagen muy pequeña pero con algunas utilidades que nos vienen muy bien:
 
     kubectl apply -f busybox.yaml
 
-¿Qué servidor DNS está configurado en los pods que estamos creando? Podemos ejecutar la siguiente instrucción para comprobarlo:
+¿Qué servidor DNS está configurado en los Pods que estamos creando? Podemos ejecutar la siguiente instrucción para comprobarlo:
 
     kubectl exec -it busybox -- cat /etc/resolv.conf
     nameserver 10.96.0.10

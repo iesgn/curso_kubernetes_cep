@@ -39,7 +39,7 @@ La creación de un Deployment crea un ReplicaSet y los Pods correspondientes. Po
 * `revisionHistoryLimit`: Indicamos cuántos ReplicaSets antiguos deseamos conservar, para poder realizar rollback a estados anteriores. Por defecto, es 10.
 * `strategy`: Indica el modo en que se realiza una actualización del Deployment. Es decir, cuando modificamos la versión de la imagen del Deployment, se crea un ReplicaSet nuevo y ¿qué hacemos con los pods?:
     * `Recreate`: elimina los Pods antiguos y crea los nuevos; es la opción por defecto.
-    * `RollingUpdate`: va creando los nuevos pods, comprueba que funcionan y se eliminan los antiguos.
+    * `RollingUpdate`: va creando los nuevos Pods, comprueba que funcionan y se eliminan los antiguos.
 
 Además, hemos introducido un nuevo parámetro al definir el contenedor del pod: con el parámetro `ports` hemos indicado el puerto que expone el contenedor (`containerPort`) y le hemos asignado un nombre (`name`).
 
