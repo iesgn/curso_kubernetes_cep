@@ -59,7 +59,7 @@ Source:
 
 ## Uso del volumen
 
-A partir de este punto el ejercicio es muy parecido al que vimos en el ejemplo1: creamos el despliegue usando el fichero [`deploy-ejemplo2.yaml`](files/ejemplo1/deploy-ejemplo2.yaml):
+A partir de este punto el ejercicio es muy parecido al que vimos en el ejemplo1: creamos el Deployment usando el fichero [`deploy-ejemplo2.yaml`](files/ejemplo1/deploy-ejemplo2.yaml):
 
 ```yaml
 apiVersion: apps/v1
@@ -93,7 +93,7 @@ spec:
               name: volumen-ejemplo2
 ```
 
-Creamos el despliegue:
+Creamos el Deployment:
 
 ```bash
 kubectl apply -f deploy-ejemplo2.yaml
@@ -129,7 +129,7 @@ minikube ip
 
 ![volumen](img/volumen2.png)
 
-Finalmente puedes volver a comprobar que la información de la aplicación no se pierde borrando el despliegue y volviéndolo a crear, y comprobar que se sigue sirviendo el fichero `index.html`.
+Finalmente puedes volver a comprobar que la información de la aplicación no se pierde borrando el Deployment y volviéndolo a crear, y comprobar que se sigue sirviendo el fichero `index.html`.
 
 ## Eliminación del volumen
 

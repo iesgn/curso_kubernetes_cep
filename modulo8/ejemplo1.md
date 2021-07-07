@@ -123,7 +123,7 @@ spec:
 
 Donde podemos observar que en la especificación del Pod hemos indicado que estará formado por un volumen correspondiente al asignado al PersistentVolumeClaim `pvc-ejemplo1` y que el contenedor tendrá un punto de montaje en el directorio *DocumentRoot* de nginx (`/usr/share/nginx/html`) en el volumen.
 
-Creamos el despliegue:
+Creamos el Deployment:
 
 ```bash
 kubectl apply -f deploy-ejemplo1.yaml

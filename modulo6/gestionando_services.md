@@ -2,17 +2,17 @@
 
 ## Servicio de tipo NodePort
 
-Para aprender cómo gestionamos los servicios, vamos a trabajar con el despliegue de nginx ([`nginx-deployment.yaml`](../modulo5/files/nginx-deployment.yaml)) y el servicio NodePort ([`nginx-srv.yaml`](files/nginx-srv.yaml)) para acceder a los Pods de este despliegue desde el exterior.
+Para aprender cómo gestionamos los servicios, vamos a trabajar con el Deployment de nginx ([`nginx-deployment.yaml`](../modulo5/files/nginx-deployment.yaml)) y el servicio NodePort ([`nginx-srv.yaml`](files/nginx-srv.yaml)) para acceder a los Pods de este despliegue desde el exterior.
 
-### Creamos el despliegue
+### Creamos el Deployment
 
-El primer paso sería crear el despliegue de nginx:
+El primer paso sería crear el Deployment de nginx:
 
     kubectl apply -f nginx-deployment.yaml
 
-### Creamos el servicio
+### Creamos el Service
 
-A continuación vamos a crear el servicio de tipo NodePort que nos permitirá acceder al servidor nginx.
+A continuación vamos a crear el Service de tipo NodePort que nos permitirá acceder al servidor nginx.
 
     kubectl apply -f nginx-srv.yaml
 

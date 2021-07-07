@@ -16,7 +16,7 @@ docker run --name some-redis -d redis redis-server --appendonly yes
 
 Es decir, hay que crear el contenedor ejecutando el proceso `redis-server` con los argumentos `--appendonly yes`.
 
-Por lo tanto tenemos que cambiar el fichero de definición del despliegue de redis, [`redis-deployment.yaml`](/files/guestbook/plantilla-redis-deployment.yaml) de la siguiente manera:
+Por lo tanto tenemos que cambiar el fichero de definición del Deployment de redis, [`redis-deployment.yaml`](/files/guestbook/plantilla-redis-deployment.yaml) de la siguiente manera:
 
 ```yaml
 apiVersion: apps/v1

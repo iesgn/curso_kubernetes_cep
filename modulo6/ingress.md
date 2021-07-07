@@ -32,7 +32,7 @@ Debe aparece un Pod que se llama `ingress-nginx-controller-...`, si es así, sig
 
 Una vez instalado el componente ingress controller, ya podemos definir un recurso Ingress en un fichero yaml. Para ello vamos a trabajar con el despliegue y el servicio que hemos creado de nginx.
 
-El recurso ingress para acceder a nuestro despliegue de nginx lo tenemos en ele fichero [`ingress.yaml`](file/ingress.yaml):
+El recurso Ingress para acceder a nuestro despliegue de nginx lo tenemos en el fichero [`ingress.yaml`](file/ingress.yaml):
 
 ```yaml
 apiVersion: networking.k8s.io/v1

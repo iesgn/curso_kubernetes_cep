@@ -91,11 +91,11 @@ De forma similar, modificamos el fichero [`mariadb-deployment.yaml`](files/wordp
             claimName: mariadb-pvc      
 
 ```
-En esta ocasión usaremos el volumen asociado a `mariadb-pvc` y el punto de montaje se hará sobre el directorio donde se guarda la informaciónd e la base de datos: `/var/lib/mysql`.
+En esta ocasión usaremos el volumen asociado a `mariadb-pvc` y el punto de montaje se hará sobre el directorio donde se guarda la información de la base de datos: `/var/lib/mysql`.
 
-Evidntemente, no es necesario modificar la defininción de los otrs recursos: services e ingress.
+Evidentemente, no es necesario modificar la definición de los otros recursos: services e Ingress.
 
-Creamos el despliegue, los servicios y el ingress:
+Creamos el DEployment, los Services y el Ingress:
 
 ```bash
 kubectl apply -f mariadb-deployment.yaml
@@ -112,7 +112,7 @@ Acedemos a la aplicación y la configuramos:
 
 ## Comprobando la persistencia de la información
 
-Si en cualquier momento tenemos que eliminar o actualizar uno de los despliegues, podemos comprobar que la información sigue existiendo después de volver a crear los despliegues:
+Si en cualquier momento tenemos que eliminar o actualizar uno de los despliegues, podemos comprobar que la información sigue existiendo después de volver a crear los Deployments:
 
 ```bash
 kubectl delete -f mariadb-deployment.yaml

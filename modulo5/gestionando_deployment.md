@@ -1,6 +1,6 @@
 # Gestionando los Deployment
 
-En esta unidad vamos a trabajar con el recurso Deployment, vamos a crear un despliegue de un servidor nginx, usando el fichero yaml que hemos visto en la unidad anterior: [`nginx-deployment.yaml`](files/nginx-deployment.yaml).
+En esta unidad vamos a trabajar con el recurso Deployment, vamos a crear un Deployment de un servidor nginx, usando el fichero yaml que hemos visto en la unidad anterior: [`nginx-deployment.yaml`](files/nginx-deployment.yaml).
 
 ## Creación del Deployment
 

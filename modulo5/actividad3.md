@@ -23,15 +23,14 @@ Por lo tanto para desplegar la aplicaciones tendremos dos ficheros.yaml:
 
 Para realizar el despliegue realiza los siguientes pasos:
 
-1. Usando los ficheros anteriores crea los dos despliegues.
+1. Usando los ficheros anteriores crea los dos Deployments.
 2. Comprueba que los recursos que se han creado: Deployment, ReplicaSet y Pods.
 3. Crea una redirección utilizando el `port-forward` para acceder a la aplicación, sabiendo que la aplicación ofrece el servicio en el puerto 5000, y accede a la aplicación con un navegador web.
 
 ¿Qué aparece en la página principal de la aplicación?. Aparece el siguiente mensaje: **Waiting for database connection...**. Por lo tanto podemos indicar varias conclusiones:
 
 1. Hasta ahora no estamos accediendo de forma "normal" a las aplicaciones. El uso de la opción `port-forward` es un mecanismo que realmente nos posibilita acceder a la aplicación, pero utilizando un proxy. Deberíamos acceder a las aplicaciones usando una ip y un puerto determinado.
-2. Parece que tampoco hay acceso entre los p
-Pods de los distintos despliegues. Parece que los Pods de la aplicación guestbook no pueden acceder al Pod donde se está ejecutando la base de datos redis.
+2. Parece que tampoco hay acceso entre los Pods de los distintos despliegues. Parece que los Pods de la aplicación guestbook no pueden acceder al Pod donde se está ejecutando la base de datos redis.
 
 En el siguiente módulo estudiaremos los recursos que nos ofrece la API de Kubernetes para permitirnos el acceso a las aplicaciones desde el exterior, y para que los distintos Pods de los despliegues puedan acceder entre ellos.
 

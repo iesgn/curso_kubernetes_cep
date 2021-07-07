@@ -11,7 +11,7 @@ Vamos a instalar el CMS WordPress usando helm. Para ello, realiza los siguientes
 3. Busca el chart de bitnami para la instalación de WordPress. 
 4. Busca la documentación del chart y comprueba los parámetros para cambiar el tipo de servicio y el nombre del blog.
 5. Instala el chart definiendo el tipo del servicio como `NodePort` y poniendo tu nombre como nombre del blog.
-6. Comprueba los Pods, ReplicaSet, despliegues y servicios que se han creado.
+6. Comprueba los Pods, ReplicaSet, Deployment y Services que se han creado.
 7. Accede a la aplicación.
 
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:

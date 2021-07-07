@@ -28,7 +28,7 @@ spec:
     tier: frontend
 ```
 
-Tienes que poner el tipo de servicio, el puerto del servicio será el 80 y el nombre del puerto de la aplicación que hemos asignado en el despliegue es `http-server`.
+Tienes que poner el tipo de servicio, el puerto del servicio será el 80 y el nombre del puerto de la aplicación que hemos asignado en el Deployment es `http-server`.
 
 Realiza los siguientes pasos:
 
@@ -58,7 +58,7 @@ spec:
     app: redis
     tier: backend
 ```
-Tienes que poner el tipo de servicio, el puerto del servicio será el 6379 y el nombre del puerto de la base de datos que hemos asignado en el despliegue es `redis-server`. **Nota: No cambies el nombre del servicio, ya que la aplicación guestbook va a acceder por defecto a la base de datos usando el nombre `redis`**.
+Tienes que poner el tipo de servicio, el puerto del servicio será el 6379 y el nombre del puerto de la base de datos que hemos asignado en el Deployment es `redis-server`. **Nota: No cambies el nombre del servicio, ya que la aplicación guestbook va a acceder por defecto a la base de datos usando el nombre `redis`**.
 
 Realiza los siguientes pasos:
 
