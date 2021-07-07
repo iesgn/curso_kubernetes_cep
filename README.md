@@ -94,7 +94,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
         * [Actividad 5.2: Actualización y desactualización de nuestra aplicación (OBLIGATORIA)](modulo5/actividad2.md)
         * [Actividad 5.3: Despliegue de la aplicación GuestBook (OBLIGATORIA)](modulo5/actividad3.md)
 1. Acceso a las aplicaciones
-    * [Services. Tipos de servicios](modulo6/services.md)
+    * [Services. Tipos de Services](modulo6/services.md)
     * [Describiendo Services](modulo6/describiendo_services.md)
     * [Gestionando los Services](modulo6/gestionando_services.md)
     * [Servicio DNS en Kubernetes](modulo6/dns.md)
