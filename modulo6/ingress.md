@@ -58,9 +58,9 @@ Hemos indicado el tipo de recurso Ingress (`kind`) y le hemos puesto un nombre (
 * `host`: Indicamos el nombre de host que vamos a usar para el acceso. Este nombre debe apuntar a la ip del nodo master.
 * `path`: Indicamos el path de la url que vamos a usar, en este caso sería la ruta raíz: `/`. Esto nos sirve por si queremos servir la aplicación en una ruta determinada, por ejemplo: `www.example.org/app1`.
 * `pathType`: No es importante, nos permite indicar cómo se van a trabajar con las URL. 
-* `backend`: Indicamos el Service al que vamos a acceder. En este caso indicamos el nombre del servicio (`service/name`) y el puerto del servicio (`service/port/number`).
+* `backend`: Indicamos el Service al que vamos a acceder. En este caso indicamos el nombre del Service (`service/name`) y el puerto del Service (`service/port/number`).
 
-Cuando se crea el recurso, y accedamos al nombre indicado, un proxy inverso redirigirá las peticiones HTTP a la IP y al puerto del servicio correspondiente. **Nota: Utilizando Ingress no es necesario que los Services sean de tipo NodePort para acceder a la aplicación desde el exterior**.
+Cuando se crea el recurso, y accedamos al nombre indicado, un proxy inverso redirigirá las peticiones HTTP a la IP y al puerto del Service correspondiente. **Nota: Utilizando Ingress no es necesario que los Services sean de tipo NodePort para acceder a la aplicación desde el exterior**.
 
 ## Gestionando el recurso Ingress
 
