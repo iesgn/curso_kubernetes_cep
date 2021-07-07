@@ -97,7 +97,7 @@ Siempre podemos volver a ver esta información ejecutando la siguiente instrucci
 helm status serverweb
 ```
 
-Podemos comprobar los Deployments que hemos realizado con helm, ejecutando:
+Podemos comprobar los Deployments que hemos realizado con Helm, ejecutando:
 
 ```bash
 helm ls

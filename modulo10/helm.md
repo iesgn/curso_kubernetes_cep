@@ -6,4 +6,4 @@ Necesitamos herramientas para gestionar la aplicación completa: empaquetado, in
 
 Helm usa un formato de empaquetado llamado **charts**. Un chart es una colección de archivos que describen un conjunto de recursos que nos permite desplegar una aplicación en Kubernetes.
 
-Los **charts** son distribuidos en distintos repositorios, que podremos dar de alta en nuestra instalación de helm. Para buscar los distintos charts y los repositorios desde los que se distribuyen podemos usar la página [Artifact Hub](https://artifacthub.io/).
+Los **charts** son distribuidos en distintos repositorios, que podremos dar de alta en nuestra instalación de Helm. Para buscar los distintos charts y los repositorios desde los que se distribuyen podemos usar la página [Artifact Hub](https://artifacthub.io/).

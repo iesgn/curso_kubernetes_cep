@@ -4,9 +4,9 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-Vamos a instalar el CMS WordPress usando helm. Para ello, realiza los siguientes pasos:
+Vamos a instalar el CMS WordPress usando Helm. Para ello, realiza los siguientes pasos:
 
-1. Instala la última versión de helm.
+1. Instala la última versión de Helm.
 2. Añade el repositorio de bitnami
 3. Busca el chart de bitnami para la instalación de WordPress. 
 4. Busca la documentación del chart y comprueba los parámetros para cambiar el tipo de Service y el nombre del blog.

@@ -2,7 +2,7 @@
 
 Helm se distribuye como un único binario que podemos instalar de distintas formas. La última versión del programa lo podemos encontrar en esta [página](https://github.com/helm/helm/releases/) y podemos ver los distintos métodos de instalación en la [documentación oficial](https://helm.sh/docs/intro/install/).
 
-Una vez instalado podemos ver la versión de helm que tenemos instalada:
+Una vez instalado podemos ver la versión de Helm que tenemos instalada:
 
 ```bash
 helm version
