@@ -156,8 +156,7 @@ aproximadamente 5-6 horas por semana.
 | MÓD 3 | 3.2: Trabajando con un pod multicontenedor (VOLUNTARIA)  | 1 h | 3ª |
 | MÓD 4 | 4.1: Trabajando con ReplicaSet (T) | 1 h | 4ª |
 | MÓD 5 | 5.1: Trabajando con Deployments (T) | 1 h | 4ª |
-| MÓD 5 | 5.2: Actualización y desactualización de nuestra aplicación
-(T)  | 1 h | 4ª |
+| MÓD 5 | 5.2: Actualización y desactualización de nuestra aplicación (T)  | 1 h | 4ª |
 | MÓD 5 | 5.3: Despliegue de la aplicación GuestBook (T)  | 1 h | 5ª |
 | MÓD 6 | 6.1: Acceso de la aplicación GuestBook (T) | 1 h | 5ª |
 | MÓD 6 | 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA) | 1 h | 5ª |
