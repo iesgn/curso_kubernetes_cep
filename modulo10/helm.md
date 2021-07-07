@@ -1,6 +1,6 @@
 # Despliegue de aplicaciones completas
 
-<img src="https://helm.sh/img/helm.svg" alt="helm-logo" width="150"/>  
+<img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo10/img/helm.svg" alt="helm-logo" width="150"/>  
 
 Como hemos estudiado en las unidades anteriores, una aplicación real completa se compone de un conjunto amplio de objetos que definen Deployments, ConfigMaps, Services, etc. La API de Kubernetes no nos ofrece un "superobjeto" que defina una aplicación completa.
 

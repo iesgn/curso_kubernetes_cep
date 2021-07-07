@@ -6,7 +6,7 @@ Configurar y actualizar un cluster de Kubernetes es una tarea compleja, pero exi
 
 # minikube
 
-<img src="https://raw.githubusercontent.com/kubernetes/minikube/master/images/logo/logo.png" alt="minikube-logo" width="150"/>
+<img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo2/img/logo.png" alt="minikube-logo" width="150"/>
 
 minikube permite desplegar localmente un "cluster" de Kubernetes con un solo nodo. minikube es un proyecto oficial de Kubernetes y es probablemente la solución más adecuada para aprender a usar k8s, ya que es un proyecto maduro y muy sencillo de instalar. Los requisitos mínimos para instalar minikube en nuestro equipo son:
 
@@ -29,7 +29,7 @@ Los detalles para la instalación local de minikube los explicamos en la siguien
 
 # kubeadm
 
-<img src="https://raw.githubusercontent.com/kubernetes/kubeadm/master/logos/stacked/color/kubeadm-stacked-color.png" alt="kubeadm-logo" width="150"/>
+<img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo2/img/kubeadm-stacked-color.png" alt="kubeadm-logo" width="150"/>
 
 kubeadm es una solución más realista que minikube, ya que sí se instala un cluster de Kubernetes con varios nodos. La instalación de kubeadm no es especialmente compleja, pero no está tan automatizada como minikube y necesita más recursos y tiempo para configurarlo. kubeadm es una opción muy interesante cuando queremos ver de forma detallada la diferencia entre lo que se ejecuta en el nodo controlador y en los nodos workers, que no se puede apreciar en minikube.
 
@@ -40,7 +40,7 @@ La instalación de kubeadm se realiza típicamente en varias máquinas virtuales
 
 # kind
 
-<img src="https://d33wubrfki0l68.cloudfront.net/d0c94836ab5b896f29728f3c4798054539303799/9f948/logo/logo.png" alt="kind-logo" width="150"/>
+<img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo2/img/logo_kind.png" alt="kind-logo" width="150"/>
 
 kind (kubernetes in docker) es un proyecto oficial de Kubernetes más reciente que los dos anteriores y que permite desplegar un cluster de Kubernetes con varios nodos sobre docker. Es también muy interesante como opción de instalación local y de forma análoga al anterior, dejamos un par de enlaces para quienes estén interesados en probarlo:
 
@@ -49,7 +49,7 @@ kind (kubernetes in docker) es un proyecto oficial de Kubernetes más reciente q
 
 # k3s
 
-<img src="https://k3s.io/images/logo-k3s.svg" alt="k3s-logo" width="150"/>
+<img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo2/img/logo-k3s.svg" alt="k3s-logo" width="150"/>
 
 A diferencia de las opciones anteriores, k3s es una distribución de Kubernetes que sí está pensada para poner en producción, pero en unas circunstancias peculiares como son su uso para IoT, edge computing y en general para configurar clusters de Kubernetes en sistemas de pocos recursos (k3s es por ejemplo la opción más adecuada para usar Kubernetes en la arquitectura arm). k3s no es un proyecto oficial de Kubernetes, sino que lo comenzó a desarrollar la empresa [Rancher](https://rancher.com/) y hoy en día lo mantiene la [Cloud Native Computing Foundation](https://www.cncf.io/).
 

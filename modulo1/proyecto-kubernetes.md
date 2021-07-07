@@ -57,7 +57,7 @@ poder desplegarse en Kubernetes.
 
 ## Características principales
 
-<img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" alt="k8s-logo" width="150" />
+<img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/logo.png" alt="k8s-logo" width="150" />
 
 Kubernetes surge como un software para desplegar aplicaciones sobre
 contenedores que utilicen infraestructura en nube (pública, privada o
