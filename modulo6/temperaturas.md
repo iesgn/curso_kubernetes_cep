@@ -60,11 +60,11 @@ Para terminar vamos a crear un recurso Ingress que nos posibilite acceder a la a
 
 Y comprobamos que realmente ha cambiado el tipo de servicio, y que ya no tenemos un puerto para acceder usando la ip del nodo master.
 
-A continuación usamos el fichero  [`ingress.yaml`](files/temperaturas/ingress.yaml) para crear el recurso ingress, que definirá el nombre del host `www.temperaturas.org` que tendremos que introducir en la resolución estática cómo visto anteriormente. Por lo tanto modificamos el fichero `/etc/hosts` de nuestro ordenador con la siguiente línea:
+A continuación usamos el fichero  [`ingress.yaml`](files/temperaturas/ingress.yaml) para crear el recurso Ingress, que definirá el nombre del host `www.temperaturas.org` que tendremos que introducir en la resolución estática cómo visto anteriormente. Por lo tanto modificamos el fichero `/etc/hosts` de nuestro ordenador con la siguiente línea:
 
     192.168.39.222  www.temperaturas.org
 
-Creamos el recurso ingress:
+Creamos el recurso Ingress:
 
     kubectl apply -f ingress.yaml
 

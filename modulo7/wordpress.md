@@ -55,13 +55,13 @@ Para desplegar la aplicación WordPress vamos a usar el fichero [`wordpress-depl
 
     kubectl apply -f wordpress-deployment.yaml
 
-La definición del servicio que vamos a crear lo tenemos en el fichero: [`wordpress-srv.yaml`](files/wordpress/wordpress-srv.yaml). Como comprobamos en la definición estamos creando un servicio del tipo NodePort, pero también podríamos haberlo configurado de tipo ClusterIP, porque posteriormente vamos a crear un recurso ingress para acceder a la aplicación. Ejecutamos:
+La definición del servicio que vamos a crear lo tenemos en el fichero: [`wordpress-srv.yaml`](files/wordpress/wordpress-srv.yaml). Como comprobamos en la definición estamos creando un servicio del tipo NodePort, pero también podríamos haberlo configurado de tipo ClusterIP, porque posteriormente vamos a crear un recurso Ingress para acceder a la aplicación. Ejecutamos:
 
     kubectl apply -f wordpress-srv.yaml
 
 ## Acceso a la aplicación
 
-Para acceder a la aplicación vamos a crear un recurso Ingress que tenemos definido en el fichero: [`wordpress-ingress.yaml`](files/wordpress/wordpress-ingress.yaml). Como podemos observar vamos a usar el nombre `www.miwordpress.org` que tendremos que añadir en la resolución estática del ordenador desde el que vamos a acceder. También es interesante observar a que servicio se va acceder con este recurso ingress, el nombre del servicio es `wordpress-service` que evidentemente es el mismo que hemos puesto en la definición del servicio de wordpress.
+Para acceder a la aplicación vamos a crear un recurso Ingress que tenemos definido en el fichero: [`wordpress-ingress.yaml`](files/wordpress/wordpress-ingress.yaml). Como podemos observar vamos a usar el nombre `www.miwordpress.org` que tendremos que añadir en la resolución estática del ordenador desde el que vamos a acceder. También es interesante observar a que servicio se va acceder con este recurso Ingress, el nombre del servicio es `wordpress-service` que evidentemente es el mismo que hemos puesto en la definición del servicio de wordpress.
 
 Una vez que comprobemos que todos los recursos están funcionando, podemos acceder a nuestra aplicación:
 

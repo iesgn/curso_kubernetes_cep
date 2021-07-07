@@ -15,7 +15,7 @@ Cuando hacemos una instalación de minikube el componente de Ingress Controller 
 
     minikube addons list
 
-Para activar el ingress controller ejecutamos:
+Para activar el Ingress Controller ejecutamos:
 
     minikube addons enable ingress
 
@@ -26,11 +26,11 @@ Para comprobar si tenemos instalado el componente, podemos visualizar los Pods c
     ingress-nginx-controller-558664778f-shjzp   1/1     Running     0          
     ...    
 
-Debe aparece un Pod que se llama `ingress-nginx-controller-...`, si es así, significa que se ha instalado un ingress controller basado en el proxy inverso nginx.
+Debe aparece un Pod que se llama `ingress-nginx-controller-...`, si es así, significa que se ha instalado un Ingress Controller basado en el proxy inverso nginx.
 
 ## Describiendo el recurso Ingress
 
-Una vez instalado el componente ingress controller, ya podemos definir un recurso Ingress en un fichero yaml. Para ello vamos a trabajar con el despliegue y el servicio que hemos creado de nginx.
+Una vez instalado el componente Ingress Controller, ya podemos definir un recurso Ingress en un fichero yaml. Para ello vamos a trabajar con el despliegue y el servicio que hemos creado de nginx.
 
 El recurso Ingress para acceder a nuestro despliegue de nginx lo tenemos en el fichero [`ingress.yaml`](file/ingress.yaml):
 
@@ -60,7 +60,7 @@ Hemos indicado el tipo de recurso Ingress (`kind`) y le hemos puesto un nombre (
 * `pathType`: No es importante, nos permite indicar cómo se van a trabajar con las URL. 
 * `backend`: Indicamos el servicio al que vamos a acceder. En este caso indicamos el nombre del servicio (`service/name`) y el puerto del servicio (`service/port/number`).
 
-Cuando se crea el recurso, y accedamos al nombre indicado, un proxy inverso redirigirá las peticiones HTTP a la IP y al puerto del servicio correspondiente. **Nota: Utilizando ingress no es necesario que los servicios sean de tipo NodePort para acceder a la aplicación desde el exterior**.
+Cuando se crea el recurso, y accedamos al nombre indicado, un proxy inverso redirigirá las peticiones HTTP a la IP y al puerto del servicio correspondiente. **Nota: Utilizando Ingress no es necesario que los servicios sean de tipo NodePort para acceder a la aplicación desde el exterior**.
 
 ## Gestionando el recurso Ingress
 
@@ -68,7 +68,7 @@ Para crear el recurso ingress:
 
     kubectl apply -f ingress.yaml
 
-Y podemos ver el recurso ingress que hemos creado:
+Y podemos ver el recurso Ingress que hemos creado:
 
     kubectl get ingress
 
