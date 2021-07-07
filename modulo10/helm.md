@@ -1,4 +1,4 @@
-# Despliegue de aplicaciones completas
+# Despliegue de aplicaciones con Helm
 
 <img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo10/img/helm.svg" alt="helm-logo" width="150"/>  
 
