@@ -22,7 +22,7 @@ orquestar aplicaciones basadas en contenedores en entornos en
 producción.
 
 En este curso conoceremos las principales características de
-kubernetes y de las aplicaciones más adecuadas para poner en este
+Kubernetes y de las aplicaciones más adecuadas para poner en este
 entorno y comprobaremos de forma práctica la tolerancia a fallos, la
 escalabilidad de una aplicación o la gestión del versionado y los
 diferentes enfoques a la hora de hacerlo en entornos en producción,
@@ -46,7 +46,7 @@ en contenedores.
 ### Objetivos
 
 El principal objetivo de este curso es conocer la herramienta
-kubernetes, el software más extendido actualmente para la puesta en
+Kubernetes, el software más extendido actualmente para la puesta en
 producción de aplicaciones sobre contenedores, haciendo énfasis en la
 arquitectura de la aplicación, la actualización de versiones, la
 escalabilidad, etc.
