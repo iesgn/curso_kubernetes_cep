@@ -20,7 +20,7 @@ Solo permite el acceso interno a un Service de este tipo, es decir si tenemos un
 Veamos el ejemplo:
 
 1. Necesitamos que los Pods de Wordpress accedan al Pod del MySQL.
-2. La IP que ha tomado el Pod de MySQL (`172.25.3.5`) es inaccesible desde los Pods de wordpress.
+2. La IP que ha tomado el Pod de MySQL (`172.25.3.5`) es inaccesible desde los Pods de Wordpress.
 3. Por lo tanto hemos creado un Service de tipo ClusterIP, que ha obtenido una ip virtual (`192.168.3.5`) y expone el puerto de MySQL 3306.
 4. Esta IP sí es accesible desde los Pods de Wordpress.
 5. Al acceder a esta IP se balanceará la carga entre los Pods de MySQL (en el ejemplo sólo tenemos uno).

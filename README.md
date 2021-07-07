@@ -106,7 +106,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Variables de entorno](modulo7/variables_entorno.md)
 	* [ConfigMaps](modulo7/configmaps.md)
 	* [Secrets](modulo7/secrets.md)
-    * [Ejemplo completo: Despliegue y acceso a WordPress + MariaDB](modulo7/wordpress.md)
+    * [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](modulo7/wordpress.md)
         * [Actividad 7.1: Configurando nuestra aplicación Temperaturas (OBLIGATORIA)](modulo7/actividad1.md)
         * [Actividad 7.2: Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA)](modulo7/actividad2.md)
 1. Almacenamiento en Kubernetes
@@ -117,7 +117,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Uso de volúmenes](modulo8/uso.md)
     * [Ejemplo 1: Gestión estática de volúmenes](modulo8/ejemplo1.md)
     * [Ejemplo 2: Gestión dinámica de volúmenes](modulo8/ejemplo2.md)
-    * [Ejemplo 3: WordPress con almacenamiento persistente](modulo8/wordpress.md)
+    * [Ejemplo 3: Wordpress con almacenamiento persistente](modulo8/wordpress.md)
         * [Actividad 8.1: Desplegando un servidor web persistente (OBLIGATORIA)](modulo8/actividad1.md)
         * [Actividad 8.2: Haciendo persistente la aplicación GuestBook (OBLIGATORIA)](modulo8/actividad2.md)
         * [Actividad 8.3: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA)](modulo8/actividad3.md)

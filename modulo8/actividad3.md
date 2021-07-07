@@ -6,7 +6,7 @@
 
 Esta actividad es la continuación de la actividad voluntaria [Actividad 7.2: Despliegue y acceso de la aplicación Nextcloud](../modulo7/actividad2.md).
 
-Siguiendo la guía que hemos desarrollado en [Ejemplo 3: WordPress con almacenamiento persistente](wordpress.md) vamos a configurar el despliegue de Nextcloud para que use volúmenes (vamos a usar dos volúmenes, uno para la aplicación y otro para la base de datos) para que la información no se pierda.
+Siguiendo la guía que hemos desarrollado en [Ejemplo 3: Wordpress con almacenamiento persistente](wordpress.md) vamos a configurar el despliegue de Nextcloud para que use volúmenes (vamos a usar dos volúmenes, uno para la aplicación y otro para la base de datos) para que la información no se pierda.
 
 Realiza los siguientes pasos:
 

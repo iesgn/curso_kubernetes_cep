@@ -1,8 +1,8 @@
-# Ejemplo 3: WordPress con almacenamiento persistente
+# Ejemplo 3: Wordpress con almacenamiento persistente
 
-En este ejemplo vamos a volver e realizar el [Ejemplo completo: Despliegue y acceso a WordPress + MariaDB](../modulo7/wordpress.md) del módulo anterior, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente. 
+En este ejemplo vamos a volver e realizar el [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](../modulo7/wordpress.md) del módulo anterior, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente. 
 
-Para llevar a cabo esta tarea necesitaremos tener a nuestra disposición dos volúmenes: uno para guardar la información de WordPress y otro para guardar la información de MariaDB.
+Para llevar a cabo esta tarea necesitaremos tener a nuestra disposición dos volúmenes: uno para guardar la información de Wordpress y otro para guardar la información de MariaDB.
 
 Para este ejercicio utilizaremos asignación dinámica de volúmenes.
 
@@ -10,7 +10,7 @@ Para este ejercicio utilizaremos asignación dinámica de volúmenes.
 
 Como hemos comentado vamos a usar la asignación dinámica de volúmenes, por lo tanto tendremos que crear dos objetos PersistentVolumenClaim para solicitar los dos volúmenes.
 
-Para solicitar el volumen para la aplicación WordPress usaremos el fichero [`wordpress-pvc.yaml`](files/wordpress/wordpress-pvc.yaml):
+Para solicitar el volumen para la aplicación Wordpress usaremos el fichero [`wordpress-pvc.yaml`](files/wordpress/wordpress-pvc.yaml):
 
 ```yaml
 apiVersion: v1

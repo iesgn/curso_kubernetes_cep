@@ -2,7 +2,7 @@
 
 Ya lo hemos comentando en anteriores módulos, pero es importante tener en cuenta que **los Pods son efímeros**, es decir, cuando un Pod se elimina se pierde toda la información que tenía. Evidentemente, cuando creamos un nuevo Pod no contendrá ninguna información adicional a la propia aplicación.
 
-Podemos fijarnos en el [Ejemplo: Despliegue y acceso a WordPress + MariaDB](../modulo7/wordpress.md), y responder las siguientes preguntas:
+Podemos fijarnos en el [Ejemplo: Despliegue y acceso a Wordpress + MariaDB](../modulo7/wordpress.md), y responder las siguientes preguntas:
 
 1. ¿Qué pasa si eliminamos el despliegue de mariadb?, o, ¿se elimina el Pod de mariadb y se crea uno nuevo?
 
@@ -12,11 +12,11 @@ Podemos fijarnos en el [Ejemplo: Despliegue y acceso a WordPress + MariaDB](../m
 
     En este caso el Pod más antiguo tendría la información de la base de datos, pero el nuevo Pod creado al escalar el despliegue no tendría ninguna información. Como al acceder al Service de la base de datos se hace balanceo de carga, en unas ocasiones accederíamos al Pod antiguo, y todo funcionaría correctamente, pero cuando accederíamos al Pod nuevo, al no tener información, nos mostraría la pantalla de instalación de la aplicación. En definitiva, tendríamos dos bases de datos distintas a las que accederíamos indistintamente.
 
-3. Si escribimos un post en el wordpress y subimos una imagen, ¿qué pasa con esta información en el pod?
+3. Si escribimos un post en el Wordpress y subimos una imagen, ¿qué pasa con esta información en el pod?
 
-    Esta claro, que cuando escribimos un post, esa información se guarda en la base de datos. Pero la imágen que hemos subido al post se guardaría en un directorio del servidor web (del Pod de wordpress). Tendríamos los mismos problemas que con la base de datos, si eliminamos este Pod se perderá todo el contenido estático de nuestro WordPress.
+    Esta claro, que cuando escribimos un post, esa información se guarda en la base de datos. Pero la imágen que hemos subido al post se guardaría en un directorio del servidor web (del Pod de Wordpress). Tendríamos los mismos problemas que con la base de datos, si eliminamos este Pod se perderá todo el contenido estático de nuestro Wordpress.
 
-4. ¿Qué pasa si escalamos el despliegue de wordpress a dos pods?
+4. ¿Qué pasa si escalamos el despliegue de Wordpress a dos pods?
 
     Pues la respuesta es similar a la anterior. En este caso, el Pod antigüo tendría almacenada el contenido estáticos (las imágenes), pero el nuevo no tendría información. Como al acceder a la aplicación se balancea la carga, se mostraría la imagen según al Pod que estuviéramos accediendo.
 
