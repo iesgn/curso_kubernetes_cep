@@ -16,7 +16,7 @@ Podemos fijarnos en el [Ejemplo: Despliegue y acceso a Wordpress + MariaDB](../m
 
     Esta claro, que cuando escribimos un post, esa información se guarda en la base de datos. Pero la imágen que hemos subido al post se guardaría en un directorio del servidor web (del Pod de Wordpress). Tendríamos los mismos problemas que con la base de datos, si eliminamos este Pod se perderá todo el contenido estático de nuestro Wordpress.
 
-4. ¿Qué pasa si escalamos el despliegue de Wordpress a dos pods?
+4. ¿Qué pasa si escalamos el despliegue de Wordpress a dos Pods?
 
     Pues la respuesta es similar a la anterior. En este caso, el Pod antigüo tendría almacenada el contenido estáticos (las imágenes), pero el nuevo no tendría información. Como al acceder a la aplicación se balancea la carga, se mostraría la imagen según al Pod que estuviéramos accediendo.
 
