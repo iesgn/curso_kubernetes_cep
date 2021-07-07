@@ -135,7 +135,43 @@ De forma más concreta estos objetivos se pueden enumerar en:
 
 ## Agenda
 
-Pendiente de hacer cuando estén definidas las actividades
+Con objeto que los participantes en el curso puedan planificar sus
+sesiones de trabajo, a modo orientativo se elabora la siguiente
+Agenda. En la columna “Actividad” se indicará el nombre de la
+misma. Además, si dicha actividad necesita la revisión del tutor o
+tutora, se pondrá (T). Bajo la columna "Horas" encontrará el tiempo
+aproximado que estimamos le llevará realizar cada actividad. La
+columna "Semana" indica la semana del curso en que debería estar
+trabajando en la actividad, teniendo en cuenta que se valoran
+aproximadamente 5-6 horas por semana.
+
+| MÓDULO | ACTIVIDAD | HORAS | SEMANA |
+| :----: | :-------- | :---: | :----: |
+| INICIO | 0.1. Guía del curso | 30' | 1ª |
+| INICIO | 0.2. Ayuda para conocer el Aula Virtual | 1 h | 1ª |
+| INICIO | 0.3. Nos presentamos (T) | 30' | 1ª |
+| MÓD 2 | 2.1: Instalación de minikube (T) | 1 h | 2ª |
+| MÓD 2 | 2.2: Instalación de kubectl (T) | 30' | 2ª |
+| MÓD 3 | 3.1: Trabajando con pods (T) | 1 h | 3ª |
+| MÓD 3 | 3.2: Trabajando con un pod multicontenedor (VOLUNTARIA)  | 1 h | 3ª |
+| MÓD 4 | 4.1: Trabajando con ReplicaSet (T) | 1 h | 4ª |
+| MÓD 5 | 5.1: Trabajando con Deployments (T) | 1 h | 4ª |
+| MÓD 5 | 5.2: Actualización y desactualización de nuestra aplicación
+(T)  | 1 h | 4ª |
+| MÓD 5 | 5.3: Despliegue de la aplicación GuestBook (T)  | 1 h | 5ª |
+| MÓD 6 | 6.1: Acceso de la aplicación GuestBook (T) | 1 h | 5ª |
+| MÓD 6 | 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA) | 1 h | 5ª |
+| MÓD 7 | 7.1: Configurando nuestra aplicación Temperaturas (T) | 1 h | 6ª |
+| MÓD 7 | 7.2: Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA) | 1 h | 6ª |
+| MÓD 8 | 8.1: Desplegando un servidor web persistente (T) | 1 h | 7ª |
+| MÓD 8 | 8.2: Haciendo persistente la aplicación GuestBook (T) | 1 h | 7ª |
+| MÓD 8 | 8.3: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA) | 1 h | 7ª |
+| MÓD 9 | 9.1: Creando un cluster de MySQL (VOLUNTARIA) | 2 h | 8ª |
+| MÓD 10 | 10.1: Instalación de un CMS con Helm (T) | 1 h | 8ª |
+
+El RESTO DE LAS HORAS HASTA LAS 45 HORAS DEL CURSO DEBEN DEDICARSE A
+LA LECTURA DE LOS MATERIALES Y AL VISIONADO DE LOS VIDEOTUTORIALES
+INCLUIDOS.
 
 ## Metodología
 
