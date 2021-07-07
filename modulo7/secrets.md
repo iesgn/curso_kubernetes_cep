@@ -2,7 +2,7 @@
 
 Cuando en un variable de entorno indicamos una información sensible,
 como por ejemplo, una contraseña o una clave ssh, es mejor utilizar un
-nuevo recurso de Kubernetes llamado **secret**.
+nuevo recurso de Kubernetes llamado **Secret**.
 
 Los
 [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
@@ -12,11 +12,11 @@ permiten guardar información sensible que será **codificada** o
 Hay distintos tipos de Secret, en este curso vamos a usar los
 genéricos y lo vamos a crear a partir de un literal, por ejemplo para
 guardar la contraseña del usuario root de una base de datos,
-crearíamos un secret de la siguiente manera:
+crearíamos un Secret de la siguiente manera:
 
     kubectl create secret generic mariadb --from-literal=password=my-password
 
-Podemos obtener información de los secret que hemos creado con las instrucciones:
+Podemos obtener información de los Secret que hemos creado con las instrucciones:
 
     kubectl get secret
     kubectl describe secret mariadb
@@ -48,8 +48,8 @@ Donde observamos como al indicar las variables de entorno (sección
 con un valor de un Secret (`valueFrom: - secretKeyRef:`), indicando el
 nombre del Secret (`name`) y la clave correspondiente. (`key`).
 
-**Nota:** Por defecto, k8s no cifra el valor de los secretos,
-simplemente los codifica en base64. El cifrado de los secretos requiere
+**Nota:** Por defecto, k8s no cifra el valor de los Secrets,
+simplemente los codifica en base64. El cifrado de los Secrets requiere
 configuraciones adicionales que se detallan en [Encrypting Secret Data
 at
 Rest](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/)
