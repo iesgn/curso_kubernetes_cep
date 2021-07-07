@@ -30,9 +30,9 @@ spec:
     requests:
       storage: 1Gi
 ```
-**Nota**: Fíjate que esta definición hemos quitado la declaración `storageClassName: manual`, al no ponerla se eligira el `storageclass` por defecto que en este caso se llama `standard` y que hemos visto anteriormente su definición en minikube.
+**Nota**: Fíjate que esta definición hemos quitado la declaración `storageClassName: manual`, al no ponerla se elegirá el `storageclass` por defecto que en este caso se llama `standard` y que hemos visto anteriormente su definición en minikube.
 
-Cuando creemos el objeto *PersistentVolumeClaim*, veremos que de forma dinámica se creará un *PersitentVolumen* que se asociará a nuestra solicitud::
+Cuando creemos el objeto PersistentVolumeClaim, veremos que de forma dinámica se creará un *PersitentVolumen* que se asociará a nuestra solicitud::
 
 ```bash
 kubectl apply -f pvc-ejemplo2.yaml
@@ -133,7 +133,7 @@ Finalmente puedes volver a comprobar que la información de la aplicación no se
 
 ## Eliminación del volumen
 
-En este caso los volúmenes que crea de forma dinámica el `storageclass`que tenemos creado en minikube, tienen como política de reciclaje el valor de `Delete`. esto significa que cuando eliminemos la solicitud, el objeto *PersistentVolumeClaim*, también se borrará el volumen, el objeto *PersistentVolume*.
+En este caso los volúmenes que crea de forma dinámica el `storageclass`que tenemos creado en minikube, tienen como política de reciclaje el valor de `Delete`. esto significa que cuando eliminemos la solicitud, el objeto PersistentVolumeClaim, también se borrará el volumen, el objeto PersistentVolume.
 
 ```bash
 kubectl delete persistentvolumeclaim/pvc-ejemplo2

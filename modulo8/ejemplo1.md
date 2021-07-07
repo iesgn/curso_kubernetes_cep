@@ -6,7 +6,7 @@ En este ejemplo vamos a desplegar un servidor web que va a servir una página ht
 
 En este caso, será el administrador del cluster el responsable de dar de alta en el cluster los volúmenes disponibles. Como hemos estudiado anteriormente, indicaremos algunas características del volumen: la capacidad, el modo de acceso, la política de reciclaje, el tipo de volumen,...
 
-Para ello vamos a describir el objeto *PersistentVolume* en el fichero [`pv-ejemplo1.yaml`](files/ejemplo1/pv-ejemplo1.yaml):
+Para ello vamos a describir el objeto PersistentVolume en el fichero [`pv-ejemplo1.yaml`](files/ejemplo1/pv-ejemplo1.yaml):
 
 ```yaml
 apiVersion: v1
@@ -49,7 +49,7 @@ kubectl describe pv pv-ejemplo1
 
 ## Solicitud del volumen
 
-A continuación, nosotros como desarrolladores necesitamos solicitar un volumen con ciertas características para nuestra aplicación, para ello vamos a definir un objeto *PersistentVolumeClaim*, que definiremos en el fichero [`pvc-ejemplo1.yaml`](files/ejemplo1/pvc-ejemplo1.yaml):
+A continuación, nosotros como desarrolladores necesitamos solicitar un volumen con ciertas características para nuestra aplicación, para ello vamos a definir un objeto PersistentVolumeClaim, que definiremos en el fichero [`pvc-ejemplo1.yaml`](files/ejemplo1/pvc-ejemplo1.yaml):
 
 ```yaml
 apiVersion: v1
@@ -67,7 +67,7 @@ spec:
 
 Como vemos desde el punto de vista del desarrollador no necesita saber los tipos de volúmenes que tenemos disponibles, simplemente indicamos que queremos un 1Gb de almacenamiento, el tipo de acceso y que se haga la asignación de forma estática (`storageClassName: manual`).
 
-Cuando creemos el objeto *PersistentVolumeClaim*, podremos comprobar si hay algún volumen (*PersistentVolume*) disponible en el cluster que cumpla con los requisitos:
+Cuando creemos el objeto PersistentVolumeClaim, podremos comprobar si hay algún volumen (PersistentVolume) disponible en el cluster que cumpla con los requisitos:
 
 ```bash
 kubectl apply -f pvc-ejemplo1.yaml
@@ -80,7 +80,7 @@ NAME                                 STATUS   VOLUME        CAPACITY   ACCESS MO
 persistentvolumeclaim/pvc-ejemplo1   Bound    pv-ejemplo1   5Gi        RWX            manual         3s
 ```
 
-Podemos apreciar que el el estado del volumen ha cambiado a `Bound` que significa que ya está asociado al *PersistentVolumeClaim* que hemos creado.
+Podemos apreciar que el el estado del volumen ha cambiado a `Bound` que significa que ya está asociado al PersistentVolumeClaim que hemos creado.
 
 **Nota**: El desarrollador quería 1 Gb de disco, que se cumple de sobra con los 5 Gb del volumen que se ha asociado.
 
@@ -121,7 +121,7 @@ spec:
               name: volumen-ejemplo1
 ```
 
-Donde podemos observar que en la especificación del Pod hemos indicado que estará formado por un volumen correspondiente al asignado al *PersistentVolumeClaim* `pvc-ejemplo1` y que el contenedor tendrá un punto de montaje en el directorio *DocumentRoot* de nginx (`/usr/share/nginx/html`) en el volumen.
+Donde podemos observar que en la especificación del Pod hemos indicado que estará formado por un volumen correspondiente al asignado al PersistentVolumeClaim `pvc-ejemplo1` y que el contenedor tendrá un punto de montaje en el directorio *DocumentRoot* de nginx (`/usr/share/nginx/html`) en el volumen.
 
 Creamos el despliegue:
 
@@ -188,7 +188,7 @@ Y volvemos acceder al mismo puerto:
 
 ## Eliminación del volumen
 
-Si finalmente queremos eliminar los volúmenes creados, tendremos que eliminar la solicitud, el objeto *PersistentVolumeClaim*, dependiendo de la política de reciclaje con la que creamos el objeto *PersistentVolume* tendremos distintos comportamientos.
+Si finalmente queremos eliminar los volúmenes creados, tendremos que eliminar la solicitud, el objeto PersistentVolumeClaim, dependiendo de la política de reciclaje con la que creamos el objeto PersistentVolume tendremos distintos comportamientos.
 
 En este caso como la política de reciclaje con la que creamos el volumen es `Recycle`, no se eliminará se borrará el contenido pero se podrá reutilizar es decir su estado volverá a `Available`:
 
@@ -200,7 +200,7 @@ NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS
 persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  8m8s
 ```
 
-Si queremos eliminar el objeto *PersistentVolume*, ejecutamos:
+Si queremos eliminar el objeto PersistentVolume, ejecutamos:
 
 ```bash
 kubectl delete persistentvolume/pv-ejemplo1

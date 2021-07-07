@@ -5,9 +5,9 @@ Para que el administrador de Kubernetes defina los volúmenes disponible en nues
 
 ## Aprovisionamiento estático
 
-En este caso, es el administrador del cluster el responsable de ir definiendo los distintos volúmenes disponibles en el cluster creando manualmente los distintos recursos *PersistentVolumen*.
+En este caso, es el administrador del cluster el responsable de ir definiendo los distintos volúmenes disponibles en el cluster creando manualmente los distintos recursos PersistentVolumen.
 
-Un *PersistentVolumen* es un objeto que representa los volúmenes disponibles en el cluster. En él se van a definir los detalles del [backend](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes) de almacenamiento que vamos a utilizar, el tamaño disponible, los [modos de acceso](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes), las [políticas de reciclaje](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reclaim-policy), etc.
+Un PersistentVolumen es un objeto que representa los volúmenes disponibles en el cluster. En él se van a definir los detalles del [backend](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes) de almacenamiento que vamos a utilizar, el tamaño disponible, los [modos de acceso](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes), las [políticas de reciclaje](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reclaim-policy), etc.
 
 Tenemos tres modos de acceso, que depende del backend que vamos a utilizar: 
 
@@ -51,7 +51,7 @@ spec:
 
 ## Aprovisionamiento dinámico
 
-Cuando el desarrollador necesita almacenamiento para su aplicación, hace una petición de almacenamiento creando un recurso *PersistantVolumenClaim* y de forma dinámica se crea el recurso *PersistantVolume* que representa el volumen y se asocia con esa petición. DE otra forma explicado, cada vez que se cree un *PersistentVolumenClaim*, se creará bajo demanda un *PersistentVolumen* que se ajuste a las características seleccionadas.
+Cuando el desarrollador necesita almacenamiento para su aplicación, hace una petición de almacenamiento creando un recurso PersistentVolumenClaim y de forma dinámica se crea el recurso PersistentVolume que representa el volumen y se asocia con esa petición. DE otra forma explicado, cada vez que se cree un PersistentVolumenClaim, se creará bajo demanda un PersistentVolumen que se ajuste a las características seleccionadas.
 
 Para obtener la [gestión dinámica de volúmenes](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/), necesitamos [un "provisionador" de almacenamiento](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) (tendremos distintos provisionadores para los distintos tipos de almacenamiento).
 
@@ -66,4 +66,4 @@ standard (default)   k8s.io/minikube-hostpath   Delete          Immediate       
 En este caso la configuración del objeto `storageclass` se definió con las siguientes características:
 
 * La política de reciclaje tiene el valor `Delete`.
-* Y el modo de asociación (`VOLUMEBINDINGMODE`) tiene el valor `Immediate`, es decir, cuando se cree el objeto *PersistenVolumenClaim* se asociará de forma dinámica un volumen (objeto *PersistenVolumen*) inmediatamente. Otro valor podría ser `WaitForFirstConsumer`, en ese caso la asociación se haría cuando se utilizará el volumen.
+* Y el modo de asociación (`VOLUMEBINDINGMODE`) tiene el valor `Immediate`, es decir, cuando se cree el objeto PersistenVolumenClaim se asociará de forma dinámica un volumen (objeto PersistenVolumen) inmediatamente. Otro valor podría ser `WaitForFirstConsumer`, en ese caso la asociación se haría cuando se utilizará el volumen.

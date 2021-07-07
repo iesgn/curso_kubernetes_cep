@@ -98,7 +98,7 @@ Vamos a estudiar las características de la definición de este recurso:
 
 * Con el parámetro `serviceName` indicaremos el nombre de dominio que va a formar parte del nombre DNS que el Headless Service va a crear para cada Pod.
 * Con el parámetro `selector` se indica los Pods que vamos a controlar con StatefulSet.
-* Una de las características que hemos indicado del StatefulSet es que cada Pod va a tener un almacenamiento estáble. El tipo de almacenamiento se indica con el parámetro `volumeClaimTemplates` que se define de forma similar a un `PersistantVolumenClaim`. 
+* Una de las características que hemos indicado del StatefulSet es que cada Pod va a tener un almacenamiento estáble. El tipo de almacenamiento se indica con el parámetro `volumeClaimTemplates` que se define de forma similar a un `PersistentVolumenClaim`. 
 * Además observamos en la definición del contenedor que el almacenamiento que hemos definido se va a montar en cada Pod (en este ejemplo el punto de montaje es el DocumentRoot de nginx), con el parámetro `volumeMounts`.
 
 ## Ejemplo: Creación de un StatefulSet
