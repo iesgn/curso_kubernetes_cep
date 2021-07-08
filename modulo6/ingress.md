@@ -9,7 +9,7 @@ La solución puede ser utilizar un [Ingress controller](https://kubernetes.io/do
 
 ![ingress](img/ingress.png)
 
-## Instalación de Ingress Controller en miinikube
+## Instalación de Ingress Controller en minikube
 
 Cuando hacemos una instalación de minikube el componente de Ingress Controller no viene instalada por defecto. minikube nos ofrece un conjunto de *addons* que al activarlos nos instalan un determinado componente que nos ofrece una funcionalidad adicional. Para ver los *addons* que nos ofrece minikube podemos ejecutar:
 
@@ -64,7 +64,7 @@ Cuando se crea el recurso, y accedamos al nombre indicado, un proxy inverso redi
 
 ## Gestionando el recurso Ingress
 
-Para crear el recurso ingress:
+Para crear el recurso Ingress:
 
     kubectl apply -f ingress.yaml
 
