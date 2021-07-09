@@ -2,7 +2,7 @@
 
 Los servicios ([Services](https://kubernetes.io/docs/concepts/services-networking/service/)) nos permiten acceder a las aplicaciones que hemos desplegado en el cluster.
 
-* Un Service es una abstracción que **nos permite acceder a un conjunto de pods** (que se han creado a partir de un Deployment) que implementan una aplicación (Por ejemplo: acceder a un servidor web, a una servidor de base de datos, a un Servicevicio que forma parte de una aplicación, ...).
+* Un Service es una abstracción que **nos permite acceder a un conjunto de pods** (que se han creado a partir de un Deployment) que implementan una aplicación (Por ejemplo: acceder a un servidor web, a una servidor de base de datos, a un servicio que forma parte de una aplicación, ...).
 * A cada Pod se le asigna una IP a la que no se puede acceder directamente, por lo tanto necesitamos un Service que nos ofrece **una dirección virtual (CLUSTER-IP) y un nombre** que identifica al conjunto de Pods que representa, al cual nos podemos conectar.
 * La conexión al Service se puede realizar **desde otros Pods o desde el exterior** (mediante la generación aleatoria de un puerto). Por ejemplo, si tenemos una aplicación formada por dos Services: servidor web y servidor de base de datos, tendremos que acceder desde el exterior al servidor web, y acceder al servidor de base de datos desde el servidor web. En principio no será necesario acceder al servidor de base de datos desde el exterior.
 * Si el Deployment que hemos creado tiene más de un Pod asociado, el Service que representa el acceso a esta aplicación **balanceará la carga** entre los Pods con una política Round Robin.
@@ -13,7 +13,7 @@ Los servicios ([Services](https://kubernetes.io/docs/concepts/services-networkin
 
 ### ClusterIP
 
-Solo permite el acceso interno a un Service de este tipo, es decir si tenemos un despliegue con una aplicación a la que no es necesaria acceder desde el exterior, crearemos un Service de este tipo para que otras aplicaciones puedan acceder a ella (por ejemplo, una base de datos). Es el tipo por defecto. Si deseamos seguir accediendo desde el exterior, para hacer pruebas durante la fase de desarrollo podemos seguir utilizando la instrucción `kubectl port-forward`.
+Solo se permite el acceso interno a un Service de este tipo. Es decir, si tenemos un despliegue con una aplicación a la que no es necesario acceder desde el exterior, crearemos un Service de este tipo para que otras aplicaciones puedan acceder a ella (por ejemplo, una base de datos). Es el tipo por defecto. Si deseamos seguir accediendo desde el exterior, para hacer pruebas durante la fase de desarrollo podemos seguir utilizando la instrucción `kubectl port-forward`.
 
 ![clusterip](img/clusterip.png)
 
@@ -38,7 +38,7 @@ Veamos el ejemplo:
 2. La IP que han tomado los Pods de Wordpress (`172.25.3.3`, ...) no son accesibles desde el exterior. Además comprobamos que estos Pods están ofreciendo el servicio en el puerto 8080.
 3. Por lo tanto, hemos creado un Service de tipo NodePort que ha obtenido una IP virtual (`192.168.3.4`) y expone el puerto 80.
 4. Al acceder a esta IP al puerto 80 se balanceará la carga entre los Pods de Wordpress, accediendo a las IPs de los Pods de Wordpress al puerto 8080.
-6. El Service NodePort ha asignado un puerto de acceso aleatorio (entre el 30000 - 40000), y que nos permite acceder a la aplicación accediendo a la IP del nodo master. En el ejemplo si accedemos a `10.0.2.4:30453` estaremos accediendo al Service que nos permitirá acceder a la aplicación.
+5. El Service NodePort ha asignado un puerto de acceso aleatorio (entre el 30000 - 40000) que nos permite acceder a la aplicación mediante la IP del nodo master. En el ejemplo si accedemos a `10.0.2.4:30453` estaremos accediendo al Service que nos permitirá acceder a la aplicación.
 
 ### LoadBalancer
 

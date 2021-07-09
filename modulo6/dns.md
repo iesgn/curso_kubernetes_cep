@@ -14,7 +14,7 @@ Partimos del punto anterior donde tenemos creados los dos Services:
     mariadb      ClusterIP   10.106.60.233   <none>        3306/TCP
     nginx        NodePort    10.110.81.74    <none>        80:32717/TCP
 
-Para comprobar el servidor DNS de nuestro cluster y de que podemos resolver los nombres de los distintos Services, vamos a usar un Pod ([`busybox.yaml`](files/busybox.yaml)) creado desde una imagen `busybox`.  Es una imagen muy pequeña pero con algunas utilidades que nos vienen muy bien:
+Para comprobar el servidor DNS de nuestro cluster y que podemos resolver los nombres de los distintos Services, vamos a usar un Pod ([`busybox.yaml`](files/busybox.yaml)) creado desde una imagen `busybox`.  Es una imagen muy pequeña pero con algunas utilidades que nos vienen muy bien:
 
     kubectl apply -f busybox.yaml
 
@@ -53,8 +53,3 @@ También podemos comprobar que usando el nombre podemos acceder al servicio:
     ...
 
 Podemos concluir que, cuando necesitemos acceder desde alguna aplicación desplegada en nuestro cluster a otro servicio ofrecido por otro despliegue, **utilizaremos el nombre que hemos asignado a su Service de acceso**. Por ejemplo, si desplegamos un Wordpress y un servidor de base de datos mariadb, y creamos dos Services: uno de tipo NodePort para acceder desde el exterior al CMS, y otro, que llamamos `mariadb` de tipo ClusterIP para acceder ala base de datos, cuando tengamos que configurar el Wordpress para indicar la dirección de la base de datos, pondremos `mariadb`.
-
-
-
-
-
