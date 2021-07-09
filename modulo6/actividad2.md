@@ -19,7 +19,7 @@ Realiza los siguientes pasos:
 
 1. Utilizando como modelos los ficheros yaml de la actividad anterior, crea los ficheros necesarios para crear los recursos en tu cluster de Kubernetes para desplegar esta aplicación.
 
-Para superar la actividad deberás entregar en un fichero comprimido con la siguiente información:
+Para superar la actividad deberás entregar en un fichero comprimido que contenga:
 
 1. Los ficheros yaml que has creado.
 2. Un pantallazo donde se vea el acceso desde un navegador web a la aplicación usando la ip del nodo master y el puerto asignado al Service (**pantallazo1.jpg**).
@@ -55,7 +55,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 

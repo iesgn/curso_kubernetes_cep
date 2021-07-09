@@ -6,7 +6,7 @@
 
 Una vez que tenemos creado el despliegue de la aplicación, que realizamos en la [Actividad 5.3: Despliegue de la aplicación GuestBook](../modulo5/actividad3.md), vamos a crear los Services correspondientes para acceder a ella:
 
-#### Service para acceder a la aplicación
+### Service para acceder a la aplicación
 
 El primer Service que vamos a crear nos va a permitir acceder a la aplicación GuestBook desde el exterior, para ello crea un fichero yaml con la definición del Service a partir de la siguiente plantilla:
 
@@ -32,12 +32,12 @@ Tienes que poner el tipo del Service, el puerto del servicio será el 80 y el no
 
 Realiza los siguientes pasos:
 
-1. Crea el fichero yaml con la definición del Service, y crealo.
-2. Comprueba el puerto que te han asignado al Service para acceder desde el exterior.
+1. Elabora el fichero yaml con la definición del Service, y créalo.
+2. Comprueba el puerto que le han asignado al Service para acceder desde el exterior.
 3. Accede a la ip del nodo master y al puerto asignado desde un navegador web para ver la aplicación.
 4. Responde la siguiente pregunta: ¿Por qué aparece el mensaje de error: **Waiting for database connection...**?
 
-#### Service para acceder a la base de datos
+### Service para acceder a la base de datos
 
 A continuación vamos a crear el Service para acceder a la base de datos. Vamos a crear el fichero yaml para su definición a partir de la siguiente plantilla:
 
@@ -62,11 +62,11 @@ Tienes que poner el tipo del Service, el puerto del servicio será el 6379 y el 
 
 Realiza los siguientes pasos:
 
-1. Crea el fichero yaml con la definición del Service, y crealo.
+1. Elabora el fichero yaml con la definición del Service, y créalo.
 2. Lista los Services que has creado.
-3. Accede a la ip del nodo master y al puerto asignado desde un navegador web para ver la aplicación. Y comprueba que funciona sin ningún problema.
+3. Accede a la ip del nodo master y al puerto asignado desde un navegador web para ver la aplicación. Comprueba que funciona sin ningún problema.
 
-#### Acceso a la aplicación usando Ingress
+### Acceso a la aplicación usando Ingress
 
 Vamos a crear el fichero yaml de definición del recurso Ingress para acceder a la aplicación a partir de la siguiente plantilla:
 
@@ -136,7 +136,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 
