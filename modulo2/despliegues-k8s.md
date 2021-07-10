@@ -16,17 +16,17 @@ bases de datos (a los que llamaremos de forma genérica "back-end").
 <img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo2/img/esquema-tradicional.png" alt="esquema-tradicional" />
 
 En la imagen anterior, vemos que el balanceador de carga expuesto al
-exterior recibe la petición, que asigna a alguno de las máquinas
-virtuales o físicas que forman el "front-end" y que estos a su vez se
+exterior recibe la petición, que asigna a alguna de las máquinas
+virtuales o físicas que forman el "front-end" y que estas a su vez se
 comunican con alguna de las máquinas del "back-end" a través del
 balanceador de carga intermedio.
 
 En el caso de Kubernetes, esto se realiza utilizando una serie de
 objetos internos, que normalmente se ejecutan sobre contenedores,
-denominados Pods, ReplicaSets,  deployments, Services e
-Ingress. Hay bastantes más objetos de k8s, pero nos centramos en estos
-que son los principales. En la siguiente imagen podemos ver la forma
-que una petición externa se gestionaría:
+denominados Pods, ReplicaSets,  Deployments, Services e
+Ingress Controllers. Hay bastantes más objetos de k8s, pero nos
+centramos en estos que son los principales. En la siguiente imagen
+podemos ver la forma que una petición externa se gestionaría:
 
 <img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo2/img/esquema-k8s.png" alt="esquema-k8s" />
 

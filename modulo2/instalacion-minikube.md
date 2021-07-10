@@ -4,7 +4,7 @@ El "cluster" de k8s que vamos a utilizar en este curso es el de un
 solo nodo que va a encargarse de realizar tanto las tareas de master,
 con los componentes principales de Kubernetes, como de worker,
 ejecutando las cargas de trabajo en contenedores (ya veremos más
-adelante que realmente utiliza algo que se llama pod). Aunque
+adelante que realmente utiliza algo que se llama Pod). Aunque
 evidentemente un cluster constituido por un solo nodo no es la
 solución más adecuada en la mayoría de los casos, sí lo es en éste, en
 el que queremos instalar Kubernetes de forma rápida y fácil para
@@ -94,7 +94,7 @@ salida típica de la instalación del cluster a continuación:
 
 En la última línea de la salida podemos ver que se ha intentado
 configurar apropiadamente kubectl, a pesar de que no está instalado en
-el equipo, paso que haremos a continuación.
+el equipo, paso que haremos en el siguiente apartado.
 
 Podemos comprobar en cualquier momento el estado de minikube con la
 instrucción:
@@ -111,9 +111,9 @@ kubeconfig: Configured
 
 ## Parada y reinicio de minikube
 
-Si vamos a apagar nuestro equipo, debemos parar previamente minikube y
-volverlo a lanzar cuando vayamos a usarlo de nuevo. Esto se realiza
-mediante las instrucciones:
+Podemos parar y volver a arrancar minikube cuando sea preciso, ya que
+no se trata de un cluster de k8s en producción, sino de uno instalado
+en un equipo convencional. Esto se realiza mediante las instrucciones:
 
 ```
 minikube stop

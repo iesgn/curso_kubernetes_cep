@@ -1,15 +1,17 @@
 # Instalación de kubectl
 
-kubectl es la herramienta de línea de comandos para interactuar con la
-API de Kubernetes, es por tanto la herramienta fundamental que vamos a
-utilizar durante todo el curso para gestionar nuestros objetos en el
-cluster recién creado con minikube.
+kubectl es la herramienta de línea de comandos utilizada para
+interactuar con la API de Kubernetes, es por tanto la herramienta
+fundamental que vamos a utilizar durante todo el curso para gestionar
+nuestros objetos en el cluster recién creado con minikube.
 
 kubectl está escrito en Go y de nuevo su instalación es muy simple, ya
 que se trata de un binario enlazado estáticamente y sin
 dependencias. Las instrucciones para su instalación están disponibles
 en la [documentación de
-k8s](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/).
+k8s](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/). A
+continuación veremos algunas de las opciones que tenemos para
+instalarlo.
 
 ## Opción 1. Instalar binario desde el proyecto
 
@@ -26,7 +28,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
 Este binario obviamente no se actualiza y tendremos que repetir el
-proceso cuando cambiemos la versión de k8s.
+proceso cuando se actualice.
 
 ## Opción 2. Instalar desde repositorios no oficiales
 
