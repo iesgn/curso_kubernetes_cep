@@ -14,8 +14,8 @@ Basándonos en el [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](
 Para superar la actividad deberás entregar en un fichero comprimido los siguientes pantallazos:
 
 1. Pantallazo donde se vea el contenido del fichero de despliegue de NextCloud (**pantallazo1.jpg**).
-2. Pantallazo donde se vean los recurso que se han creado (**pantallazo2.jpg**).
-3. Pantallazo donde se comprueba que la aplicación está funcionando (**pantallazo3.jpg**).
+2. Pantallazo donde se vean los recursos que se han creado (**pantallazo2.jpg**).
+3. Pantallazo donde se compruebe que la aplicación está funcionando (**pantallazo3.jpg**).
 
 ## RECURSOS
 
@@ -48,7 +48,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 

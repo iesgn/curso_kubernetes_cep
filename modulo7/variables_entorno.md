@@ -1,9 +1,8 @@
 # Despliegues parametrizados: Variables de entorno
 
-Para añadir alguna configuración especifica a la hora de crear un
-contenedor, se usan variables de entorno que se crean en el contenedor
-y cuyo valor se especifica al crear el contenedor para realizar una
-configuración concreta del mismo.
+Para añadir alguna configuración específica a la hora de lanzar un
+contenedor, se usan variables de entorno  del contenedor
+cuyos valores se especifican al crear el contenedor para realizar una configuración concreta del mismo.
 
 Por ejemplo, si estudiamos la documentación de la imagen `mariadb` en
 [Docker Hub](https://hub.docker.com/_/mariadb), podemos comprobar que
@@ -15,7 +14,7 @@ del usuario root, creando una determinada base de datos o creando un
 usuario con una contraseña por ejemplo.
 
 De la misma manera, al especificar los contenedores que contendrán los
-Pods que se van a crear desde un Deployment también se pondrán
+Pods que se van a crear desde un Deployment, también se pondrán
 inicializar las variables de entorno necesarias.
 
 ## Configuración de aplicaciones usando variables de entorno
@@ -24,7 +23,7 @@ Vamos a hacer un despliegue de un servidor de base de datos
 mariadb. Si volvemos a estudiar la documentación de esta imagen en
 [Docker Hub](https://hub.docker.com/_/mariadb) comprobamos que
 obligatoriamente tenemos que indicar la contraseña del usuario root
-incializando la variable de entorno `MYSQL_ROOT_PASSWORD`. El fichero
+inicializando la variable de entorno `MYSQL_ROOT_PASSWORD`. El fichero
 de despliegue que vamos a usar es
 [`mariadb-deployment-env.yaml`](files/mariadb-deployment-env.yaml), y
 vemos el fragmento del fichero donde se define el contenedor:

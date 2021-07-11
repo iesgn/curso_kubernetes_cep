@@ -10,7 +10,7 @@ permiten guardar información sensible que será **codificada** o
 **cifrada**.
 
 Hay distintos tipos de Secret, en este curso vamos a usar los
-genéricos y lo vamos a crear a partir de un literal, por ejemplo para
+genéricos y los vamos a crear a partir de un literal. Por ejemplo para
 guardar la contraseña del usuario root de una base de datos,
 crearíamos un Secret de la siguiente manera:
 
@@ -43,7 +43,7 @@ y el fragmento donde definimos las variables de entorno quedaría:
                   name: mariadb
                   key: password
 ```
-Donde observamos como al indicar las variables de entorno (sección
+Observamos como al indicar las variables de entorno (sección
 `env`) seguimos indicado el nombre (`name`) pero el valor se indica
 con un valor de un Secret (`valueFrom: - secretKeyRef:`), indicando el
 nombre del Secret (`name`) y la clave correspondiente. (`key`).

@@ -7,11 +7,11 @@ En este ejemplo vamos a desplegar el CMS Wordpress y la base de datos MariaDB pa
 * Como hemos estudiado en los ejemplos vistos en este módulo, al crear el despliegue de MariaDB tendremos que configurar las siguientes variables de entorno: `MYSQL_ROOT_PASSWORD` (contraseña del usuario root de la base de datos), `MYSQL_DATABASE` (el nombre de la base de datos que se va a crear), `MYSQL_USER` (nombre del usuario de la base de datos que se va carear), `MYSQL_PASSWORD` (contraseña de este usuario).
 * Si comprobamos la documentación de la imagen [Wordpress en Docker Hub](https://hub.docker.com/_/wordpress) las variables de entorno que vamos a definir son las siguientes: `WORDPRESS_DB_HOST` (la dirección del servidor de base de datos), `WORDPRESS_DB_USER` (el usuario que se va a usar para acceder a la base de datos), `WORDPRESS_DB_PASSWORD` (la contraseña de dicho usuario) y `WORDPRESS_DB_NAME` (el nombre de la base de datos a las que vamos a conectar para gestionar las tablas de Wordpress).
 
-Evidentemente el valor de estas variables tienen que coincidir, es decir, el usuario y la contraseña que creemos en la base de datos serán las mismas que utilicemos desde Wordpress para acceder a la base de datos, y el nombre de la base de datos usada por WordPres será el mismo que la base de datos creada en MariaDB.
+Evidentemente los valores de estas variables tienen que coincidir, es decir, el usuario y la contraseña que creemos en la base de datos serán las mismas que utilicemos desde Wordpress para acceder a la base de datos, y el nombre de la base de datos usada por WordPres será el mismo que la base de datos creada en MariaDB.
 
 Lo veremos posteriormente, pero adelantamos, que el valor de la variable `WORDPRESS_DB_HOST` será el nombre del Service que creemos para acceder a la base de datos, como ya hemos estudiado, se creará un registro en el DNS del cluster que permitirá que Wordpress acceda a la base de datos usando el nombre del Service.
 
-Los valores para crear la base de datos y el usuario en MariaDB, que corresponden a las credenciales que vamos a usar en Wordpress, lo vamos a guardar en dos recursos de nuestro cluster: los datos no sensibles (nombre de usuario y nombre de la base de datos) lo guardaremos en un ConfigMap y los datos sensibles, las contraseñas, la guardaremos en un Secret.
+Los valores para crear la base de datos y el usuario en MariaDB, que corresponden a las credenciales que vamos a usar en Wordpress, los vamos a guardar en dos recursos de nuestro cluster: los datos no sensibles (nombre de usuario y nombre de la base de datos) lo guardaremos en un ConfigMap y los datos sensibles, las contraseñas, la guardaremos en un Secret.
 
 Para ello ejecutamos las siguientes instrucciones:
 
@@ -22,7 +22,7 @@ Para ello ejecutamos las siguientes instrucciones:
     kubectl create secret generic bd-passwords --from-literal=bd_password=password1234 \
                                                --from-literal=bd_rootpassword=root1234
 
-**Nota: No hemos guardado la definición del ConfigMap y el Secret en un fichero yaml. De esta manera evitamos que información sensible sea guardado por ejemplo en un repositorio git.** 
+**Nota: No hemos guardado la definición del ConfigMap y el Secret en un fichero yaml. De esta manera evitamos que información sensible sea guardada por ejemplo en un repositorio git.** 
 
 Sin embargo, a partir de las instrucciones anteriores podemos generar ficheros yaml que posteriormente añadimos a la configuración del cluster. Podemos ejecutar:
 
@@ -55,7 +55,7 @@ Para desplegar la aplicación Wordpress vamos a usar el fichero [`wordpress-depl
 
     kubectl apply -f wordpress-deployment.yaml
 
-La definición del Service que vamos a crear lo tenemos en el fichero: [`wordpress-srv.yaml`](files/wordpress/wordpress-srv.yaml). Como comprobamos en la definición estamos creando un Service del tipo NodePort, pero también podríamos haberlo configurado de tipo ClusterIP, porque posteriormente vamos a crear un recurso Ingress para acceder a la aplicación. Ejecutamos:
+La definición del Service que vamos a crear la tenemos en el fichero: [`wordpress-srv.yaml`](files/wordpress/wordpress-srv.yaml). Como comprobamos en la definición estamos creando un Service del tipo NodePort, pero también podríamos haberlo configurado de tipo ClusterIP, porque posteriormente vamos a crear un recurso Ingress para acceder a la aplicación. Ejecutamos:
 
     kubectl apply -f wordpress-srv.yaml
 
@@ -66,4 +66,3 @@ Para acceder a la aplicación vamos a crear un recurso Ingress que tenemos defin
 Una vez que comprobemos que todos los recursos están funcionando, podemos acceder a nuestra aplicación:
 
 ![wordpress](img/wordpress.png)
-

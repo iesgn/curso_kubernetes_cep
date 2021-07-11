@@ -4,7 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-En un ejemplo del módulo anterior: [Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas](../modulo6/temperaturas.md) habíamos desplegado una aplicación formado por dos microservicios que nos permitía visualizar las temperaturas de municipios.
+En un ejemplo del módulo anterior: [Ejemplo completo: Desplegando y accediendo a la aplicación Temperaturas](../modulo6/temperaturas.md) habíamos desplegado una aplicación formada por dos microservicios que nos permitía visualizar las temperaturas de municipios.
 
 Recordamos que el componente `frontend` hace peticiones al componente `backend` utilizando el nombre `temperaturas-backend`, que es el nombre que asignamos al Service ClusterIP para el acceso al `backend`.
 
@@ -32,7 +32,7 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 1. Pantallazo donde se vea la definición del recurso `ConfigMap` (**pantallazo1.jpg**).
 2. Pantallazo donde se vea la modificación del fichero `frontend-deployment.yaml` (**pantallazo2.jpg**).
 3. Pantallazo donde se vea la modificación del fichero `backend-srv.yaml` (**pantallazo3.jpg**).
-4. Pantallazo donde se comprueba que la aplicación está funcionando (**pantallazo4.jpg**).
+4. Pantallazo donde se compruebe que la aplicación está funcionando (**pantallazo4.jpg**).
 
 ## RECURSOS
 
@@ -65,7 +65,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 
