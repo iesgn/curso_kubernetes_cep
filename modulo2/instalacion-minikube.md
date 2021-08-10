@@ -4,7 +4,9 @@ El "cluster" de k8s que vamos a utilizar en este curso es el de un
 solo nodo que va a encargarse de realizar tanto las tareas de master,
 con los componentes principales de Kubernetes, como de worker,
 ejecutando las cargas de trabajo en contenedores (ya veremos más
-adelante que realmente utiliza algo que se llama Pod). Aunque
+adelante que realmente utiliza algo que se llama Pod). 
+
+Aunque
 evidentemente un cluster constituido por un solo nodo no es la
 solución más adecuada en la mayoría de los casos, sí lo es en éste, en
 el que queremos instalar Kubernetes de forma rápida y fácil para
