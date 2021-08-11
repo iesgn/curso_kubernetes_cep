@@ -3,7 +3,9 @@
 Kubernetes es un software pensado para poner en producción
 aplicaciones más o menos complejas que se ejecutan sobre contenedores,
 garantizando su disponibilidad, escalabilidad y actualización sin
-interrupciones. En un entorno en producción no se instala Kubernetes
+interrupciones. 
+
+En un entorno en producción no se instala Kubernetes
 en un solo equipo (nodo), sino que creamos un cluster de nodos que
 permita garantizar el funcionamiento ininterrumpido de las
 aplicaciones incluso en el caso de que uno o varios de los nodos del
@@ -21,8 +23,8 @@ tener que utilizar una instalación más compleja o costosa.
 
 # minikube
 
-minikube permite desplegar localmente un "cluster" de Kubernetes con
-un solo nodo. minikube es un proyecto oficial de Kubernetes y es
+Minikube permite desplegar localmente un "cluster" de Kubernetes con
+un solo nodo. Minikube es un proyecto oficial de Kubernetes y es
 probablemente la solución más adecuada para aprender a usar k8s, ya
 que es un proyecto maduro y muy sencillo de instalar. Los requisitos
 mínimos para instalar minikube en nuestro equipo son:
@@ -41,13 +43,12 @@ mínimos para instalar minikube en nuestro equipo son:
   * VMWare
 
 Minikube instalará un nodo de Kubernetes en el sistema de
-virtualización/contenedores que prefiramos, dependiendo el sistema
-adecuado del sistema operativo de nuestro equipo, tal como se muestra
+virtualización/contenedores que prefiramos, siendo unas opciones más adecuadas que otras dependiendo del sistema operativo de nuestro equipo, tal como se muestra
 en
 [https://minikube.sigs.k8s.io/docs/drivers/](https://minikube.sigs.k8s.io/docs/drivers/). En
 versiones recientes, es posible aumentar el número de nodos del
 cluster de minikube, aunque para el objetivo de este curso no es
-necesario y haremos ha instalación estándar de un solo nodo.
+necesario y haremos la instalación estándar de un solo nodo.
 
 Los detalles para la instalación local de minikube los explicamos en
 la siguiente sección, ya que va a ser el método recomendado para
@@ -55,9 +56,8 @@ realizar este curso.
 
 # kubeadm
 
-kubeadm es una solución más realista que minikube, ya que sí se
-instala un cluster de Kubernetes con varios nodos. La instalación de
-kubeadm no es especialmente compleja, pero no está tan automatizada
+kubeadm es una solución más realista que minikube si se
+instala un cluster de Kubernetes con varios nodos. Su instalación no es especialmente compleja, pero no está tan automatizada
 como minikube y necesita más recursos y tiempo para
 configurarlo. kubeadm es una opción muy interesante cuando queremos
 ver de forma detallada la diferencia entre lo que se ejecuta en el
@@ -65,7 +65,7 @@ nodo controlador y en los nodos workers, que no se puede apreciar en
 minikube.
 
 La instalación de kubeadm se realiza típicamente en varias máquinas
-virtuales o varias instancias de nube y dejamos un par de enlace para
+virtuales o varias instancias de nube y dejamos un par de enlaces para
 quienes estén más interesados en indagar en este software:
 
 * [https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
@@ -100,8 +100,8 @@ Los pasos para la instalaciónde k3s están disponibles en:
 
 # Conclusión
 
-Aunque existen múltiples de instalación de Kubernetes, en este curso
-utilizaremos minikube que es el proyecto más maduro y que consideremos
+Aunque existen múltiples opciones de instalación de Kubernetes, en este curso
+utilizaremos minikube que es el proyecto más maduro y que consideramos
 más adecuado para comenzar y centrarnos directamente en el uso de
 Kubernetes, obviando inicialmente los detalles de la instalación de
 Kubernetes, que realmente es un proceso complejo y que no es lo más
