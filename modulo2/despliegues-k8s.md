@@ -1,8 +1,10 @@
 # Despliegues de aplicaciones en Kubernetes
 
 Vamos a resumir brevemente, con la ayuda de un par de imágenes, la
-forma que tiene k8s de hacer despliegues de aplicaciones, comparándolo
-con un despliegue "tradicional". Aunque un despliegue real tiene
+forma que tiene k8s de hacer despliegues de aplicaciones y lo compararemos
+con un despliegue "tradicional".
+
+Aunque un despliegue real tiene
 muchos más elementos que los que vamos a exponer a continuación, con
 idea de simplificarlo todo y centrarnos en la diferencia de los
 elementos que intervienen, supondremos una aplicación "tradicional" de
@@ -17,7 +19,7 @@ bases de datos (a los que llamaremos de forma genérica "back-end").
 
 En la imagen anterior, vemos que el balanceador de carga expuesto al
 exterior recibe la petición, que asigna a alguna de las máquinas
-virtuales o físicas que forman el "front-end" y que estas a su vez se
+virtuales o físicas que forman el "front-end" y que éstas a su vez se
 comunican con alguna de las máquinas del "back-end" a través del
 balanceador de carga intermedio.
 
@@ -25,8 +27,10 @@ En el caso de Kubernetes, esto se realiza utilizando una serie de
 objetos internos, que normalmente se ejecutan sobre contenedores,
 denominados Pods, ReplicaSets,  Deployments, Services e
 Ingress Controllers. Hay bastantes más objetos de k8s, pero nos
-centramos en estos que son los principales. En la siguiente imagen
-podemos ver la forma que una petición externa se gestionaría:
+centraremos en éstos que son los principales. 
+
+En la siguiente imagen
+podemos ver la forma en la que una petición externa se gestionaría:
 
 <img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo2/img/esquema-k8s.png" alt="esquema-k8s" />
 

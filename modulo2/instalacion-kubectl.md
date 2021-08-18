@@ -1,7 +1,7 @@
 # Instalación de kubectl
 
-kubectl es la herramienta de línea de comandos utilizada para
-interactuar con la API de Kubernetes, es por tanto la herramienta
+**kubectl** es la herramienta de línea de comandos utilizada para
+interactuar con la API de Kubernetes. Es por tanto la herramienta
 fundamental que vamos a utilizar durante todo el curso para gestionar
 nuestros objetos en el cluster recién creado con minikube.
 
@@ -146,7 +146,7 @@ Client Version: version.Info{Major:"1", Minor:"20", GitVersion:"v1.20.2", GitCom
 Server Version: version.Info{Major:"1", Minor:"20", GitVersion:"v1.20.7", GitCommit:"132a687512d7fb058d0f5890f07d4121b3f0a2e2", GitTreeState:"clean", BuildDate:"2021-05-12T12:32:49Z", GoVersion:"go1.15.12", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
-En el que comprobamos que ya aparece la versión del servidor y por
+Comprobamos que ya aparece la versión del servidor y por
 tanto se ha podido conectar con el cluster que gestiona
 minikube. Además podemos ejecutar nuestro primer comando propiamente
 de `kubectl`:

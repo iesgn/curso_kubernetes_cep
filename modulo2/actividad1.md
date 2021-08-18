@@ -44,7 +44,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 
