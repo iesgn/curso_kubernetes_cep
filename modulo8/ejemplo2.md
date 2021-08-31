@@ -4,7 +4,7 @@ En este ejemplo vamos a desplegar un servidor web que va a servir una página ht
 
 ## Aprovisonamiento del volumen
 
-Para que la asignación del voluemn (objeto *PersitentVolume*) se haga de forma dinámica al crear ela solicitud (objeto *PersitentVolumeClaim*) es necesario tener configurado un provisonador de almacenamiento que se define en un objeto `StorageClass`. Como vimos en minikube tenemos configurado un provisonador para volúmenes de tipo *hostPath*:
+Para que la asignación del volumen (objeto *PersitentVolume*) se haga de forma dinámica al crear la solicitud (objeto *PersitentVolumeClaim*) es necesario tener configurado un aprovisonador de almacenamiento que se define en un objeto `StorageClass`. Como vimos en minikube tenemos configurado un aprovisonador para volúmenes de tipo *hostPath*:
 
 ```bash
 kubectl get storageclass
@@ -30,7 +30,7 @@ spec:
     requests:
       storage: 1Gi
 ```
-**Nota**: Fíjate que esta definición hemos quitado la declaración `storageClassName: manual`, al no ponerla se elegirá el `storageclass` por defecto que en este caso se llama `standard` y que hemos visto anteriormente su definición en minikube.
+**Nota**: Fíjate que esta definición hemos quitado la declaración `storageClassName: manual`. Al no ponerla se elegirá el `storageclass` por defecto, cuya definición hemos visto anteriormente en minikube y que en este caso se llama `standard`.
 
 Cuando creemos el objeto PersistentVolumeClaim, veremos que de forma dinámica se creará un *PersitentVolumen* que se asociará a nuestra solicitud::
 
@@ -44,9 +44,9 @@ persistentvolume/pvc-6a09c69a-4344-447c-b23d-d85c7edd7f36   1Gi        RWX      
 NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 persistentvolumeclaim/pvc-ejemplo2   Bound    pvc-6a09c69a-4344-447c-b23d-d85c7edd7f36   1Gi        RWX            standard       1s
 ```
-**Nota**: En este caso, como el volumen se ha generado dinámica, su capacidad es igual a la solicitada, 1 Gb.
+**Nota**: En este caso, como el volumen se ha generado dinámicamente, su capacidad es igual a la solicitada, 1 Gb.
 
-Cómo el volumen ha sido generado de forma dinámica por el provisonador, éste habra escogido una carpeta del host que correspona al volumen.
+Como el volumen ha sido generado de forma dinámica por el aprovisonador, éste habrá escogido una carpeta del host que corresponda al volumen.
 
 ```bash
 kubectl describe persistentvolume/pvc-6a09c69a-4344-447c-b23d-d85c7edd7f36
@@ -59,7 +59,9 @@ Source:
 
 ## Uso del volumen
 
-A partir de este punto el ejercicio es muy parecido al que vimos en el ejemplo1: creamos el Deployment usando el fichero [`deploy-ejemplo2.yaml`](files/ejemplo1/deploy-ejemplo2.yaml):
+A partir de este punto el ejercicio es muy parecido al que vimos en el ejemplo1. 
+
+Creamos el Deployment usando el fichero [`deploy-ejemplo2.yaml`](files/ejemplo1/deploy-ejemplo2.yaml):
 
 ```yaml
 apiVersion: apps/v1
@@ -120,7 +122,7 @@ service/nginx-ejemplo2   NodePort    10.99.48.24   <none>        80:31053/TCP   
 ...
 ```
 
-Y accedemos a la aplicación, accedo a la ip del nodo controlador del cluster y al puerto asignado al Service NodePort:
+Y accedemos a la aplicación accediendo a la ip del nodo controlador del cluster y al puerto asignado al Service NodePort:
 
 ```bash
 minikube ip
@@ -129,11 +131,11 @@ minikube ip
 
 ![volumen](img/volumen2.png)
 
-Finalmente puedes volver a comprobar que la información de la aplicación no se pierde borrando el Deployment y volviéndolo a crear, y comprobar que se sigue sirviendo el fichero `index.html`.
+Finalmente puedes volver a comprobar que la información de la aplicación no se pierde borrando el Deployment y volviéndolo a crear, comprobando que se sigue sirviendo el fichero `index.html`.
 
 ## Eliminación del volumen
 
-En este caso los volúmenes que crea de forma dinámica el `storageclass`que tenemos creado en minikube, tienen como política de reciclaje el valor de `Delete`. esto significa que cuando eliminemos la solicitud, el objeto PersistentVolumeClaim, también se borrará el volumen, el objeto PersistentVolume.
+En este caso, los volúmenes que crea de forma dinámica el `storageclass` que tenemos creado en minikube, tienen como política de reciclaje el valor de `Delete`. Esto significa que cuando eliminemos la solicitud, el objeto PersistentVolumeClaim, también se borrará el volumen, el objeto PersistentVolume.
 
 ```bash
 kubectl delete persistentvolumeclaim/pvc-ejemplo2
