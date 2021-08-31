@@ -26,7 +26,7 @@ spec:
 
 **Nota**: como estamos utilizando minikube, y nuestro cluster está formado por un sólo nodo, el tipo de almacenamiento más simple que podemos usar es `hostPath`, que creará un directorio en el nodo (`/data/pv-ejemplo1`) que será el que se monte en el Pod para guardar la información.
 
-Al administrador crea el volumen:
+El administrador crea el volumen:
 
 ```bash
 kubectl apply -f pv-ejemplo1.yaml
@@ -39,7 +39,7 @@ kubectl get pv
 NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
 persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  73s
 ```
-Noos fijamos que el estado del volumen es `Available`, todavía no se ha asociado con ninguna solicitud de volúmen.
+Nos fijamos que el estado del volumen es `Available`, todavía no se ha asociado con ninguna solicitud de volúmen.
 
 Y podemos obtener los detalle de este recurso:
 
@@ -65,9 +65,9 @@ spec:
       storage: 1Gi
 ```
 
-Como vemos desde el punto de vista del desarrollador no necesita saber los tipos de volúmenes que tenemos disponibles, simplemente indicamos que queremos un 1Gb de almacenamiento, el tipo de acceso y que se haga la asignación de forma estática (`storageClassName: manual`).
+Como vemos, desde el punto de vista del desarrollador no se necesita saber los tipos de volúmenes que tenemos disponibles, simplemente indicamos que queremos un 1Gb de almacenamiento, el tipo de acceso y que se haga la asignación de forma estática (`storageClassName: manual`).
 
-Cuando creemos el objeto PersistentVolumeClaim, podremos comprobar si hay algún volumen (PersistentVolume) disponible en el cluster que cumpla con los requisitos:
+Cuando creemos el objeto PersistentVolumeClaim podremos comprobar si hay algún volumen (PersistentVolume) disponible en el cluster que cumpla con los requisitos:
 
 ```bash
 kubectl apply -f pvc-ejemplo1.yaml
@@ -82,7 +82,7 @@ persistentvolumeclaim/pvc-ejemplo1   Bound    pv-ejemplo1   5Gi        RWX      
 
 Podemos apreciar que el el estado del volumen ha cambiado a `Bound` que significa que ya está asociado al PersistentVolumeClaim que hemos creado.
 
-**Nota**: El desarrollador quería 1 Gb de disco, que se cumple de sobra con los 5 Gb del volumen que se ha asociado.
+**Nota**: El desarrollador quería 1 Gb de disco, demanda que se cumple de sobra con los 5 Gb del volumen que se ha asociado.
 
 ## Uso del volumen
 
@@ -121,7 +121,7 @@ spec:
               name: volumen-ejemplo1
 ```
 
-Donde podemos observar que en la especificación del Pod hemos indicado que estará formado por un volumen correspondiente al asignado al PersistentVolumeClaim `pvc-ejemplo1` y que el contenedor tendrá un punto de montaje en el directorio *DocumentRoot* de nginx (`/usr/share/nginx/html`) en el volumen.
+Podemos observar que en la especificación del Pod hemos indicado que estará formado por un volumen correspondiente al asignado al PersistentVolumeClaim `pvc-ejemplo1` y que el contenedor tendrá en el volumen un punto de montaje en el directorio *DocumentRoot* de nginx (`/usr/share/nginx/html`) .
 
 Creamos el Deployment:
 
@@ -139,7 +139,7 @@ pod/nginx-ejemplo1-86864d84b5-s62dq   1/1     Running   0          6s
 ...
 ```
 
-Vamos a ejecutar un comando en el Pod para que cree un fichero `index.html` en el directorio `/usr/share/nginx/html` (evidentemente estaremos guardando ese fichero en el volumen).
+Vamos a ejecutar un comando en el Pod para que se cree un fichero `index.html` en el directorio `/usr/share/nginx/html` (evidentemente estaremos guardando ese fichero en el volumen).
 
 ```bash
 kubectl exec pod/nginx-ejemplo1-86864d84b5-s62dq -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
@@ -156,7 +156,7 @@ service/nginx-ejemplo1   NodePort    10.106.238.146   <none>        80:32581/TCP
 ...
 ```
 
-Y accedemos a la aplicación, accedo a la ip del nodo controlador del cluster y al puerto asignado al Service NodePort:
+Y accedemos a la aplicación, accediendo a la ip del nodo controlador del cluster y al puerto asignado al Service NodePort:
 
 ```bash
 minikube ip
@@ -170,12 +170,12 @@ minikube ip
 En primer lugar podemos acceder al nodo del cluster y comprobar que en el directorio que indicamos en la creación del volumen, efectivamente existe el fichero `index.html`:
 
 ```bash
-minikube shh
+minikube ssh
 ls /data/pv-ejemplo1
 index.html
 ```
 
-En segundo lugar podemos hacer la prueba de eliminar el despliegue, volver a crearlo y volver acceder a la aplicación para comprobar que el servidor web sigue sirviendo el mismo fichero `index.html`:
+En segundo lugar podemos hacer la prueba de eliminar el despliegue, volver a crearlo y volver a acceder a la aplicación para comprobar que el servidor web sigue sirviendo el mismo fichero `index.html`:
 
 ```bash
 kubectl delete -f deploy-ejemplo1.yaml
@@ -188,9 +188,9 @@ Y volvemos acceder al mismo puerto:
 
 ## Eliminación del volumen
 
-Si finalmente queremos eliminar los volúmenes creados, tendremos que eliminar la solicitud, el objeto PersistentVolumeClaim, dependiendo de la política de reciclaje con la que creamos el objeto PersistentVolume tendremos distintos comportamientos.
+Si finalmente queremos eliminar los volúmenes creados, tendremos que eliminar la solicitud, el objeto PersistentVolumeClaim, y dependiendo de la política de reciclaje con la que creamos el objeto PersistentVolume tendremos distintos comportamientos.
 
-En este caso como la política de reciclaje con la que creamos el volumen es `Recycle`, no se eliminará se borrará el contenido pero se podrá reutilizar es decir su estado volverá a `Available`:
+En este caso, como la política de reciclaje con la que creamos el volumen es `Recycle`, no se eliminará pero se borrará su contenido y el volumen se podrá reutilizar, es decir su estado volverá a `Available`:
 
 ```bash
 kubectl delete persistentvolumeclaim/pvc-ejemplo1
