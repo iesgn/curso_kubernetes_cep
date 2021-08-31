@@ -2,7 +2,10 @@
 
 En este ejemplo vamos a volver e realizar el [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](../modulo7/wordpress.md) del módulo anterior, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente. 
 
-Para llevar a cabo esta tarea necesitaremos tener a nuestra disposición dos volúmenes: uno para guardar la información de Wordpress y otro para guardar la información de MariaDB.
+Para llevar a cabo esta tarea necesitaremos tener a nuestra disposición dos volúmenes: 
+
+* Uno para guardar la información de Wordpress. 
+* Otro para guardar la información de MariaDB.
 
 Para este ejercicio utilizaremos asignación dinámica de volúmenes.
 
@@ -95,7 +98,7 @@ En esta ocasión usaremos el volumen asociado a `mariadb-pvc` y el punto de mont
 
 Evidentemente, no es necesario modificar la definición de los otros recursos: Services e Ingress.
 
-Creamos el DEployment, los Services y el Ingress:
+Creamos el Deployment, los Services y el Ingress:
 
 ```bash
 kubectl apply -f mariadb-deployment.yaml
