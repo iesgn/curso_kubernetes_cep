@@ -14,17 +14,17 @@ Podemos fijarnos en el [Ejemplo: Despliegue y acceso a Wordpress + MariaDB](../m
 
 3. Si escribimos un post en el Wordpress y subimos una imagen, ¿qué pasa con esta información en el Pod?
 
-    Esta claro, que cuando escribimos un post, esa información se guarda en la base de datos. Pero la imágen que hemos subido al post se guardaría en un directorio del servidor web (del Pod de Wordpress). Tendríamos los mismos problemas que con la base de datos, si eliminamos este Pod se perderá todo el contenido estático de nuestro Wordpress.
+    Está claro que cuando escribimos un post esa información se guarda en la base de datos. Pero la imágen que hemos subido al post se guardaría en un directorio del servidor web (del Pod de Wordpress). Tendríamos los mismos problemas que con la base de datos, si eliminamos este Pod se perderá todo el contenido estático de nuestro Wordpress.
 
 4. ¿Qué pasa si escalamos el despliegue de Wordpress a dos Pods?
 
-    Pues la respuesta es similar a la anterior. En este caso, el Pod antigüo tendría almacenada el contenido estáticos (las imágenes), pero el nuevo no tendría información. Como al acceder a la aplicación se balancea la carga, se mostraría la imagen según al Pod que estuviéramos accediendo.
+    Pues la respuesta es similar a la anterior. En este caso, el Pod antigüo tendría almacenada el contenido estático (la imágen), pero el nuevo no tendría esa información. Como al acceder a la aplicación se balancea la carga, se mostraría la imagen según al Pod que estuviéramos accediendo.
 
 
-Por lo tanto es necesario usar un mecanismo que nos permita guardar la información con la que trabajan los Pods para que no se pierda en caso de que el Pod se elimine. Al sistema de almacenamiento que nos ofrece Kubernetes lo llamamos **volumenes**. Con el uso de volúmenes vamos a conseguir varias cosas:
+Por lo tanto, es necesario usar un mecanismo que nos permita guardar la información con la que trabajan los Pods para que no se pierda en caso de que el Pod se elimine. Al sistema de almacenamiento que nos ofrece Kubernetes lo llamamos **volúmenes**. Con el uso de dichos volúmenes vamos a conseguir varias cosas:
 
 1. Si un Pod guarda su información en un volumen, está no se perderá. Por lo que podemos eliminar el Pod sin ningún problema y cuando volvamos a crearlo mantendrá la misma información. En definitiva, los volúmenes proporcionan almacenamiento adicional o secundario al disco que define la imagen.
-2. Si usamos volúmenes, y tenemos varios Pods que están ofreciendo un servicio, estos Pods tendrán la información compartida y por tanto todos podrán leer y escribir la misma información. 
+2. Si usamos volúmenes, y tenemos varios Pods que están ofreciendo un servicio, estos Pods tendrán la información compartida y por tanto todos podrán leer y escribir la misma información.
 3. También podemos usar los volúmenes dentro de un Pod, para que los contenedores que forman parte de él puedan compartir información.
 
-Por último, indicar que vamos a tener a nuestra disposición distintos tipos de volúmenes que podemos usar. Hay que tener en cuenta que si nuestro cluster tienes varios nodos y que los Pods de una aplicación se reparten por estos nodos, necesitamos sistemas de almacenamiento que nos posibiliten compartir la información entre los nodos del cluster. Como en este curso estamos usando **minikube**, nuestro cluster tiene un solo nodo, por lo que vamos a usar un tipo de almacenmaiento que permita compartir la información dentro de este nodo (por ejemplo un directorio en el sistema de archivo del nodo), por lo tanto este tema lo vamos a simplificar al no tener la posibilidad de tener un cluster con varios nodos.
+Por último, indicar que vamos a tener a nuestra disposición distintos tipos de volúmenes para usar. Hay que tener en cuenta que si nuestro cluster tiene varios nodos y los Pods de una aplicación se reparten por estos nodos, necesitamos sistemas de almacenamiento que nos posibiliten compartir la información entre los nodos del cluster. Como en este curso estamos usando **minikube**, nuestro cluster tiene un solo nodo, por lo que vamos a usar un tipo de almacenamiento que permita compartir la información dentro de este nodo (por ejemplo un directorio en el sistema de archivos del nodo), por lo tanto este tema lo vamos a simplificar al no tener la posibilidad de tener un cluster con varios nodos.
