@@ -26,7 +26,7 @@ stable 	https://charts.helm.sh/stable
 bitnami	https://charts.bitnami.com/bitnami
 ```
 
-Si queremos actualizar la lista de charts ofrecidas por los repositorios podemos actualizarlos:
+Si queremos actualizar la lista de charts ofrecidos por los repositorios:
 
 ```bash
 helm repo update
@@ -38,7 +38,7 @@ Update Complete. ⎈Happy Helming!⎈
 
 ## Buscar charts
 
-Como hemos comentado anteriormente los charts lo podemos buscar en la página [Artifact Hub](https://artifacthub.io/), o podemos buscarlos desde la línea de comandos, por ejemplo si queremos buscar un chart relacionado con `nginx`:
+Como hemos comentado anteriormente, los charts los podemos buscar en la página [Artifact Hub](https://artifacthub.io/) o los podemos buscar desde la línea de comandos, por ejemplo si queremos buscar un chart relacionado con `nginx`:
 
 ```bash
 helm search repo nginx
@@ -54,7 +54,7 @@ Para obtener información sobre el chart `bitnami/nginx` podemos buscar en [Arti
 
 Todos los ficheros yaml que forman parte de un chart están parametrizados, es decir cada propiedad tiene un valor por defecto, pero a la hora de instalarlo se puede cambiar. Por ejemplo, ¿qué tipo de Service se creará al instalar el chart `bitnami/nginx`? Por defecto, el parámetro `service.type` tiene como valor `LoadBalancer`, pero si queremos un Service de tipo `NodePort`, podremos redefinir este parámetro a la hora de instalar el chart.
 
-¿Y cómo sabemos los parámetros que tiene definido cada chart y sus valores por defecto? Estudiando la documentación del char en [Artifact Hub](https://artifacthub.io/), en concreto para el chart con el que estamos trabajando, accediendo a la url [https://artifacthub.io/packages/helm/bitnami/nginx](https://artifacthub.io/packages/helm/bitnami/nginx). También podemos obtener esta información ejecutando el siguiente comando:
+¿Y cómo sabemos los parámetros que tiene definido cada chart y sus valores por defecto?. Estudiando la documentación del chart en [Artifact Hub](https://artifacthub.io/). En concreto para el chart con el que estamos trabajando, accediendo a la url [https://artifacthub.io/packages/helm/bitnami/nginx](https://artifacthub.io/packages/helm/bitnami/nginx). También podemos obtener esta información ejecutando el siguiente comando:
 
 ```bash
 helm show all bitnami/nginx
@@ -70,7 +70,7 @@ helm install serverweb bitnami/nginx --set service.type=NodePort
 
 Como vemos hemos nombrado el chart desplegado (`serverweb`), indicado el chart (`bitnami/nginx`) y, en este caso, hemos redefinido el parámetro `service.type`.
 
-Cuando se despliega el chart se nos ofrece información que nos muestra como acceder a la aplicación:
+Cuando se despliega el chart se nos ofrece información que nos muestra cómo acceder a la aplicación:
 
 ```
 NOTES:
@@ -89,7 +89,7 @@ To access NGINX from outside the cluster, follow the steps below:
     echo "http://${NODE_IP}:${NODE_PORT}"
 ```
 
-Si queremos acceder a la aplicación desde el exterior, debemos ejecutar las tres últimas instrucciones, que nos muestra la ip de nuestro cluster y el puerto asignado al Service NodePort.
+Si queremos acceder a la aplicación desde el exterior debemos ejecutar las tres últimas instrucciones, que nos muestran la ip de nuestro cluster y el puerto asignado al Service NodePort.
 
 Siempre podemos volver a ver esta información ejecutando la siguiente instrucción:
 
