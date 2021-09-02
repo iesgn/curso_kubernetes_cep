@@ -18,7 +18,7 @@ Para superar la actividad deberás entregar en un fichero comprimido los siguien
 
 1. Pantallazo con la búsqueda del chart con el comando `helm` (**pantallazo1.jpg**).
 2. Pantallazo donde se compruebe que se ha desplegado de forma correcta (**pantallazo2.jpg**).
-3. Pantallazo donde se vean los Pods, ReplicaSet, Deployments y Services que se han creado (**pantallazo3.jpg**).
+3. Pantallazo donde se vean los Pods, ReplicaSets, Deployments y Services que se han creado (**pantallazo3.jpg**).
 4. Pantallazo donde se vea el acceso al blog y se vea tu nombre como título del blog (**pantallazo4.jpg**).
 
 
@@ -52,7 +52,7 @@ No
 
 ## EVALUACIÓN
 
-* Se entregan los documentos; contienen lo solicitado y los contenidos son originales.
+* Se entregan los documentos, contienen lo solicitado y los contenidos son originales.
 
 ## ¿ES NECESARIO TENER TERMINADA ALGUNA ACTIVIDAD O RECURSO ANTERIOR? Indique cuáles.
 
