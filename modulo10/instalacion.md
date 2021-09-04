@@ -1,6 +1,6 @@
 # Instalación de helm
 
-Helm se distribuye como un único binario que podemos instalar de distintas formas. La última versión del programa lo podemos encontrar en esta [página](https://github.com/helm/helm/releases/) y podemos ver los distintos métodos de instalación en la [documentación oficial](https://helm.sh/docs/intro/install/).
+Helm se distribuye como un único binario que podemos instalar de distintas formas. La última versión del programa la podemos encontrar en esta [página](https://github.com/helm/helm/releases/) y podemos ver los distintos métodos de instalación en la [documentación oficial](https://helm.sh/docs/intro/install/).
 
 Una vez instalado podemos ver la versión de Helm que tenemos instalada:
 
@@ -19,7 +19,7 @@ NAME  	URL
 stable	https://kubernetes-charts.storage.googleapis.com
 ```
 
-Así, que actualizamos a `https://charts.helm.sh/stable`, tal como se recomienda:
+Así, que actualizamos a `https://charts.helm.sh/stable`, tal y como se recomienda:
 
 ```bash
 helm repo add "stable" "https://charts.helm.sh/stable" --force-update
