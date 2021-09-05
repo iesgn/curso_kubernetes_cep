@@ -1,10 +1,10 @@
 # StatefulSets
 
-El objeto [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) controla el despliegue de Pods con identidades únicas y persistentes, y nombres de host estables. 
+El objeto [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) controla el despliegue de Pods con identidades únicas y persistentes, y nombres de host estables. El uso de StatefulSets es alternativo al de despliegues y su objetivo principal es poder utilizar en Kubernetes aplicaciones más restrictivas que no se ajusten bien a las características de los despliegues, principalmente aplicaciones con estado que necesiten algunas características fijas y estables en los Pods, algo que no puede ocurrir con los despliegues en los pods son completamente indistinguibles unos de otros y la aplicación puede utilizar cualquiera de ellos en cada momento.
 
-Veamos algunos ejemplos en los que podemos usarlo:
+Veamos algunos ejemplos en los es adecuado utilizar StatefulSet en lugar de Deployment y por qué:
 
-* Un despliegue de redis master-slave: necesita que **el master esté corriendo antes de que podamos configurar las réplicas**.
+* Un despliegue de redis primario-secundario: necesita que **el primario esté operativo antes de que podamos configurar las réplicas**.
 * Un cluster mongodb: Los diferentes nodos deben **tener una identidad de red persistente** (ya que el DNS es estático), para que se produzca la sincronización después de reinicios o fallos.
 * Zookeeper: cada nodo necesita **almacenamiento único y estable**, ya que el identificador de cada nodo se guarda en un fichero.
 
@@ -17,25 +17,25 @@ Por lo tanto el objeto StatefulSet nos ofrece las siguientes **características*
 
 **Por lo tanto cada Pod es distinto (tiene una identidad única)**, y este hecho tiene algunas consecuencias:
 
-* El nombre de cada Pod tendrá un número (1,2,...) que lo identifica y que nos proporciona la posibilidad de que la creación actualización y eliminación sea ordenada.
-* Si un nuevo Pod es recreado, obtendrá el mismo nombre (hostname), los mismos nombres DNS (aunque la IP pueda cambiar) y el mismo volumen que tenía asociado. 
+* El nombre de cada Pod tendrá un número (1,2,...) que lo identifica y que nos proporciona la posibilidad de que la creación actualización y eliminación sea ordenada. Se crearán en orden ascendente y se eliminarán en orden descendente.
+* Si un nuevo Pod es recreado, obtendrá el mismo nombre (hostname), los mismos nombres DNS (aunque la IP pueda cambiar) y el mismo volumen que tenía asociado.
 * Necesitamos crear un Service especial, llamado **Headless Service**, que nos permite acceder a los Pods de forma independiente, pero que no balancea la carga entre ellos, por lo tanto este Service no tendrá una ClusterIP.
 
 ## StatefulSet vs Deployment
 
 * A diferencia de un Deployment, un StatefulSet mantiene una identidad fija para cada uno de sus Pods.
-* Eliminar y / o escalar un StatefulSet no eliminará los volúmenes asociados con StatefulSet.
+* Eliminar y/o escalar un StatefulSet no eliminará los volúmenes asociados con StatefulSet.
 * StatefulSets actualmente requiere que un Headless Service sea responsable de la identidad de red de los Pods.
-* Cuando use StatefulSets, cada Pod recibirá un PersistentVolume independiente.
-* StatefulSet actualmente no admite el escalado automático
+* Al utilizar StatefulSet, cada Pod recibe un PersistentVolume independiente.
+* StatefulSet actualmente no admite el escalado automático.
 
-## Creando el Headless Service para acceder a los Pods del StatefulSet
+## Creando el *Headless Service* para acceder a los Pods del StatefulSet
 
-Una de las características de los Pods controlados por un StatefulSet es que son únicos (todos los Pods son distintos), por lo tanto al acceder a ellos por medio de la definición de un Service no necesitamos el balanceo de carga entre ellos. 
+Una de las características de los Pods controlados por un StatefulSet es que son únicos (todos los Pods son distintos), por lo tanto al acceder a ellos por medio de la definición de un Service no necesitamos el balanceo de carga entre ellos.
 
 Para acceder a los Pods de un StatefulSet vamos a crear un Service Headless que se caracteriza por no tener IP (ClusterIP) y por lo tanto no va a balancear la carga entre los distintos Pods. Este tipo de Service va a crear una entrada DNS por cada Pod, que nos permitirá acceder a cada Pod de forma independiente. El nombre DNS que se creará será `<nombre del Pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`.
 
-Veamos un ejemplo de definición de un Headless Service (fichero `service.yaml`):
+Veamos un ejemplo de definición de un Headless Service (fichero [`service.yaml`](files/ejemplo1/service.yaml):
 
 ```yaml
 apiVersion: v1
@@ -57,7 +57,7 @@ En esta definición podemos observar que al indicar `clusterIP: None` estamos cr
 
 ## Creando el recurso StatefulSet
 
-Vamos a definir nuestro recurso StatefulSet en un fichero yaml (`statefulset.yaml`):
+Vamos a definir nuestro recurso StatefulSet en un fichero yaml [`statefulset.yaml`](files/ejemplo1/statefulset.yaml):
 
 ```yaml
 apiVersion: apps/v1
@@ -98,7 +98,7 @@ Vamos a estudiar las características de la definición de este recurso:
 
 * Con el parámetro `serviceName` indicaremos el nombre de dominio que va a formar parte del nombre DNS que el Headless Service va a crear para cada Pod.
 * Con el parámetro `selector` se indica los Pods que vamos a controlar con StatefulSet.
-* Una de las características que hemos indicado del StatefulSet es que cada Pod va a tener un almacenamiento estáble. El tipo de almacenamiento se indica con el parámetro `volumeClaimTemplates` que se define de forma similar a un `PersistentVolumenClaim`. 
+* Una de las características que hemos indicado del StatefulSet es que cada Pod va a tener un almacenamiento estáble. El tipo de almacenamiento se indica con el parámetro `volumeClaimTemplates` que se define de forma similar a un `PersistentVolumenClaim`.
 * Además observamos en la definición del contenedor que el almacenamiento que hemos definido se va a montar en cada Pod (en este ejemplo el punto de montaje es el DocumentRoot de nginx), con el parámetro `volumeMounts`.
 
 ## Ejemplo: Creación de un StatefulSet
