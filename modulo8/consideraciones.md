@@ -14,14 +14,14 @@ Podemos fijarnos en el [Ejemplo: Despliegue y acceso a Wordpress + MariaDB](../m
 
 3. Si escribimos un post en el Wordpress y subimos una imagen, ¿qué pasa con esta información en el Pod?
 
-    Está claro que cuando escribimos un post esa información se guarda en la base de datos. Pero la imágen que hemos subido al post se guardaría en un directorio del servidor web (del Pod de Wordpress). Tendríamos los mismos problemas que con la base de datos, si eliminamos este Pod se perderá todo el contenido estático de nuestro Wordpress.
+    Está claro que cuando escribimos un post esa información se guarda en la base de datos. Pero la imagen que hemos subido al post se guardaría en un directorio del servidor web (del Pod de Wordpress). Tendríamos los mismos problemas que con la base de datos, si eliminamos este Pod se perderá todo el contenido estático de nuestro Wordpress.
 
 4. ¿Qué pasa si escalamos el despliegue de Wordpress a dos Pods?
 
-    Pues la respuesta es similar a la anterior. En este caso, el Pod antigüo tendría almacenada el contenido estático (la imágen), pero el nuevo no tendría esa información. Como al acceder a la aplicación se balancea la carga, se mostraría la imagen según al Pod que estuviéramos accediendo.
+    Pues la respuesta es similar a la anterior. En este caso, el Pod antiguo tendría almacenada el contenido estático (la imagen), pero el nuevo no tendría esa información. Como al acceder a la aplicación se balancea la carga, se mostraría la imagen diferente en función del Pod que estuviéramos accediendo.
 
 
-Por lo tanto, es necesario usar un mecanismo que nos permita guardar la información con la que trabajan los Pods para que no se pierda en caso de que el Pod se elimine. Al sistema de almacenamiento que nos ofrece Kubernetes lo llamamos **volúmenes**. Con el uso de dichos volúmenes vamos a conseguir varias cosas:
+Por lo tanto, es necesario usar un mecanismo que nos permita guardar la información con la que trabajan los Pods para que no se pierda en caso de que el Pod se elimine. Al sistema de almacenamiento persistente que nos ofrece Kubernetes lo llamamos **volúmenes**. Con el uso de dichos volúmenes vamos a conseguir varias cosas:
 
 1. Si un Pod guarda su información en un volumen, está no se perderá. Por lo que podemos eliminar el Pod sin ningún problema y cuando volvamos a crearlo mantendrá la misma información. En definitiva, los volúmenes proporcionan almacenamiento adicional o secundario al disco que define la imagen.
 2. Si usamos volúmenes, y tenemos varios Pods que están ofreciendo un servicio, estos Pods tendrán la información compartida y por tanto todos podrán leer y escribir la misma información.
