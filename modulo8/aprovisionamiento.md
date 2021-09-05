@@ -9,21 +9,33 @@ En este caso, es el administrador del cluster el responsable de ir definiendo lo
 
 Un PersistentVolumen es un objeto que representa los volúmenes disponibles en el cluster. En él se van a definir los detalles del [backend](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes) de almacenamiento que vamos a utilizar, el tamaño disponible, los [modos de acceso](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes), las [políticas de reciclaje](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reclaim-policy), etc.
 
-Tenemos tres modos de acceso, que dependen del backend que vamos a utilizar: 
+Tenemos tres modos de acceso, que dependen del backend que vamos a utilizar:
 
-* ReadWriteOnce: read-write solo para un nodo (RWO) 
-* ReadOnlyMany: read-only para muchos nodos (ROX) 
+* ReadWriteOnce: read-write solo para un nodo (RWO)
+* ReadOnlyMany: read-only para muchos nodos (ROX)
 * ReadWriteMany: read-write para muchos nodos (RWX)
 
-Las políticas de reciclaje de volúmenes también dependen del backend y son: 
+Las políticas de reciclaje de volúmenes también dependen del backend y son:
 
-* Retain: El PV no se elimina, aunque el PVC se elimine. El administrador debe borrar el contenido para la próxima asociación. 
+* Retain: El PV no se elimina, aunque el PVC se elimine. El administrador debe borrar el contenido para la próxima asociación.
 * Recycle: Reutilizar contenido. Se elimina el contenido y el volumen es de nuevo utilizable.
 * Delete: Se borra después de su utilización.
 
-Podemos ver un resumen de los backend de almacenamiento:
+A modo de resumen, ponemos en la siguiente tabla los modos de acceso de algunos de los sistemas de almacenamiento más usados:
 
-![backend](img/backend.png)
+|Plugin |ReadWriteOnce |ReadOnlyMany| ReadWriteMany|
+|:---:|:---:|:---:|:---:|
+|AWS EBS| ✓ | - | - |
+|AzureFile|	✓ |	✓ |	✓ |
+|AzureDisk|	✓ | - |	- |
+|CephFS | ✓ | ✓ | ✓ |
+|Cinder |	✓ |	- |	-|
+|GCEPersistentDisk |	✓ |	✓ |	- |
+|Glusterfs | ✓ | ✓ | ✓|
+|HostPath |	✓ |	- |	- |
+|iSCSI |	✓ |	✓ |	- |
+|NFS |	✓ |	✓ |	✓ |
+|RBD | ✓ | ✓ | - |
 
 Por último, vemos un ejemplo de un fichero yaml que nos permite la definición de un *PersitentVolumen*:
 
