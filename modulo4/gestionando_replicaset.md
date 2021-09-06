@@ -55,7 +55,7 @@ La escalabilidad puede ser para aumentar el número de Pods o para reducirla:
 
 Por último, si borramos un ReplicaSet se borrarán todos los Pods asociados:
 
-    kubectl delete rs nginx
+    kubectl delete rs replicaset-nginx
 
 Otra forma de borrar el recurso, es utilizar el fichero yaml:
 
