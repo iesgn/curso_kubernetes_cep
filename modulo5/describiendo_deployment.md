@@ -4,7 +4,7 @@ Podemos crear un Deployment de forma imperativa utilizando un comando como el si
 
     kubectl create deployment nginx --image nginx
 
-Nosotros, sim embargo, vamos a seguir describiendo los recursos en un fichero yaml. En este caso para describir un Deployment de nginx podemos escribir un fichero [`nginx-deployment.yaml`](files/nginx-deployment.yaml):
+Nosotros, sin embargo, vamos a seguir describiendo los recursos en un fichero yaml. En este caso para describir un Deployment de nginx podemos escribir un fichero [`nginx-deployment.yaml`](files/nginx-deployment.yaml):
 
 ```yaml
 apiVersion: apps/v1
