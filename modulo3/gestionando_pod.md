@@ -7,15 +7,15 @@ un Pod de la siguiente manera:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-nginx
-  namespace: default
-  labels:
-    app: nginx
-    service: web
+ name: pod-nginx
+ labels:
+   app: nginx
+   service: web
 spec:
-  containers:
-    - image: nginx
-      name: contenedor-nginx
+ containers:
+   - image: nginx:1.16
+     name: contenedor-nginx
+     imagePullPolicy: Always
 ```
 
 Podemos crear directamente el Pod desde el fichero yaml:
