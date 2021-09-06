@@ -54,7 +54,7 @@ Normalmente no se interactúa directamente con el Pod a través de una
 shell, pero sí se obtienen directamente los logs al igual que se hace
 en docker:
 
-    kubectl logs nginx
+    kubectl logs pod-nginx
 
 En el caso poco habitual de que queramos ejecutar alguna orden
 adicional en el Pod, podemos utilizar el comando `exec`, por ejemplo,
