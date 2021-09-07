@@ -25,15 +25,15 @@ Como ocurría con los ReplicaSets los Deployment también se pueden escalar, aum
 
 Si queremos acceder a la aplicación, podemos utilizar la opción de `port-forward` sobre el despliegue (de nuevo recordamos que no es la forma adecuada para acceder a un servicio que se ejecuta en un Pod, pero de momento no tenemos otra). En este caso si tenemos asociados más de un Pod, la redirección de puertos se hará sobre un solo Pod (no habrá balanceo de carga):
 
-    kubectl port-forward deployment deployment-nginx 8080:80
+    kubectl port-forward deployment/deployment-nginx 8080:80
 
 Si queremos ver los logs generados en los Pods de un Deployment:
 
-    kubectl logs deployment deployment-nginx
+    kubectl logs deployment/deployment-nginx
 
 Si queremos obtener información detallada del recurso Deployment que hemos creado:
 
-    kubectl describe deployment deployment-nginx
+    kubectl describe deployment/deployment-nginx
 
 ## Eliminando el Deployment
 
