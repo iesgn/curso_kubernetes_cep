@@ -65,7 +65,7 @@ A continuación queremos desplegar una versión más reciente de la mediawiki. P
 1. Modificando el fichero yaml y volviendo a ejecutar un `kubectl apply`.
 2. Ejecutando la siguiente instrucción:
 
-    kubectl set image deployment/mediawiki contenedor-mediawiki=mediawiki:1.34 --record
+      kubectl set image deployment/mediawiki contenedor-mediawiki=mediawiki:1.34 --record
 
 Al ejecutar la actualización del Deployment podemos observar que se ha creado un nuevo ReplicaSet, que creará los nuevos Pods a partir de la versión modificada de la imagen. ¿Cómo se crean los nuevos Pods y se destruyen los antiguos? Dependerá de la estratégia de despliegue:
 
