@@ -129,7 +129,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [StatefulSets](modulo9/statefulsets.md)
 	* [DaemonSets](modulo9/daemonsets.md)
 	* [Jobs y CronJobs](modulo9/jobs.md)
-        [* Actividad 9.1: Creando un cluster de mysql (VOLUNTARIA)](modulo9/actividad1.md)
+        * [Actividad 9.1: Creando un cluster de mysql (VOLUNTARIA)](modulo9/actividad1.md)
 1. Instalación de aplicaciones en Kubernetes con Helm
     * [Despliegue de aplicaciones con Helm](modulo10/helm.md   )
     * [Instalación de Helm](modulo10/instalacion.md)
