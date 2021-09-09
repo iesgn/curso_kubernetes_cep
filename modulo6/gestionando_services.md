@@ -89,3 +89,9 @@ Comprobamos el Service creado:
     ...
 
 Podemos comprobar que no se ha mapeado un puerto aleatorio para que accedamos usando la IP del nodo master. Los Pods que accedan a la IP 10.106.60.233 o al nombre `mariadb` y al puerto 3306 estarán accediendo al Pod (172.17.0.5:3306) del despliegue de mariadb.
+
+## Eliminando los servicios
+
+Por ejemplo para borrar el servicio `mariadb`, ejecutaríamos:
+
+    kubectl delete service mariadb
