@@ -65,7 +65,7 @@ curso.
 Creamos un ConfigMap para modificar el fichero de configuración de
 MySQL, de manera que el primario genere los registros para la
 sincronización y los secundarios actúen en modo lectura:
-[configmap.yaml](ejemplo1/configmap.yaml)
+[configmap.yaml](files/ejemplo2/configmap.yaml)
 
 ```yaml
 apiVersion: v1
@@ -92,7 +92,7 @@ kubectl apply -f configmap.yaml
 Creamos dos servicios, uno de tipo Headless asociado con el
 StatefulSet para gestionar los nombres internos de los pods y otro
 para balancear entre los diferentes pods secundarios las peticiones de
-lectura: [servicios.yaml](ejemplo1/servicios.yaml)
+lectura: [servicios.yaml](files/ejemplo2/servicios.yaml)
 
 ```yaml
 # Servicio para usar los nombres DNS internamente
@@ -167,7 +167,7 @@ para clonar inicialmente la base de datos en los secundarios con
 * Se define el acceso a la base de datos sin contraseña, lo que hace
   que el sistema no sea válido para un despliegue real.
 
-[statefulset.yaml](ejemplo1/statefulset.yaml)
+[statefulset.yaml](files/ejemplo2/statefulset.yaml)
 ```yaml
 apiVersion: apps/v1
 kind: StatefulSet
@@ -192,13 +192,13 @@ spec:
         - "-c"
         - |
           set -ex
-          # Generate mysql server-id from pod ordinal index.
+          # Numera los servidores en función del índice del pod
           [[ `hostname` =~ -([0-9]+)$ ]] || exit 1
           ordinal=${BASH_REMATCH[1]}
           echo [mysqld] > /mnt/conf.d/server-id.cnf
-          # Add an offset to avoid reserved server-id=0 value.
+          # Establece el número del servidor a partir de 100
           echo server-id=$((100 + $ordinal)) >> /mnt/conf.d/server-id.cnf
-          # Copy appropriate conf.d files from config-map to emptyDir.
+          # Modifica MySQL con el ConfigMap en función de si es el primario (0) o no
           if [[ $ordinal -eq 0 ]]; then
             cp /mnt/config-map/primary.cnf /mnt/conf.d/
           else
@@ -216,15 +216,15 @@ spec:
         - "-c"
         - |
           set -ex
-          # Skip the clone if data already exists.
+          # No clona si ya existen datos.
           [[ -d /var/lib/mysql/mysql ]] && exit 0
-          # Skip the clone on primary (ordinal index 0).
+          # No clona si se trata del primario.
           [[ `hostname` =~ -([0-9]+)$ ]] || exit 1
           ordinal=${BASH_REMATCH[1]}
           [[ $ordinal -eq 0 ]] && exit 0
-          # Clone data from previous peer.
+          # Clona los datos del pod inmediatamente anterior
           ncat --recv-only mysql-$(($ordinal-1)).mysql 3307 | xbstream -x -C /var/lib/mysql
-          # Prepare the backup.
+          # Prepara la copia de seguridad
           xtrabackup --prepare --target-dir=/var/lib/mysql
         volumeMounts:
         - name: data
@@ -259,7 +259,7 @@ spec:
           timeoutSeconds: 5
         readinessProbe:
           exec:
-            # Check we can execute queries over TCP (skip-networking is off).
+            # Comprueba si se pueden hacer consultas sobre TCP
             command: ["mysql", "-h", "127.0.0.1", "-e", "SELECT 1"]
           initialDelaySeconds: 5
           periodSeconds: 2
@@ -276,27 +276,25 @@ spec:
           set -ex
           cd /var/lib/mysql
 
-          # Determine binlog position of cloned data, if any.
+          # Determina la posición de log a clonar.
           if [[ -f xtrabackup_slave_info && "x$(<xtrabackup_slave_info)" != "x" ]]; then
-            # XtraBackup already generated a partial "CHANGE MASTER TO" query
-            # because we're cloning from an existing replica. (Need to remove the tailing semicolon!)
+            # Modificaciones previas
             cat xtrabackup_slave_info | sed -E 's/;$//g' > change_master_to.sql.in
-            # Ignore xtrabackup_binlog_info in this case (it's useless).
             rm -f xtrabackup_slave_info xtrabackup_binlog_info
           elif [[ -f xtrabackup_binlog_info ]]; then
-            # We're cloning directly from primary. Parse binlog position.
+            # Si existe xtrabackup_binlog_info, estamos clonando desde el primario
             [[ `cat xtrabackup_binlog_info` =~ ^(.*?)[[:space:]]+(.*?)$ ]] || exit 1
             rm -f xtrabackup_binlog_info xtrabackup_slave_info
             echo "CHANGE MASTER TO MASTER_LOG_FILE='${BASH_REMATCH[1]}',\
                   MASTER_LOG_POS=${BASH_REMATCH[2]}" > change_master_to.sql.in
           fi
 
-          # Check if we need to complete a clone by starting replication.
+          # Se comprueba si es necesaria completar un clon iniciando la replicación.
           if [[ -f change_master_to.sql.in ]]; then
-            echo "Waiting for mysqld to be ready (accepting connections)"
+            echo "Esperando a que mysqld esté disponible"
             until mysql -h 127.0.0.1 -e "SELECT 1"; do sleep 1; done
 
-            echo "Initializing replication from clone position"
+            echo "Inicializando la réplica desde la última modificación"
             mysql -h 127.0.0.1 \
                   -e "$(<change_master_to.sql.in), \
                           MASTER_HOST='mysql-0.mysql', \
@@ -304,11 +302,11 @@ spec:
                           MASTER_PASSWORD='', \
                           MASTER_CONNECT_RETRY=10; \
                         START SLAVE;" || exit 1
-            # In case of container restart, attempt this at-most-once.
+            # En caso de que el contenedor se reinicie, se intenta de nuevo.
             mv change_master_to.sql.in change_master_to.sql.orig
           fi
 
-          # Start a server to send backups when requested by peers.
+          # Lanza un servidor que pueda mandar copias solicitadas por otros.
           exec ncat --listen --keep-open --send-only --max-conns=1 3307 -c \
             "xtrabackup --backup --slave-info --stream=xbstream --host=127.0.0.1 --user=root"
         volumeMounts:
