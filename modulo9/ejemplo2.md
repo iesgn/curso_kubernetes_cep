@@ -31,7 +31,7 @@ pod. El primer nodo que se desplegará será el primario, con un volumen
 asociado para la base de datos, el resto de nodos se arrancarán
 después del primario y al iniciarse sincronizarán la base de datos con
 la del primario y la almacenarán también en un volumen diferente para
-cada pod.
+cada Pod.
 
 Este ejemplo es probablemente el más avanzado de todo el curso y
 utilizaremos además otros recursos como ConfigMap, Services o
@@ -130,7 +130,7 @@ spec:
 kubectl apply -f servicios.yaml
 ```
 
-Y ya por último creado el StatefulSet, que en este caso es el objeto
+Y ya por último creamos el StatefulSet, que en este caso es el objeto
 más complicado que vamos a ver en este curso. Veamos los elementos que
 utiliza:
 
@@ -160,7 +160,7 @@ número, lo hace como secundario). El otro InitContainer se utiliza
 para clonar inicialmente la base de datos en los secundarios con
 `xtrabackup`.
 
-* Se establecen límite de consumo de recursos y se definen las pruebas
+* Se establece límite de consumo de recursos y se definen las pruebas
   de disponibilidad para que Kubernetes pueda comprobar si se está
   ofreciendo el servicio de forma adecuada.
 
@@ -373,7 +373,7 @@ kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --\
 
 Podemos comprobar los servidores que responden a una consulta a
 `mysql-read` solicitando el identificador del servidor en unas cuantas
-de iteraciones:
+ iteraciones:
 
 ```
 kubectl run mysql-client-loop --image=mysql:5.7 -i -t --rm --restart=Never --\

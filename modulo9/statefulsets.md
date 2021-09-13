@@ -1,6 +1,6 @@
 # StatefulSets
 
-El objeto [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) controla el despliegue de Pods con identidades únicas y persistentes, y nombres de host estables. El uso de StatefulSets es alternativo al de despliegues y su objetivo principal es poder utilizar en Kubernetes aplicaciones más restrictivas que no se ajusten bien a las características de los despliegues, principalmente aplicaciones con estado que necesiten algunas características fijas y estables en los Pods, algo que no puede ocurrir con los despliegues en los pods son completamente indistinguibles unos de otros y la aplicación puede utilizar cualquiera de ellos en cada momento.
+El objeto [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) controla el despliegue de Pods con identidades únicas y persistentes, y nombres de host estables. El uso de StatefulSets es alternativo al de despliegues (Deployments) y su objetivo principal es poder utilizar en Kubernetes aplicaciones más restrictivas que no se ajusten bien a las características de los despliegues, principalmente aplicaciones con estado que necesiten algunas características fijas y estables en los Pods, algo que no puede ocurrir con los despliegues en los pods que son completamente indistinguibles unos de otros y la aplicación puede utilizar cualquiera de ellos en cada momento.
 
 Veamos algunos ejemplos en los es adecuado utilizar StatefulSet en lugar de Deployment y por qué:
 
@@ -98,7 +98,7 @@ Vamos a estudiar las características de la definición de este recurso:
 
 * Con el parámetro `serviceName` indicaremos el nombre de dominio que va a formar parte del nombre DNS que el Headless Service va a crear para cada Pod.
 * Con el parámetro `selector` se indica los Pods que vamos a controlar con StatefulSet.
-* Una de las características que hemos indicado del StatefulSet es que cada Pod va a tener un almacenamiento estáble. El tipo de almacenamiento se indica con el parámetro `volumeClaimTemplates` que se define de forma similar a un `PersistentVolumenClaim`.
+* Una de las características que hemos indicado del StatefulSet es que cada Pod va a tener un almacenamiento estable. El tipo de almacenamiento se indica con el parámetro `volumeClaimTemplates` que se define de forma similar a un `PersistentVolumenClaim`.
 * Además observamos en la definición del contenedor que el almacenamiento que hemos definido se va a montar en cada Pod (en este ejemplo el punto de montaje es el DocumentRoot de nginx), con el parámetro `volumeMounts`.
 
 ## Ejemplo: Creación de un StatefulSet
@@ -113,13 +113,13 @@ kubectl apply -f service.yaml
 
 ### Creación ordenada de Pods
 
-Es statefulSet que hemos definido va a crear dos Pods (`replicas: 2`). Para observar cómo se crean de forma ordenada podemos usar dos terminales, en la primera ejecutamos:
+El statefulSet que hemos definido va a crear dos Pods (`replicas: 2`). Para observar cómo se crean de forma ordenada podemos usar dos terminales, en la primera ejecutamos:
 
 ```bash
 watch kubectl get pod
 ```
 
-Con esta instrucción vamos a ver en "vivo" cómo se van creando los Pods, que vamos a crear al ejecutar en la otra terminar la instrucción:
+Con esta instrucción vamos a ver en "vivo" cómo se van creando los Pods, que vamos a crear al ejecutar en otra terminal la instrucción:
 
 ```bash
 kubectl apply -f statefulset.yaml
@@ -129,7 +129,7 @@ kubectl apply -f statefulset.yaml
 
 En este caso vamos a comprobar que los hostname y los nombres DNS son estables para cada Pod. Las ips de los Pods pueden cambiar si eliminamos el recurso StatefulSet y lo volvemos a crear, pero los nombres van a permanecer.
 
-Para ver los nombres de los Pods podemos ejecutar los siguiente:
+Para ver los nombres de los Pods podemos ejecutar lo siguiente:
 
 ```bash
 for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done
@@ -137,7 +137,7 @@ web-0
 web-1
 ```
 
-Veamos los nombres DNS. en este ejemplo el Headless Service ha creado entradas en el DNS para cada Pod. El nombre DNS que se creará será `<nombre del pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`. En este caso el nombre del primer Pod será `web-0.nginx`. Vamos a comprobarlo, haciendo una consulta DNS desde otro pod:
+Veamos los nombres DNS. En este ejemplo el Headless Service ha creado una entrada en el DNS para cada Pod. El nombre DNS que se creará será `<nombre del pod>.<dominio del StatefulSet>`. El dominio del StatefulSet se indicará en la definición del recurso usando el parámetro `serviceName`. En este caso el nombre del primer Pod será `web-0.nginx`. Vamos a comprobarlo, haciendo una consulta DNS desde otro pod:
 
 ```bash
 kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm
@@ -151,7 +151,7 @@ Address 1: 172.17.0.5 web-1.nginx.default.svc.cluster.local
 
 ### Eliminación de pods
 
-Podemos usar las dos terminales para observar como la eliminación también se hace de forma ordenada. en la primera terminal ejecutamos:
+Podemos usar las dos terminales para observar cómo la eliminación también se hace de forma ordenada. En la primera terminal ejecutamos:
 
 ```bash
 watch kubectl get pod

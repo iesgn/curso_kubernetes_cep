@@ -47,7 +47,7 @@ job.batch/pi   0/1           4s         4s
 
 Sin embargo, una vez que la tarea del contenedor finaliza, en este
 caso cuando se consigue el número Pi con dos mil decimales de
-precisión, el pod se para y la tarea se marca como completada:
+precisión, el Pod se para y la tarea se marca como completada:
 
 ```
 NAME           READY   STATUS      RESTARTS   AGE
@@ -59,7 +59,7 @@ NAME           COMPLETIONS   DURATION   AGE
 job.batch/pi   1/1           9s         10s
 ```
 
-Podemos ver que no se borra el pod, ya que lo necesitamos en muchas
+Podemos ver que no se borra el Pod, ya que lo necesitamos en muchas
 ocasiones para ver el resultado de la tarea. En este caso para ver el
 número Pi con la precisión solicitada, veríamos los logs del pod:
 
