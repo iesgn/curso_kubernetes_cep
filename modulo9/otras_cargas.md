@@ -1,15 +1,17 @@
 # ¿Podemos usar un despliegue para todo?
 
-Hasta ahora hemos visto con bastante detalle el uso de los despliegues
+Hasta ahora hemos visto con bastante detalle el uso de los despliegues (Deployments)
 en Kubernetes. Los despliegues son una herramienta enormemente potente
-ya que nos permite adecuar el número de pods a la demanda y garantiza
+ya que nos permiten adecuar el número de pods a la demanda y garantizan
 el funcionamiento continuo, tanto en el caso de que haya algún nodo
 con problemas, como en el caso de actualizaciones que se pueden
 realizar de forma continua. Sin embargo, no es posible utilizar
 despliegues en todos los casos, hay determinadas situaciones en las
 que hay cargas de trabajo (*workloads*) que no se ajustan
 adecuadamente a un despliegue de Kubernetes, por lo que se han
-desarrollado otros objetos para esas situaciones diferentes. Sí es
+desarrollado otros objetos para esas situaciones diferentes. 
+
+Sí es
 conveniente remarcar, que siempre que sea posible es mejor definir una
 carga de trabajo como un despliegue en Kubernetes y limitar el uso de
 las otras cargas de trabajo que vamos a ver a continuación para casos
@@ -19,7 +21,7 @@ debemos usarlo prioritariamente siempre que sea posible.
 
 ## Aplicaciones con estado o sin estado
 
-Una característica de la aplicación que es muy importante para
+Una característica de una aplicación que es muy importante para
 Kubernetes es si se trata de una aplicación con estado (*stateful*) o
 sin estado (*stateless*). Una aplicación sin estado es aquella en la
 que las peticiones son totalmente independientes unas de otras y no
@@ -36,7 +38,7 @@ Por contra, las aplicaciones con estado son aquellas en las que una
 petición puede verse afectada por el resultado de las anteriores y a
 su vez puede afectar a las posteriores (por eso se dice que tiene
 estado). Una base de datos sería el paradigma de una aplicación con
-estado, puesto que cada modificación que hagamos a la base de datos,
+estado, puesto que cada modificación que hagamos a la base de datos 
 puede afectar a las consultas posteriores. Una aplicación con estado
 no se ajusta bien a un Deployment de Kubernetes, ya que de forma
 general, un cluster de pods independientes no puede tener en cuenta el
