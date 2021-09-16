@@ -4,7 +4,7 @@ El "cluster" de k8s que vamos a utilizar en este curso es el de un
 solo nodo que va a encargarse de realizar tanto las tareas de master,
 con los componentes principales de Kubernetes, como de worker,
 ejecutando las cargas de trabajo en contenedores (ya veremos más
-adelante que realmente utiliza algo que se llama Pod). 
+adelante que realmente utiliza algo que se llama Pod).
 
 Aunque
 evidentemente un cluster constituido por un solo nodo no es la
@@ -42,8 +42,9 @@ de forma más sencilla con `install`
 Comprobamos que se ha instalado correctamente con:
 
     minikube version
-    minikube version: v1.21.0
-    commit: 76d74191d82c47883dc7e1319ef7cebd3e00ee11
+
+	minikube version: v1.23.0
+	commit: 5931455374810b1bbeb222a9713ae2c756daee10
 
 ## Creación del cluster de k8s
 
@@ -71,19 +72,19 @@ de k8s) para que utilice el cluster recién instalado. Podemos ver una
 salida típica de la instalación del cluster a continuación:
 
 ```
-😄  minikube v1.21.0 en Debian 11.0
+😄  minikube v1.23.0 en Debian 11.0
 ✨  Using the kvm2 driver based on user configuration
 💾  Descargando el controlador docker-machine-driver-kvm2:
     > docker-machine-driver-kvm2....: 65 B / 65 B [----------] 100.00% ? p/s 0s
     > docker-machine-driver-kvm2: 11.45 MiB / 11.45 MiB  100.00% 14.25 MiB p/s
 💿  Descargando la imagen de arranque de la VM
-    > minikube-v1.21.0.iso.sha256: 65 B / 65 B [-------------] 100.00% ? p/s 0s
-    > minikube-v1.21.0.iso: 243.03 MiB / 243.03 MiB [ 100.00% 10.56 MiB p/s 23s
+    > minikube-v1.23.0.iso.sha256: 65 B / 65 B [-------------] 100.00% ? p/s 0s
+    > minikube-v1.23.0.iso: 243.03 MiB / 243.03 MiB [ 100.00% 10.56 MiB p/s 23s
 👍  Starting control plane node minikube in cluster minikube
-💾  Descargando Kubernetes v1.20.7 ...
+💾  Descargando Kubernetes v1.22.1 ...
     > preloaded-images-k8s-v11-v1...: 492.20 MiB / 492.20 MiB  100.00% 11.25 Mi
 🔥  Creando kvm2 VM (CPUs=2, Memory=3900MB, Disk=20000MB) ...
-🐳  Preparando Kubernetes v1.20.7 en Docker 20.10.6...
+🐳  Preparando Kubernetes v1.22.1 en Docker 20.10.8...
     ▪ Generating certificates and keys ...
     ▪ Booting up control plane ...
     ▪ Configuring RBAC rules ...
@@ -124,12 +125,11 @@ minikube stop
 ```
 
 ```
-minikube start
-😄  minikube v1.21.0 en Debian 11.0
+😄  minikube v1.23.0 en Debian 11.0
 ✨  Using the kvm2 driver based on existing profile
 👍  Starting control plane node minikube in cluster minikube
 🔄  Restarting existing kvm2 VM for "minikube" ...
-🐳  Preparando Kubernetes v1.20.7 en Docker 20.10.6...
+🐳  Preparando Kubernetes v1.22.1 en Docker 20.10.8...
 🔎  Verifying Kubernetes components...
     ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
 🌟  Complementos habilitados: storage-provisioner, default-storageclass
