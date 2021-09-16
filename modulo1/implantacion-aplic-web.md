@@ -100,7 +100,7 @@ recursos.
 
 ### Paso 3. Servidores de aplicaciones en equipos separados
 
-El coste computacional mayor en una aplicacioń web suele recaer en los
+El coste computacional mayor en una aplicación web suele recaer en los
 servidores de aplicaciones, que son los que ejecutan código complejo, mientras que el servidor web se limita a servir el contenido generado
 por estos servidores de aplicaciones o los ficheros estáticos del
 sitio web. Al servir tres aplicaciones web diferentes desde el mismo
