@@ -20,10 +20,8 @@ directamente desde la URL del proyecto e instalarlo en
 `/usr/local/bin`:
 
 ```
-curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s
-https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install kubectl /usr/local/bin/kubectl
 ```
 
 Este binario obviamente no se actualiza y tendremos que repetir el
@@ -73,12 +71,11 @@ versión, con la instrucción:
 
 ```
 kubectl version
-Client Version: version.Info{Major:"1", Minor:"20", GitVersion:"v1.20.2", GitCommit:"faecb196815e248d3ecfb03c680a4507229c2a56", GitTreeState:"archive", BuildDate:"2021-01-14T10:55:09Z", GoVersion:"go1.15.6", Compiler:"gc", Platform:"linux/amd64"}
-The connection to the server localhost:8080 was refused - did you
-specify the right host or port?
+Client Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.2", GitCommit:"8b5a19147530eaac9476b0ab82980b4088bbc1b2", GitTreeState:"clean", BuildDate:"2021-09-15T21:38:50Z", GoVersion:"go1.16.8", Compiler:"gc", Platform:"linux/amd64"}
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
 ```
 
-En el caso anterior, estamos utilizando la versión 1.20.2 y nos
+En el caso anterior, estamos utilizando la versión 1.22.2 y nos
 informa de que no ha podido conectarse al cluster de Kubernetes con la
 configuración por defecto (`localhost:8080`). Es decir, aunque
 tengamos kubectl y minikube instalados, el primero no está configurado
@@ -105,20 +102,20 @@ clusters:
     certificate-authority: /home/alberto/.minikube/ca.crt
     extensions:
     - extension:
-        last-update: Sun, 04 Jul 2021 11:25:04 CEST
+        last-update: Thu, 16 Sep 2021 12:24:31 CEST
         provider: minikube.sigs.k8s.io
-        version: v1.21.0
+        version: v1.23.0
       name: cluster_info
-    server: https://192.168.39.69:8443
+    server: https://192.168.39.221:8443
   name: minikube
 contexts:
 - context:
     cluster: minikube
     extensions:
     - extension:
-        last-update: Sun, 04 Jul 2021 11:25:04 CEST
+        last-update: Thu, 16 Sep 2021 12:24:31 CEST
         provider: minikube.sigs.k8s.io
-        version: v1.21.0
+        version: v1.23.0
       name: context_info
     namespace: default
     user: minikube
@@ -134,7 +131,7 @@ users:
 ```
 
 Donde en cada caso variará la dirección IP del servidor del cluster
-(en este caso la 192.168.39.69) y la ubicación de los ficheros de los
+(en este caso la 192.168.39.221) y la ubicación de los ficheros de los
 certificados y claves x509 (en este caso en el directorio
 `/home/alberto`).
 
@@ -143,8 +140,9 @@ comando:
 
 ```
 kubectl version
-Client Version: version.Info{Major:"1", Minor:"20", GitVersion:"v1.20.2", GitCommit:"faecb196815e248d3ecfb03c680a4507229c2a56", GitTreeState:"archive", BuildDate:"2021-01-14T10:55:09Z", GoVersion:"go1.15.6", Compiler:"gc", Platform:"linux/amd64"}
-Server Version: version.Info{Major:"1", Minor:"20", GitVersion:"v1.20.7", GitCommit:"132a687512d7fb058d0f5890f07d4121b3f0a2e2", GitTreeState:"clean", BuildDate:"2021-05-12T12:32:49Z", GoVersion:"go1.15.12", Compiler:"gc", Platform:"linux/amd64"}
+
+Client Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.2", GitCommit:"8b5a19147530eaac9476b0ab82980b4088bbc1b2", GitTreeState:"clean", BuildDate:"2021-09-15T21:38:50Z", GoVersion:"go1.16.8", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.1", GitCommit:"632ed300f2c34f6d6d15ca4cef3d3c7073412212", GitTreeState:"clean", BuildDate:"2021-08-19T15:39:34Z", GoVersion:"go1.16.7", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
 Comprobamos que ya aparece la versión del servidor y por
@@ -158,4 +156,18 @@ NAME       STATUS   ROLES                  AGE   VERSION
 minikube   Ready    control-plane,master   23h   v1.20.7
 ```
 
-Ya está todo el entorno listo para poder realizar el curso.
+Si queremos utilizar el autocompletado, podemos generarlo e
+incorporarlo a nuestro entorno con:
+
+```
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+```
+
+Y para poder usarlo en esta misma sesión (no será necesario más
+adelante, ya que el fichero .bashrc se lee cada vez que se inicia una
+sesión):
+
+```
+source ~/.bashrc
+```
+
