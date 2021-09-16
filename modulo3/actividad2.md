@@ -40,7 +40,7 @@ Tenemos la definición del Pod en el fichero [`pod_multicontenedor.yaml`](files/
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod_multicontenedor
+  name: pod-multicontenedor
 spec:
   volumes:
   - name: html
