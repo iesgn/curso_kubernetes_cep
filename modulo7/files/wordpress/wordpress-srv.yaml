@@ -10,10 +10,10 @@ spec:
     app: wordpress
     type: frontend
   ports:
-  - name: http-sv-port 
+  - name: http-sv-port
     port: 80
     targetPort: http-port
   - name: https-sv-port
     port: 443
     targetPort: https-port
-  type: NodePort 
+  type: NodePort

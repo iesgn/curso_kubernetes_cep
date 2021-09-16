@@ -43,4 +43,4 @@ spec:
                 configMapKeyRef:
                   name: bd-datos
                   key: bd_dbname
-            
+
