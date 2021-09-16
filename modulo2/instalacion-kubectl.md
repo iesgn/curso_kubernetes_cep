@@ -20,8 +20,7 @@ directamente desde la URL del proyecto e instalarlo en
 `/usr/local/bin`:
 
 ```
-curl -LO
-"https://storage.googleapis.com/kubernetes-release/release/$(curl -s
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
@@ -54,6 +53,8 @@ esa versión, podemos instalar `kubectl` directamente con apt:
 ```
 sudo apt install kubernetes-client
 ```
+
+En estos momentos se instala la versión 1.20 de kubectl.
 
 ## Opción 4. Instalar desde snap
 
