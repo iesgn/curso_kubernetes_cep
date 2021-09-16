@@ -44,4 +44,3 @@ spec:
                 secretKeyRef:
                   name: bd-passwords
                   key: bd_rootpassword
-          
