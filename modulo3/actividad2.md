@@ -94,7 +94,7 @@ Para realizar la actividad realiza los siguientes pasos:
 
         kubectl exec pod_multicontenedor -c contenedor1 -- /bin/cat /usr/share/nginx/html/index.html
 
-    En esta ocasión hay que indicar el contenedor (opción `-c`) para indicar donde vamos a ejecutar la instrucción.
+    En esta ocasión hay que indicar el contenedor (opción `-c`) para indicar en que contenedor vamos a ejecutar la instrucción.
 4. Muestra el contenido del fichero `index.html` en el segundo contenedor, ejecutando:
 
         kubectl exec pod_multicontenedor -c contenedor2 -- /bin/cat /html/index.html
@@ -103,7 +103,7 @@ Para realizar la actividad realiza los siguientes pasos:
 
 Para superar la actividad deberás entregar en un fichero comprimido el siguiente pantallazo:
 
-1. Un pantallazo donde se muestre la información del Pod y se vean la definición de los dos contenedores (**pantallazo1.jpg**).
+1. Un pantallazo donde se muestre la información del Pod y se vean la definición del pod y se vea que contiene dos contenedores (**pantallazo1.jpg**).
 2. Un pantallazo donde se vea el acceso a la página desde un navegador web (**pantallazo2.jpg**).
 
 
