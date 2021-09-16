@@ -195,7 +195,7 @@ alt="paso8" />
 
 Al ofrecer microservicios no podemos tener dependencia de un solo
 nodo, por lo que al igual que en los pasos anteriores, se debe ofrecer
-la posiblidad de escalar cualquier componente a la demanda y que el
+la posibilidad de escalar cualquier componente a la demanda y que el
 sistema globalmente pueda responder ante cualquier error puntual.
 
 <img
