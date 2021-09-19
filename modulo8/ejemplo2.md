@@ -25,7 +25,7 @@ metadata:
     name: pvc-ejemplo2
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
