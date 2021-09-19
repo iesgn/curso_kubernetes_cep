@@ -12,7 +12,7 @@ Por lo tanto necesitaremos solicitar un volumen, que se asociará de forma diná
 
 Si estudiamos la documentación de la imagen redis en [Docker Hub](https://hub.docker.com/_/redis), para que la información de la base de datos se guarde en un directorio `/data` del contenedor hay que ejecutar con docker:
 
-docker run --name some-redis -d redis redis-server --appendonly yes
+  docker run --name some-redis -d redis redis-server --appendonly yes
 
 Es decir, hay que crear el contenedor ejecutando el proceso `redis-server` con los argumentos `--appendonly yes`.
 
@@ -64,7 +64,7 @@ Realiza los siguientes pasos:
 
 1. Crea un fichero yaml para definir un recurso PersistentVolumenClaim que se llame `pvc-redis` y para solicitar un volumen de 3Gb.
 2. Crea el recurso y comprueba que se ha asociado un volumen de forma dinámica a la solicitud.
-3. Modifica el fichero del despliegue de redis, modificando las `xxxxxxxxxxxx` por los valores correctos: el nombre del PersistentVolumenClaim y el directorio de montaje en el contenedor.
+3. Modifica el fichero del despliegue de redis, modificando las `xxxxxxxxxxxx` por los valores correctos: el nombre del PersistentVolumenClaim y el directorio de montaje en el contenedor (como hemos visto anteriormente es `/data`).
 4. Crea el despliegue de redis. El despliegue de la aplicación `guestbook` y la creación de los Services de acceso se hace con los ficheros que ya utilizamos anteriormente: [`guestbook-deployment.yaml`](files/guestbook/guestbook-deployment.yaml), [`guestbook-srv.yaml`](files/guestbook/guestbook-srv.yaml) y [`redis-srv.yaml`](files/guestbook/redis-srv.yaml).
 5. Accede a la aplicación y escribe algunos mensajes.
 6. Comprobemos la persistencia: elimina el despliegue de redis, vuelve a crearlo, vuelve a acceder desde el navegador y comprueba que los mensajes no se han perdido.
