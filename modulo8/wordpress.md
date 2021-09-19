@@ -1,10 +1,10 @@
 # Ejemplo 3: Wordpress con almacenamiento persistente
 
-En este ejemplo vamos a volver e realizar el [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](../modulo7/wordpress.md) del módulo anterior, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente. 
+En este ejemplo vamos a volver e realizar el [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](../modulo7/wordpress.md) del módulo anterior, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente.
 
-Para llevar a cabo esta tarea necesitaremos tener a nuestra disposición dos volúmenes: 
+Para llevar a cabo esta tarea necesitaremos tener a nuestra disposición dos volúmenes:
 
-* Uno para guardar la información de Wordpress. 
+* Uno para guardar la información de Wordpress.
 * Otro para guardar la información de MariaDB.
 
 Para este ejercicio utilizaremos asignación dinámica de volúmenes.
@@ -22,7 +22,7 @@ metadata:
     name: wordpress-pvc
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
@@ -37,7 +37,7 @@ metadata:
     name: mariadb-pvc
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
@@ -74,7 +74,7 @@ A continuación vamos a modificar el fichero [`wordpress-deployment.yaml`](files
       volumes:
         - name: wordpress-vol
           persistentVolumeClaim:
-            claimName: wordpress-pvc      
+            claimName: wordpress-pvc
 ```
 Como observamos vamos a usar el volumen asociado al PersistentVolumenClaim `wordpress-pvc` y que lo vamos a montar en el directorio *DocumentRoot* del servidor web: `/var/www/html`.
 
@@ -91,7 +91,7 @@ De forma similar, modificamos el fichero [`mariadb-deployment.yaml`](files/wordp
       volumes:
         - name: mariadb-vol
           persistentVolumeClaim:
-            claimName: mariadb-pvc      
+            claimName: mariadb-pvc
 
 ```
 En esta ocasión usaremos el volumen asociado a `mariadb-pvc` y el punto de montaje se hará sobre el directorio donde se guarda la información de la base de datos: `/var/lib/mysql`.
