@@ -2,10 +2,10 @@
 
 Independientemente de cómo haya aprovisionado el almacenamiento el administrador del cluster (de forma dinámica o de forma estática), el desarrollador debe hacer una **solicitud de almacenamiento**, indicando las características del volumen que necesita.
 
-Un desarrollador no necesita conocer los distintos tipos de volúmenes disponibles en el cluster. ¡¡¡Son detalles muy específicos!!!.
+Un desarrollador no necesita conocer los distintos tipos de volúmenes disponibles en el cluster. ¡Son detalles muy específicos!
 
- Un desarrollador se centra en indicar los requerimientos que debe tener el volumen que necesita:
-    
+Un desarrollador se centra en indicar los requerimientos que debe tener el volumen que necesita:
+
 * Tamaño.
 * Tipo de acceso (sólo lectura o lectura / escritura).
 * Tipo de volumen (sólo si es importante).
@@ -20,7 +20,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
