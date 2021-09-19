@@ -6,7 +6,7 @@ metadata:
     app: temperaturas
     tier: frontend
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - port: 3000
     targetPort: http-server
