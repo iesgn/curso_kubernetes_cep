@@ -50,4 +50,4 @@ spec:
       volumes:
         - name: mariadb-vol
           persistentVolumeClaim:
-            claimName: mariadb-pvc      
+            claimName: mariadb-pvc
