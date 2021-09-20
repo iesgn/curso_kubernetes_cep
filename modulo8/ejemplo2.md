@@ -111,7 +111,7 @@ pod/nginx-ejemplo2-7b79b5966-zbdqh   1/1     Running   0          5s
 ...
 kubectl exec pod/nginx-ejemplo2-7b79b5966-zbdqh -- bash -c "echo '<h1>Almacenamiento en K8S</h1>' > /usr/share/nginx/html/index.html"
 ```
-Finalmente creamos el Service de acceso al despliegue, usando el fichero [`srv-ejemplo1.yaml`](files/ejemplo1/srv-ejemplo1.yaml).
+Finalmente creamos el Service de acceso al despliegue, usando el fichero [`srv-ejemplo2.yaml`](files/ejemplo2/srv-ejemplo2.yaml).
 
 ```bash
 kubectl apply -f srv-ejemplo2.yaml
