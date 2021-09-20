@@ -39,7 +39,7 @@ kubectl get pv
 NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
 persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  73s
 ```
-Nos fijamos que el estado del volumen es `Available`, todavía no se ha asociado con ninguna solicitud de volúmen.
+Nos fijamos que el estado del volumen es `Available`, todavía no se ha asociado con ninguna solicitud de volumen.
 
 Y podemos obtener los detalle de este recurso:
 
