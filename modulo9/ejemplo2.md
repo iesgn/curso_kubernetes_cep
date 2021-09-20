@@ -1,4 +1,4 @@
-# Ejemplo 2: Despliegue de un cluster de MySQL
+# Ejemplo: Despliegue de un cluster de MySQL
 
 Una base de datos relacional es un ejemplo perfecto de aplicación con
 estado, cualquier petición puede depender del estado resultante de una

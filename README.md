@@ -127,7 +127,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
 1. Otras cargas de trabajo
     * [¿Podemos usar un despliegue para todo?](modulo9/otras_cargas.md)
     * [StatefulSets](modulo9/statefulsets.md)
-	* [Ejemplo 2: Despliegue de un cluster de MySQL](modulo9/ejemplo2.md)
+	* [Ejemplo: Despliegue de un cluster de MySQL](modulo9/ejemplo2.md)
 	* [DaemonSets](modulo9/daemonsets.md)
 	* [Jobs y CronJobs](modulo9/jobs.md)
         * [Actividad 9.1: Creando un cluster de MySQL (VOLUNTARIA)](modulo9/actividad1.md)
