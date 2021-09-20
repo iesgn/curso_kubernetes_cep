@@ -1,6 +1,6 @@
 # DaemonSet
 
-El objeto DaemonSet (DS) se utiliza cuando queremos ejecutar un pod en
+El objeto [DaemonSet (DS)](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) se utiliza cuando queremos ejecutar un pod en
 todos los nodos del cluster o al menos en un conjunto de ellos que
 tienen una serie de características en común. Un DaemonSet se utiliza
 en algunas circunstancias muy concretas, por ejemplo:
@@ -11,8 +11,6 @@ en algunas circunstancias muy concretas, por ejemplo:
   fluentd, logstash
 * Ejecutar un pod en cada nodo para el almacenamiento del cluster:
   ceph o glusterfs
-
-[DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 
 Un ejemplo de DaemonSet tendría el siguiente aspecto:
 
