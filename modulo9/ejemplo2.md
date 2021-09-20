@@ -43,20 +43,17 @@ Application](https://kubernetes.io/docs/tasks/run-application/run-replicated-sta
 producción, ya que se ha simplificado la configuración de MySQL, para
 centrarnos en los aspectos relacionados con Kubernetes.
 
-**Nota** Para este ejemplo es posible que la máquina virtual que hemos
-creado para instalar minikube no tenga recursos suficientes, por lo
-que habría que eliminar el cluster y volverlo a crear con suficientes
-recursos (en el ejemplo siguiente creamos un nuevo cluster de k8s con
-8 GiB de RAM y 4 cores virtuales:
+**Nota** En caso de no tener recursos suficientes para realizar este
+ejemplo, se puede reducir el número de réplicas a dos, o bien eliminar
+el cluster y volverlo a crear con suficientes recursos (en el ejemplo
+siguiente creamos un nuevo cluster de k8s con 6 GiB de RAM y 4 cores
+virtuales:
 
 ```
 minikube stop
 minikube delete
-minikube start --driver ... --memory 8192 --cpus 4
+minikube start --driver ... --memory 6144 --cpus 4
 ```
-
-Aunque si no disponemos de esos recursos, podría modificarse el
-StatefulSet limitando el número de réplicas a dos.
 
 Vamos pues con la creación de este cluster, para lo que utilizaremos
 diferentes objetos de Kubernetes que hemos visto durante todo el
@@ -249,7 +246,7 @@ spec:
           mountPath: /etc/mysql/conf.d
         resources:
           requests:
-            cpu: 500m
+            cpu: 200m
             memory: 1Gi
         livenessProbe:
           exec:
