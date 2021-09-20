@@ -100,6 +100,10 @@ Evidentemente, no es necesario modificar la definición de los otros recursos: S
 
 Creamos el Deployment, los Services y el Ingress:
 
+* [mariadb-srv.yaml](files/wordpress/mariadb-srv.yaml)
+* [wordpress-srv.yaml](files/wordpress/wordpress-srv.yaml)
+* [wordpress-ingress.yaml](files/wordpress/wordpress-ingress.yaml)
+
 ```bash
 kubectl apply -f mariadb-deployment.yaml
 kubectl apply -f mariadb-srv.yaml
