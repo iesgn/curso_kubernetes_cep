@@ -370,10 +370,14 @@ kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --\
 
 Podemos comprobar los servidores que responden a una consulta a
 `mysql-read` solicitando el identificador del servidor en unas cuantas
- iteraciones:
+ iteraciones, para lo que ejecutamos de forma interactiva una consulta
+ repetidas veces para que se muestre el id del servidor que está
+ respondiendo y así se vea el balanceo sobre todos los nodos:
 
+```bash
+kubectl run mysql-client-loop --image=mysql:5.7 bash
 ```
-kubectl run mysql-client-loop --image=mysql:5.7 -i -t --rm --restart=Never --\
-  bash -ic "for i in `seq 1 10`; do mysql -h mysql-read -e 'SELECT
-  @@server_id,NOW()'; sleep 1; done"
+
+```bash
+for i in `seq 1 10`; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; sleep 1; done"
 ```
