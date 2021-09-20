@@ -1,13 +1,12 @@
 # Job
 
-El objeto Job se utiliza cuando queremos ejecutar una tarea puntual,
+El objeto [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
+ se utiliza cuando queremos ejecutar una tarea puntual,
 para lo que se define el objeto y se crean todos los objetos
 necesarios para realizarla, principalmente creando uno o varios Pods
 hasta que se finaliza la tarea.
 Una vez se termina la tarea y de forma general, los pods permanecerán
 creados y no se borrarán hasta que se elimine el Job que los creó.
-
-[Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 
 Un ejemplo de Job tendría el siguiente aspecto:
 
@@ -76,10 +75,8 @@ kubectl logs pi-jbt4r
 
 En el caso de que la tarea que tengamos que realizar no sea puntual,
 sino que se tenga que repetir cada cierto tiempo conforme a un patrón,
-k8s ofrece el objeto CronJob, que creará tareas conforme a la
+k8s ofrece el objeto [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/), que creará tareas conforme a la
 periodicidad que se indique.
-
-[CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
 
 En el siguiente ejemplo de CronJob, ejecutamos una tarea cada minuto,
 en la que se muestra la fecha y hora junto al texto "Curso del CEP":
