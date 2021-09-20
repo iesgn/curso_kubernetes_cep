@@ -43,7 +43,7 @@ spec:
       storage: 5Gi
 ```
 
-Creamos las solicitudes y comprobamos que se ha asociado un volúmen a cada una de ellas:
+Creamos las solicitudes y comprobamos que se ha asociado un volumen a cada una de ellas:
 
 ```bash
 kubectl apply -f wordpress-pvc.yaml
