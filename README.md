@@ -213,3 +213,15 @@ En todo momento contarás con la ayuda de un tutor o tutora que te
 facilitará tu paso por la actividad formativa y se fomentará la
 participación a través de los foros para compartir dudas y cualquier
 otra cuestión.
+
+## Licencia
+
+Materiales desarrollados por Alberto Molina Coballes y José Domingo
+Muñoz Rodríguez para el curso "Introducción a Kubernetes"
+organizado por la [Consejería de Educación y Deporte de la Junta de
+Andalucía](https://www.juntadeandalucia.es/educacion/portals/web/ced)
+y dirigido a profesorado de secundaria de Andalucía.
+
+Toda la documentación es libre y puede compartirse y modificarse bajo
+las limitaciones de la licencia Creative Commons
+[BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es).
