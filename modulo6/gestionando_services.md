@@ -64,7 +64,7 @@ En esta ocasión vamos a desplegar una base de datos MariaDB. En este caso no va
 
 Para el despliegue de MariaDB vamos a usar el fichero [`mariadb-deployment.yaml`](files/mariadb-deployment.yaml). Puedes comprobar que en la definición del contenedor hemos añadido la sección `env` que nos permite establecer variables de entorno para configurar el contenedor (los estudiaremos en el siguiente módulo).
 
-Para la creación del Service utilizamos el fichero [`mariadb-srv.yaml`](files/mariad-srv.yaml).
+Para la creación del Service utilizamos el fichero [`mariadb-srv.yaml`](files/mariadb-srv.yaml).
 
 Para la creación del Deployment y el Service vamos ejecutando las siguientes instrucciones:
 
