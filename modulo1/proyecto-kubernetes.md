@@ -93,10 +93,15 @@ El código de Kubernetes se gestiona a través de
 [Github](https://github.com/kubernetes/kubernetes) en cuyo repositorio
 se puede ver la gran cantidad de código desarrollado en estos años
 (más de 100000 "commits") y las miles de personas que han participado
-en mayor o menor medida. La versión actual de Kubernetes es la 1.21 y
-el proyecto actualmente está publicando tres versiones nuevas cada
-año, por lo que es probable que a lo largo del 2021 se publiquen las
-versiones 1.22 y 1.23.
+en mayor o menor medida. La última versión de Kubernetes en el momento
+de escribir esta documenración es la 1.23 y el proyecto actualmente
+está publicando dos o tres versiones nuevas cada año.
+
+En cualquier caso la versión de Kubernetes no es algo esencial para
+los contenidos de este curso, porque se van a tratar los elementos
+básicos, que ya están muy establecidos y, salvo algún detalle menor,
+se puede realizar este curso al completo con una versión de Kubernetes
+diferente a la utilizada para la documentación.
 
 ## El ecosistema
 
