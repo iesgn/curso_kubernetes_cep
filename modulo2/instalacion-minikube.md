@@ -6,14 +6,31 @@ con los componentes principales de Kubernetes, como de worker,
 ejecutando las cargas de trabajo en contenedores (ya veremos más
 adelante que realmente utiliza algo que se llama Pod).
 
-Aunque
-evidentemente un cluster constituido por un solo nodo no es la
-solución más adecuada en la mayoría de los casos, sí lo es en éste, en
-el que queremos instalar Kubernetes de forma rápida y fácil para
-aprender sus características, pero no para usarlo en producción ni
-nada similar.
+Minikube se distribuye como un programa que se instala en nuestra
+máquina física (podría instalarse igualmente en una máquina virtual a
+la que tuviésemos acceso completo) y que al ejecutarlo crea una
+máquina virtual linux con un cluster de Kubernetes completamente
+configurado y listo para su uso. Podemos instalar minikube en nuestra
+máquina con sistema linux, windows o mac y en una variedad importante
+de sistemas de virtualización, aunque en el curso recomendaremos sólo
+algunas combinaciones que hemos probado y que incluyen toda la
+funcionalidad necesaria para realizar el curso.
 
-## Instalación del binario minikube
+**Nota:** Puede haber interacción si utilizamos más de un
+sistema de virtualización en nuestro equipo, por ejemplo, la
+utilización en Windows de virtualbox para unas cosas e hyper-v para
+minikube, puede dar lugar a problemas, por lo que en general es
+recomendable usar un solo sistema de virtualización.
+
+Combinaciones de sistema operativo/virtualización recomendadas para el
+curso:
+
+* Linux + KVM
+* Linux + VirtualBox
+* Windows + HyperV
+* Windows + VirtualBox
+
+## Instalación de minikube en linux con KVM
 
 Accedemos a
 [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
