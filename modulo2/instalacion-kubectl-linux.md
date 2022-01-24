@@ -1,4 +1,4 @@
-# Instalación de kubectl
+# Instalación de kubectl en linux
 
 **kubectl** es la herramienta de línea de comandos utilizada para
 interactuar con la API de Kubernetes. Es por tanto la herramienta
@@ -170,4 +170,3 @@ sesión):
 ```
 source ~/.bashrc
 ```
-
