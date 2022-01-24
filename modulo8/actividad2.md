@@ -51,7 +51,7 @@ spec:
             - name: redis-server
               containerPort: 6379
           volumeMounts:
-            - mountPath: "xxxxxxxxxxxx"
+            - mountPath: xxxxxxxxxxxx
               name: volumen-redis
 ```
 Hemos usado el parámetro `command` para ejecutar el proceso, y el parámetro `args` para indicar los argumentos.
