@@ -55,17 +55,9 @@ Podemos acceder al Administrador de Hyper-V y comprobar que se ha creado la máq
 
 ![windows1](img/windows7.png)
 
-Además podemos comprobar que el cluster está en funcionamiento ejecutando:
+Además podemos comprobar que el cluster está en funcionamiento ejecutando `minikube status`:
 
-```
-minikube status
-minikube
-type: Control Plane
-host: Running
-kubelet: Running
-apiserver: Running
-kubeconfig: Configured
-```
+![windows1](img/windows10.png)
 
 Cuando terminemos de trabajar con kubernetes podemos apagar la máquina virtual con el comando `minikube stop`:
 
