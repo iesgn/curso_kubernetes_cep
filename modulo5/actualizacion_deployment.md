@@ -44,9 +44,11 @@ spec:
 ```
 Si nos fijamos vamos a desplegar la versión 1.31 de la aplicación mediawiki. Creamos el despliegue con la siguiente instrucción:
 
-    kubectl apply -f mediawiki-deployment.yaml --record
+    kubectl apply -f mediawiki-deployment.yaml
 
-Con la opción `--record` vamos a registrar las instrucciones que vamos a ejecutar a continuación para ir actualizando el despliegue. De esta forma al visualizar el historial de modificaciones veremos las instrucciones que han provocado cada actualización.
+A continuación podemos "anotar" en el despliegue la causa del nuevo despliegue, de esta forma al visualizar el historial de modificaciones veremos las causas que han provocado cada actualización. Para ello:
+
+    kubectl annotate deployment/mediawiki kubernetes.io/change-cause="Primer despliegue. Desplegamos versión 1.31"
 
 Podemos comprobar los recursos que hemos creado:
 
@@ -65,12 +67,16 @@ A continuación queremos desplegar una versión más reciente de la mediawiki. P
 1. Modificando el fichero yaml y volviendo a ejecutar un `kubectl apply`.
 2. Ejecutando la siguiente instrucción:
 
-        kubectl set image deployment/mediawiki contenedor-mediawiki=mediawiki:1.34 --record
+        kubectl set image deployment/mediawiki contenedor-mediawiki=mediawiki:1.34
 
-Al ejecutar la actualización del Deployment podemos observar que se ha creado un nuevo ReplicaSet, que creará los nuevos Pods a partir de la versión modificada de la imagen. ¿Cómo se crean los nuevos Pods y se destruyen los antiguos? Dependerá de la estratégia de despliegue:
+Al ejecutar la actualización del Deployment podemos observar que se ha creado un nuevo ReplicaSet, que creará los nuevos Pods a partir de la versión modificada de la imagen. ¿Cómo se crean los nuevos Pods y se destruyen los antiguos? Dependerá de la estrategia de despliegue:
 
-  * Por defecto la estrategía de despliegue es `Recreate` que elimina los Pods antiguos y crea los nuevos.
+  * Por defecto la estrategia de despliegue es `Recreate` que elimina los Pods antiguos y crea los nuevos.
   * Si indicamos en el despliegue el tipo de estrategia  `RollingUpdate`, se van creando los nuevos Pods, se comprueba que funcionan y se eliminan los antiguos.
+
+A continuación anotamos porque se ha producido la actualización del despliegue:
+
+    kubectl annotate deployment/mediawiki kubernetes.io/change-cause="Segundo despliegue. Actualizamos a la versión 1.34"
 
 Veamos los recursos que se han creado en la actualización:
 
@@ -79,6 +85,14 @@ Veamos los recursos que se han creado en la actualización:
 Kubernetes utiliza el término *rollout* para la gestión de diferentes versiones de despliegues. Podemos ver el historial de actualizaciones que hemos hecho sobre el despliegue:
 
     kubectl rollout history deployment/mediawiki
+
+Y nos aparecen las anotaciones que hemos hecho de cada despliegue:
+
+    deployment.apps/mediawiki 
+    REVISION  CHANGE-CAUSE
+    1         Primer despliegue. Desplegamos versión 1.31
+    2         Segundo despliegue. Actualizamos a la versión 1.34
+
 
 Y volvemos a acceder a la aplicación con un `port-forward` para comprobar que realmente se ha desplegado la versión 1.34.
 
@@ -94,7 +108,22 @@ A ese proceso de volver a una versión anterior de la aplicación es lo que llam
 
 Ahora vamos a desplegar una versión que nos da un error (la versión 2 de la aplicación no existe, no existe la imagen `mediawiki:2`). ¿Podremos volver al despliegue anterior?
 
-    kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:2 --record
+    kubectl set image deployment mediawiki contenedor-mediawiki=mediawiki:2
+
+Y realizamos la anotación:
+
+    kubectl annotate deployment/mediawiki kubernetes.io/change-cause="Tercer despliegue. Actualizamos a la versión 2"
+
+Comprobamos el historial de despliegues:
+
+```
+kubectl rollout history deployment/mediawiki
+deployment.apps/mediawiki 
+REVISION  CHANGE-CAUSE
+1         Primer despliegue. Desplegamos versión 1.31
+2         Segundo despliegue. Actualizamos a la versión 1.34
+3         Tercer despliegue. Actualizamos a la versión 2
+```
 
 Dependiendo de la estrategia de despliegue, esto puede provocar que la aplicación se quede en la versión anterior (`RollingUpdate`) o que no haya ningún Pod válido desplegado (`Recreate`). En cualquier caso, se puede volver a la versión anterior del despliegue mediante rollout:
 
@@ -103,4 +132,11 @@ Dependiendo de la estrategia de despliegue, esto puede provocar que la aplicaci�
 
 Y terminamos comprobando el historial de actualizaciones:
 
-    kubectl rollout history deployment mediawiki
+```
+kubectl rollout history deployment mediawiki
+deployment.apps/mediawiki 
+REVISION  CHANGE-CAUSE
+1         Primer despliegue. Desplegamos versión 1.31
+3         Tercer despliegue. Actualizamos a la versión 2
+4         Segundo despliegue. Actualizamos a la versión 1.34
+```
