@@ -74,7 +74,7 @@ Al ejecutar la actualización del Deployment podemos observar que se ha creado u
   * Por defecto la estrategia de despliegue es `Recreate` que elimina los Pods antiguos y crea los nuevos.
   * Si indicamos en el despliegue el tipo de estrategia  `RollingUpdate`, se van creando los nuevos Pods, se comprueba que funcionan y se eliminan los antiguos.
 
-A continuación anotamos porque se ha producido la actualización del despliegue:
+A continuación indicamos el motivo del cambio del despliegue con una anotación:
 
     kubectl annotate deployment/mediawiki kubernetes.io/change-cause="Segundo despliegue. Actualizamos a la versión 1.34"
 
