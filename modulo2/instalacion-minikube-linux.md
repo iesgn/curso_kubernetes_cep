@@ -110,6 +110,7 @@ minikube stop
 ```
 
 ```
+minikube stop
 😄  minikube v1.23.0 en Debian 11.0
 ✨  Using the kvm2 driver based on existing profile
 👍  Starting control plane node minikube in cluster minikube
