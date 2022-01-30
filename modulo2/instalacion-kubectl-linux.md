@@ -71,7 +71,7 @@ versión, con la instrucción:
 
 ```
 kubectl version
-Client Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.2", GitCommit:"8b5a19147530eaac9476b0ab82980b4088bbc1b2", GitTreeState:"clean", BuildDate:"2021-09-15T21:38:50Z", GoVersion:"go1.16.8", Compiler:"gc", Platform:"linux/amd64"}
+Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.3", GitCommit:"816c97ab8cff8a1c72eccca1026f7820e93e0d25", GitTreeState:"clean", BuildDate:"2022-01-25T21:25:17Z", GoVersion:"go1.17.6", Compiler:"gc", Platform:"linux/amd64"}
 The connection to the server localhost:8080 was refused - did you specify the right host or port?
 ```
 
@@ -102,20 +102,20 @@ clusters:
     certificate-authority: /home/alberto/.minikube/ca.crt
     extensions:
     - extension:
-        last-update: Thu, 16 Sep 2021 12:24:31 CEST
+        last-update: Sun, 30 Jan 2022 20:45:08 CET
         provider: minikube.sigs.k8s.io
-        version: v1.23.0
+        version: v1.24.0
       name: cluster_info
-    server: https://192.168.39.221:8443
+    server: https://192.168.39.115:8443
   name: minikube
 contexts:
 - context:
     cluster: minikube
     extensions:
     - extension:
-        last-update: Thu, 16 Sep 2021 12:24:31 CEST
+        last-update: Sun, 30 Jan 2022 20:45:08 CET
         provider: minikube.sigs.k8s.io
-        version: v1.23.0
+        version: v1.24.0
       name: context_info
     namespace: default
     user: minikube
@@ -141,8 +141,8 @@ comando:
 ```
 kubectl version
 
-Client Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.2", GitCommit:"8b5a19147530eaac9476b0ab82980b4088bbc1b2", GitTreeState:"clean", BuildDate:"2021-09-15T21:38:50Z", GoVersion:"go1.16.8", Compiler:"gc", Platform:"linux/amd64"}
-Server Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.1", GitCommit:"632ed300f2c34f6d6d15ca4cef3d3c7073412212", GitTreeState:"clean", BuildDate:"2021-08-19T15:39:34Z", GoVersion:"go1.16.7", Compiler:"gc", Platform:"linux/amd64"}
+Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.3", GitCommit:"816c97ab8cff8a1c72eccca1026f7820e93e0d25", GitTreeState:"clean", BuildDate:"2022-01-25T21:25:17Z", GoVersion:"go1.17.6", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.3", GitCommit:"c92036820499fedefec0f847e2054d824aea6cd1", GitTreeState:"clean", BuildDate:"2021-10-27T18:35:25Z", GoVersion:"go1.16.9", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
 Comprobamos que ya aparece la versión del servidor y por
@@ -153,7 +153,7 @@ de `kubectl`:
 ```
 kubectl get nodes
 NAME       STATUS   ROLES                  AGE   VERSION
-minikube   Ready    control-plane,master   23h   v1.20.7
+minikube   Ready    control-plane,master   21m   v1.22.3
 ```
 
 Si queremos utilizar el autocompletado, podemos generarlo e

@@ -28,8 +28,8 @@ Comprobamos que se ha instalado correctamente con:
 
     minikube version
 
-	minikube version: v1.23.0
-	commit: 5931455374810b1bbeb222a9713ae2c756daee10
+    minikube version: v1.24.0
+	commit: 76b94fb3c4e8ac5062daf70d60cf03ddcc0a741b
 
 ## Creación del cluster de k8s
 
@@ -57,19 +57,11 @@ de k8s) para que utilice el cluster recién instalado. Podemos ver una
 salida típica de la instalación del cluster a continuación:
 
 ```
-😄  minikube v1.23.0 en Debian 11.0
+😄  minikube v1.24.0 en Debian 11.2
 ✨  Using the kvm2 driver based on user configuration
-💾  Descargando el controlador docker-machine-driver-kvm2:
-    > docker-machine-driver-kvm2....: 65 B / 65 B [----------] 100.00% ? p/s 0s
-    > docker-machine-driver-kvm2: 11.45 MiB / 11.45 MiB  100.00% 14.25 MiB p/s
-💿  Descargando la imagen de arranque de la VM
-    > minikube-v1.23.0.iso.sha256: 65 B / 65 B [-------------] 100.00% ? p/s 0s
-    > minikube-v1.23.0.iso: 243.03 MiB / 243.03 MiB [ 100.00% 10.56 MiB p/s 23s
 👍  Starting control plane node minikube in cluster minikube
-💾  Descargando Kubernetes v1.22.1 ...
-    > preloaded-images-k8s-v11-v1...: 492.20 MiB / 492.20 MiB  100.00% 11.25 Mi
 🔥  Creando kvm2 VM (CPUs=2, Memory=3900MB, Disk=20000MB) ...
-🐳  Preparando Kubernetes v1.22.1 en Docker 20.10.8...
+🐳  Preparando Kubernetes v1.22.3 en Docker 20.10.8...
     ▪ Generating certificates and keys ...
     ▪ Booting up control plane ...
     ▪ Configuring RBAC rules ...
@@ -110,12 +102,11 @@ minikube stop
 ```
 
 ```
-minikube stop
-😄  minikube v1.23.0 en Debian 11.0
+😄  minikube v1.24.0 en Debian 11.2
 ✨  Using the kvm2 driver based on existing profile
 👍  Starting control plane node minikube in cluster minikube
 🔄  Restarting existing kvm2 VM for "minikube" ...
-🐳  Preparando Kubernetes v1.22.1 en Docker 20.10.8...
+🐳  Preparando Kubernetes v1.22.3 en Docker 20.10.8...
 🔎  Verifying Kubernetes components...
     ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
 🌟  Complementos habilitados: storage-provisioner, default-storageclass
