@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-multicontenedor
+  name: pod_multicontenedor
 spec:
   volumes:
   - name: html
