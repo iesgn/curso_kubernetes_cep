@@ -94,7 +94,7 @@ El código de Kubernetes se gestiona a través de
 se puede ver la gran cantidad de código desarrollado en estos años
 (más de 100000 "commits") y las miles de personas que han participado
 en mayor o menor medida. La última versión de Kubernetes en el momento
-de escribir esta documenración es la 1.23 y el proyecto actualmente
+de escribir esta documentación es la 1.23 y el proyecto actualmente
 está publicando dos o tres versiones nuevas cada año.
 
 En cualquier caso la versión de Kubernetes no es algo esencial para
