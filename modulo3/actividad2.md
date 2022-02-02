@@ -68,7 +68,7 @@ Estudiemos la definición del Pod:
 
 ![pod_multicontenedor](img/pod_multicontenedor.png)
 
-* El Pod se llama `pod_multicontenedor` y en el apartado `spec` vemos
+* El Pod se llama `pod-multicontenedor` y en el apartado `spec` vemos
   que está formado por un volumen (llamado `html` y de tipo
   `emptyDir`, que estudiaremos más adelante, pero que básicamente es
   un directorio que vamos a montar en los contenedores) y dos
@@ -92,12 +92,12 @@ Para realizar la actividad realiza los siguientes pasos:
 2. Muestra la información del Pod, y fíjate que el Pod está formado por un volumen y dos contenedores.
 3. Muestra el contenido del fichero `index.html` en el primer contenedor, ejecutando:
 
-        kubectl exec pod_multicontenedor -c contenedor1 -- /bin/cat /usr/share/nginx/html/index.html
+        kubectl exec pod-multicontenedor -c contenedor1 -- /bin/cat /usr/share/nginx/html/index.html
 
     En esta ocasión hay que indicar el contenedor (opción `-c`) para indicar en que contenedor vamos a ejecutar la instrucción.
 4. Muestra el contenido del fichero `index.html` en el segundo contenedor, ejecutando:
 
-        kubectl exec pod_multicontenedor -c contenedor2 -- /bin/cat /html/index.html
+        kubectl exec pod-multicontenedor -c contenedor2 -- /bin/cat /html/index.html
 5. Ejecuta un "port forward" para acceder al Pod en el puerto 8081 de localhost, sabiendo que el servicio usa el puerto 80.
 6. Accede desde un navegador para ver el resultado. Refresca la página para observar cómo va cambiando el fichero `index.html`.
 
@@ -110,7 +110,7 @@ Para superar la actividad deberás entregar en un fichero comprimido el siguient
 ## RECURSOS
 
 * Conexión a Internet
-* El fichero con la definición del Pod: [`pod_multicontenedor.yaml`](files/pod_multicontenedor.yaml)
+* El fichero con la definición del Pod: [`pod-multicontenedor.yaml`](files/pod-multicontenedor.yaml)
 
 ## ¿ES OBLIGATORIO HACER ESTA ACTIVIDAD PARA SUPERAR EL CURSO? (S/N)
 
