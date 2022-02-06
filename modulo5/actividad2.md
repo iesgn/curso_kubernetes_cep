@@ -9,19 +9,19 @@ El equipo de desarrollo ha creado una primera versión preliminar de una aplicac
 Vamos a desplegar esta primera versión de la aplicación, para ello:
 
 1. Crea un fichero yaml (puedes usar el de la actividad anterior) para desplegar la imagen: `iesgn/test_web:version1`.
-2. Crea el Deployment, recuerda la opción que nos permite registrar los comandos que vamos a ejecutar a continuación para ir actualizando el despliegue.
+2. Crea el Deployment, recuerda realizar una anotación para indicar las características del despliegue.
 3. Crea una redirección utilizando el `port-forward` para acceder a la aplicación, sabiendo que la aplicación ofrece el servicio en el puerto 80, y accede a la aplicación con un navegador web.
 
 Nuestro equipo de desarrollo ha seguido trabajando y ya tiene lista la versión 2 de nuestra aplicación, han creado una imagen que se llama: `iesgn/test_web:version2`. Vamos a actualizar nuestro despliegue con la nueva versión, para ello:
 
-1. Realiza la actualización del despliegue utilizando la nueva imagen.
+1. Realiza la actualización del despliegue utilizando la nueva imagen (no olvides anotar la causa).
 2. Comprueba los recursos que se han creado: Deployment, ReplicaSet y Pods.
 3. Visualiza el historial de actualizaciones.
 4. Crea una redirección utilizando el `port-forward` para acceder a la aplicación, sabiendo que la aplicación ofrece el servicio en el puerto 80, y accede a la aplicación con un navegador web.
 
 Finalmente después de un trabajo muy duro, el equipo de desarrollo ha creado la imagen `iesgn/test_web:version3` con la última versión de nuestra aplicación y la vamos a poner en producción, para ello:
 
-1. Realiza la actualización del despliegue utilizando la nueva imagen.
+1. Realiza la actualización del despliegue utilizando la nueva imagen (no olvides anotar la causa).
 2. Comprueba los recursos que se han creado: Deployment, ReplicaSet y Pods.
 3. Visualiza el historial de actualizaciones.
 4. Crea una redirección utilizando el `port-forward` para acceder a la aplicación, sabiendo que la aplicación ofrece el servicio en el puerto 80, y accede a la aplicación con un navegador web.
