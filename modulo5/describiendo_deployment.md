@@ -46,3 +46,7 @@ Además, hemos introducido un nuevo parámetro al definir el contenedor del pod:
 ## Para seguir aprendiendo
 
 * Para más información acerca de los Deployment puedes leer: [la documentación de la API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#deployment-v1-apps) y la [guía de usuario](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=NBsc_fILt8g](https://www.youtube.com/watch?v=NBsc_fILt8g)

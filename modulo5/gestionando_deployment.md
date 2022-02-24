@@ -40,3 +40,7 @@ Si queremos obtener información detallada del recurso Deployment que hemos crea
 Si eliminamos el Deployment se eliminarán el ReplicaSet asociado y los Pods que se estaban gestionando.
 
     kubectl delete deployment deployment-nginx
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=dcKWO6gXhhs](https://www.youtube.com/watch?v=dcKWO6gXhhs)

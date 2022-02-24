@@ -134,9 +134,13 @@ Y terminamos comprobando el historial de actualizaciones:
 
 ```
 kubectl rollout history deployment mediawiki
-deployment.apps/mediawiki 
+deployment.apps/mediawiki
 REVISION  CHANGE-CAUSE
 1         Primer despliegue. Desplegamos versión 1.31
 3         Tercer despliegue. Actualizamos a la versión 2
 4         Segundo despliegue. Actualizamos a la versión 1.34
 ```
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=6LjTwopWDFw](https://www.youtube.com/watch?v=6LjTwopWDFw)
