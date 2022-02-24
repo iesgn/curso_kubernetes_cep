@@ -42,3 +42,7 @@ Veamos cada uno de los parámetros que hemos definido:
 
 * Para más información acerca de los Pod puedes leer: la [documentación de la API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#pod-v1-core) y la [guía de usuario](https://kubernetes.io/docs/concepts/workloads/pods/).
 * Para más información acerca de la estructura de la definición de los objetos de Kubernetes: [Understanding Kubernetes Objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/).
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=zMkXnENOBBc](https://www.youtube.com/watch?v=zMkXnENOBBc)

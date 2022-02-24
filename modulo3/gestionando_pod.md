@@ -97,3 +97,7 @@ columna:
 Y por último, eliminamos el Pod mediante:
 
     kubectl delete pod pod-nginx
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=OA0OheCtrXo](https://www.youtube.com/watch?v=OA0OheCtrXo)
