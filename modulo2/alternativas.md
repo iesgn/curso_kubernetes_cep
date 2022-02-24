@@ -106,3 +106,7 @@ más adecuado para comenzar y centrarnos directamente en el uso de
 Kubernetes, obviando inicialmente los detalles de la instalación de
 Kubernetes, que realmente es un proceso complejo y que no es lo más
 adecuado para empezar.
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=tdihL7Q-0IY](https://www.youtube.com/watch?v=tdihL7Q-0IY)
