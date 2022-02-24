@@ -61,3 +61,7 @@ datos con esa contraseña del root:
     Enter password:
     ...
     MariaDB [(none)]>
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=MazyA8LP8Oc](https://www.youtube.com/watch?v=MazyA8LP8Oc)

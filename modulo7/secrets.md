@@ -53,3 +53,7 @@ simplemente los codifica en base64. El cifrado de los Secrets requiere
 configuraciones adicionales que se detallan en [Encrypting Secret Data
 at
 Rest](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/)
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=lckojEFiUiw](https://www.youtube.com/watch?v=lckojEFiUiw)
