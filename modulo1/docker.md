@@ -88,3 +88,7 @@ que pueda utilizar docker o parte de él y que sea capaz de comunicar
 múltiples nodos para proporcionar de forma coordinada estas
 funcionalidades. Ese software se conoce de forma genérica como
 **orquestador de contenedores**.
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=UdPsknw30OE](https://www.youtube.com/watch?v=UdPsknw30OE)
