@@ -381,3 +381,7 @@ kubectl run mysql-client-loop --image=mysql:5.7 bash
 ```bash
 for i in `seq 1 10`; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; sleep 1; done"
 ```
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=aUH2x9WtJZM](https://www.youtube.com/watch?v=aUH2x9WtJZM)

@@ -202,3 +202,7 @@ for i in 0 1; do kubectl exec -i -t "web-$i" -- sh -c 'curl http://localhost/'; 
 web-0
 web-1
 ```
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=ULaNgtJ8NHQ](https://www.youtube.com/watch?v=ULaNgtJ8NHQ)
