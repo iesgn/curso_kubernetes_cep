@@ -143,3 +143,7 @@ kubectl delete persistentvolumeclaim/pvc-ejemplo2
 kubectl get pv,pvc
 No resources found
 ```
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=hxeizzHQsHw](https://www.youtube.com/watch?v=hxeizzHQsHw)

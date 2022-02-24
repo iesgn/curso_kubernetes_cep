@@ -205,3 +205,7 @@ Si queremos eliminar el objeto PersistentVolume, ejecutamos:
 ```bash
 kubectl delete persistentvolume/pv-ejemplo1
 ```
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=z3DOCCjRnSY](https://www.youtube.com/watch?v=z3DOCCjRnSY)

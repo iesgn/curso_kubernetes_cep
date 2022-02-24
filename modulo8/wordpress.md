@@ -131,3 +131,7 @@ kubectl apply -f wordpress-deployment.yaml
 Si volvemos acceder, comprobamos que la aplicación sigue funcionando con toda la información:
 
 ![wordpress](img/wp2.png)
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=fLMALdJ905E](https://www.youtube.com/watch?v=fLMALdJ905E)
