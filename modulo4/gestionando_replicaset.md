@@ -60,3 +60,7 @@ Por último, si borramos un ReplicaSet se borrarán todos los Pods asociados:
 Otra forma de borrar el recurso, es utilizar el fichero yaml:
 
     kubectl delete -f nginx-rs.yaml
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=MeCraOsxRPo](https://www.youtube.com/watch?v=MeCraOsxRPo)

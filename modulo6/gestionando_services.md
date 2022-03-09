@@ -95,3 +95,7 @@ Podemos comprobar que no se ha mapeado un puerto aleatorio para que accedamos us
 Por ejemplo para borrar el servicio `mariadb`, ejecutaríamos:
 
     kubectl delete service mariadb
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=UAaBzXG13XU](https://www.youtube.com/watch?v=UAaBzXG13XU)

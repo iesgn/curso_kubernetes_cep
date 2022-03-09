@@ -114,3 +114,7 @@ minikube start
 💡  kubectl not found. If you need it, try: 'minikube kubectl -- get pods -A'
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 ```
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=0l_NICnY7AI](https://www.youtube.com/watch?v=0l_NICnY7AI)

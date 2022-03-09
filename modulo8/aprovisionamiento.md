@@ -79,3 +79,7 @@ En este caso la configuración del objeto `storageclass` se definió con las sig
 
 * La política de reciclaje tiene el valor `Delete`.
 * Y el modo de asociación (`VOLUMEBINDINGMODE`) tiene el valor `Immediate`, es decir, cuando se cree el objeto PersistenVolumenClaim se asociará de forma dinámica un volumen (objeto PersistenVolumen) inmediatamente. Otro valor podría ser `WaitForFirstConsumer`, en ese caso la asociación se haría cuando se utilizará el volumen.
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=7D9R0_f60-Q](https://www.youtube.com/watch?v=7D9R0_f60-Q)

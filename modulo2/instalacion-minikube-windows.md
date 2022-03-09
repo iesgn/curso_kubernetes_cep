@@ -66,3 +66,7 @@ Cuando terminemos de trabajar con kubernetes podemos apagar la máquina virtual 
 Y en el momento que queramos seguir trabajando iniciaremos la máquina virtual ejecutando `minikubee start`:
 
 ![windows1](img/windows9.png)
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=dr1G_aOaBek](https://www.youtube.com/watch?v=dr1G_aOaBek)

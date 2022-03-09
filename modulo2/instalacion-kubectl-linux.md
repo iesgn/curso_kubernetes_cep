@@ -170,3 +170,7 @@ sesión):
 ```
 source ~/.bashrc
 ```
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=0p_JGucaSco](https://www.youtube.com/watch?v=0p_JGucaSco)

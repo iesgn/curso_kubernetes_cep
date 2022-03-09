@@ -18,6 +18,10 @@ Y ahora el repositorio `stable` corresponde a `charts.helm.sh/stable`:
 
 ```bash
 helm repo list
-NAME  	URL                          
+NAME  	URL
 stable	https://charts.helm.sh/stable
 ```
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=tRBCdOYOfnU](https://www.youtube.com/watch?v=tRBCdOYOfnU)

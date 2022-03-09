@@ -66,3 +66,7 @@ Para acceder a la aplicación vamos a crear un recurso Ingress que tenemos defin
 Una vez que comprobemos que todos los recursos están funcionando, podemos acceder a nuestra aplicación:
 
 ![wordpress](img/wordpress.png)
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=Iy6MaixXSrw](https://www.youtube.com/watch?v=Iy6MaixXSrw)

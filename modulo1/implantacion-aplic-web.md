@@ -2,14 +2,14 @@
 
 El protocolo http, o su extensión https, ha ido convirtiéndose poco a
 poco en el "superprotocolo" de Internet y ha ido desplazando
-paulatinamente el uso de otros protocolos. 
+paulatinamente el uso de otros protocolos.
 
 De igual forma, la mayor
 parte del software que se consume hoy en día se podría denominar de
 forma genérica como aplicación web, aunque hay diferencias
 importantes sobre la forma de presentarse, ya que no es lo mismo que una persona acceda a una aplicación a través de un navegador, a través
 de una aplicación móvil o que quien acceda a la aplicación sea una
-máquina. 
+máquina.
 
 En este curso no podemos entrar en detalle sobre las
 características de estas aplicaciones web, pero sí en las
@@ -245,3 +245,7 @@ claramente podemos ver es que la gestión de este tipo de aplicaciones
 se convierte pronto en algo muy complejo, por lo que necesitamos
 apoyarnos en algún software que controle y gestione de forma adecuada
 estos sistemas tan complejos.
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=vYB1hNXde0o](https://www.youtube.com/watch?v=vYB1hNXde0o)

@@ -48,3 +48,7 @@ Veamos la descripción:
 ## Para seguir aprendiendo
 
 Para más información acerca de los Services puedes leer: [la documentación de la API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#service-v1-core) y la [guía de usuario](https://kubernetes.io/docs/concepts/services-networking/service/).
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=kI2rZmqA7TI](https://www.youtube.com/watch?v=kI2rZmqA7TI)

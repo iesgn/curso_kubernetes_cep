@@ -131,3 +131,7 @@ release "serverweb" uninstalled
 ```
 
 Aunque no entra en el ámbito de este curso, hay que indicar que si nosotros desarrollamos una aplicación podemos empaquetarla para instalarla con Helm, creando nuestros propios charts. Para más información puedes entrar en la [documentación oficial](https://helm.sh/docs/chart_template_guide/#the-chart-template-developer-s-guide).
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=UlkXAFHvrkw](https://www.youtube.com/watch?v=UlkXAFHvrkw)

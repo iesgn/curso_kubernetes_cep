@@ -85,3 +85,7 @@ Como no tenemos un servidor DNS que nos permita gestionar los nombres que vamos 
 Y ya podemos acceder a la aplicación usando el nombre:
 
 ![ingress](img/ingress2.png)
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=X2dW9UbfU88](https://www.youtube.com/watch?v=X2dW9UbfU88)

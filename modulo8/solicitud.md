@@ -33,3 +33,7 @@ En esta solicitud el desarrollador indica los requisitos que necesita para su al
 * Y el tamaño que necesita en `resources`, `requests`, `storage`.
 
 Una vez que se crea este recurso, el cluster intentará asignar un volumen (ya sea de forma estática o dinámica) que cumpla con los requisitos indicados.
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=YV21W_hjo0Q](https://www.youtube.com/watch?v=YV21W_hjo0Q)

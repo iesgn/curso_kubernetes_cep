@@ -31,3 +31,7 @@ Algunos de los parámetros definidos ya lo hemos estudiado en la definición del
 ## Para seguir aprendiendo
 
 * Para más información acerca de los ReplicaSet puedes leer: la [documentación de la API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#replicaset-v1-apps) y la [guía de usuario](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/).
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=VL3J63JqV5o](https://www.youtube.com/watch?v=VL3J63JqV5o)

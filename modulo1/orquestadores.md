@@ -42,3 +42,7 @@ software de orquestación más simple, que se centre en la gestión del
 cluster de nodos y la ejecución de contenedores en ellos, pero sin
 proporcionar todo el resto de funcionalidad adicional, por lo que
 Nomad se utiliza junto a otro software cuando se pone en producción.
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=XYh8PSQY5gs](https://www.youtube.com/watch?v=XYh8PSQY5gs)

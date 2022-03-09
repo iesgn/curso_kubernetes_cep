@@ -76,3 +76,7 @@ contenedores, que suele ser una red de tipo
 [overlay](https://en.wikipedia.org/wiki/Overlay_network).
 
 <img src="https://github.com/iesgn/curso_kubernetes_cep/raw/main/modulo1/img/arquitectura.png" alt="arquitectura" />
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=mF-OGBbA57k](https://www.youtube.com/watch?v=mF-OGBbA57k)

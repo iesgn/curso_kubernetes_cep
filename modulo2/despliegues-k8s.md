@@ -52,3 +52,7 @@ funciones en la siguiente lista:
   * Balancean la carga entre los Pods disponibles
 * Ingress:
   * Gestionan el acceso desde el exterior a través de nombre
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=9bCXCemP4aY](https://www.youtube.com/watch?v=9bCXCemP4aY)

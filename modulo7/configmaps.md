@@ -88,3 +88,7 @@ ficheros yaml los valores específicos de las variables de entorno, y
 además, estos valores se pueden reutilizar para otros despliegues, por
 ejemplo, al desplegar un CMS indicar los mismos valores para las
 credenciales de acceso a la base de datos.
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=QVC9TsHpXvc](https://www.youtube.com/watch?v=QVC9TsHpXvc)

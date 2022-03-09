@@ -116,3 +116,7 @@ algunos de esos proyectos se estabilicen y otros desaparezcan, ya que
 en muchos casos solapan unos con otros.
 
 [https://landscape.cncf.io/](https://landscape.cncf.io/)
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=MtA74Hc4FAo](https://www.youtube.com/watch?v=MtA74Hc4FAo)

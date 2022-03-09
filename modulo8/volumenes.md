@@ -29,3 +29,7 @@ Al trabajar con volúmenes en Kubernetes se realizan dos funciones claramente di
     
     * Quiero 20 GiB de almacenamiento permanente que pueda compartir entre varios Pods de varios nodos en modo lectura.
     * Quiero 10 GiB de almacenamiento provisional para usar desde un Pod en modo lectura y escritura.
+
+## Vídeo
+
+[https://www.youtube.com/watch?v=g1Elyt_OuqA](https://www.youtube.com/watch?v=g1Elyt_OuqA)
