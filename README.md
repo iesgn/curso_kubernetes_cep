@@ -157,29 +157,32 @@ aproximadamente 5-6 horas por semana.
 | INICIO | 0.1. Guía del curso | 30' | 1ª |
 | INICIO | 0.2. Ayuda para conocer el Aula Virtual | 1 h | 1ª |
 | INICIO | 0.3. Nos presentamos (T) | 30' | 1ª |
-| MÓD 1 | 1.1. Introducción a kuberenetes |  | 1ª |
-| MÓD 2 | 2.1. Instalación de kubernetes |  | 2ª |
-| MÓD 2 | 2.2. Tarea. Instalación y configuración de minikube y kubectl |  | 2ª |
-| MÓD 3 | 3.1. Contenedores en Kubernetes: Pods  |  | 3ª |
-| MÓD 3 | 3.2. Tarea. Trabajando con Pods  |  | 3ª |
-| MÓD 3 | 3.3. Trabajando con un Pod multicontenedor (VOLUNTARIA)  |   | 3ª |
-| MÓD 4 | 4.1. Tolerancia y escalabilidad: ReplicaSets |  | 4ª |
-| MÓD 4 | 4.2. Tarea. Trabajando con ReplicaSet |  | 4ª |
-| MÓD 5 | 5.1. Despliegues: Deployments |  | 4ª |
-
-
-| MÓD 5 | 5.1: Trabajando con Deployments (T) | 1 h | 4ª |
-| MÓD 5 | 5.2: Actualización y desactualización de nuestra aplicación (T)  | 1 h | 4ª |
-| MÓD 5 | 5.3: Despliegue de la aplicación GuestBook (T)  | 1 h | 5ª |
-| MÓD 6 | 6.1: Acceso de la aplicación GuestBook (T) | 1 h | 5ª |
-| MÓD 6 | 6.2: Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA) | 1 h | 5ª |
-| MÓD 7 | 7.1: Configurando nuestra aplicación Temperaturas (T) | 1 h | 6ª |
-| MÓD 7 | 7.2: Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA) | 1 h | 6ª |
-| MÓD 8 | 8.1: Desplegando un servidor web persistente (T) | 1 h | 7ª |
-| MÓD 8 | 8.2: Haciendo persistente la aplicación GuestBook (T) | 1 h | 7ª |
-| MÓD 8 | 8.3: Haciendo persistente la aplicación Nextcloud (VOLUNTARIA) | 1 h | 7ª |
-| MÓD 9 | 9.1: Creando un cluster de MySQL (VOLUNTARIA) | 2 h | 8ª |
-| MÓD 10 | 10.1: Instalación de un CMS con Helm (T) | 1 h | 8ª |
+| MÓD 1 | 1.1. **Teoría**. Introducción a kubernetes |  | 1ª |
+| MÓD 2 | 2.1. **Teoría**. Instalación de kubernetes |  | 2ª |
+| MÓD 2 | 2.2. **Tarea**. Instalación y configuración de minikube y kubectl |  | 2ª |
+| MÓD 3 | 3.1. **Teoría**. Contenedores en Kubernetes: Pods  |  | 3ª |
+| MÓD 3 | 3.2. **Tarea**. Trabajando con Pods  |  | 3ª |
+| MÓD 3 | 3.3. **Tarea**. Trabajando con un Pod multicontenedor (VOLUNTARIA)  | --- | 3ª |
+| MÓD 4 | 4.1. **Teoría**. Tolerancia y escalabilidad: ReplicaSets |  | 4ª |
+| MÓD 4 | 4.2. **Tarea**. Trabajando con ReplicaSet |  | 4ª |
+| MÓD 5 | 5.1. **Teoría**. Despliegues: Deployments |  | 4ª |
+| MÓD 5 | 5.2. **Tarea**. Trabajando con Deployments (T) | 1 h | 4ª |
+| MÓD 5 | 5.3. **Tarea**. Actualización y desactualización de nuestra aplicación  |  | 4ª |
+| MÓD 5 | 5.4. **Tarea**. Despliegue de la aplicación GuestBook   |  | 5ª |
+| MÓD 6 | 6.1. **Teoría**. Acceso a las aplicaciones: Services  |  | 5ª |
+| MÓD 6 | 6.2. **Tarea**. Acceso de la aplicación GuestBook  |  | 5ª |
+| MÓD 6 | 6.3. **Tarea**. Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA) | --- | 5ª |
+| MÓD 7 | 7.1. **Teoría**. Despliegues parametrizados | h | 6ª |
+| MÓD 7 | 7.2. **Tarea**. Configurando nuestra aplicación Temperaturas | 1 h | 6ª |
+| MÓD 7 | 7.3. **Tarea**. Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA) | --- | 6ª |
+| MÓD 8 | 8.1. **Teoría**. Almacenamiento en Kubernetes | 1 h | 7ª |
+| MÓD 8 | 8.2. **Tarea**. Desplegando un servidor web persistente |  | 7ª |
+| MÓD 8 | 8.3. **Tarea**. Haciendo persistente la aplicación GuestBook |  | 7ª |
+| MÓD 8 | 8.4. **Tarea**. Haciendo persistente la aplicación Nextcloud (VOLUNTARIA) | --- | 7ª |
+| MÓD 9 | 9.1. **Teoría**. Otras cargas de trabajo  |  | 8ª |
+| MÓD 9 | 9.2. **Tarea**. Creando un cluster de MySQL (VOLUNTARIA) | --- | 8ª |
+| MÓD 10 | 10.1. **Teoría**. Despliegue de aplicaciones con Helm  |  | 8ª |
+| MÓD 10 | 10.2. **Tarea**. Instalación de un CMS con Helm |  | 8ª |
 
 El RESTO DE LAS HORAS HASTA LAS 45 HORAS DEL CURSO DEBEN DEDICARSE A
 LA LECTURA DE LOS MATERIALES Y AL VISIONADO DE LOS VIDEOTUTORIALES
