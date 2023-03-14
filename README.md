@@ -166,16 +166,16 @@ aproximadamente 5-6 horas por semana.
 | MÓD 4 | 4.1. **Teoría**. Tolerancia y escalabilidad: ReplicaSets |  | 4ª |
 | MÓD 4 | 4.2. **Tarea**. Trabajando con ReplicaSet |  | 4ª |
 | MÓD 5 | 5.1. **Teoría**. Despliegues: Deployments |  | 4ª |
-| MÓD 5 | 5.2. **Tarea**. Trabajando con Deployments (T) | 1 h | 4ª |
+| MÓD 5 | 5.2. **Tarea**. Trabajando con Deployments (T) | | 4ª |
 | MÓD 5 | 5.3. **Tarea**. Actualización y desactualización de nuestra aplicación  |  | 4ª |
 | MÓD 5 | 5.4. **Tarea**. Despliegue de la aplicación GuestBook   |  | 5ª |
 | MÓD 6 | 6.1. **Teoría**. Acceso a las aplicaciones: Services  |  | 5ª |
 | MÓD 6 | 6.2. **Tarea**. Acceso de la aplicación GuestBook  |  | 5ª |
 | MÓD 6 | 6.3. **Tarea**. Despliegue y acceso de la Aplicación Lets-Chat (VOLUNTARIA) | --- | 5ª |
-| MÓD 7 | 7.1. **Teoría**. Despliegues parametrizados | h | 6ª |
-| MÓD 7 | 7.2. **Tarea**. Configurando nuestra aplicación Temperaturas | 1 h | 6ª |
+| MÓD 7 | 7.1. **Teoría**. Despliegues parametrizados | | 6ª |
+| MÓD 7 | 7.2. **Tarea**. Configurando nuestra aplicación Temperaturas | | 6ª |
 | MÓD 7 | 7.3. **Tarea**. Despliegue y acceso de la aplicación Nextcloud (VOLUNTARIA) | --- | 6ª |
-| MÓD 8 | 8.1. **Teoría**. Almacenamiento en Kubernetes | 1 h | 7ª |
+| MÓD 8 | 8.1. **Teoría**. Almacenamiento en Kubernetes | | 7ª |
 | MÓD 8 | 8.2. **Tarea**. Desplegando un servidor web persistente |  | 7ª |
 | MÓD 8 | 8.3. **Tarea**. Haciendo persistente la aplicación GuestBook |  | 7ª |
 | MÓD 8 | 8.4. **Tarea**. Haciendo persistente la aplicación Nextcloud (VOLUNTARIA) | --- | 7ª |
