@@ -166,7 +166,7 @@ aproximadamente 5-6 horas por semana.
 | MÓD 4 | 4.1. **Teoría**. Tolerancia y escalabilidad: ReplicaSets |  | 4ª |
 | MÓD 4 | 4.2. **Tarea**. Trabajando con ReplicaSet |  | 4ª |
 | MÓD 5 | 5.1. **Teoría**. Despliegues: Deployments |  | 4ª |
-| MÓD 5 | 5.2. **Tarea**. Trabajando con Deployments (T) | | 4ª |
+| MÓD 5 | 5.2. **Tarea**. Trabajando con Deployments | | 4ª |
 | MÓD 5 | 5.3. **Tarea**. Actualización y desactualización de nuestra aplicación  |  | 4ª |
 | MÓD 5 | 5.4. **Tarea**. Despliegue de la aplicación GuestBook   |  | 5ª |
 | MÓD 6 | 6.1. **Teoría**. Acceso a las aplicaciones: Services  |  | 5ª |
