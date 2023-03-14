@@ -157,11 +157,17 @@ aproximadamente 5-6 horas por semana.
 | INICIO | 0.1. Guía del curso | 30' | 1ª |
 | INICIO | 0.2. Ayuda para conocer el Aula Virtual | 1 h | 1ª |
 | INICIO | 0.3. Nos presentamos (T) | 30' | 1ª |
-| MÓD 2 | 2.1: Instalación de minikube (T) | 1 h | 2ª |
-| MÓD 2 | 2.2: Instalación de kubectl (T) | 30' | 2ª |
-| MÓD 3 | 3.1: Trabajando con Pods (T) | 1 h | 3ª |
-| MÓD 3 | 3.2: Trabajando con un Pod multicontenedor (VOLUNTARIA)  | 1 h | 3ª |
-| MÓD 4 | 4.1: Trabajando con ReplicaSet (T) | 1 h | 4ª |
+| MÓD 1 | 1.1. Introducción a kuberenetes |  | 1ª |
+| MÓD 2 | 2.1. Instalación de kubernetes |  | 2ª |
+| MÓD 2 | 2.2. Tarea. Instalación y configuración de minikube y kubectl |  | 2ª |
+| MÓD 3 | 3.1. Contenedores en Kubernetes: Pods  |  | 3ª |
+| MÓD 3 | 3.2. Tarea. Trabajando con Pods  |  | 3ª |
+| MÓD 3 | 3.3. Trabajando con un Pod multicontenedor (VOLUNTARIA)  |   | 3ª |
+| MÓD 4 | 4.1. Tolerancia y escalabilidad: ReplicaSets |  | 4ª |
+| MÓD 4 | 4.2. Tarea. Trabajando con ReplicaSet |  | 4ª |
+| MÓD 5 | 5.1. Despliegues: Deployments |  | 4ª |
+
+
 | MÓD 5 | 5.1: Trabajando con Deployments (T) | 1 h | 4ª |
 | MÓD 5 | 5.2: Actualización y desactualización de nuestra aplicación (T)  | 1 h | 4ª |
 | MÓD 5 | 5.3: Despliegue de la aplicación GuestBook (T)  | 1 h | 5ª |
