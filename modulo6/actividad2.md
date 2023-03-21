@@ -8,7 +8,7 @@
 
 Vamos a realiza el despliegue y acceso a esta aplicación teniendo en cuenta los siguientes aspectos:
 
-* La imagen docker que vamos a usar para el despliegue de Let's Chat es `sdelements/lets-chat` y para desplegar mongoDB utilizaremos la imagen `mongo`.
+* La imagen docker que vamos a usar para el despliegue de Let's Chat es `sdelements/lets-chat` y para desplegar mongoDB utilizaremos la imagen `mongo:4`.
 * Al crear el despliegue de Let's Chat podemos poner varias replicas, pero el despliegue de la base de datos, sólo creará una replica.
 * El puerto en el que responde la aplicación es el 8080. La base de datos utiliza el puerto 27017.
 * Vamos acceder desde el exterior a la aplicación. Sin embargo, no es necesario acceder desde el exterior a la base de datos.
