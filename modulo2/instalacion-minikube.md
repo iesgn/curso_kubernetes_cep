@@ -27,5 +27,4 @@ curso:
 
 * Linux + KVM
 * Linux + VirtualBox
-* Windows + HyperV
 * Windows + VirtualBox

@@ -70,9 +70,12 @@ Una vez instalado `kubectl` podemos comprobar que está disponible y cuál es su
 versión, con la instrucción:
 
 ```
-kubectl version
-Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.3", GitCommit:"816c97ab8cff8a1c72eccca1026f7820e93e0d25", GitTreeState:"clean", BuildDate:"2022-01-25T21:25:17Z", GoVersion:"go1.17.6", Compiler:"gc", Platform:"linux/amd64"}
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+kubectl version --short
+...
+Client Version: v1.26.3
+Kustomize Version: v4.5.7
+Server Version: v1.26.1
+
 ```
 
 En el caso anterior, estamos utilizando la versión 1.22.2 y nos
