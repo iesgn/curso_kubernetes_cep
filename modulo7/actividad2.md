@@ -21,11 +21,14 @@ Basándonos en el [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](
 
 * Al igual que en el ejemplo utiliza un recurso ConfigMap para guardar los valores de configuración no sensibles, y un recurso Secret para los datos sensibles.
     * Podemos crear un ConfigMap llamado `bd-datos`:
+
     |Clave|Valor|
     |---|---|
     |`bd_user`|Guardamos el nombre de usuario de la base de datos|
     |`bd_name`|Guardamos el nombre de la base de datos|
+    
     * Podemos crear un Secret llamado `bd-passwords`:
+    
     |Clave|Valor|
     |---|---|
     |`bd_password`|Guardamos la contraseña del usuario de la base de datos|
