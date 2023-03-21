@@ -8,6 +8,17 @@ Basándonos en el [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](
 
 * El despliegue de la base de datos se haría de la misma forma que encontramos en el ejemplo de Wordpress, pero para esta actividad vamos a usar la imagen `mariadb:10.5`.
 * Según la documentación de [NextCloud en DockerHub](https://hub.docker.com/_/nextcloud) las variables de entorno que tienes que modificar serían: `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD` y `MYSQL_HOST`.
+    * Las variables seerían las siguientes:
+
+    | Nextcloud | mariadb  | |
+    |---|---|---|
+    | MYSQL_DATABASE | MYSQL_DATABASE | Nombre de la BD |
+    | MYSQL_USER | MYSQL_USER | Nombre del usuario de la BD|
+    | MYSQL_PASSWORD | MYSQL_PASSWORD | Contraseña de usuario |
+    | MYSQL_HOST | | Nombre del servicio mariadb |
+    | | MYSQL_ROOT_PASSWORD |Contraseña del root de mariadb|
+
+
 * Al igual que en el ejemplo utiliza un recurso ConfigMap para guardar los valores de configuración no sensibles, y un recurso Secret para los datos sensibles.
 * Utiliza los ficheros yaml del ejemplo haciendo las modificaciones oportunas.
 
