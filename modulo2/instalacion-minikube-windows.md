@@ -1,41 +1,71 @@
-# Instalación de minikube en Windows + Hyper-V
+# Instalación de minikube en Windows + VirtualBox
 
-En este apartado vamos a instalar minikube utilizando como sistema de virtualización Hyper-V. Lo primero que tenemos que indicar es que la instalación en Windows no se puede realizar en las versiones *Home* del sistema operativo. Por lo tanto en este ejemplo voy a utiliza un Windows 10 Profesional.
+En este apartado vamos a instalar minikube utilizando como sistema de virtualización VirtualBox. 
 
-Otro aspecto a tener en cuenta es que Hyper-V y VirtualBox son incompatibles en la misma máquina. Si utilizas habitualmente VirtualBox, utilizalo junto a minikube para crear el cluster de kubernetes. Si optas por el uso de Hyper-V debes desinstalar el VirtualBox.
+**Paso 1: Instalación de VirtualBox**
 
-**Paso 1: Instalación de Hyper-V**
+Siga las instrucciones que encontrarás en la página oficial: [https://www.virtualbox.org/](https://www.virtualbox.org/).
 
-Para ello vamos a entrar en PowerShell como administrador:
+**Paso 2: Descargamos minikube y lo instalamos**
 
-![windows1](img/windows1.png)
-
-Y ejecutamos la instrucción:
+Abrimos la PowerShell, como administrador, y ejecutamos :
 
 ```
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
+Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' –UseBasicParsing
 ```
 
-![windows1](img/windows2.png)
+Esta instrucción va a crear un directorio en c:/minikube y ahí va a depositar el ejecutable `minikube.exe` (70MB).
 
-Una vez instalado, nos pedirá que reiniciamos el sistema para terminar la instalación. Una vez reiniciado el sistema, podemos comprobar que ya tenemos el Administrador de Hyper-V instalado:
+Puedes seguir cualquier otro método de descargas que encontraras en la página oficial: [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/).
 
-![windows1](img/windows3.png)
+A continuación, vamos añadir el binario minikube.exe al PATH:
 
-**Paso 2: Descargamos minikube**
+```
+$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
+  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine) `
+}
+```
 
-Accedemos a [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
-y seleccionamos el método que prefiramos para instalar, eligiendo nuestro sistema operativo, arquitectura, etc.
+**IMPORTANTE: Debemos cerrar la sesión, para que se cargue las variables de entorno.**
 
-![windows1](img/windows4.png)
-
-Nos descargamos el fichero ejecutable `minikube-installer.exe` y lo ejecutamos para realizar la instalación:
-
-![windows1](img/windows5.png)
+Podemos ver el valor del path: `dir env :path|fl`
 
 **Paso 3: Creación del cluster de kubernetes con minikube**
 
-En este apartado vamos a crear un cluster de kubernetes de un nodo. En este caso minikube creará una máquina virtual (de 2Gb de RAM, 2 vcpu y 20G de almacenamiento) en Hyper-V utilizando una imagen que configura la máquina con kubernetes. Para empezar volvemos a cceder a la PowerShell como administrador y ejecutamos la instrucción:
+En este apartado vamos a crear un cluster de kubernetes de un nodo. En este caso minikube creará una máquina virtual (de 2Gb de RAM, 2 vcpu y 20G de almacenamiento) en VirtualBox utilizando una imagen que configura la máquina con kubernetes. 
+
+Cerramos el terminal PowerShell y la volvemos abrir como administrador.
+
+Averiguamos la versión de minikube :
+
+![windows1](img/newwin1.png)
+
+Ejecutamos `minikube start` para que construya el clúster:
+
+![windows1](img/newwin2.png)
+
+No hace falta indicar el driver, pero si tenemos algún problema podemos ejecutar `minikube start - -driver=virtualbox`. Lo debe coger automáticamente. No es necesario, tener abierto VirtualBox.
+
+Comprobamos el estado de minikube:
+
+![windows1](img/newwin3.png)
+
+Podemos averiguar la IP asignada a la máquina donde se ha instalado el clúster ejecutando `minikube ip` (nos hará falta más adelante)(seguramente tu tendrás una ip diferente a la mostrada):
+
+![windows1](img/newwin4.png)
+
+Cuando terminemos de trabajar con kubernetes es conveniente para la máquina, para ello: `minikube stop`. Y si por cualquier motivo necesitamos eliminar la máquina, ejecutaremos `minikube delete`.
+
+
+
+
+
+
+
+
+
 
 ```
 minikube start

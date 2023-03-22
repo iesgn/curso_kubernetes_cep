@@ -75,6 +75,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Alternativas para instalación simple de k8s](modulo2/alternativas.md)
     * [Introducción a la instalación de minikube](modulo2/instalacion-minikube.md)
     * [Instalación de minikube en linux + KVM](modulo2/instalacion-minikube-linux.md)
+    * [Instalación de minikube en Windows + VirtualBox](modulo2/instalacion-minikube-linux.md)
     * [Instalación y configuración de kubectl en linux](modulo2/instalacion-kubectl-linux.md)
     * [Instalación y configuración de kubectl en windows](modulo2/instalacion-kubectl-windows.md)
     * [Despliegues de aplicaciones en Kubernetes](modulo2/despliegues-k8s.md)
