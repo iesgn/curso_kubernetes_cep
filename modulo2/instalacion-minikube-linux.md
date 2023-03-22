@@ -1,4 +1,4 @@
-## Instalación de minikube en linux con KVM/VirtaulBox
+## Instalación de minikube en linux con KVM/VirtualBox
 
 Accedemos a
 [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
