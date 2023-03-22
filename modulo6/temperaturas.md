@@ -70,3 +70,7 @@ Creamos el recurso Ingress:
 Y accedemos a la aplicación usando el nombre:
 
 ![temperaturas](img/temperaturas3.png)
+
+## Esquema
+
+![temperaturas](img/Modulo6.-Temperaturas.drawio.png)
