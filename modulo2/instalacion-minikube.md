@@ -28,3 +28,6 @@ curso:
 * Linux + KVM
 * Linux + VirtualBox
 * Windows + VirtualBox
+
+**Nota: Recomendamos la instalación de Kubernetes en un sistema Linux (Debian o Ubuntu), bien con KVM o con VirtualBox.
+Sabemos por experiencia, que da menos problemas que en un sistema Windows.**
