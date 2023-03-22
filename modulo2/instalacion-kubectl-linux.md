@@ -3,7 +3,7 @@
 **kubectl** es la herramienta de línea de comandos utilizada para
 interactuar con la API de Kubernetes. Es por tanto la herramienta
 fundamental que vamos a utilizar durante todo el curso para gestionar
-nuestros objetos en el cluster recién creado con minikube.
+nuestros objetos en el clúster recién creado con minikube.
 
 kubectl está escrito en Go y de nuevo su instalación es muy simple, ya
 que se trata de un binario enlazado estáticamente y sin
@@ -79,10 +79,10 @@ Server Version: v1.26.1
 ```
 
 En el caso anterior, estamos utilizando la versión 1.22.2 y nos
-informa de que no ha podido conectarse al cluster de Kubernetes con la
+informa de que no ha podido conectarse al clúster de Kubernetes con la
 configuración por defecto (`localhost:8080`). Es decir, aunque
 tengamos kubectl y minikube instalados, el primero no está configurado
-todavía para conectarse al cluster de k8s que ejecuta minikube.
+todavía para conectarse al clúster de k8s que ejecuta minikube.
 
 La solución más sencilla es parar minikube y volverlo a arrancar,
 porque de esta manera minikube configurará automáticamente
@@ -94,7 +94,7 @@ no teníamos instalado `kubectl`, aparecía la línea:
 ```
 
 Pero si lo volvemos a repetir ahora, esa línea no aparecerá y se
-configurará `kubectl` para poder usar el cluster que proporciona
+configurará `kubectl` para poder usar el clúster que proporciona
 minikube. Lo que va a hacer minikube es configurar el fichero
 `~/.kube/config` de la siguiente manera:
 
@@ -133,7 +133,7 @@ users:
     client-key: /home/alberto/.minikube/profiles/minikube/client.key
 ```
 
-Donde en cada caso variará la dirección IP del servidor del cluster
+Donde en cada caso variará la dirección IP del servidor del clúster
 (en este caso la 192.168.39.221) y la ubicación de los ficheros de los
 certificados y claves x509 (en este caso en el directorio
 `/home/alberto`).
@@ -149,7 +149,7 @@ Server Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.3", GitCom
 ```
 
 Comprobamos que ya aparece la versión del servidor y por
-tanto se ha podido conectar con el cluster que gestiona
+tanto se ha podido conectar con el clúster que gestiona
 minikube. Además podemos ejecutar nuestro primer comando propiamente
 de `kubectl`:
 
