@@ -1,4 +1,4 @@
-## Instalación de minikube en linux con KVM
+## Instalación de minikube en linux con KVM/VirtaulBox
 
 Accedemos a
 [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
@@ -31,7 +31,7 @@ Comprobamos que se ha instalado correctamente con:
     minikube version: v1.29.0
     commit: ddac20b4b34a9c8c857fc602203b6ba2679794d3
 
-## Creación del cluster de k8s
+## Creación del clúster de k8s
 
 El siguiente paso consiste en lanzar minikube para que cree el cluster
 de Kubernetes de un solo nodo (master+worker). Minikube puede crear
@@ -40,7 +40,7 @@ recomendable es visitar la página de
 ["drivers"](https://minikube.sigs.k8s.io/docs/drivers/) y seleccionar
 el método más adecuado para nuestro sistema.
 
-De forma general, se creará el cluster de Kubernetes a través de
+De forma general, se creará el clúster de Kubernetes a través de
 minikube, mediante la instrucción:
 
     minikube start
@@ -57,11 +57,11 @@ de k8s) para que utilice el cluster recién instalado. Podemos ver una
 salida típica de la instalación del cluster a continuación:
 
 ```
-😄  minikube v1.29.0 en Debian 11.2
+😄  minikube v1.29.0 en Debian 11.6
 ✨  Using the kvm2 driver based on user configuration
 👍  Starting control plane node minikube in cluster minikube
 🔥  Creando kvm2 VM (CPUs=2, Memory=3900MB, Disk=20000MB) ...
-🐳  Preparando Kubernetes v1.22.3 en Docker 20.10.8...
+🐳  Preparando Kubernetes v1.25.3 en Docker 20.10.8...
     ▪ Generating certificates and keys ...
     ▪ Booting up control plane ...
     ▪ Configuring RBAC rules ...
@@ -92,7 +92,7 @@ kubeconfig: Configured
 ## Parada y reinicio de minikube
 
 Podemos parar y volver a arrancar minikube cuando sea preciso, ya que
-no se trata de un cluster de k8s en producción, sino de uno instalado
+no se trata de un clúster de k8s en producción, sino de uno instalado
 en un equipo convencional. Esto se realiza mediante las instrucciones:
 
 ```
@@ -103,16 +103,8 @@ minikube stop
 
 ```
 minikube start
-😄  minikube v1.29.0 en Debian 11.2
-✨  Using the kvm2 driver based on existing profile
-👍  Starting control plane node minikube in cluster minikube
-🔄  Restarting existing kvm2 VM for "minikube" ...
-🐳  Preparando Kubernetes v1.22.3 en Docker 20.10.8...
-🔎  Verifying Kubernetes components...
-    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
-🌟  Complementos habilitados: storage-provisioner, default-storageclass
-💡  kubectl not found. If you need it, try: 'minikube kubectl -- get pods -A'
-🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+😄  minikube v1.29.0 en Debian 11.6
+...
 ```
 
 ## Instalación de minikube sobre VirtualBox
