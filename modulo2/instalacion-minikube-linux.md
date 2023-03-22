@@ -115,6 +115,12 @@ minikube start
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 ```
 
+## Instalación de minikube sobre VirtualBox
+
+La instalación es similar a la que hemos explicado en este apartado, simplemente cambiaremos el driver a la hora de crear la máquina de minikube:
+
+    minikube start --driver=virtualbox
+
 ## Vídeo
 
 [https://www.youtube.com/watch?v=0l_NICnY7AI](https://www.youtube.com/watch?v=0l_NICnY7AI)
