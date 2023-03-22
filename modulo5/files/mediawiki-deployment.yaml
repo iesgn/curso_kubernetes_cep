@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: contenedor-mediawiki
-        image: mediawiki:1.31
+        image: mediawiki:1.38.5
         ports:
         - containerPort: 80

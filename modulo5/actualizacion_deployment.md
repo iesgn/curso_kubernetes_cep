@@ -38,23 +38,23 @@ spec:
     spec:
       containers:
       - name: contenedor-mediawiki
-        image: mediawiki:1.31
+        image: mediawiki:1.38.5
         ports:
         - containerPort: 80
 ```
-Si nos fijamos vamos a desplegar la versión 1.31 de la aplicación mediawiki. Creamos el despliegue con la siguiente instrucción:
+Si nos fijamos vamos a desplegar la versión 1.38.5 de la aplicación mediawiki. Creamos el despliegue con la siguiente instrucción:
 
     kubectl apply -f mediawiki-deployment.yaml
 
 A continuación podemos "anotar" en el despliegue la causa del nuevo despliegue, de esta forma al visualizar el historial de modificaciones veremos las causas que han provocado cada actualización. Para ello:
 
-    kubectl annotate deployment/mediawiki kubernetes.io/change-cause="Primer despliegue. Desplegamos versión 1.31"
+    kubectl annotate deployment/mediawiki kubernetes.io/change-cause="Primer despliegue. Desplegamos versión 1.38.5"
 
 Podemos comprobar los recursos que hemos creado:
 
     kubectl get all
 
-Y si accedemos al Pod con un `port-forward` comprobamos que la versión actual de la mediawiki es la 1.31:
+Y si accedemos al Pod con un `port-forward` comprobamos que la versión actual de la mediawiki es la 1.38.5:
 
     kubectl port-forward deployment/mediawiki 8080:80
 
@@ -67,7 +67,7 @@ A continuación queremos desplegar una versión más reciente de la mediawiki. P
 1. Modificando el fichero yaml y volviendo a ejecutar un `kubectl apply`.
 2. Ejecutando la siguiente instrucción:
 
-        kubectl set image deployment/mediawiki contenedor-mediawiki=mediawiki:1.34
+        kubectl set image deployment/mediawiki contenedor-mediawiki=mediawiki:1.39.1
 
 Al ejecutar la actualización del Deployment podemos observar que se ha creado un nuevo ReplicaSet, que creará los nuevos Pods a partir de la versión modificada de la imagen. ¿Cómo se crean los nuevos Pods y se destruyen los antiguos? Dependerá de la estrategia de despliegue:
 
@@ -76,7 +76,7 @@ Al ejecutar la actualización del Deployment podemos observar que se ha creado u
 
 A continuación indicamos el motivo del cambio del despliegue con una anotación:
 
-    kubectl annotate deployment/mediawiki kubernetes.io/change-cause="Segundo despliegue. Actualizamos a la versión 1.34"
+    kubectl annotate deployment/mediawiki kubernetes.io/change-cause="Segundo despliegue. Actualizamos a la versión 1.39.1"
 
 Veamos los recursos que se han creado en la actualización:
 
@@ -90,11 +90,11 @@ Y nos aparecen las anotaciones que hemos hecho de cada despliegue:
 
     deployment.apps/mediawiki 
     REVISION  CHANGE-CAUSE
-    1         Primer despliegue. Desplegamos versión 1.31
-    2         Segundo despliegue. Actualizamos a la versión 1.34
+    1         Primer despliegue. Desplegamos versión 1.38.5
+    2         Segundo despliegue. Actualizamos a la versión 1.39.1
 
 
-Y volvemos a acceder a la aplicación con un `port-forward` para comprobar que realmente se ha desplegado la versión 1.34.
+Y volvemos a acceder a la aplicación con un `port-forward` para comprobar que realmente se ha desplegado la versión 1.39.1.
 
 ![mediawiki](img/mediawiki2.png)
 
@@ -120,8 +120,8 @@ Comprobamos el historial de despliegues:
 kubectl rollout history deployment/mediawiki
 deployment.apps/mediawiki 
 REVISION  CHANGE-CAUSE
-1         Primer despliegue. Desplegamos versión 1.31
-2         Segundo despliegue. Actualizamos a la versión 1.34
+1         Primer despliegue. Desplegamos versión 1.38.5
+2         Segundo despliegue. Actualizamos a la versión 1.39.1
 3         Tercer despliegue. Actualizamos a la versión 2
 ```
 
@@ -136,9 +136,9 @@ Y terminamos comprobando el historial de actualizaciones:
 kubectl rollout history deployment mediawiki
 deployment.apps/mediawiki
 REVISION  CHANGE-CAUSE
-1         Primer despliegue. Desplegamos versión 1.31
+1         Primer despliegue. Desplegamos versión 1.38.5
 3         Tercer despliegue. Actualizamos a la versión 2
-4         Segundo despliegue. Actualizamos a la versión 1.34
+4         Segundo despliegue. Actualizamos a la versión 1.39.1
 ```
 
 ## Vídeo
