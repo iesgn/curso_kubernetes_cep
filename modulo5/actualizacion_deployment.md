@@ -143,7 +143,7 @@ REVISION  CHANGE-CAUSE
 
 ## Nota
 
-El contenido de esta unidad difiere un poco con lo mostrado en el siguiente vídeo. Actualmente si prefiere el uso de anotaciones para ir guardando en el Deployment las causas que han producido la actualización del despliegue. Aunque lo mostrado en el vídeo sigue funcionando, es recomendable hacer el proceso de actualización del despliegue usando anotaciones.
+El contenido de esta unidad difiere un poco con lo mostrado en el siguiente vídeo. Actualmente se prefiere el uso de anotaciones para ir guardando en el Deployment las causas que han producido la actualización del despliegue. Aunque lo mostrado en el vídeo sigue funcionando, es recomendable hacer el proceso de actualización del despliegue usando anotaciones.
 
 ## Vídeo
 
