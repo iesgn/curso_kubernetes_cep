@@ -6,12 +6,12 @@ Podemos encontrar la información donde nos explican la instalación de `kubectl
 curl.exe -LO https://storage.googleapis.com/kubernetes-release/release/v1.26.0/bin/windows/amd64/kubectl.exe
 ```
 
-Una vez instalado, desde una PowerShell sin acceso como administrador, podemos empezar a usar `kubectl` y comprobar si podemos acceder al cluster.
+Una vez instalado, desde una PowerShell sin acceso como administrador, podemos empezar a usar `kubectl` y comprobar si podemos acceder al clúster.
 
 Podemos comprobar la versión de `kubectl`:
 
 ![windows1](img/windows11.png)
 
-Y ejecutar nuestro primer comando para obtener los nodos del cluster:
+Y ejecutar nuestro primer comando para obtener los nodos del clúster:
 
 ![windows1](img/windows12.png)
