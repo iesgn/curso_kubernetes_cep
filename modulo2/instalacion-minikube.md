@@ -1,6 +1,6 @@
 # Introducción a la instalación de minikube
 
-El "cluster" de k8s que vamos a utilizar en este curso es el de un
+El "clúster" de k8s que vamos a utilizar en este curso es el de un
 solo nodo que va a encargarse de realizar tanto las tareas de master,
 con los componentes principales de Kubernetes, como de worker,
 ejecutando las cargas de trabajo en contenedores (ya veremos más
@@ -9,7 +9,7 @@ adelante que realmente utiliza algo que se llama Pod).
 Minikube se distribuye como un programa que se instala en nuestra
 máquina física (podría instalarse igualmente en una máquina virtual a
 la que tuviésemos acceso completo) y que al ejecutarlo crea una
-máquina virtual linux con un cluster de Kubernetes completamente
+máquina virtual linux con un clúster de Kubernetes completamente
 configurado y listo para su uso. Podemos instalar minikube en nuestra
 máquina con sistema linux, windows o mac y en una variedad importante
 de sistemas de virtualización, aunque en el curso recomendaremos sólo
