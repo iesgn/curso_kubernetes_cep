@@ -141,6 +141,10 @@ REVISION  CHANGE-CAUSE
 4         Segundo despliegue. Actualizamos a la versión 1.39.1
 ```
 
+## Nota
+
+El contenido de esta unidad difiere un poco con lo mostrado en el siguiente vídeo. Actualmente si prefiere el uso de anotaciones para ir guardando en el Deployment las causas que han producido la actualización del despliegue. Aunque lo mostrado en el vídeo sigue funcionando, es recomendable hacer el proceso de actualización del despliegue usando anotaciones.
+
 ## Vídeo
 
 [https://www.youtube.com/watch?v=6LjTwopWDFw](https://www.youtube.com/watch?v=6LjTwopWDFw)
