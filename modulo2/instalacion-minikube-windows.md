@@ -32,9 +32,9 @@ if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
 
 Podemos ver el valor del path: `dir env :path|fl`
 
-**Paso 3: Creación del cluster de kubernetes con minikube**
+**Paso 3: Creación del clúster de kubernetes con minikube**
 
-En este apartado vamos a crear un cluster de kubernetes de un nodo. En este caso minikube creará una máquina virtual (de 2Gb de RAM, 2 vcpu y 20G de almacenamiento) en VirtualBox utilizando una imagen que configura la máquina con kubernetes. 
+En este apartado vamos a crear un clúster de kubernetes de un nodo. En este caso minikube creará una máquina virtual (de 2Gb de RAM, 2 vcpu y 20G de almacenamiento) en VirtualBox utilizando una imagen que configura la máquina con kubernetes. 
 
 Cerramos el terminal PowerShell y la volvemos abrir como administrador.
 
