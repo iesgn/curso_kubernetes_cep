@@ -79,7 +79,7 @@ De forma más concreta estos objetivos se pueden enumerar en:
     * [Instalación y configuración de kubectl en linux](modulo2/instalacion-kubectl-linux.md)
     * [Instalación y configuración de kubectl en windows](modulo2/instalacion-kubectl-windows.md)
     * [Despliegues de aplicaciones en Kubernetes](modulo2/despliegues-k8s.md)
-        * [Actividad 2.1: Instalación de minikube y kubectl (OBLIGATORIA)](modulo2/actividad1.md)
+        * [Actividad 2.1: Instalación y configuración de minikube y kubectl (OBLIGATORIA)](modulo2/actividad1.md)
 1. Contenedores en Kubernetes: Pods
     * [Pod](modulo3/pods.md)
     * [Describiendo un Pod](modulo3/describiendo_pod.md)
