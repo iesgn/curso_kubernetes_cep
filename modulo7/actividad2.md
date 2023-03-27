@@ -32,7 +32,7 @@ Basándonos en el [Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB](
     |Clave|Valor|
     |---|---|
     |`bd_password`|Guardamos la contraseña del usuario de la base de datos|
-    |`bd_rootpassword`|Guardamos la cntraseña del usuario root de la base de datos|
+    |`bd_rootpassword`|Guardamos la contraseña del usuario root de la base de datos|
 
 
 * Utiliza los ficheros yaml del ejemplo haciendo las modificaciones oportunas.
