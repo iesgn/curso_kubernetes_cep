@@ -30,7 +30,7 @@ if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
 
 **IMPORTANTE: Debemos cerrar la sesión, para que se cargue las variables de entorno.**
 
-Podemos ver el valor del path: `dir env :path|fl`
+Podemos ver el valor del path: `dir env:path|fl`
 
 **Paso 3: Creación del clúster de kubernetes con minikube**
 
