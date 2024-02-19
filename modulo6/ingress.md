@@ -19,20 +19,20 @@ Para activar el Ingress Controller ejecutamos:
 
     minikube addons enable ingress
 
-Para comprobar si tenemos instalado el componente, podemos visualizar los Pods creados en el *namespace* `ingress-nginx`. Este espacio de nombre se ha creado para desplegar el controlador de ingress Por lo tanto al ejecutar:
+Para comprobar si tenemos instalado el componente, podemos visualizar los Pods creados en el *namespace* `ingress-nginx`. Este espacio de nombre se ha creado para desplegar el controlador de ingress. Por lo tanto al ejecutar:
 
     kubectl get pods -n ingress-nginx 
     ...
     ingress-nginx-controller-558664778f-shjzp   1/1     Running     0          
     ...    
 
-Debe aparece un Pod que se llama `ingress-nginx-controller-...`, si es así, significa que se ha instalado un Ingress Controller basado en el proxy inverso nginx.
+Debe aparecer un Pod que se llama `ingress-nginx-controller-...`, si es así, significa que se ha instalado un Ingress Controller basado en el proxy inverso nginx.
 
 ## Describiendo el recurso Ingress
 
 Una vez instalado el componente Ingress Controller, ya podemos definir un recurso Ingress en un fichero yaml. Para ello vamos a trabajar con el despliegue y el Service que hemos creado de nginx.
 
-El recurso Ingress para acceder a nuestro despliegue de nginx lo tenemos en el fichero [`ingress.yaml`](file/ingress.yaml):
+El recurso Ingress para acceder a nuestro despliegue de nginx lo tenemos en el fichero [`ingress.yaml`](files/ingress.yaml):
 
 ```yaml
 apiVersion: networking.k8s.io/v1
