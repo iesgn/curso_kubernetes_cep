@@ -41,7 +41,7 @@ Con la opción `--dry-run=client`, *kubectl* va a simular la creación del recur
 
 ## Despliegue de la base de datos
 
-Para desplegar la base de datos vamos a usar el fichero [`mariadb-deployment.yaml`](files/wordpress/mariadb-deployment.yaml). Podemos observar en el fichero cómo los datos de las variables de entorno del contenedor se inicalizan con los valores que hemos creado en el ConfigMap y en el Secret anterior. Ejecutamos:
+Para desplegar la base de datos vamos a usar el fichero [`mariadb-deployment.yaml`](files/wordpress/mariadb-deployment.yaml). Podemos observar en el fichero cómo los datos de las variables de entorno del contenedor se inicializan con los valores que hemos creado en el ConfigMap y en el Secret anterior. Ejecutamos:
 
     kubectl apply -f mariadb-deployment.yaml
 

@@ -30,7 +30,7 @@ nuestro ConfigMap, en este caso vamos a usar literales, por ejemplo:
                               --from-literal=mysql_password=password-user \
                               --from-literal=basededatos=test
 
-En el ejemplo anteriore, hemos creado un ConfigMap llamado `mariadb`
+En el ejemplo anterior, hemos creado un ConfigMap llamado `mariadb`
 con cuatro pares clave-valor. Para ver los ConfigMap que tenemos
 creados, podemos utilizar:
 

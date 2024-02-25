@@ -341,7 +341,7 @@ diferentes pods y contenedores, tanto los InitContainers como los
 contenedores de cada pod y al tratarse de un StatefulSet, los pods no
 se crean en paralelo, lo hacen de manera secuencial (algo fundamental
 en este caso, ya que hasta que no ha terminado el primer pod que
-contiene el contendor primario, no deben lanzarse los secundarios).
+contiene el contenedor primario, no deben lanzarse los secundarios).
 
 ## Prueba de funcionamiento de la base de datos
 
