@@ -94,7 +94,7 @@ Kubernetes, sino que lo comenzó a desarrollar la empresa
 [Rancher](https://rancher.com/) y hoy en día lo mantiene la [Cloud
 Native Computing Foundation](https://www.cncf.io/).
 
-Los pasos para la instalaciónde k3s están disponibles en:
+Los pasos para la instalación de k3s están disponibles en:
 
 * [https://rancher.com/docs/k3s/latest/en/installation/](https://rancher.com/docs/k3s/latest/en/installation/)
 

@@ -59,7 +59,7 @@ spec:
 * Se indica al tamaño del volumen, con `capacity`, `storage`.
 * `accessModes`: El modo de acceso.
 * `persistentVolumeReclaimPolicy`: La política de reciclaje.
-* Y por útimo se indica el tipo (backend) de almacenamiento, en este caso es de tipo `hostPath` que creará un directorio (`/data/pv1`) en el nodo para guardar la información.
+* Y por último se indica el tipo (backend) de almacenamiento, en este caso es de tipo `hostPath` que creará un directorio (`/data/pv1`) en el nodo para guardar la información.
 
 ## Aprovisionamiento dinámico
 
