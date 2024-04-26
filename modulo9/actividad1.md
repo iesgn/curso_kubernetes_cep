@@ -4,7 +4,7 @@
 
 ## TEXTO DE LA ACTIVIDAD
 
-Siguiendo el [Ejemplo2: Despliegue de un cluster de MySQL](ejemplo2.md) de esta unidad, crea un cluster de MySQL con un primario y un secundario y realiza algunas pruebas para comrpobar su funcionamiento.
+Siguiendo el [Ejemplo2: Despliegue de un cluster de MySQL](ejemplo2.md) de esta unidad, crea un cluster de MySQL con un primario y un secundario y realiza algunas pruebas para comprobar su funcionamiento.
 
 Realiza los siguientes pasos:
 
