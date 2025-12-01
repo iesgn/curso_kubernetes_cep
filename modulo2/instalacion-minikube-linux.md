@@ -27,9 +27,7 @@ de forma más sencilla con `install`
 Comprobamos que se ha instalado correctamente con:
 
     minikube version
-
-    minikube version: v1.29.0
-    commit: ddac20b4b34a9c8c857fc602203b6ba2679794d3
+    minikube version: v1.35.0
 
 ## Creación del clúster de k8s
 
