@@ -27,9 +27,7 @@ de forma más sencilla con `install`
 Comprobamos que se ha instalado correctamente con:
 
     minikube version
-
-    minikube version: v1.29.0
-    commit: ddac20b4b34a9c8c857fc602203b6ba2679794d3
+    minikube version: v1.35.0
 
 ## Creación del clúster de k8s
 
@@ -57,7 +55,7 @@ de k8s) para que utilice el cluster recién instalado. Podemos ver una
 salida típica de la instalación del cluster a continuación:
 
 ```
-😄  minikube v1.29.0 en Debian 11.6
+...
 ✨  Using the kvm2 driver based on user configuration
 👍  Starting control plane node minikube in cluster minikube
 🔥  Creando kvm2 VM (CPUs=2, Memory=3900MB, Disk=20000MB) ...
@@ -103,7 +101,6 @@ minikube stop
 
 ```
 minikube start
-😄  minikube v1.29.0 en Debian 11.6
 ...
 ```
 

@@ -20,33 +20,18 @@ directamente desde la URL del proyecto e instalarlo en
 `/usr/local/bin`:
 
 ```
-curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install kubectl /usr/local/bin/kubectl
 ```
 
 Este binario obviamente no se actualiza y tendremos que repetir el
 proceso cuando se actualice.
 
-## Opción 2. Instalar desde repositorios no oficiales
-
-El término repositorio no oficial se utiliza para aquellos
-repositorios que se añaden y que no son los propios de la distribución
-que estamos utilizando. En este caso, los repositorios no oficiales
-los proporciona el propio proyecto k8s.
-
-En el caso de las distribuciones Debian y derivadas, el repositorio es
-`https://packages.cloud.google.com/apt/` y en la documentación se
-detallan los pasos para instalar `kubectl` a través de apt.
-
-La ventaja de este método respecto al anterior es que sí se
-actualizará `kubectl` adecuadamente como cualquier otro paquete que
-tengamos instalado en nuestra distro.
-
-## Opción 3. Instalar desde repositorio oficial
+## Opción 2. Instalar desde repositorio oficial
 
 En el caso de Debian, se ha añadido soporte para Kubernetes a partir
 de la versión `bullseye` o Debian 11, por lo que si tenemos instalada
-esa versión, podemos instalar `kubectl` directamente con apt:
+esa versión o superior, podemos instalar `kubectl` directamente con apt:
 
 ```
 sudo apt install kubernetes-client
@@ -54,7 +39,7 @@ sudo apt install kubernetes-client
 
 En estos momentos se instala la versión 1.20 de kubectl.
 
-## Opción 4. Instalar desde snap
+## Opción 3. Instalar desde snap
 
 Ubuntu no proporciona de forma directa un paquete con el cliente de
 k8s, pero sí lo hace a través de snap, por lo que quienes utilicen
@@ -70,16 +55,14 @@ Una vez instalado `kubectl` podemos comprobar que está disponible y cuál es su
 versión, con la instrucción:
 
 ```
-kubectl version --short
+kubectl version
 ...
-Client Version: v1.26.3
-Kustomize Version: v4.5.7
-Server Version: v1.26.1
-
+Client Version: v1.34.2
+Kustomize Version: v5.7.1
+Server Version: v1.32.0
 ```
 
-En el caso anterior, estamos utilizando la versión 1.22.2 y nos
-informa de que no ha podido conectarse al clúster de Kubernetes con la
+Si nos aparece un error que nos informa de que no ha podido conectarse al clúster de Kubernetes con la
 configuración por defecto (`localhost:8080`). Es decir, aunque
 tengamos kubectl y minikube instalados, el primero no está configurado
 todavía para conectarse al clúster de k8s que ejecuta minikube.
@@ -96,7 +79,7 @@ no teníamos instalado `kubectl`, aparecía la línea:
 Pero si lo volvemos a repetir ahora, esa línea no aparecerá y se
 configurará `kubectl` para poder usar el clúster que proporciona
 minikube. Lo que va a hacer minikube es configurar el fichero
-`~/.kube/config` de la siguiente manera:
+`~/.kube/config` de la siguiente manera (o similar):
 
 ```
 apiVersion: v1
@@ -143,9 +126,6 @@ comando:
 
 ```
 kubectl version
-
-Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.3", GitCommit:"816c97ab8cff8a1c72eccca1026f7820e93e0d25", GitTreeState:"clean", BuildDate:"2022-01-25T21:25:17Z", GoVersion:"go1.17.6", Compiler:"gc", Platform:"linux/amd64"}
-Server Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.3", GitCommit:"c92036820499fedefec0f847e2054d824aea6cd1", GitTreeState:"clean", BuildDate:"2021-10-27T18:35:25Z", GoVersion:"go1.16.9", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
 Comprobamos que ya aparece la versión del servidor y por
@@ -156,7 +136,7 @@ de `kubectl`:
 ```
 kubectl get nodes
 NAME       STATUS   ROLES                  AGE   VERSION
-minikube   Ready    control-plane,master   21m   v1.22.3
+minikube   Ready    control-plane,master   21m   v1.32.0
 ```
 
 Si queremos utilizar el autocompletado, podemos generarlo e
