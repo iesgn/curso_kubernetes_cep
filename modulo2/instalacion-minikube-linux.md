@@ -55,7 +55,7 @@ de k8s) para que utilice el cluster recién instalado. Podemos ver una
 salida típica de la instalación del cluster a continuación:
 
 ```
-😄  minikube v1.29.0 en Debian 11.6
+...
 ✨  Using the kvm2 driver based on user configuration
 👍  Starting control plane node minikube in cluster minikube
 🔥  Creando kvm2 VM (CPUs=2, Memory=3900MB, Disk=20000MB) ...
