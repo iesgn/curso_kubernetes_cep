@@ -101,7 +101,6 @@ minikube stop
 
 ```
 minikube start
-😄  minikube v1.29.0 en Debian 11.6
 ...
 ```
 
