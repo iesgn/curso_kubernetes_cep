@@ -12,7 +12,7 @@ Abrimos la PowerShell, como administrador, y ejecutamos :
 
 ```
 New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
-Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' –UseBasicParsing
+$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
 ```
 
 Esta instrucción va a crear un directorio en c:/minikube y ahí va a depositar el ejecutable `minikube.exe` (70MB).
