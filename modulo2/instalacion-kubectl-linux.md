@@ -139,20 +139,6 @@ NAME       STATUS   ROLES                  AGE   VERSION
 minikube   Ready    control-plane,master   21m   v1.32.0
 ```
 
-Si queremos utilizar el autocompletado, podemos generarlo e
-incorporarlo a nuestro entorno con:
-
-```
-echo 'source <(kubectl completion bash)' >>~/.bashrc
-```
-
-Y para poder usarlo en esta misma sesión (no será necesario más
-adelante, ya que el fichero .bashrc se lee cada vez que se inicia una
-sesión):
-
-```
-source ~/.bashrc
-```
 
 ## Vídeo
 
