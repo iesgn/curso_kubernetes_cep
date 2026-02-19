@@ -57,9 +57,9 @@ versión, con la instrucción:
 ```
 kubectl version
 ...
-Client Version: v1.34.2
+Client Version: v1.35.1
 Kustomize Version: v5.7.1
-Server Version: v1.32.0
+Server Version: v1.35.0
 ```
 
 Si nos aparece un error que nos informa de que no ha podido conectarse al clúster de Kubernetes con la
