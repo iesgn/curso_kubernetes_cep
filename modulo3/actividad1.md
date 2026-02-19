@@ -15,7 +15,7 @@ ello realiza los siguientes pasos:
 2. Crea el Pod.
 3. Comprueba que el Pod se ha creado y está corriendo.
 4. Obtén información detallada del Pod creado.
-5. Accede de forma interactiva al Pod y comprueba los ficheros que están en el DocumentRoot (`usr/local/apache2/htdocs/`).
+5. Accede de forma interactiva al Pod y comprueba los ficheros que están en el DocumentRoot (`/usr/local/apache2/htdocs/`).
 6. Crea una redirección con `kubectl port-forward` utilizando el puerto de localhost 8888 y sabiendo que el Pod ofrece el servicio en el puerto 80. Accede a la aplicación desde un navegador.
 7. Muestra los logs del Pod y comprueba que se visualizan los logs de los accesos que hemos realizado en el punto anterior.
 8. Elimina el Pod, y comprueba que ha sido eliminado.
