@@ -64,7 +64,7 @@ datos con esa contraseña del root:
 
 ## Nota importante
 
-En el vídeo y en estos apuntes al crear el pod de mysql se utiliza el cliente **mysql** para acceder. Actualmente, la última versión de la imagen ya no tiene el cliente **mysql**, tiene el cliente **mariadb** y la última instrucción quedaría así:
+En el vídeo y en estos apuntes, al crear el pod de mysql se utiliza el cliente **mysql** para acceder. Actualmente, la última versión de la imagen ya no tiene el cliente **mysql**, tiene el cliente **mariadb** y la última instrucción quedaría así:
 
     kubectl exec -it deployment.apps/mariadb-deployment -- mariadb -u root -p
 
