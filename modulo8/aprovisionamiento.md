@@ -17,9 +17,10 @@ Tenemos tres modos de acceso, que dependen del backend que vamos a utilizar:
 
 Las políticas de reciclaje de volúmenes también dependen del backend y son:
 
-* Retain: El PV no se elimina, aunque el PVC se elimine. El administrador debe borrar el contenido para la próxima asociación.
-* Recycle: Reutilizar contenido. Se elimina el contenido y el volumen es de nuevo utilizable.
 * Delete: Se borra después de su utilización.
+* Retain: El PV no se elimina, aunque el PVC se elimine. El administrador debe borrar el contenido para la próxima asociación.
+* Recycle: Reutilizar contenido. Se elimina el contenido y el volumen es de nuevo utilizable. Esta opción está obsoleta.
+
 
 A modo de resumen, ponemos en la siguiente tabla los modos de acceso de algunos de los sistemas de almacenamiento más usados:
 
@@ -50,7 +51,7 @@ spec:
     storage: 5Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Delete
   hostPath:
     path: /data/pv1
 ```

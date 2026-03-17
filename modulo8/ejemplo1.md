@@ -19,7 +19,7 @@ spec:
     storage: 5Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Delete
   hostPath:
     path: /data/pv-ejemplo1
 ```
@@ -37,7 +37,7 @@ Podemos ver los volúmenes que tenemos disponibles en el cluster:
 ```bash
 kubectl get pv
 NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
-persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  73s
+persistentvolume/pv-ejemplo1   5Gi        RWX            Delete          Available           manual                  73s
 ```
 Nos fijamos que el estado del volumen es `Available`, todavía no se ha asociado con ninguna solicitud de volumen.
 
@@ -74,7 +74,7 @@ kubectl apply -f pvc-ejemplo1.yaml
 
 kubectl get pv,pvc
 NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                  STORAGECLASS   REASON   AGE
-persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Bound    default/pvc-ejemplo1   manual                  2m1s
+persistentvolume/pv-ejemplo1   5Gi        RWX            Delete          Bound    default/pvc-ejemplo1   manual                  2m1s
 
 NAME                                 STATUS   VOLUME        CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 persistentvolumeclaim/pvc-ejemplo1   Bound    pv-ejemplo1   5Gi        RWX            manual         3s
@@ -190,14 +190,14 @@ Y volvemos acceder al mismo puerto:
 
 Si finalmente queremos eliminar los volúmenes creados, tendremos que eliminar la solicitud, el objeto PersistentVolumeClaim, y dependiendo de la política de reciclaje con la que creamos el objeto PersistentVolume tendremos distintos comportamientos.
 
-En este caso, como la política de reciclaje con la que creamos el volumen es `Recycle`, no se eliminará pero se borrará su contenido y el volumen se podrá reutilizar, es decir su estado volverá a `Available`:
+En este caso, como la política de reciclaje con la que creamos el volumen es `Delete`, al eliminar el PersistentVolumeClaim, el contenido del volumen se borrará y el volumen podrá reutilizarse, pasando de nuevo al estado `Available`:
 
 ```bash
 kubectl delete persistentvolumeclaim/pvc-ejemplo1
 
 kubectl get pv,pvc
 NAME                           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
-persistentvolume/pv-ejemplo1   5Gi        RWX            Recycle          Available           manual                  8m8s
+persistentvolume/pv-ejemplo1   5Gi        RWX            Delete          Available           manual                  8m8s
 ```
 
 Si queremos eliminar el objeto PersistentVolume, ejecutamos:
@@ -205,6 +205,10 @@ Si queremos eliminar el objeto PersistentVolume, ejecutamos:
 ```bash
 kubectl delete persistentvolume/pv-ejemplo1
 ```
+
+## Nota
+
+En el vídeo se utiliza el valor `persistentVolumeReclaimPolicy: Recycle`. Actualmente ese valor está obsolote, por lo que en la documentación se ha cambiado a `Delete`.
 
 ## Vídeo
 
